@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Zion Narrows  
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20102110
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>naomi cable - A Better Place</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">Naomi cable   </a></h1>
+			<p> where you come to watch TV</p>
+		</div>
+		<div id="search">
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li><a href="http://1.1.0.2/index.html">The Real Cartoon Network</a></li>
+			<li><a href="http://1.1.0.3/index.html">TV Tokyo in America</a></li>
+			<li><a href="http://1.1.0.4/index.html">Movie Channel</a></li>
+			<li><a href="http://1.1.0.5/index.html">Requests</a></li>
+		</ul>
+	</div>
+	<div id="page">
+	    <div id="page-bgtop">
+	        <div id="page-bgbtm">
+		        <div id="content">
+			        <div class="post">
+			        	<h2 class="title"><a href="#">Welcome to naomi cable.</a></h2>
+			        	<div class="entry">
+			        	    <p class="meta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here we like to think that backronyms are excellent.</p>
+				            <p>Originally created by Omacron Naomi in 2010 out of desire for good television. Perhaps now under new managment due to graduation.
+				            We aim to provide television that people want to watch instead of that garbage on basic cable. Our cartoon channel also plays
+				            cartoons, unlike that other cartoon network. If you don't live in an area in which we broadcast you're out of luck. If you do
+				            however we can add you to our network if you pay for the hardware or bring the hardware in yourself.</p>
+				            <p>Administrative office currently resides in 4403 Friley Lincoln.</p>
+			        	</div>
+			        </div>
+			        <div class="post">
+				        <h2 class="title"><a href="#">What's Playing!?</a></h2>
+				        <div class="entry">
+					        <p class="meta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you are somehow not a poor college student, please support the official releases.</p>
+					        <p>INSERT</p>
+				        </div>
+			        </div>
+		            <div style="clear: both;">&nbsp;</div>
+		        </div>
+            </div>
+        </div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2>Next Up</h2>
+					<ul>
+						<li>EDITME</li>
+						<li>EDITME</li>
+						<li>EDITME</li>
+						<li>EDITME</li>
+						<li>EDITME</li>
+						<li>EDITME</li>
+						<li>EDITME</li>
+						<li>EDITME</li>
+						<li>EDITME</li>
+						<li>EDITME</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- end #content -->
+	</div>
+	<!-- end #footer -->
+</body>
+</html>

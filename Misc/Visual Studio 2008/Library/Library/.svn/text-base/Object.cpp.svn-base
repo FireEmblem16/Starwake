@@ -1,0 +1,208 @@
+#ifndef OBJECT_CPP
+#define OBJECT_CPP
+
+#include "Object.h"
+
+Object::Object(char* filename)
+{
+	model = new Model(filename);
+
+	vert = model->get_vert();
+	norm = model->get_norm();
+
+	num_vert = model->get_num_vert();
+	num_norm = model->get_num_norm();
+
+	disp = Vector(0.0f,0.0f,0.0f);
+	distortion = Vector(1.0f,1.0f,1.0f);
+	rot = Vector(0.0f,0.0f,0.0f);
+
+	return;
+}
+
+Object::Object(Object* o2)
+{
+	*model = *o2->model;
+
+	num_vert = o2->num_vert;
+	num_norm = o2->num_norm;
+
+	if(!o2->vert)
+	{
+		vert = new Vector[num_vert];
+
+		for(uint32_t i = 0;i < num_vert;i++)
+		vert[i] = o2->vert[i];
+	}
+
+	if(!o2->norm)
+	{
+		norm = new Vector[num_norm];
+
+		for(uint32_t i =  0;i < num_norm;i++)
+			norm[i] = o2->norm[i];
+	}
+
+	disp = o2->disp;
+	distortion = o2->distortion;
+	rot = o2->rot;
+
+	return;
+}
+
+Object Object::operator =(Object o2)
+{
+	*model = *o2.model;
+
+	num_vert = o2.num_vert;
+	num_norm = o2.num_norm;
+
+	if(o2.vert)
+	{
+		vert = new Vector[num_vert];
+	
+		for(uint32_t i = 0;i < num_vert;i++)
+			vert[i] = o2.vert[i];
+	}
+
+	if(o2.norm)
+	{
+		norm = new Vector[num_norm];
+
+		for(uint32_t i =  0;i < num_norm;i++)
+			norm[i] = o2.norm[i];
+	}
+
+	disp = o2.disp;
+	distortion = o2.distortion;
+	rot = o2.rot;
+
+	return *this;
+}
+
+Object::~Object()
+{
+	if(model)
+		delete model;
+
+	if(vert)
+		delete[] vert;
+
+	if(norm)
+		delete[] norm;
+
+	return;
+}
+
+bool Object::operator ==(Object o2)
+{
+	return !strcmp(model->get_filename(),o2.model->get_filename());
+}
+
+Vector Object::displacement()
+{
+	return disp;
+}
+
+Vector Object::rotation()
+{
+	return rot;
+}
+
+Vector Object::scale()
+{
+	return distortion;
+}
+
+void Object::move(Vector dist)
+{
+	disp += dist;
+
+	return;
+}
+
+void Object::moveto(Vector pos)
+{
+	disp = pos;
+
+	return;
+}
+
+void Object::rotate(Vector rotation)
+{
+	rot += rotation;
+	wrap();
+
+	return;
+}
+
+void Object::rotateto(Vector angles)
+{
+	rot = angles;
+	wrap();
+
+	return;
+}
+
+void Object::scale(Vector scale_inc)
+{
+	distortion += scale_inc;
+
+	return;
+}
+
+void Object::scaleto(Vector percent_size)
+{
+	distortion = percent_size;
+
+	return;
+}
+
+Model* Object::getmodel()
+{
+	return model;
+}
+
+void Object::draw()
+{
+	glPushMatrix();
+	{
+		glScalef(distortion[0],distortion[1],distortion[2]);
+		glTranslatef(disp[0],disp[1],disp[2]);
+		glRotatef(rot[0],1.0f,0.0f,0.0f);
+		glRotatef(rot[1],0.0f,1.0f,0.0f);
+		glRotatef(rot[2],0.0f,0.0f,1.0f);
+
+		// Temp color, waiting for textures
+		glColor3f(0.0f,1.0f,0.0f);
+
+		glBegin(GL_TRIANGLE_STRIP);
+		{
+			for(uint32_t i = 0;i < num_vert;i++)
+				glVertex3fv(vert[i]);
+		}
+		glEnd();
+	}
+	glPopMatrix();
+
+	return;
+}
+
+void Object::wrap()
+{
+	GLfloat* vals = rot;
+
+	for(uint32_t i = 0;i < 3;i++)
+	{
+		if(vals[i] < 0)
+			while(vals[i] < 0.0f)
+				vals[i] += 360.0f;
+		else
+			while(vals[i] >= 360.0f)
+				vals[i] -= 360.0f;
+	}
+
+	return;
+}
+
+#endif

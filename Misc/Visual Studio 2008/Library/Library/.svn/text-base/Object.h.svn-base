@@ -1,0 +1,50 @@
+#ifndef OBJECT_H
+#define OBJECT_H
+
+#include <stdlib.h>
+#include <GL/gl.h>
+
+#include "Defines.h"
+#include "Vector.h"
+#include "Model.h"
+
+class Object
+{
+public:
+	Object(char* filename);
+	Object(Object* o2);
+	Object operator =(Object o2);
+	~Object();
+
+	bool operator ==(Object o2);
+
+	Vector displacement();
+	Vector rotation();
+	Vector scale();
+
+	void move(Vector dist);
+	void moveto(Vector pos);
+	void rotate(Vector rotation);
+	void rotateto(Vector angles);
+	void scale(Vector scale_inc);
+	void scaleto(Vector percent_size);
+
+	Model* getmodel();
+	void draw();
+protected:
+	void wrap();
+
+	Model* model;
+
+	uint32_t num_vert;
+	uint32_t num_norm;
+
+	Vector* vert;
+	Vector* norm;
+
+	Vector disp;
+	Vector distortion;
+	Vector rot;
+};
+
+#endif

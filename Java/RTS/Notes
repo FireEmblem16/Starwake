@@ -1,0 +1,28 @@
+Add a main config file that stores all game level scope configurations.
+This should have a path to a config file for game controls.
+
+Make sure that the system file allows us to define movement multipliers for flying, swimming, and such in the game system config file.
+For example flying should probably be at half cost mostly for FE mode.
+
+Make a way to edit pallets.
+We should do this in it's own editor as it will be quite big.
+
+Make an animation editor.
+We should do this in it's own editor as it will be quite big.
+
+Have a hexgrid option.
+This is quite possible as all we need to do is add a boolean ishex to board and relevant drawing functions it uses.
+From this we simply stagger the drawing location using math. Naturally this requires 100% transparency outside the hex, since images are always rectangles.
+...May have to rethink erase function and paint and Overlaps algorithm.
+Navigate cellwidth and cellheight to maps.
+
+Have multiplayer, including a GM server which may require two forwarded ports.
+
+Important for running the game
+------------------------------
+KeyListener[] listeners = board.getKeyListeners();
+		
+for(int i = 0;i < listeners.length;i++)
+	addKeyListener(listeners[i]);
+		
+new DataDisplay().Display(board.GetDisplayedMap().GetItems(new Location(2,8,board.GetDisplayedMap().GetName())));

@@ -1,0 +1,9 @@
+Create a world class.
+-Has draw which is called as often as possible.
+-Has update which is called as often as possible but uses a time stamp to determine the multiplier for velocity and such.
+-Contains BoundedObjects and Objects of which the later should be updated and drawn first due to the nature of BoundedObjects.
+-The BoundedObjects and Objects need a physics wrapper class that stores a,v,r,...
+-Collisions should be done during update after updating.
+-Collision math should be calculated...probably.
+-An object need not be checked for collision if it is stationary. However a moving object may collide with it.
+-Should have some way to load world data...somehow.

@@ -1,0 +1,13 @@
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\bin\Debug\Use to Make Txts.exe
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\bin\Debug\Use to Make Txts.pdb
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\bin\Debug\Use to Make Txts.xml
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\Use_to_Make_Txts.Resources.resources
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\Use to Make Txts.vbproj.GenerateResource.Cache
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\Use to Make Txts.exe
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\Use to Make Txts.xml
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\Use to Make Txts.pdb
+C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\Use_to_Make_Txts.Form1.resources
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\Use to Make Txts.exe
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\Use to Make Txts.xml
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\Use to Make Txts\Use to Make Txts\obj\Debug\Use to Make Txts.pdb

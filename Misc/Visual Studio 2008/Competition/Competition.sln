@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Your Ride is Here", "Competition\Competition.vcproj", "{7A66D731-A36F-4C45-9C94-FA80852C67AC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Greedy Gift Givers", "Greedy Gift Givers\Greedy Gift Givers.vcproj", "{590A0CB5-6722-404C-A800-20867E5BA30D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Friday the Thirteenth", "Friday the Thirteenth\Friday the Thirteenth.vcproj", "{0C6BFC02-BFC2-47DE-80AA-03080E1C0BB0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Broken Necklace", "Broken Necklace\Broken Necklace.vcproj", "{2E34A934-B4A9-4FA8-8483-985D39F7B584}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Milking Cows", "Milking Cows\Milking Cows.vcproj", "{0553A590-4B94-4541-807B-9331248ED26A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A66D731-A36F-4C45-9C94-FA80852C67AC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7A66D731-A36F-4C45-9C94-FA80852C67AC}.Debug|Win32.Build.0 = Debug|Win32
+		{7A66D731-A36F-4C45-9C94-FA80852C67AC}.Release|Win32.ActiveCfg = Release|Win32
+		{7A66D731-A36F-4C45-9C94-FA80852C67AC}.Release|Win32.Build.0 = Release|Win32
+		{590A0CB5-6722-404C-A800-20867E5BA30D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{590A0CB5-6722-404C-A800-20867E5BA30D}.Debug|Win32.Build.0 = Debug|Win32
+		{590A0CB5-6722-404C-A800-20867E5BA30D}.Release|Win32.ActiveCfg = Release|Win32
+		{590A0CB5-6722-404C-A800-20867E5BA30D}.Release|Win32.Build.0 = Release|Win32
+		{0C6BFC02-BFC2-47DE-80AA-03080E1C0BB0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C6BFC02-BFC2-47DE-80AA-03080E1C0BB0}.Debug|Win32.Build.0 = Debug|Win32
+		{0C6BFC02-BFC2-47DE-80AA-03080E1C0BB0}.Release|Win32.ActiveCfg = Release|Win32
+		{0C6BFC02-BFC2-47DE-80AA-03080E1C0BB0}.Release|Win32.Build.0 = Release|Win32
+		{2E34A934-B4A9-4FA8-8483-985D39F7B584}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2E34A934-B4A9-4FA8-8483-985D39F7B584}.Debug|Win32.Build.0 = Debug|Win32
+		{2E34A934-B4A9-4FA8-8483-985D39F7B584}.Release|Win32.ActiveCfg = Release|Win32
+		{2E34A934-B4A9-4FA8-8483-985D39F7B584}.Release|Win32.Build.0 = Release|Win32
+		{0553A590-4B94-4541-807B-9331248ED26A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0553A590-4B94-4541-807B-9331248ED26A}.Debug|Win32.Build.0 = Debug|Win32
+		{0553A590-4B94-4541-807B-9331248ED26A}.Release|Win32.ActiveCfg = Release|Win32
+		{0553A590-4B94-4541-807B-9331248ED26A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

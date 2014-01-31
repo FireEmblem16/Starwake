@@ -1,0 +1,4 @@
+Content\box.xnb
+Content\boxtexture.xnb
+Content\avatartexture.xnb
+Content\ComicSansMS.xnb

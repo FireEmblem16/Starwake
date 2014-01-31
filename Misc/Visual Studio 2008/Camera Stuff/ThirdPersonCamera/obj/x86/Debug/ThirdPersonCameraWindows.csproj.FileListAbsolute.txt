@@ -1,0 +1,20 @@
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\bin\x86\Debug\Content\box.xnb
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\bin\x86\Debug\Content\boxtexture.xnb
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\bin\x86\Debug\Content\avatartexture.xnb
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\bin\x86\Debug\Content\ComicSansMS.xnb
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\bin\x86\Debug\ThirdPersonCamera.exe
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\bin\x86\Debug\ThirdPersonCamera.pdb
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\obj\x86\Debug\ThirdPersonCamera.exe
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\obj\x86\Debug\ThirdPersonCamera.pdb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\bin\x86\Debug\Content\box.xnb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\bin\x86\Debug\Content\boxtexture.xnb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\bin\x86\Debug\Content\avatartexture.xnb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\bin\x86\Debug\Content\ComicSansMS.xnb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\bin\x86\Debug\ThirdPersonCamera.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\bin\x86\Debug\ThirdPersonCamera.pdb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\obj\x86\Debug\ThirdPersonCamera.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\obj\x86\Debug\ThirdPersonCamera.pdb

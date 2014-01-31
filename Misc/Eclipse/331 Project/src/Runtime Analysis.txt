@@ -1,0 +1,17 @@
+Analysis begins on line 19 since the while loop above is the iteration of problems, not computation within a problem.
+
+Unless otherwise mentioned, lines are O(1) (in the context they exist, such as in a loop they would be run O(n) times).
+
+Lines 35-38 are O(n log n) since we are sorting the array of days we read in.
+Lines 40-41 are O(n) since we are reloading our n days into an arraylist.
+Lines 41-51 are O(n) since we are initializing a table that is of size O(n).
+Line 58 is another O(n log n) sort.
+Lines 60-122 will be executed O(n) times which we will take into account in further runtime analysis.
+Lines 67-69 are O(n^2) time since we loop through the input days to find all the ones in range.
+Lines 74-84 are O(n^2) since we could be processing O(n) days in the range, though it is highly unlikely and the algorithm would end extremely fast.
+Similarly lines 86-87 are O(n^2).
+Lines 91-107 are O(n^3) however the second loop will rarely execute and even if it does it usually won't go very far into it since both parts require extremely specific circumstances. Average runtime will be O(n^2).
+Lines 128-129 are O(n) since we could possibly have every day in the optimal solution.
+All helping functions are O(1). Reading in data not part of the algorithm complexity of the algorithm so we do not count the parsing of numbers in our runtime analysis.
+
+So in total the algorithm is worst case O(n^3) which will rarely come up and the average case is O(n^2).

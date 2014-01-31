@@ -1,0 +1,15 @@
+Basic Play
+To play a card on the deck it must either be the same suit or the same value.
+false
+Jacks
+When a Jack is played it skips the next person who would have otherwise played.
+false
+Popcorn
+When playing a club you must say popcorn. If popcorn is not said the player recieves a card.
+false
+Sevens
+When a seven is play the turn order is reversed and play proceeds with the in the oppisite direction.
+false
+Suicide King
+When a King of Hearts is played all players must slap the deck. The last player to slap the deck recieves a card.
+false

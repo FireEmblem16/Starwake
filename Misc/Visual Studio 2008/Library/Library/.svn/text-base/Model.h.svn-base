@@ -1,0 +1,45 @@
+#ifndef MODEL_H
+#define MODEL_H
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "Defines.h"
+#include "utility.h"
+#include "Vector.h"
+
+#define MESH "Mesh"
+#define NORM "Norms"
+
+class Model
+{
+public:
+	Model(char* filename);
+	Model operator =(Model m2);
+	~Model();
+
+	const char* get_filename();
+	uint32_t get_num_vert();
+	uint32_t get_num_norm();
+	Vector* get_vert();
+	Vector* get_norm();
+protected:
+	
+private:
+	bool gotoblock(char* str);
+	bool read_line(char* buf, uint32_t len);
+	uint32_t parse_int(char* str, uint32_t ordinal_index);
+	GLfloat parse_float(char* str, uint32_t ordinal_index);
+	Vector* load_vert(FILE* file);
+	Vector* load_norm(FILE* file);
+
+	char* filename;
+	FILE* file;
+	Vector* vert;
+	Vector* norm;
+	uint32_t num_vert;
+	uint32_t num_norm;
+};
+
+#endif

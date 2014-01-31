@@ -1,0 +1,12 @@
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\bin\Debug\Translation.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\bin\Debug\Translation.pdb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\bin\Debug\Translation.xml
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\obj\Debug\Translation.frm1.resources
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\obj\Debug\Translation.Resources.resources
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\obj\Debug\Translation.vbproj.GenerateResource.Cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\obj\Debug\Translation.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\obj\Debug\Translation.xml
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\obj\Debug\Translation.pdb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\obj\Debug\Translation.frm2.resources
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Translation\Translation\obj\Debug\Translation.frm3.resources

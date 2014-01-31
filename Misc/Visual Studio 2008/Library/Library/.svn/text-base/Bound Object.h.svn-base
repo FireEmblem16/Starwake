@@ -1,0 +1,52 @@
+#ifndef BOUND_OBJECT_H
+#define BOUND_OBJECT_H
+
+#include <stdlib.h>
+#include <GL/gl.h>
+
+#include "Defines.h"
+#include "Vector.h"
+#include "Object.h"
+
+class BoundObject
+{
+public:
+	BoundObject(Object* o);
+	BoundObject(Object* o, char* filename);
+	BoundObject(BoundObject* o2);
+	BoundObject operator =(BoundObject o2);
+	~BoundObject();
+
+	bool operator ==(BoundObject o2);
+
+	Vector displacement();
+	Vector rotation();
+	Vector scale();
+
+	void displace(Vector dist);
+	void displaceto(Vector pos);
+	void rotate(Vector rotation);
+	void rotateto(Vector angles);
+	void scale(Vector scale_inc);
+	void scaleto(Vector percent_size);
+
+	Model* getmodel();
+	void draw();
+protected:
+	void wrap();
+
+	Model* model;
+	Object* dependant;
+
+	uint32_t num_vert;
+	uint32_t num_norm;
+
+	Vector* vert;
+	Vector* norm;
+
+	Vector disp;
+	Vector distortion;
+	Vector rot;
+};
+
+#endif

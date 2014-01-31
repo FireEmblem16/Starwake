@@ -1,0 +1,92 @@
+// Anything before <Pallet> will be ignored.
+
+<Pallet>
+	// Note that for any cropping, if the crop extends past the edge of an image the entire image will be discarded.
+	
+	<Image> // Each of these will load an image and parse it if the tags are given.
+		<path = background.bmp>
+		<width = 16> // These two tags indicate how large the image, or each image, should be.
+		<height = 16> // Note that if these are alone we default to uv cropping with u,v defaulting to zero.
+		// If at least one of the above two tags doesn't appear when padding tags appear then it will be no different than a uv crop.
+		<padding-left = 1> // When cropping the image into bit sized pieces we will use this value as padding to the crop.
+		<padding-top = 1> // Note that if padding appears, uv will indicate where to start dissecting the image.
+		<padding-right = 0> // If any one of the padding tags appears (and is greater than -1) then we will switch to dissecting the image into many.
+		<padding-bottom = 0> // Defaults to zero.
+		// Note that when we dissect an image we do so left to right, top to bottom.
+		<name = Not My Name> // This tag will be ignored since we are dissecting the image into many.
+		<u = 1> // These default to zero.
+		<v = 1>
+		
+		//<name-scheme = background.scheme> // See cursor image tags 
+		
+		// This will filter images into seperate "folders" when selecting them in a pallet.
+		// Each folder should be seperated by a '/' and if it ends with '/' the last '/' will be ignored.
+		// If this tag takes the form <filter = > or is not present then it will default to "" which implies it will be in the top folder.
+		<filter = Tests/Garbage>
+	</Image>
+	
+	<Image>
+		<path = Hesitation.png>
+		<width = 136> // Defaults to the width of the image (minus any changes u made).
+		<height = 275> // Defaults to the height of the image (minus any changes v made).
+		// If the above two values are too big or less than zero then the image will be discarded.
+		<u = 130> // Defaults to zero.
+		<v = 315> // Defaults to zero.
+		<name = Hesitation> // If this is not given it will default to the next undefined integer value.
+		// This is generally seen as bad, especially if you define an image with a name the same as a not yet defined generic as it could be lost.
+		
+		<filter = Tests/Garbage>
+	</Image>
+	
+	<Image>
+		<path = hextest.png>
+		<name = GreenHex>
+		<filter = Tests>
+	</Image>
+	
+	<Image>
+		<path = hextest2.png>
+		<name = RedHex>
+		<filter = Tests>
+	</Image>
+
+	<Image>
+		<path = Node.png>
+		<name = Node>
+		
+		<filter = Tests/Nodes>
+	</Image>
+	
+	<Image>
+		<path = Red Quarter.png>
+		<name = Red Quarter>
+		<flip = No!> // This defaults to the null value, or rather no flipping. Flips across "vertical" and "horizontal".
+		<rotate = 3690> // This defaults to 0 degrees. Valid values are only multiples of 90 degress. Other values are assumed to be zero.
+		
+		<filter = Tests/Garbage>
+	</Image>
+	
+	<Image>
+		<path = Cursor.png>
+		
+		<width = 18>
+		<height = 18>
+		
+		<padding-left = 0>
+		<padding-top = 0>
+		<padding-right = 0>
+		<padding-bottom = 0>
+		
+		<u = 0>
+		<v = 0>
+		
+		// This tag will make an image that is being disected into many not have default names so long as there are names left in the scheme file.
+		// Note that this does not work when an image is not being made into many.
+		// The scheme should also contains filter values.
+		<name-scheme = Cursor.scheme>
+	</Image>
+	
+	<name = Base Pallet> // This tag is required and defines what we will refer to this pallet as.
+</Pallet>
+
+// Anything after </Pallet> will be ignored. 

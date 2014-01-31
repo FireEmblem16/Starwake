@@ -1,0 +1,10 @@
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\bin\Debug\Inititive.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\bin\Debug\Inititive.pdb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\bin\Debug\Inititive.xml
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\obj\Debug\Inititive.frm1.resources
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\obj\Debug\Inititive.Resources.resources
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\obj\Debug\Inititive.vbproj.GenerateResource.Cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\obj\Debug\Inititive.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\obj\Debug\Inititive.xml
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Inititive\Inititive\obj\Debug\Inititive.pdb

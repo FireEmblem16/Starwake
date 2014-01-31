@@ -1,0 +1,9 @@
+// Each line whould contain the name of the next image.
+// The next line should contain the filter value.
+// Also if we run out of names we will start using defaults after using the last name.
+// One blank line when a filter is expected will be used as a "" filter and all other black lines will be ignored.
+
+Cursor1Big
+Cursors/Cursor1
+Cursor1Small
+Cursors/Cursor1

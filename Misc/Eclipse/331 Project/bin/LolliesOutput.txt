@@ -1,0 +1,180 @@
+In January 100 lollies can be obtained:
+On day 1 collect 100 lollies.
+
+In February 12 lollies can be obtained:
+On day 2 collect 7 lollies.
+On day 3 collect 5 lollies.
+
+In March 4 lollies can be obtained:
+On day 1 collect 2 lollies.
+On day 4 collect 2 lollies.
+
+In April 100 lollies can be obtained:
+On day 1 collect 50 lollies.
+On day 11 collect 50 lollies.
+
+In May 38 lollies can be obtained:
+On day 1 collect 1 lolly.
+On day 2 collect 2 lollies.
+On day 5 collect 5 lollies.
+On day 10 collect 10 lollies.
+On day 20 collect 20 lollies.
+
+In June 43 lollies can be obtained:
+On day 1 collect 2 lollies.
+On day 3 collect 2 lollies.
+On day 5 collect 1 lolly.
+On day 7 collect 2 lollies.
+On day 8 collect 1 lolly.
+On day 9 collect 2 lollies.
+On day 10 collect 2 lollies.
+On day 12 collect 2 lollies.
+On day 13 collect 2 lollies.
+On day 15 collect 1 lolly.
+On day 16 collect 2 lollies.
+On day 18 collect 1 lolly.
+On day 20 collect 1 lolly.
+On day 22 collect 2 lollies.
+On day 23 collect 2 lollies.
+On day 25 collect 2 lollies.
+On day 26 collect 2 lollies.
+On day 28 collect 1 lolly.
+On day 30 collect 2 lollies.
+On day 32 collect 2 lollies.
+On day 34 collect 2 lollies.
+On day 35 collect 2 lollies.
+On day 36 collect 2 lollies.
+On day 38 collect 2 lollies.
+On day 39 collect 1 lolly.
+
+In July 46 lollies can be obtained:
+On day 1 collect 1 lolly.
+On day 3 collect 1 lolly.
+On day 5 collect 1 lolly.
+On day 7 collect 1 lolly.
+On day 9 collect 1 lolly.
+On day 11 collect 1 lolly.
+On day 13 collect 1 lolly.
+On day 15 collect 1 lolly.
+On day 17 collect 1 lolly.
+On day 19 collect 1 lolly.
+On day 21 collect 1 lolly.
+On day 23 collect 1 lolly.
+On day 25 collect 1 lolly.
+On day 27 collect 1 lolly.
+On day 29 collect 1 lolly.
+On day 31 collect 1 lolly.
+On day 33 collect 1 lolly.
+On day 35 collect 1 lolly.
+On day 37 collect 1 lolly.
+On day 39 collect 1 lolly.
+On day 41 collect 1 lolly.
+On day 43 collect 1 lolly.
+On day 45 collect 1 lolly.
+On day 47 collect 1 lolly.
+On day 49 collect 1 lolly.
+On day 51 collect 1 lolly.
+On day 53 collect 1 lolly.
+On day 55 collect 1 lolly.
+On day 57 collect 1 lolly.
+On day 59 collect 1 lolly.
+On day 61 collect 1 lolly.
+On day 63 collect 1 lolly.
+On day 65 collect 1 lolly.
+On day 67 collect 1 lolly.
+On day 69 collect 1 lolly.
+On day 71 collect 1 lolly.
+On day 73 collect 1 lolly.
+On day 75 collect 1 lolly.
+On day 77 collect 1 lolly.
+On day 79 collect 1 lolly.
+On day 81 collect 1 lolly.
+On day 83 collect 1 lolly.
+On day 85 collect 1 lolly.
+On day 87 collect 1 lolly.
+On day 90 collect 2 lollies.
+
+In August 101 lollies can be obtained:
+On day 1 collect 100 lollies.
+On day 100 collect 1 lolly.
+
+In September 447 lollies can be obtained:
+On day 1 collect 6 lollies.
+On day 5 collect 14 lollies.
+On day 6 collect 14 lollies.
+On day 9 collect 18 lollies.
+On day 10 collect 3 lollies.
+On day 14 collect 15 lollies.
+On day 15 collect 2 lollies.
+On day 18 collect 2 lollies.
+On day 19 collect 17 lollies.
+On day 22 collect 4 lollies.
+On day 24 collect 11 lollies.
+On day 26 collect 11 lollies.
+On day 30 collect 10 lollies.
+On day 31 collect 6 lollies.
+On day 34 collect 10 lollies.
+On day 36 collect 7 lollies.
+On day 38 collect 16 lollies.
+On day 42 collect 16 lollies.
+On day 44 collect 20 lollies.
+On day 47 collect 20 lollies.
+On day 48 collect 3 lollies.
+On day 52 collect 19 lollies.
+On day 54 collect 17 lollies.
+On day 59 collect 5 lollies.
+On day 61 collect 9 lollies.
+On day 62 collect 16 lollies.
+On day 64 collect 5 lollies.
+On day 66 collect 18 lollies.
+On day 68 collect 4 lollies.
+On day 70 collect 10 lollies.
+On day 75 collect 8 lollies.
+On day 80 collect 18 lollies.
+On day 83 collect 8 lollies.
+On day 84 collect 2 lollies.
+On day 85 collect 3 lollies.
+On day 88 collect 3 lollies.
+On day 89 collect 20 lollies.
+On day 94 collect 19 lollies.
+On day 95 collect 12 lollies.
+On day 98 collect 14 lollies.
+On day 99 collect 12 lollies.
+
+In October 2089 lollies can be obtained:
+On day 1 collect 19 lollies.
+On day 4 collect 26 lollies.
+On day 7 collect 75 lollies.
+On day 10 collect 77 lollies.
+On day 13 collect 40 lollies.
+On day 15 collect 78 lollies.
+On day 18 collect 88 lollies.
+On day 22 collect 83 lollies.
+On day 25 collect 13 lollies.
+On day 27 collect 61 lollies.
+On day 31 collect 33 lollies.
+On day 33 collect 40 lollies.
+On day 36 collect 8 lollies.
+On day 39 collect 76 lollies.
+On day 41 collect 74 lollies.
+On day 45 collect 43 lollies.
+On day 47 collect 84 lollies.
+On day 49 collect 86 lollies.
+On day 52 collect 34 lollies.
+On day 54 collect 40 lollies.
+On day 57 collect 85 lollies.
+On day 59 collect 4 lollies.
+On day 62 collect 67 lollies.
+On day 64 collect 62 lollies.
+On day 68 collect 25 lollies.
+On day 70 collect 79 lollies.
+On day 75 collect 89 lollies.
+On day 78 collect 80 lollies.
+On day 80 collect 80 lollies.
+On day 82 collect 86 lollies.
+On day 87 collect 78 lollies.
+On day 90 collect 68 lollies.
+On day 92 collect 47 lollies.
+On day 95 collect 73 lollies.
+On day 97 collect 88 lollies.
+

@@ -1,0 +1,208 @@
+#ifndef BOUND_OBJECT_CPP
+#define BOUND_OBJECT_CPP
+
+#include "Bound Object.h"
+
+BoundObject::BoundObject(Object* o2)
+{
+	if(!o2)
+		return;
+
+	dependant = o2;
+	model = o2->getmodel();
+
+	num_vert = model->get_num_vert();
+	num_norm = model->get_num_norm();
+
+	vert = model->get_vert();
+	norm = model->get_norm();
+
+	disp = Vector(0.0f,0.0f,0.0f);
+	distortion = Vector(0.0f,0.0f,0.0f);
+	rot = Vector(0.0f,0.0f,0.0f);
+
+	return;
+}
+
+BoundObject::BoundObject(Object* o2, char* filename)
+{
+	if(!o2)
+		return;
+
+	dependant = o2;
+	model = new Model(filename);
+
+	vert = model->get_vert();
+	norm = model->get_norm();
+
+	num_vert = model->get_num_vert();
+	num_norm = model->get_num_norm();
+
+	disp = Vector(0.0f,0.0f,0.0f);
+	distortion = Vector(0.0f,0.0f,0.0f);
+	rot = Vector(0.0f,0.0f,0.0f);
+
+	return;
+}
+
+BoundObject BoundObject::operator =(BoundObject o2)
+{
+	dependant = o2.dependant;
+	*model = *o2.getmodel();
+
+	num_vert = model->get_num_vert();
+	num_norm = model->get_num_norm();
+
+	if(o2.vert)
+	{
+		vert = new Vector[num_vert];
+		
+		for(uint32_t i = 0;i < num_vert;i++)
+			vert[i] = o2.vert[i];
+	}
+
+	if(o2.norm)
+	{
+		norm = new Vector[num_norm];
+
+		for(uint32_t i =  0;i < num_norm;i++)
+			norm[i] = o2.norm[i];
+	}
+
+	disp = o2.disp;
+	distortion = o2.distortion;
+	rot = o2.rot;
+
+	return *this;
+}
+
+BoundObject::~BoundObject()
+{
+	if(model)
+		delete model;
+
+	if(vert)
+		delete[] vert;
+
+	if(norm)
+		delete[] norm;
+
+	return;
+}
+
+bool BoundObject::operator ==(BoundObject o2)
+{
+	return !strcmp(model->get_filename(),o2.model->get_filename());
+}
+
+Vector BoundObject::displacement()
+{
+	return disp;
+}
+
+Vector BoundObject::rotation()
+{
+	return rot;
+}
+
+Vector BoundObject::scale()
+{
+	return distortion;
+}
+
+void BoundObject::displace(Vector dist)
+{
+	disp += dist;
+
+	return;
+}
+
+void BoundObject::displaceto(Vector pos)
+{
+	disp = pos;
+
+	return;
+}
+
+void BoundObject::rotate(Vector rotation)
+{
+	rot += rotation;
+	wrap();
+
+	return;
+}
+
+void BoundObject::rotateto(Vector angles)
+{
+	rot = angles;
+	wrap();
+
+	return;
+}
+
+void BoundObject::scale(Vector scale_inc)
+{
+	distortion += scale_inc;
+
+	return;
+}
+
+void BoundObject::scaleto(Vector percent_size)
+{
+	distortion = percent_size;
+
+	return;
+}
+
+Model* BoundObject::getmodel()
+{
+	return model;
+}
+
+void BoundObject::draw()
+{
+	Vector t = disp + dependant->displacement();
+	Vector r = rot + dependant->rotation();
+	Vector s = distortion + dependant->scale();
+
+	glPushMatrix();
+	{
+		glScalef(s[0],s[1],s[2]);
+		glTranslatef(t[0],t[1],t[2]);
+		glRotatef(r[0],1.0f,0.0f,0.0f);
+		glRotatef(r[1],0.0f,1.0f,0.0f);
+		glRotatef(r[2],0.0f,0.0f,1.0f);
+
+		// Temp color, waiting for textures
+		glColor3f(0.0f,1.0f,0.0f);
+
+		glBegin(GL_TRIANGLE_STRIP);
+		{
+			for(uint32_t i = 0;i < num_vert;i++)
+				glVertex3fv(vert[i]);
+		}
+		glEnd();
+	}
+	glPopMatrix();
+
+	return;
+}
+
+void BoundObject::wrap()
+{
+	GLfloat* vals = rot;
+
+	for(uint32_t i = 0;i < 3;i++)
+	{
+		if(vals[i] < 0)
+			while(vals[i] < 0.0f)
+				vals[i] += 360.0f;
+		else
+			while(vals[i] >= 360.0f)
+				vals[i] -= 360.0f;
+	}
+
+	return;
+}
+
+#endif

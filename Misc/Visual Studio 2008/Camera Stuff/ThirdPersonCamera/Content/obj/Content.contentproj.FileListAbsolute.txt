@@ -1,0 +1,4 @@
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Temp\ThirdPersonCamera\ThirdPersonCamera\Content\obj\Xbox 360\Debug\ResolveAssemblyReference.cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Camera Stuff\ThirdPersonCamera\Content\obj\Xbox 360\Debug\ResolveAssemblyReference.cache

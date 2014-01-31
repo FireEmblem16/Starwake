@@ -1,0 +1,22 @@
+// Everything before <Animation> will be ignored.
+
+<Animation>
+	<name = Idle> // This is what we will refer to this animation as.
+	<loop = true> // This animation will loop if this is true and will default to false if any other value appears.
+	<start-frame = 0> // Defaults to zero if invalid or absent.
+	// <next-animation = Moving> // If this animation is not looping then when it finishes it will switch the item it's animating to an animation with this name.
+	
+	<KeyFrame> // This is an important point in the animation, order matters.
+		<pallet = Base Pallet> // This is the pallet where we will look for the image.
+		<pallet-name = Cursor1Big> // This is the image name we will draw.
+		<time = 500> // This is how long this frame will last. Defaults to 1000.
+	</KeyFrame>
+	
+	<KeyFrame>
+		<pallet = Base Pallet> // Even if these two tags are not given the KeyFrame will be kept and nothing will be drawn during it.
+		<pallet-name = Cursor1Small>
+		<time = 500> // If this value is too small we will almost certainly have concurrency issues.
+	</KeyFrame>
+</Animation>
+
+// Everything after </Animation> will be ignored.

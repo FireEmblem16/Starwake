@@ -1,0 +1,13 @@
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\bin\Debug\rewriter.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\bin\Debug\rewriter.pdb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\bin\Debug\rewriter.xml
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\rewriter.Form1.resources
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\rewriter.Resources.resources
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\rewriter.vbproj.GenerateResource.Cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\rewriter.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\rewriter.xml
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\rewriter.pdb
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\rewriter.exe
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\rewriter.xml
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\rewriter\rewriter\obj\Debug\rewriter.pdb

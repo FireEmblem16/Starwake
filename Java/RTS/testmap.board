@@ -1,0 +1,2074 @@
+<Board>
+	<name = Break My Code>
+	<goal = Defend#8>
+	<display-map = Hex Test>
+
+	<pallet-path = testpallet.pallet>
+
+	<Map>
+		<name = Map 1>
+		<width = 2>
+		<height = 1>
+
+		<cell-width = 16>
+		<cell-height = 16>
+		<hex = false>
+
+		<Item>
+			<class = Forest>
+			<x = 1>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 50>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Node>
+			<x = 1>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = Node>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 51>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 3>
+			<avoid-bonus = -5>
+			<def-bonus = 5>
+			<life-gain = -1>
+		</Item>
+
+		<Item>
+			<class = Cursor>
+			<x = 2>
+			<y = 1>
+			<animation = CursorIdle.animation>
+			<animation-name = Idle>
+		</Item>
+
+	</Map>
+
+	<Map>
+		<name = Map 2>
+		<width = 2>
+		<height = 2>
+
+		<cell-width = 0>
+		<cell-height = 0>
+		<hex = false>
+
+	</Map>
+
+	<Map>
+		<name = Big>
+		<width = 10>
+		<height = 10>
+
+		<cell-width = 16>
+		<cell-height = 16>
+		<hex = false>
+
+		<Item>
+			<class = Forest>
+			<x = 1>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 1>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 1>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 1>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 1>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 1>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 1>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 1>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 1>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 1>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 2>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 2>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Cursor>
+			<x = 2>
+			<y = 8>
+			<animation = CursorIdle.animation>
+			<animation-name = Idle>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 2>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 3>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 3>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 3>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 3>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 3>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 3>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 3>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 3>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 3>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 3>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 4>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 4>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 4>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 4>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 4>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 4>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 4>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 4>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 4>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 4>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 5>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 5>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 5>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 5>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 5>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 23>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 5>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 48>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 5>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 48>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 5>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 48>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 5>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 48>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 5>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 48>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 6>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 6>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 6>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 6>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 6>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 24>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 6>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 49>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 6>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 145>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 6>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 96>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 6>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 96>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 6>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 96>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 7>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 7>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 7>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 7>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 7>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 24>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 7>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 49>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 7>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 170>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Pillar>
+			<x = 7>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 25>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 10>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 7>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 50>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 7>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 8>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 9>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 9>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 9>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 9>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 9>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 24>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 9>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 49>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 9>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 170>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Pillar>
+			<x = 9>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 25>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 10>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 9>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 50>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 9>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 10>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Forest>
+			<x = 10>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = 19>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 2>
+			<avoid-bonus = 20>
+			<def-bonus = 1>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 10>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 10>
+			<y = 4>
+			<pallet = Base Pallet>
+			<pallet-name = 20>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 10>
+			<y = 5>
+			<pallet = Base Pallet>
+			<pallet-name = 24>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Roofless Wall>
+			<x = 10>
+			<y = 6>
+			<pallet = Base Pallet>
+			<pallet-name = 49>
+
+			<passable = false>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 15>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 10>
+			<y = 7>
+			<pallet = Base Pallet>
+			<pallet-name = 170>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 10>
+			<y = 8>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 10>
+			<y = 9>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 10>
+			<y = 10>
+			<pallet = Base Pallet>
+			<pallet-name = 97>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+	</Map>
+
+	<Map>
+		<name = Hex Test>
+		<width = 3>
+		<height = 3>
+
+		<cell-width = 24>
+		<cell-height = 16>
+		<hex = true>
+
+		<Item>
+			<class = Flatland>
+			<x = 1>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = GreenHex>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 1>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = RedHex>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 1>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = GreenHex>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = GreenHex>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = RedHex>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 2>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = GreenHex>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 3>
+			<y = 1>
+			<pallet = Base Pallet>
+			<pallet-name = GreenHex>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 3>
+			<y = 2>
+			<pallet = Base Pallet>
+			<pallet-name = RedHex>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+		<Item>
+			<class = Flatland>
+			<x = 3>
+			<y = 3>
+			<pallet = Base Pallet>
+			<pallet-name = GreenHex>
+
+			<passable = true>
+			<flyable = true>
+			<swimable = false>
+			<climbable = false>
+
+			<cost = 1>
+			<avoid-bonus = 0>
+			<def-bonus = 0>
+			<life-gain = 0>
+		</Item>
+
+	</Map>
+
+</Board>

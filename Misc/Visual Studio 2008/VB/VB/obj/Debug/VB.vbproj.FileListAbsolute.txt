@@ -1,0 +1,13 @@
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\VB.frm2.resources
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\VB.Resources.resources
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\VB.vbproj.GenerateResource.Cache
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\bin\Debug\VB.exe
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\bin\Debug\VB.pdb
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\bin\Debug\VB.xml
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\VB.frm1.resources
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\VB.exe
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\VB.xml
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\VB.pdb
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\VB.frm3.resources
+C:\Users\FireEmblem16\Documents\Visual Studio 2008\Projects\VB\VB\obj\Debug\VB.frm4.resources

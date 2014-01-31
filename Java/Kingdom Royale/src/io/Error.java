@@ -1,0 +1,12 @@
+package io;
+
+public enum Error
+{
+	NO_ERROR,
+	FIRST_FAIL,
+	SECOND_FAIL,
+	THIRD_FAIL,
+	SETUP_FAIL,
+	RECIEVE_FAIL,
+	UNKNOWN_ERROR
+}
