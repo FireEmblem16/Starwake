@@ -1,0 +1,15 @@
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\obj\x86\Debug\GameMenu.Properties.Resources.resources
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\bin\Debug\GameMenu.exe
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\bin\Debug\GameMenu.pdb
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\obj\x86\Debug\GameMenu.GetScoreForm.resources
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\obj\x86\Debug\GameMenu.SignupForm.resources
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\obj\x86\Debug\GameMenu.exe
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\obj\x86\Debug\GameMenu.pdb
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\bin\Debug\Engine.dll
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\bin\Debug\Networking.dll
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\bin\Debug\Engine.pdb
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\bin\Debug\Networking.pdb
+C:\Users\phuduong\Desktop\Team27\trunk\Cards With Class\GameMenu\obj\x86\Debug\GameMenu.Form1.resources

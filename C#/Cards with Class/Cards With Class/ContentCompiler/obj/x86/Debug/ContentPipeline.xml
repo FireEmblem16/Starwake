@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Decks\Classic Cards\b1fh.png</Source>
+      <Name>Decks\Classic Cards\b1fh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1fh.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b1fv.png</Source>
+      <Name>Decks\Classic Cards\b1fv</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1fv.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b1pb.png</Source>
+      <Name>Decks\Classic Cards\b1pb</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1pb.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b1pl.png</Source>
+      <Name>Decks\Classic Cards\b1pl</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1pl.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b1pr.png</Source>
+      <Name>Decks\Classic Cards\b1pr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1pr.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b1pt.png</Source>
+      <Name>Decks\Classic Cards\b1pt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1pt.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b2fh.png</Source>
+      <Name>Decks\Classic Cards\b2fh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2fh.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b2fv.png</Source>
+      <Name>Decks\Classic Cards\b2fv</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2fv.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b2pb.png</Source>
+      <Name>Decks\Classic Cards\b2pb</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2pb.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b2pl.png</Source>
+      <Name>Decks\Classic Cards\b2pl</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2pl.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b2pr.png</Source>
+      <Name>Decks\Classic Cards\b2pr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2pr.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\b2pt.png</Source>
+      <Name>Decks\Classic Cards\b2pt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2pt.xnb</Output>
+      <Time>2005-09-26T22:53:24-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Ace of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Ace of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ace of Clubs.xnb</Output>
+      <Time>2013-11-03T11:00:25.9697811-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Ace of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Ace of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ace of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Ace of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Ace of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ace of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Ace of Spades.png</Source>
+      <Name>Decks\Classic Cards\Ace of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ace of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Big Joker.png</Source>
+      <Name>Decks\Classic Cards\Big Joker</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Big Joker.xnb</Output>
+      <Time>2005-09-26T22:53:42-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Duece of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Duece of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Duece of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Duece of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Duece of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Duece of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:42-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Duece of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Duece of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Duece of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:42-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Duece of Spades.png</Source>
+      <Name>Decks\Classic Cards\Duece of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Duece of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:42-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Eight of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Eight of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Eight of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Eight of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Eight of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Eight of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Eight of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Eight of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Eight of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Eight of Spades.png</Source>
+      <Name>Decks\Classic Cards\Eight of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Eight of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Five of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Five of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Five of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Five of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Five of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Five of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Five of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Five of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Five of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Five of Spades.png</Source>
+      <Name>Decks\Classic Cards\Five of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Five of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Four of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Four of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Four of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Four of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Four of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Four of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Four of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Four of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Four of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Four of Spades.png</Source>
+      <Name>Decks\Classic Cards\Four of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Four of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\King of Clubs.png</Source>
+      <Name>Decks\Classic Cards\King of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\King of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:42-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\King of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\King of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\King of Dimonds.xnb</Output>
+      <Time>2005-10-09T21:13:14-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\King of Hearts.png</Source>
+      <Name>Decks\Classic Cards\King of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\King of Hearts.xnb</Output>
+      <Time>2005-10-09T21:13:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\King of Spades.png</Source>
+      <Name>Decks\Classic Cards\King of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\King of Spades.xnb</Output>
+      <Time>2005-10-09T21:13:04-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Knave of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Knave of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Knave of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Knave of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Knave of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Knave of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Knave of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Knave of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Knave of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Knave of Spades.png</Source>
+      <Name>Decks\Classic Cards\Knave of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Knave of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Nine of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Nine of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Nine of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Nine of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Nine of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Nine of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Nine of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Nine of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Nine of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Nine of Spades.png</Source>
+      <Name>Decks\Classic Cards\Nine of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Nine of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Queen of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Queen of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Queen of Clubs.xnb</Output>
+      <Time>2005-10-09T21:13:18-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Queen of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Queen of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Queen of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Queen of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Queen of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Queen of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Queen of Spades.png</Source>
+      <Name>Decks\Classic Cards\Queen of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Queen of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Seven of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Seven of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Seven of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Seven of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Seven of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Seven of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Seven of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Seven of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Seven of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Seven of Spades.png</Source>
+      <Name>Decks\Classic Cards\Seven of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Seven of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Six of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Six of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Six of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Six of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Six of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Six of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Six of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Six of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Six of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Six of Spades.png</Source>
+      <Name>Decks\Classic Cards\Six of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Six of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:38-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Small Joker.png</Source>
+      <Name>Decks\Classic Cards\Small Joker</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Small Joker.xnb</Output>
+      <Time>2005-09-26T22:53:42-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Ten of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Ten of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ten of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Ten of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Ten of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ten of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:36-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Ten of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Ten of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ten of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Ten of Spades.png</Source>
+      <Name>Decks\Classic Cards\Ten of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ten of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:34-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Three of Clubs.png</Source>
+      <Name>Decks\Classic Cards\Three of Clubs</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Three of Clubs.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Three of Dimonds.png</Source>
+      <Name>Decks\Classic Cards\Three of Dimonds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Three of Dimonds.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Three of Hearts.png</Source>
+      <Name>Decks\Classic Cards\Three of Hearts</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Three of Hearts.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Decks\Classic Cards\Three of Spades.png</Source>
+      <Name>Decks\Classic Cards\Three of Spades</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Three of Spades.xnb</Output>
+      <Time>2005-09-26T22:53:40-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\TNR12.spritefont</Source>
+      <Name>Fonts\TNR12</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Fonts\TNR12.xnb</Output>
+      <Time>2013-09-26T21:34:53.0147443-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ContentCompiler\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ContentCompiler\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-01-17T17:44:18.0288034-06:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

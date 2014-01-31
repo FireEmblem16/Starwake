@@ -1,0 +1,5 @@
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Networking\bin\Debug\Networking.dll
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Networking\bin\Debug\Networking.pdb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Networking\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Networking\obj\Debug\Networking.dll
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Networking\obj\Debug\Networking.pdb

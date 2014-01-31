@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{523633DC-0B1A-412A-BD2B-0B854E2ABFA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HeartsGame</RootNamespace>
+    <AssemblyName>Hearts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\HeartsAI.cs" />
+    <Compile Include="Code\HeartsData.cs" />
+    <Compile Include="Code\HeartsGame.cs" />
+    <Compile Include="Code\HeartsHandsPacket.cs" />
+    <Compile Include="Code\HeartsOptionsPacket.cs" />
+    <Compile Include="Code\HeartsPassingListPacket.cs" />
+    <Compile Include="Code\HeartsPassingPacket.cs" />
+    <Compile Include="Code\HeartsPlayer.cs" />
+    <Compile Include="HeartsOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeartsRules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeartsTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeartsWaitingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.csproj">
+      <Project>{57A9969A-340D-4AF4-A33E-DAF4BCD5C904}</Project>
+      <Name>Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Networking\Networking.csproj">
+      <Project>{73262FA5-DB07-4711-97D7-B4610F8A1A7A}</Project>
+      <Name>Networking</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ace of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ace of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ace of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ace of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b1fh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b1fv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Big Joker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Duece of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Duece of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Duece of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Duece of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eight of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eight of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eight of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eight of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Five of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Five of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Five of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Five of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Four of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Four of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Four of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Four of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\King of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\King of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\King of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\King of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knave of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knave of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knave of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Knave of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nine of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nine of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nine of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nine of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Queen of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Queen of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Queen of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Queen of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seven of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seven of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seven of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seven of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Six of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Six of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Six of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Six of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Small Joker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ten of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ten of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ten of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ten of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Three of Clubs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Three of Dimonds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Three of Hearts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Three of Spades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

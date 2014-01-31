@@ -1,0 +1,67 @@
+ContentCompiler\Decks\Classic Cards\b1fh.xnb
+ContentCompiler\Decks\Classic Cards\b1fv.xnb
+ContentCompiler\Decks\Classic Cards\b1pb.xnb
+ContentCompiler\Decks\Classic Cards\b1pl.xnb
+ContentCompiler\Decks\Classic Cards\b1pr.xnb
+ContentCompiler\Decks\Classic Cards\b1pt.xnb
+ContentCompiler\Decks\Classic Cards\b2fh.xnb
+ContentCompiler\Decks\Classic Cards\b2fv.xnb
+ContentCompiler\Decks\Classic Cards\b2pb.xnb
+ContentCompiler\Decks\Classic Cards\b2pl.xnb
+ContentCompiler\Decks\Classic Cards\b2pr.xnb
+ContentCompiler\Decks\Classic Cards\b2pt.xnb
+ContentCompiler\Decks\Classic Cards\Ace of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Ace of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Ace of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Ace of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Big Joker.xnb
+ContentCompiler\Decks\Classic Cards\Duece of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Duece of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Duece of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Duece of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Eight of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Eight of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Eight of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Eight of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Five of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Five of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Five of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Five of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Four of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Four of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Four of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Four of Spades.xnb
+ContentCompiler\Decks\Classic Cards\King of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\King of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\King of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\King of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Knave of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Knave of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Knave of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Knave of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Nine of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Nine of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Nine of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Nine of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Queen of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Queen of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Queen of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Queen of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Seven of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Seven of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Seven of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Seven of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Six of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Six of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Six of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Six of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Small Joker.xnb
+ContentCompiler\Decks\Classic Cards\Ten of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Ten of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Ten of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Ten of Spades.xnb
+ContentCompiler\Decks\Classic Cards\Three of Clubs.xnb
+ContentCompiler\Decks\Classic Cards\Three of Dimonds.xnb
+ContentCompiler\Decks\Classic Cards\Three of Hearts.xnb
+ContentCompiler\Decks\Classic Cards\Three of Spades.xnb
+ContentCompiler\Fonts\TNR12.xnb

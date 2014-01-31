@@ -1,0 +1,18 @@
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Cards With Class\bin\Debug\Engine.dll
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Cards With Class\bin\Debug\Engine.pdb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\Engine.dll
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\Engine.pdb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\bin\Debug\Engine.dll
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\bin\Debug\Engine.pdb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\Engine.Game.Screens.GameTable.resources
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\bin\Debug\Networking.dll
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\bin\Debug\Networking.pdb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\Engine.Game.Screens.TitleScreen.resources
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\Engine.Game.Screens.WaitingScreen.resources
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\Engine.Game.Screens.GameOptionsScreen.resources
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\Engine.Game.Screens.GameSelectScreen.resources
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\Engine.Game.Screens.RuleScreen.resources
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\Engine\obj\Debug\Engine.Game.Screens.AboutScreen.resources

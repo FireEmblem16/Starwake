@@ -1,0 +1,5 @@
+c:\users\fireemblem16\documents\visual studio 2010\Projects\HittingSet\HittingSet\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\fireemblem16\documents\visual studio 2010\Projects\HittingSet\HittingSet\bin\Debug\HittingSet.exe
+c:\users\fireemblem16\documents\visual studio 2010\Projects\HittingSet\HittingSet\bin\Debug\HittingSet.pdb
+c:\users\fireemblem16\documents\visual studio 2010\Projects\HittingSet\HittingSet\obj\x86\Debug\HittingSet.exe
+c:\users\fireemblem16\documents\visual studio 2010\Projects\HittingSet\HittingSet\obj\x86\Debug\HittingSet.pdb

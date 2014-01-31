@@ -1,0 +1,83 @@
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Fonts\TNR12.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ExampleGUI.exe
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ExampleGUI.pdb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\obj\x86\Debug\ExampleGUI.exe
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\obj\x86\Debug\ExampleGUI.pdb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\Graphics.dll
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\Graphics.pdb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1fh.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1fv.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1pb.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1pl.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1pr.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b1pt.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2fh.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2fv.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2pb.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2pl.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2pr.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\b2pt.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ace of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ace of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ace of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ace of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Big Joker.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Duece of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Duece of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Duece of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Duece of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Eight of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Eight of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Eight of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Eight of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Five of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Five of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Five of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Five of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Four of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Four of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Four of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Four of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\King of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\King of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\King of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\King of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Knave of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Knave of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Knave of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Knave of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Nine of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Nine of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Nine of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Nine of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Queen of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Queen of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Queen of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Queen of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Seven of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Seven of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Seven of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Seven of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Six of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Six of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Six of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Six of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Small Joker.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ten of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ten of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ten of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Ten of Spades.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Three of Clubs.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Three of Dimonds.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Three of Hearts.xnb
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ContentCompiler\Decks\Classic Cards\Three of Spades.xnb
+C:\Users\FireEmblem16\Documents\Visual Studio 2010\Projects\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ExampleGUI.exe
+C:\Users\FireEmblem16\Documents\Visual Studio 2010\Projects\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\ExampleGUI.pdb
+C:\Users\FireEmblem16\Documents\Visual Studio 2010\Projects\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\Graphics.dll
+C:\Users\FireEmblem16\Documents\Visual Studio 2010\Projects\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\bin\x86\Debug\Graphics.pdb
+C:\Users\FireEmblem16\Documents\Visual Studio 2010\Projects\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\FireEmblem16\Documents\Visual Studio 2010\Projects\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\FireEmblem16\Documents\Visual Studio 2010\Projects\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\obj\x86\Debug\ExampleGUI.exe
+C:\Users\FireEmblem16\Documents\Visual Studio 2010\Projects\309 SVN\trunk\Cards With Class\ExampleGUI\ExampleGUI\obj\x86\Debug\ExampleGUI.pdb

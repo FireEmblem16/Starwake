@@ -1,0 +1,6 @@
+all popups in the hearts table are pretty sad.
+
+need to add a report function to gamedata that gets called when the game ends.
+
+invalidate players is of questionable quality.
+	added in a total invalidate instead of region based to play normally.

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{57A9969A-340D-4AF4-A33E-DAF4BCD5C904}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine</RootNamespace>
+    <AssemblyName>Engine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CWCPackets\CWCPacket.cs" />
+    <Compile Include="CWCPackets\EventPackets\CWCGameStart.cs" />
+    <Compile Include="CWCPackets\GameStatePackets\CWCGameStatePacket.cs" />
+    <Compile Include="CWCPackets\MessagePackets\CWCMessagePacket.cs" />
+    <Compile Include="CWCPackets\MessagePackets\CWCPlayersPacket.cs" />
+    <Compile Include="CWCPackets\MovePackets\CWCMoveConfirmationPacket.cs" />
+    <Compile Include="CWCPackets\MovePackets\CWCMovePacket.cs" />
+    <Compile Include="CWCPackets\PlayerExchangePackets\CWCPlayerJoinedPacket.cs" />
+    <Compile Include="CWCPackets\PlayerExchangePackets\CWCPlayerJoinFailedPacket.cs" />
+    <Compile Include="CWCPackets\PlayerExchangePackets\CWCPlayerJoinSuccessPacket.cs" />
+    <Compile Include="CWCPackets\PlayerExchangePackets\CWCPlayerLeftPacket.cs" />
+    <Compile Include="Game\GameData.cs" />
+    <Compile Include="Game\GameOptions.cs" />
+    <Compile Include="Game\GameState.cs" />
+    <Compile Include="Game\Screens\AboutScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\Screens\AboutScreen.Designer.cs">
+      <DependentUpon>AboutScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\Screens\GameSelectScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\Screens\GameSelectScreen.designer.cs">
+      <DependentUpon>GameSelectScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\Screens\GameTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\Screens\GameTable.Designer.cs">
+      <DependentUpon>GameTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\Screens\GameOptionsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\Screens\GameOptionsScreen.Designer.cs">
+      <DependentUpon>GameOptionsScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\Screens\ProgramOptionsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\Screens\ProgramOptionsScreen.Designer.cs">
+      <DependentUpon>ProgramOptionsScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\Screens\RuleScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\Screens\RuleScreen.Designer.cs">
+      <DependentUpon>RuleScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\Screens\TitleScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\Screens\TitleScreen.Designer.cs">
+      <DependentUpon>TitleScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\Screens\WaitingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\Screens\WaitingScreen.Designer.cs">
+      <DependentUpon>WaitingScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player\AI\ABP\AlphaBetaPruner.cs" />
+    <Compile Include="Player\AI\ABP\StandardEnumerator.cs" />
+    <Compile Include="Player\AI\AIBehavior.cs" />
+    <Compile Include="Player\AI\AIPlayer.cs" />
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\CardTypes\CardSuit.cs" />
+    <Compile Include="Cards\CardTypes\CardValue.cs" />
+    <Compile Include="Cards\CardTypes\StandardCard.cs" />
+    <Compile Include="Cards\CardTypes\Suits\BlackSuit.cs" />
+    <Compile Include="Cards\CardTypes\Suits\Clubs.cs" />
+    <Compile Include="Cards\CardTypes\Suits\Dimonds.cs" />
+    <Compile Include="Cards\CardTypes\Suits\Hearts.cs" />
+    <Compile Include="Cards\CardTypes\Suits\RedSuit.cs" />
+    <Compile Include="Cards\CardTypes\Suits\Spades.cs" />
+    <Compile Include="Cards\CardTypes\Values\ComplexValue.cs" />
+    <Compile Include="Cards\CardTypes\Values\ValueN.cs" />
+    <Compile Include="Cards\Deck.cs" />
+    <Compile Include="Cards\DeckTypes\MultiDeck.cs" />
+    <Compile Include="Cards\DeckTypes\StandardDeck.cs" />
+    <Compile Include="Cards\Hand.cs" />
+    <Compile Include="Cards\Hands\StandardHand.cs" />
+    <Compile Include="Exceptions\CardNotInDeckException.cs" />
+    <Compile Include="Exceptions\OutOfCardsException.cs" />
+    <Compile Include="Player\AI\DecisionTree\Condition.cs" />
+    <Compile Include="Player\AI\DecisionTree\Negator.cs" />
+    <Compile Include="Player\AI\DecisionTree\Node.cs" />
+    <Compile Include="Player\AI\DecisionTree\Randomizer.cs" />
+    <Compile Include="Player\AI\DecisionTree\Selector.cs" />
+    <Compile Include="Player\AI\DecisionTree\Sequencer.cs" />
+    <Compile Include="Player\AI\DecisionTree\Thinker.cs" />
+    <Compile Include="Player\AI\StandardAI.cs" />
+    <Compile Include="Player\StandardPlayer.cs" />
+    <Compile Include="Player\Move.cs" />
+    <Compile Include="Player\Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Scanner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Game\Screens\AboutScreen.resx">
+      <DependentUpon>AboutScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game\Screens\GameOptionsScreen.resx">
+      <DependentUpon>GameOptionsScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game\Screens\GameSelectScreen.resx">
+      <DependentUpon>GameSelectScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game\Screens\GameTable.resx">
+      <DependentUpon>GameTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game\Screens\RuleScreen.resx">
+      <DependentUpon>RuleScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game\Screens\TitleScreen.resx">
+      <DependentUpon>TitleScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game\Screens\WaitingScreen.resx">
+      <DependentUpon>WaitingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Networking\Networking.csproj">
+      <Project>{73262FA5-DB07-4711-97D7-B4610F8A1A7A}</Project>
+      <Name>Networking</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

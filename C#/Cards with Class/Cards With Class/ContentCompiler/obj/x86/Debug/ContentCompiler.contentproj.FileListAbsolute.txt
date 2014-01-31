@@ -1,0 +1,2 @@
+C:\Users\omacron\Desktop\309\trunk\Cards With Class\ContentCompiler\obj\x86\Debug\ContentCompiler.contentprojResolveAssemblyReference.cache
+C:\Users\FireEmblem16\Desktop\309 SVN\trunk\Cards With Class\ContentCompiler\obj\x86\Debug\ResolveAssemblyReference.cache
