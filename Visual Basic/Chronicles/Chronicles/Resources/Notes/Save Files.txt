@@ -1,0 +1,2 @@
+These are the locations of data in save files. Difference in byte position denotes maximum size.
+

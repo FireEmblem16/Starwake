@@ -1,0 +1,68 @@
+Convention: Low is left/up
+			High is right/down/max
+
+dbJoystickX:-1000 to 1000 //0 is the middle position
+dbJoystickY:-1000 to 1000 //0 is the middle position
+dbJoystickZ:-1000 to 1000 //0 is the middle position
+dbJoystickTwistX:0 to 65535 //32767 is middle position
+dbJoystickTwistY:0 to 65535 //32767 is middle position
+dbJoystickTwistZ:0 to 65535 //32767 is middle position
+dbJoystickSliderA:0 to 65535 //32767 is middle position
+dbJoystickSliderB:0 to 65535 //32767 is middle position
+dbJoystickSliderC:0 to 65535 //32767 is middle position
+dbJoystickSliderD:0 to 65535 //32767 is middle position
+dbControlDeviceX:-1000 to 1000 //same as dbJoystickX
+dbControlDeviceY:-1000 to 1000 //same as dbJoystickY
+dbControlDeviceZ:-1000 to 1000 //same as dbJoystickZ
+
+Mayhaps have to use long int, unsinged int, or long unsigned int for dbJoystickTwistZ.
+Hats tend to only have 8 positions of persicion.
+Not all values max out exactly. Some are a couple below.
+
+This is all the known analog input I have for the logitech controller.
+
+ShowSomeData(dbJoystickX(),1);//l left/right:-1000/1000
+ShowSomeData(dbJoystickY(),2);//l up/down:-1000/1000
+ShowSomeData(dbJoystickZ(),3);//r left/right:-1000/1000
+ShowSomeData(dbJoystickTwistX(),4);
+ShowSomeData(dbJoystickTwistY(),5);
+ShowSomeData(dbJoystickTwistZ(),6);//r up/down:0/65535
+ShowSomeData(dbJoystickSliderA(),7);
+ShowSomeData(dbJoystickSliderB(),8);
+ShowSomeData(dbJoystickSliderC(),9);
+ShowSomeData(dbJoystickSliderD(),10);
+ShowSomeData(dbJoystickUp(),11);//l true/false:1/0
+ShowSomeData(dbJoystickDown(),12);//l true/false:1/0
+ShowSomeData(dbJoystickLeft(),13);//l true/false:1/0
+ShowSomeData(dbJoystickRight(),14);//l true/false:1/0
+ShowSomeData(dbControlDeviceX(),15);//l left/right:-1000/1000
+ShowSomeData(dbControlDeviceY(),16);//l up/down:-1000/1000
+ShowSomeData(dbControlDeviceZ(),17);//r left/right:-1000/1000
+ShowSomeData(dbJoystickHatAngle(0),18);//hat up/right/down/left:0/9000/18000/27000
+ShowSomeData(dbJoystickHatAngle(1),19);
+ShowSomeData(dbJoystickHatAngle(2),20);
+ShowSomeData(dbJoystickHatAngle(3),21);
+
+This is what I get for the XBox-360 Controller.
+
+ShowSomeData(dbJoystickX(),1);//l left/right:-1000/1000
+ShowSomeData(dbJoystickY(),2);//l up/down:-1000/1000
+ShowSomeData(dbJoystickZ(),3);//rt in/out:-1000/0 && lt in/out:0/1000
+ShowSomeData(dbJoystickTwistX(),4);//r left/right:0/65535
+ShowSomeData(dbJoystickTwistY(),5);//r up/down:0/65535
+ShowSomeData(dbJoystickTwistZ(),6);
+ShowSomeData(dbJoystickSliderA(),7);
+ShowSomeData(dbJoystickSliderB(),8);
+ShowSomeData(dbJoystickSliderC(),9);
+ShowSomeData(dbJoystickSliderD(),10);
+ShowSomeData(dbJoystickUp(),11);//l true/false:1/0
+ShowSomeData(dbJoystickDown(),12);//l true/false:1/0
+ShowSomeData(dbJoystickLeft(),13);//l true/false:1/0
+ShowSomeData(dbJoystickRight(),14);//l true/false:1/0
+ShowSomeData(dbControlDeviceX(),15);//l left/right:-1000/1000
+ShowSomeData(dbControlDeviceY(),16);//l up/down:-1000/1000
+ShowSomeData(dbControlDeviceZ(),17);//rt in/out:-1000/0 && lt in/out:0/1000
+ShowSomeData(dbJoystickHatAngle(0),18);//hat up/right/down/left:0/9000/18000/27000
+ShowSomeData(dbJoystickHatAngle(1),19);
+ShowSomeData(dbJoystickHatAngle(2),20);
+ShowSomeData(dbJoystickHatAngle(3),21);

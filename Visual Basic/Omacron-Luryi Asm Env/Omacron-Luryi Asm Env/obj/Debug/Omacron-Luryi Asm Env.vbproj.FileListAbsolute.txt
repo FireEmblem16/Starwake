@@ -1,0 +1,10 @@
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\bin\Debug\Omacron-Luryi Asm Env.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\bin\Debug\Omacron-Luryi Asm Env.pdb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\bin\Debug\Omacron-Luryi Asm Env.xml
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\obj\Debug\Omacron_Luryi_Asm_Env.Resources.resources
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\obj\Debug\Omacron-Luryi Asm Env.vbproj.GenerateResource.Cache
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\obj\Debug\Omacron-Luryi Asm Env.exe
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\obj\Debug\Omacron-Luryi Asm Env.xml
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\obj\Debug\Omacron-Luryi Asm Env.pdb
+C:\Users\Nivmizzet\Documents\Visual Studio 2008\Projects\Omacron-Luryi Asm Env\Omacron-Luryi Asm Env\obj\Debug\Omacron_Luryi_Asm_Env.frm1.resources

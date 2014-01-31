@@ -1,0 +1,3 @@
+Letters and F keys appear to be consistently faithful to assembly.
+Every other key tends to be wierd though.
+Key combos are not natively supported, must program that in myself as multipule-key checks.

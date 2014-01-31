@@ -1,0 +1,3 @@
+Objects must be reloaded and repositioned when resolution is changed.
+The camera must also be repositioned.
+This probably applies to every other type of object too including the mouse.

@@ -1,0 +1,49 @@
+In main.cpp change:
+Window* GameWindow=new Window(0,false,true,false,0,0,"Resources\\","Chronicles of Mu Alpha Theta");
+to
+Window* GameWindow=new Window(0,false,true,false,0,0,"..\\Resources\\","Chronicles of Mu Alpha Theta");
+
+Have the File Encryption Key be based on a CD key.
+
+Allow user to adjust frame rate. Put some kind of refresh rate thing in a game class thing and use that as a multiplier.
+Consider making a master array for objects in each level to update them all through the array so I don't need to define Mod everytime.
+
+Don't forget to delete used pointers.
+Delete in lifo order.
+
+Input Priority
+--------------
+1-KeyBoard
+2-Device
+3-Mouse
+
+Allow user to choose how much of a percent he wants on an analog to be true.
+
+DeviceHandler::GetFirstInput(int)
+return   means
+-------------------------
+0 to 31  Buttons 0 to 31
+32 to 39 Hat 1 pos 0 to 7
+40 to 47 Hat 2 pos 0 to 7
+48 to 55 Hat 3 pos 0 to 7
+56 to 63 Hat 4 pos 0 to 7
+64		 JoyStickX Min
+65		 JoyStickX Max
+66		 JoyStickY Min
+67		 JoyStickY Max
+68		 JoyStickZ Min
+69		 JoyStickZ Max
+70		 JoyStickTwistX Min
+71		 JoyStickTwistX Max
+72		 JoyStickTwistY Min
+73		 JoyStickTwistY Max
+74		 JoyStickTwistZ Min
+75		 JoyStickTwistZ Max
+76		 JoyStickSliderA Min
+77		 JoyStickSliderA Max
+78		 JoyStickSliderB Min
+79		 JoyStickSliderB Max
+80		 JoyStickSliderC Min
+81		 JoyStickSliderC Max
+82		 JoyStickSliderD Min
+83		 JoyStickSliderD Max

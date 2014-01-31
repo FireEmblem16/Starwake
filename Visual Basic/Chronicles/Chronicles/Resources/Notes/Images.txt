@@ -1,0 +1,2 @@
+dbImageExist(int iImage)
+returns 0 (false) if the image exists and 1 (true) if it does not.
