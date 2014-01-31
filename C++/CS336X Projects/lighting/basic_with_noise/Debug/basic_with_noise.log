@@ -1,0 +1,51 @@
+﻿Build started 11/10/2012 11:34:28 PM.
+     1>Project "J:\CS336X Projects\lighting\basic_with_noise\basic_with_noise.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\basic_with_noise.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\include /I..\RenderUtils /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Common\Noise.cpp cube_with_texture.cpp
+         cube_with_texture.cpp
+     1>j:\cs336x projects\lighting\include\sphere.h(79): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(84): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(85): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(93): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(95): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(103): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(116): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>j:\cs336x projects\lighting\include\sphere.h(145): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(155): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(156): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(157): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(158): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(232): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(236): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(240): warning C4244: '=' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(242): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\sphere.h(243): warning C4244: 'initializing' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\square.h(68): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>j:\cs336x projects\lighting\include\teapot.h(26): warning C4305: 'argument' : truncation from 'double' to 'const GLfloat'
+     1>j:\cs336x projects\lighting\include\teapot.h(127): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>j:\cs336x projects\lighting\include\images.h(110): warning C4244: '=' : conversion from 'double' to 'GLubyte', possible loss of data
+     1>j:\cs336x projects\lighting\basic_with_noise\cube_with_texture.cpp(72): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>j:\cs336x projects\lighting\basic_with_noise\cube_with_texture.cpp(73): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>j:\cs336x projects\lighting\basic_with_noise\cube_with_texture.cpp(74): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>j:\cs336x projects\lighting\basic_with_noise\cube_with_texture.cpp(164): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
+     1>j:\cs336x projects\lighting\basic_with_noise\cube_with_texture.cpp(164): warning C4305: 'argument' : truncation from 'double' to 'GLclampf'
+         Noise.cpp
+     1>j:\cs336x projects\lighting\common\noise.cpp(334): warning C4101: 'inck' : unreferenced local variable
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"J:\CS336X Projects\lighting\Debug\basic_with_noise.exe" /NOLOGO /LIBPATH:..\lib\windows glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\basic_with_noise.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"J:\CS336X Projects\lighting\Debug\basic_with_noise.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"J:\CS336X Projects\lighting\Debug\basic_with_noise.lib" /MACHINE:X86 Debug\Noise.obj
+         Debug\cube_with_texture.obj
+         "J:\CS336X Projects\lighting\Debug\RenderUtils.lib"
+         basic_with_noise.vcxproj -> J:\CS336X Projects\lighting\Debug\basic_with_noise.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"J:\CS336X Projects\lighting\Debug\basic_with_noise.exe;#1" /manifest Debug\basic_with_noise.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\basic_with_noise.unsuccessfulbuild".
+         Touching "Debug\basic_with_noise.lastbuildstate".
+     1>Done Building Project "J:\CS336X Projects\lighting\basic_with_noise\basic_with_noise.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.58

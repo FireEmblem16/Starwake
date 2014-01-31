@@ -1,0 +1,830 @@
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 1
+
+
+   1              		.file	"Error.c"
+   2              		.section	.debug_abbrev,"dr"
+   3              	Ldebug_abbrev0:
+   4              		.section	.debug_info,"dr"
+   5              	Ldebug_info0:
+   6              		.section	.debug_line,"dr"
+   7              	Ldebug_line0:
+   8 0000 48000000 		.text
+   8      02002700 
+   8      00000101 
+   8      FB0E0D00 
+   8      01010101 
+   9              	Ltext0:
+  10              		.section .rdata,"dr"
+  11              	LC0:
+  12 0000 25732069 		.ascii "%s in %s at line %u\12\0"
+  12      6E202573 
+  12      20617420 
+  12      6C696E65 
+  12      2025750A 
+  13              		.text
+  14              		.p2align 4,,15
+  15              	.globl _ReportDebugError
+  17              	_ReportDebugError:
+  18              	LFB7:
+  19              		.file 1 "./Source/Error.c"
+   1:./Source/Error.c **** /*
+   2:./Source/Error.c **** ///////////////////////////////////////////////////////////////////////////////////
+   3:./Source/Error.c **** ///////////////////////////////////// Error.c /////////////////////////////////////
+   4:./Source/Error.c **** ///////////////////////////////////////////////////////////////////////////////////
+   5:./Source/Error.c **** /// Provides some standard error inferfacing to report problems to the user.    ///
+   6:./Source/Error.c **** ///////////////////////////////////////////////////////////////////////////////////
+   7:./Source/Error.c **** ///////////////////////////////////////////////////////////////////////////////////
+   8:./Source/Error.c **** */
+   9:./Source/Error.c **** #ifndef _ERROR_C
+  10:./Source/Error.c **** #define	_ERROR_C
+  11:./Source/Error.c **** 
+  12:./Source/Error.c **** #include "../Headers/Defines.h"
+  13:./Source/Error.c **** #include "../Headers/Error.h"
+  14:./Source/Error.c **** 
+  15:./Source/Error.c **** /* Error code map */
+  16:./Source/Error.c **** const char* errors[] =
+  17:./Source/Error.c **** {"No Error.","Too many arguments were given to the program.","The program did not recieve"
+  18:./Source/Error.c **** " enough arguments to run.","Invalid number of arguments: Check your syntax.",
+  19:./Source/Error.c **** "An invalid image coloring format was given.","An invalid argument was given.","Invalid "
+  20:./Source/Error.c **** "argument: An integer was expected.","Invalid argument: A string was expected.","Error: "
+  21:./Source/Error.c **** "Abrupt end of file detected.","A supplied argument was out of range.","An invalid size "
+  22:./Source/Error.c **** "was supplied for an image channel.","An invalid image format was provided.","A null "
+  23:./Source/Error.c **** "pointer was encountered.","File not found.","Non-fatal error: Unable to close a file.",
+  24:./Source/Error.c **** "Something unexpected and unforseen occured of which no one understands.","An invalid "
+  25:./Source/Error.c **** "kernel file was provided.","A color kernel was expected and a black white kernel was "
+  26:./Source/Error.c **** "provided.","A black white kernel was expected and a color kernel was provided.",
+  27:./Source/Error.c **** "An invalid kernel size was provided."};
+  28:./Source/Error.c **** 
+  29:./Source/Error.c **** /* This will take an error code and output a relevant string to stderr */
+  30:./Source/Error.c **** void ReportError(uint32_t error_code)
+  31:./Source/Error.c **** {
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 2
+
+
+  32:./Source/Error.c ****     fprintf(stderr,"%s\n",errors[error_code]);
+  33:./Source/Error.c ****     return;
+  34:./Source/Error.c **** }
+  35:./Source/Error.c **** 
+  36:./Source/Error.c **** /* This will take an error code and output a relevant string to stderr */
+  37:./Source/Error.c **** void ReportDebugError(uint32_t error_code, uint8_t* where, uint32_t line)
+  38:./Source/Error.c **** {
+  20              		.loc 1 38 0
+  21              	LVL0:
+  22 0000 55       		pushl	%ebp
+  23              	LCFI0:
+  24 0001 89E5     		movl	%esp, %ebp
+  25              	LCFI1:
+  26 0003 53       		pushl	%ebx
+  27              	LCFI2:
+  28 0004 83EC14   		subl	$20, %esp
+  29              	LCFI3:
+  39:./Source/Error.c ****     fprintf(stderr,"%s in %s at line %u\n",errors[error_code],where,line);
+  30              		.loc 1 39 0
+  31 0007 8B4508   		movl	8(%ebp), %eax
+  32 000a 8B1C8500 		movl	_errors(,%eax,4), %ebx
+  32      000000
+  33 0011 E8000000 		call	___getreent
+  33      00
+  34 0016 8B5510   		movl	16(%ebp), %edx
+  35 0019 C7442404 		movl	$LC0, 4(%esp)
+  35      00000000 
+  36 0021 895C2408 		movl	%ebx, 8(%esp)
+  37 0025 89542410 		movl	%edx, 16(%esp)
+  38 0029 8B550C   		movl	12(%ebp), %edx
+  39 002c 8954240C 		movl	%edx, 12(%esp)
+  40 0030 8B400C   		movl	12(%eax), %eax
+  41 0033 890424   		movl	%eax, (%esp)
+  42 0036 E8000000 		call	_fprintf
+  42      00
+  40:./Source/Error.c ****     return;
+  41:./Source/Error.c **** }
+  43              		.loc 1 41 0
+  44 003b 83C414   		addl	$20, %esp
+  45 003e 5B       		popl	%ebx
+  46 003f 5D       		popl	%ebp
+  47 0040 C3       		ret
+  48              	LFE7:
+  49              		.section .rdata,"dr"
+  50              	LC1:
+  51 0015 25730A00 		.ascii "%s\12\0"
+  52              		.text
+  53 0041 EB0D9090 		.p2align 4,,15
+  53      90909090 
+  53      90909090 
+  53      909090
+  54              	.globl _ReportError
+  56              	_ReportError:
+  57              	LFB6:
+  31:./Source/Error.c **** {
+  58              		.loc 1 31 0
+  59              	LVL1:
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 3
+
+
+  60 0050 55       		pushl	%ebp
+  61              	LCFI4:
+  62 0051 89E5     		movl	%esp, %ebp
+  63              	LCFI5:
+  64 0053 53       		pushl	%ebx
+  65              	LCFI6:
+  66 0054 83EC14   		subl	$20, %esp
+  67              	LCFI7:
+  32:./Source/Error.c ****     fprintf(stderr,"%s\n",errors[error_code]);
+  68              		.loc 1 32 0
+  69 0057 8B4508   		movl	8(%ebp), %eax
+  70 005a 8B1C8500 		movl	_errors(,%eax,4), %ebx
+  70      000000
+  71 0061 E8000000 		call	___getreent
+  71      00
+  72 0066 C7442404 		movl	$LC1, 4(%esp)
+  72      15000000 
+  73 006e 895C2408 		movl	%ebx, 8(%esp)
+  74 0072 8B400C   		movl	12(%eax), %eax
+  75 0075 890424   		movl	%eax, (%esp)
+  76 0078 E8000000 		call	_fprintf
+  76      00
+  34:./Source/Error.c **** }
+  77              		.loc 1 34 0
+  78 007d 83C414   		addl	$20, %esp
+  79 0080 5B       		popl	%ebx
+  80 0081 5D       		popl	%ebp
+  81 0082 C3       		ret
+  82              	LFE6:
+  83              	.globl _errors
+  84              		.section .rdata,"dr"
+  85              	LC2:
+  86 0019 4E6F2045 		.ascii "No Error.\0"
+  86      72726F72 
+  86      2E00
+  87 0023 00       		.align 4
+  88              	LC3:
+  89 0024 546F6F20 		.ascii "Too many arguments were given to the program.\0"
+  89      6D616E79 
+  89      20617267 
+  89      756D656E 
+  89      74732077 
+  90 0052 0000     		.align 4
+  91              	LC4:
+  92 0054 54686520 		.ascii "The program did not recieve enough arguments to run.\0"
+  92      70726F67 
+  92      72616D20 
+  92      64696420 
+  92      6E6F7420 
+  93 0089 000000   		.align 4
+  94              	LC5:
+  95 008c 496E7661 		.ascii "Invalid number of arguments: Check your syntax.\0"
+  95      6C696420 
+  95      6E756D62 
+  95      6572206F 
+  95      66206172 
+  96              		.align 4
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 4
+
+
+  97              	LC6:
+  98 00bc 416E2069 		.ascii "An invalid image coloring format was given.\0"
+  98      6E76616C 
+  98      69642069 
+  98      6D616765 
+  98      20636F6C 
+  99              		.align 4
+ 100              	LC7:
+ 101 00e8 416E2069 		.ascii "An invalid argument was given.\0"
+ 101      6E76616C 
+ 101      69642061 
+ 101      7267756D 
+ 101      656E7420 
+ 102 0107 00       		.align 4
+ 103              	LC8:
+ 104 0108 496E7661 		.ascii "Invalid argument: An integer was expected.\0"
+ 104      6C696420 
+ 104      61726775 
+ 104      6D656E74 
+ 104      3A20416E 
+ 105 0133 00       		.align 4
+ 106              	LC9:
+ 107 0134 496E7661 		.ascii "Invalid argument: A string was expected.\0"
+ 107      6C696420 
+ 107      61726775 
+ 107      6D656E74 
+ 107      3A204120 
+ 108 015d 000000   		.align 4
+ 109              	LC10:
+ 110 0160 4572726F 		.ascii "Error: Abrupt end of file detected.\0"
+ 110      723A2041 
+ 110      62727570 
+ 110      7420656E 
+ 110      64206F66 
+ 111              		.align 4
+ 112              	LC11:
+ 113 0184 41207375 		.ascii "A supplied argument was out of range.\0"
+ 113      70706C69 
+ 113      65642061 
+ 113      7267756D 
+ 113      656E7420 
+ 114 01aa 0000     		.align 4
+ 115              	LC12:
+ 116 01ac 416E2069 		.ascii "An invalid size was supplied for an image channel.\0"
+ 116      6E76616C 
+ 116      69642073 
+ 116      697A6520 
+ 116      77617320 
+ 117 01df 00       		.align 4
+ 118              	LC13:
+ 119 01e0 416E2069 		.ascii "An invalid image format was provided.\0"
+ 119      6E76616C 
+ 119      69642069 
+ 119      6D616765 
+ 119      20666F72 
+ 120 0206 0000     		.align 4
+ 121              	LC14:
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 5
+
+
+ 122 0208 41206E75 		.ascii "A null pointer was encountered.\0"
+ 122      6C6C2070 
+ 122      6F696E74 
+ 122      65722077 
+ 122      61732065 
+ 123              	LC15:
+ 124 0228 46696C65 		.ascii "File not found.\0"
+ 124      206E6F74 
+ 124      20666F75 
+ 124      6E642E00 
+ 125              		.align 4
+ 126              	LC16:
+ 127 0238 4E6F6E2D 		.ascii "Non-fatal error: Unable to close a file.\0"
+ 127      66617461 
+ 127      6C206572 
+ 127      726F723A 
+ 127      20556E61 
+ 128 0261 000000   		.align 4
+ 129              	LC17:
+ 130 0264 536F6D65 		.ascii "Something unexpected and unforseen occured of which no one understands.\0"
+ 130      7468696E 
+ 130      6720756E 
+ 130      65787065 
+ 130      63746564 
+ 131              		.align 4
+ 132              	LC18:
+ 133 02ac 416E2069 		.ascii "An invalid kernel file was provided.\0"
+ 133      6E76616C 
+ 133      6964206B 
+ 133      65726E65 
+ 133      6C206669 
+ 134 02d1 000000   		.align 4
+ 135              	LC19:
+ 136 02d4 4120636F 		.ascii "A color kernel was expected and a black white kernel was provided.\0"
+ 136      6C6F7220 
+ 136      6B65726E 
+ 136      656C2077 
+ 136      61732065 
+ 137 0317 00       		.align 4
+ 138              	LC20:
+ 139 0318 4120626C 		.ascii "A black white kernel was expected and a color kernel was provided.\0"
+ 139      61636B20 
+ 139      77686974 
+ 139      65206B65 
+ 139      726E656C 
+ 140 035b 00       		.align 4
+ 141              	LC21:
+ 142 035c 416E2069 		.ascii "An invalid kernel size was provided.\0"
+ 142      6E76616C 
+ 142      6964206B 
+ 142      65726E65 
+ 142      6C207369 
+ 143 0381 000000   		.data
+ 144              		.align 32
+ 145              	_errors:
+ 146 0000 19000000 		.long	LC2
+ 147 0004 24000000 		.long	LC3
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 6
+
+
+ 148 0008 54000000 		.long	LC4
+ 149 000c 8C000000 		.long	LC5
+ 150 0010 BC000000 		.long	LC6
+ 151 0014 E8000000 		.long	LC7
+ 152 0018 08010000 		.long	LC8
+ 153 001c 34010000 		.long	LC9
+ 154 0020 60010000 		.long	LC10
+ 155 0024 84010000 		.long	LC11
+ 156 0028 AC010000 		.long	LC12
+ 157 002c E0010000 		.long	LC13
+ 158 0030 08020000 		.long	LC14
+ 159 0034 28020000 		.long	LC15
+ 160 0038 38020000 		.long	LC16
+ 161 003c 64020000 		.long	LC17
+ 162 0040 AC020000 		.long	LC18
+ 163 0044 D4020000 		.long	LC19
+ 164 0048 18030000 		.long	LC20
+ 165 004c 5C030000 		.long	LC21
+ 166 0050 00000000 		.section	.debug_frame,"dr"
+ 166      00000000 
+ 166      00000000 
+ 166      00000000 
+ 167              	Lframe0:
+ 168 0000 10000000 		.long	LECIE0-LSCIE0
+ 169              	LSCIE0:
+ 170 0004 FFFFFFFF 		.long	0xffffffff
+ 171 0008 01       		.byte	0x1
+ 172 0009 00       		.ascii "\0"
+ 173 000a 01       		.uleb128 0x1
+ 174 000b 7C       		.sleb128 -4
+ 175 000c 08       		.byte	0x8
+ 176 000d 0C       		.byte	0xc
+ 177 000e 04       		.uleb128 0x4
+ 178 000f 04       		.uleb128 0x4
+ 179 0010 88       		.byte	0x88
+ 180 0011 01       		.uleb128 0x1
+ 181 0012 0000     		.align 4
+ 182              	LECIE0:
+ 183              	LSFDE0:
+ 184 0014 18000000 		.long	LEFDE0-LASFDE0
+ 185              	LASFDE0:
+ 186 0018 00000000 		.secrel32	Lframe0
+ 187 001c 00000000 		.long	LFB7
+ 188 0020 41000000 		.long	LFE7-LFB7
+ 189 0024 41       		.byte	0x4
+ 190              		.long	LCFI0-LFB7
+ 191 0025 0E       		.byte	0xe
+ 192 0026 08       		.uleb128 0x8
+ 193 0027 85       		.byte	0x85
+ 194 0028 02       		.uleb128 0x2
+ 195 0029 42       		.byte	0x4
+ 196              		.long	LCFI1-LCFI0
+ 197 002a 0D       		.byte	0xd
+ 198 002b 05       		.uleb128 0x5
+ 199 002c 44       		.byte	0x4
+ 200              		.long	LCFI3-LCFI1
+ 201 002d 83       		.byte	0x83
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 7
+
+
+ 202 002e 03       		.uleb128 0x3
+ 203 002f 00       		.align 4
+ 204              	LEFDE0:
+ 205              	LSFDE2:
+ 206 0030 18000000 		.long	LEFDE2-LASFDE2
+ 207              	LASFDE2:
+ 208 0034 00000000 		.secrel32	Lframe0
+ 209 0038 50000000 		.long	LFB6
+ 210 003c 33000000 		.long	LFE6-LFB6
+ 211 0040 41       		.byte	0x4
+ 212              		.long	LCFI4-LFB6
+ 213 0041 0E       		.byte	0xe
+ 214 0042 08       		.uleb128 0x8
+ 215 0043 85       		.byte	0x85
+ 216 0044 02       		.uleb128 0x2
+ 217 0045 42       		.byte	0x4
+ 218              		.long	LCFI5-LCFI4
+ 219 0046 0D       		.byte	0xd
+ 220 0047 05       		.uleb128 0x5
+ 221 0048 44       		.byte	0x4
+ 222              		.long	LCFI7-LCFI5
+ 223 0049 83       		.byte	0x83
+ 224 004a 03       		.uleb128 0x3
+ 225 004b 00       		.align 4
+ 226              	LEFDE2:
+ 227              		.text
+ 228              	Letext0:
+ 229              		.section	.debug_loc,"dr"
+ 230              	Ldebug_loc0:
+ 231              	LLST0:
+ 232 0000 00000000 		.long	LFB7-Ltext0
+ 233 0004 01000000 		.long	LCFI0-Ltext0
+ 234 0008 0200     		.word	0x2
+ 235 000a 74       		.byte	0x74
+ 236 000b 04       		.sleb128 4
+ 237 000c 01000000 		.long	LCFI0-Ltext0
+ 238 0010 03000000 		.long	LCFI1-Ltext0
+ 239 0014 0200     		.word	0x2
+ 240 0016 74       		.byte	0x74
+ 241 0017 08       		.sleb128 8
+ 242 0018 03000000 		.long	LCFI1-Ltext0
+ 243 001c 41000000 		.long	LFE7-Ltext0
+ 244 0020 0200     		.word	0x2
+ 245 0022 75       		.byte	0x75
+ 246 0023 08       		.sleb128 8
+ 247 0024 00000000 		.long	0x0
+ 248 0028 00000000 		.long	0x0
+ 249              	LLST1:
+ 250 002c 50000000 		.long	LFB6-Ltext0
+ 251 0030 51000000 		.long	LCFI4-Ltext0
+ 252 0034 0200     		.word	0x2
+ 253 0036 74       		.byte	0x74
+ 254 0037 04       		.sleb128 4
+ 255 0038 51000000 		.long	LCFI4-Ltext0
+ 256 003c 53000000 		.long	LCFI5-Ltext0
+ 257 0040 0200     		.word	0x2
+ 258 0042 74       		.byte	0x74
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 8
+
+
+ 259 0043 08       		.sleb128 8
+ 260 0044 53000000 		.long	LCFI5-Ltext0
+ 261 0048 83000000 		.long	LFE6-Ltext0
+ 262 004c 0200     		.word	0x2
+ 263 004e 75       		.byte	0x75
+ 264 004f 08       		.sleb128 8
+ 265 0050 00000000 		.long	0x0
+ 266 0054 00000000 		.long	0x0
+ 267              		.section	.debug_info,"dr"
+ 268 0000 FA010000 		.long	0x1fa
+ 269 0004 0200     		.word	0x2
+ 270 0006 00000000 		.secrel32	Ldebug_abbrev0
+ 271 000a 04       		.byte	0x4
+ 272 000b 01       		.uleb128 0x1
+ 273 000c 474E5520 		.ascii "GNU C 4.3.4 20090804 (release) 1\0"
+ 273      4320342E 
+ 273      332E3420 
+ 273      32303039 
+ 273      30383034 
+ 274 002d 01       		.byte	0x1
+ 275 002e 2E2F536F 		.ascii "./Source/Error.c\0"
+ 275      75726365 
+ 275      2F457272 
+ 275      6F722E63 
+ 275      00
+ 276 003f 2F637967 		.ascii "/cygdrive/c/Users/The Science Guy/Documents/NetBeansProjects/C Project\0"
+ 276      64726976 
+ 276      652F632F 
+ 276      55736572 
+ 276      732F5468 
+ 277 0086 00000000 		.long	Ltext0
+ 278 008a 83000000 		.long	Letext0
+ 279 008e 00000000 		.secrel32	Ldebug_line0
+ 280 0092 02       		.uleb128 0x2
+ 281 0093 04       		.byte	0x4
+ 282 0094 07       		.byte	0x7
+ 283 0095 756E7369 		.ascii "unsigned int\0"
+ 283      676E6564 
+ 283      20696E74 
+ 283      00
+ 284 00a2 02       		.uleb128 0x2
+ 285 00a3 01       		.byte	0x1
+ 286 00a4 06       		.byte	0x6
+ 287 00a5 63686172 		.ascii "char\0"
+ 287      00
+ 288 00aa 02       		.uleb128 0x2
+ 289 00ab 01       		.byte	0x1
+ 290 00ac 06       		.byte	0x6
+ 291 00ad 7369676E 		.ascii "signed char\0"
+ 291      65642063 
+ 291      68617200 
+ 292 00b9 02       		.uleb128 0x2
+ 293 00ba 01       		.byte	0x1
+ 294 00bb 08       		.byte	0x8
+ 295 00bc 756E7369 		.ascii "unsigned char\0"
+ 295      676E6564 
+ 295      20636861 
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 9
+
+
+ 295      7200
+ 296 00ca 02       		.uleb128 0x2
+ 297 00cb 02       		.byte	0x2
+ 298 00cc 05       		.byte	0x5
+ 299 00cd 73686F72 		.ascii "short int\0"
+ 299      7420696E 
+ 299      7400
+ 300 00d7 02       		.uleb128 0x2
+ 301 00d8 02       		.byte	0x2
+ 302 00d9 07       		.byte	0x7
+ 303 00da 73686F72 		.ascii "short unsigned int\0"
+ 303      7420756E 
+ 303      7369676E 
+ 303      65642069 
+ 303      6E7400
+ 304 00ed 02       		.uleb128 0x2
+ 305 00ee 04       		.byte	0x4
+ 306 00ef 05       		.byte	0x5
+ 307 00f0 696E7400 		.ascii "int\0"
+ 308 00f4 02       		.uleb128 0x2
+ 309 00f5 08       		.byte	0x8
+ 310 00f6 05       		.byte	0x5
+ 311 00f7 6C6F6E67 		.ascii "long long int\0"
+ 311      206C6F6E 
+ 311      6720696E 
+ 311      7400
+ 312 0105 02       		.uleb128 0x2
+ 313 0106 08       		.byte	0x8
+ 314 0107 07       		.byte	0x7
+ 315 0108 6C6F6E67 		.ascii "long long unsigned int\0"
+ 315      206C6F6E 
+ 315      6720756E 
+ 315      7369676E 
+ 315      65642069 
+ 316 011f 02       		.uleb128 0x2
+ 317 0120 04       		.byte	0x4
+ 318 0121 05       		.byte	0x5
+ 319 0122 6C6F6E67 		.ascii "long int\0"
+ 319      20696E74 
+ 319      00
+ 320 012b 03       		.uleb128 0x3
+ 321 012c 04       		.byte	0x4
+ 322 012d 07       		.byte	0x7
+ 323 012e 02       		.uleb128 0x2
+ 324 012f 04       		.byte	0x4
+ 325 0130 07       		.byte	0x7
+ 326 0131 6C6F6E67 		.ascii "long unsigned int\0"
+ 326      20756E73 
+ 326      69676E65 
+ 326      6420696E 
+ 326      7400
+ 327 0143 04       		.uleb128 0x4
+ 328 0144 04       		.byte	0x4
+ 329 0145 B9000000 		.long	0xb9
+ 330 0149 04       		.uleb128 0x4
+ 331 014a 04       		.byte	0x4
+ 332 014b 4F010000 		.long	0x14f
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 10
+
+
+ 333 014f 05       		.uleb128 0x5
+ 334 0150 A2000000 		.long	0xa2
+ 335 0154 06       		.uleb128 0x6
+ 336 0155 01       		.byte	0x1
+ 337 0156 5265706F 		.ascii "ReportDebugError\0"
+ 337      72744465 
+ 337      62756745 
+ 337      72726F72 
+ 337      00
+ 338 0167 01       		.byte	0x1
+ 339 0168 26       		.byte	0x26
+ 340 0169 01       		.byte	0x1
+ 341 016a 00000000 		.long	LFB7
+ 342 016e 41000000 		.long	LFE7
+ 343 0172 00000000 		.secrel32	LLST0
+ 344 0176 A8010000 		.long	0x1a8
+ 345 017a 07       		.uleb128 0x7
+ 346 017b 00000000 		.secrel32	LASF0
+ 347 017f 01       		.byte	0x1
+ 348 0180 25       		.byte	0x25
+ 349 0181 92000000 		.long	0x92
+ 350 0185 02       		.byte	0x2
+ 351 0186 91       		.byte	0x91
+ 352 0187 00       		.sleb128 0
+ 353 0188 08       		.uleb128 0x8
+ 354 0189 77686572 		.ascii "where\0"
+ 354      6500
+ 355 018f 01       		.byte	0x1
+ 356 0190 25       		.byte	0x25
+ 357 0191 43010000 		.long	0x143
+ 358 0195 02       		.byte	0x2
+ 359 0196 91       		.byte	0x91
+ 360 0197 04       		.sleb128 4
+ 361 0198 08       		.uleb128 0x8
+ 362 0199 6C696E65 		.ascii "line\0"
+ 362      00
+ 363 019e 01       		.byte	0x1
+ 364 019f 25       		.byte	0x25
+ 365 01a0 92000000 		.long	0x92
+ 366 01a4 02       		.byte	0x2
+ 367 01a5 91       		.byte	0x91
+ 368 01a6 08       		.sleb128 8
+ 369 01a7 00       		.byte	0x0
+ 370 01a8 06       		.uleb128 0x6
+ 371 01a9 01       		.byte	0x1
+ 372 01aa 5265706F 		.ascii "ReportError\0"
+ 372      72744572 
+ 372      726F7200 
+ 373 01b6 01       		.byte	0x1
+ 374 01b7 1F       		.byte	0x1f
+ 375 01b8 01       		.byte	0x1
+ 376 01b9 50000000 		.long	LFB6
+ 377 01bd 83000000 		.long	LFE6
+ 378 01c1 2C000000 		.secrel32	LLST1
+ 379 01c5 D8010000 		.long	0x1d8
+ 380 01c9 07       		.uleb128 0x7
+ 381 01ca 00000000 		.secrel32	LASF0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 11
+
+
+ 382 01ce 01       		.byte	0x1
+ 383 01cf 1E       		.byte	0x1e
+ 384 01d0 92000000 		.long	0x92
+ 385 01d4 02       		.byte	0x2
+ 386 01d5 91       		.byte	0x91
+ 387 01d6 00       		.sleb128 0
+ 388 01d7 00       		.byte	0x0
+ 389 01d8 09       		.uleb128 0x9
+ 390 01d9 49010000 		.long	0x149
+ 391 01dd E8010000 		.long	0x1e8
+ 392 01e1 0A       		.uleb128 0xa
+ 393 01e2 2B010000 		.long	0x12b
+ 394 01e6 13       		.byte	0x13
+ 395 01e7 00       		.byte	0x0
+ 396 01e8 0B       		.uleb128 0xb
+ 397 01e9 6572726F 		.ascii "errors\0"
+ 397      727300
+ 398 01f0 01       		.byte	0x1
+ 399 01f1 10       		.byte	0x10
+ 400 01f2 D8010000 		.long	0x1d8
+ 401 01f6 01       		.byte	0x1
+ 402 01f7 05       		.byte	0x5
+ 403 01f8 03       		.byte	0x3
+ 404 01f9 00000000 		.long	_errors
+ 405 01fd 00       		.byte	0x0
+ 406              		.section	.debug_abbrev,"dr"
+ 407 0000 01       		.uleb128 0x1
+ 408 0001 11       		.uleb128 0x11
+ 409 0002 01       		.byte	0x1
+ 410 0003 25       		.uleb128 0x25
+ 411 0004 08       		.uleb128 0x8
+ 412 0005 13       		.uleb128 0x13
+ 413 0006 0B       		.uleb128 0xb
+ 414 0007 03       		.uleb128 0x3
+ 415 0008 08       		.uleb128 0x8
+ 416 0009 1B       		.uleb128 0x1b
+ 417 000a 08       		.uleb128 0x8
+ 418 000b 11       		.uleb128 0x11
+ 419 000c 01       		.uleb128 0x1
+ 420 000d 12       		.uleb128 0x12
+ 421 000e 01       		.uleb128 0x1
+ 422 000f 10       		.uleb128 0x10
+ 423 0010 06       		.uleb128 0x6
+ 424 0011 00       		.byte	0x0
+ 425 0012 00       		.byte	0x0
+ 426 0013 02       		.uleb128 0x2
+ 427 0014 24       		.uleb128 0x24
+ 428 0015 00       		.byte	0x0
+ 429 0016 0B       		.uleb128 0xb
+ 430 0017 0B       		.uleb128 0xb
+ 431 0018 3E       		.uleb128 0x3e
+ 432 0019 0B       		.uleb128 0xb
+ 433 001a 03       		.uleb128 0x3
+ 434 001b 08       		.uleb128 0x8
+ 435 001c 00       		.byte	0x0
+ 436 001d 00       		.byte	0x0
+ 437 001e 03       		.uleb128 0x3
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 12
+
+
+ 438 001f 24       		.uleb128 0x24
+ 439 0020 00       		.byte	0x0
+ 440 0021 0B       		.uleb128 0xb
+ 441 0022 0B       		.uleb128 0xb
+ 442 0023 3E       		.uleb128 0x3e
+ 443 0024 0B       		.uleb128 0xb
+ 444 0025 00       		.byte	0x0
+ 445 0026 00       		.byte	0x0
+ 446 0027 04       		.uleb128 0x4
+ 447 0028 0F       		.uleb128 0xf
+ 448 0029 00       		.byte	0x0
+ 449 002a 0B       		.uleb128 0xb
+ 450 002b 0B       		.uleb128 0xb
+ 451 002c 49       		.uleb128 0x49
+ 452 002d 13       		.uleb128 0x13
+ 453 002e 00       		.byte	0x0
+ 454 002f 00       		.byte	0x0
+ 455 0030 05       		.uleb128 0x5
+ 456 0031 26       		.uleb128 0x26
+ 457 0032 00       		.byte	0x0
+ 458 0033 49       		.uleb128 0x49
+ 459 0034 13       		.uleb128 0x13
+ 460 0035 00       		.byte	0x0
+ 461 0036 00       		.byte	0x0
+ 462 0037 06       		.uleb128 0x6
+ 463 0038 2E       		.uleb128 0x2e
+ 464 0039 01       		.byte	0x1
+ 465 003a 3F       		.uleb128 0x3f
+ 466 003b 0C       		.uleb128 0xc
+ 467 003c 03       		.uleb128 0x3
+ 468 003d 08       		.uleb128 0x8
+ 469 003e 3A       		.uleb128 0x3a
+ 470 003f 0B       		.uleb128 0xb
+ 471 0040 3B       		.uleb128 0x3b
+ 472 0041 0B       		.uleb128 0xb
+ 473 0042 27       		.uleb128 0x27
+ 474 0043 0C       		.uleb128 0xc
+ 475 0044 11       		.uleb128 0x11
+ 476 0045 01       		.uleb128 0x1
+ 477 0046 12       		.uleb128 0x12
+ 478 0047 01       		.uleb128 0x1
+ 479 0048 40       		.uleb128 0x40
+ 480 0049 06       		.uleb128 0x6
+ 481 004a 01       		.uleb128 0x1
+ 482 004b 13       		.uleb128 0x13
+ 483 004c 00       		.byte	0x0
+ 484 004d 00       		.byte	0x0
+ 485 004e 07       		.uleb128 0x7
+ 486 004f 05       		.uleb128 0x5
+ 487 0050 00       		.byte	0x0
+ 488 0051 03       		.uleb128 0x3
+ 489 0052 0E       		.uleb128 0xe
+ 490 0053 3A       		.uleb128 0x3a
+ 491 0054 0B       		.uleb128 0xb
+ 492 0055 3B       		.uleb128 0x3b
+ 493 0056 0B       		.uleb128 0xb
+ 494 0057 49       		.uleb128 0x49
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 13
+
+
+ 495 0058 13       		.uleb128 0x13
+ 496 0059 02       		.uleb128 0x2
+ 497 005a 0A       		.uleb128 0xa
+ 498 005b 00       		.byte	0x0
+ 499 005c 00       		.byte	0x0
+ 500 005d 08       		.uleb128 0x8
+ 501 005e 05       		.uleb128 0x5
+ 502 005f 00       		.byte	0x0
+ 503 0060 03       		.uleb128 0x3
+ 504 0061 08       		.uleb128 0x8
+ 505 0062 3A       		.uleb128 0x3a
+ 506 0063 0B       		.uleb128 0xb
+ 507 0064 3B       		.uleb128 0x3b
+ 508 0065 0B       		.uleb128 0xb
+ 509 0066 49       		.uleb128 0x49
+ 510 0067 13       		.uleb128 0x13
+ 511 0068 02       		.uleb128 0x2
+ 512 0069 0A       		.uleb128 0xa
+ 513 006a 00       		.byte	0x0
+ 514 006b 00       		.byte	0x0
+ 515 006c 09       		.uleb128 0x9
+ 516 006d 01       		.uleb128 0x1
+ 517 006e 01       		.byte	0x1
+ 518 006f 49       		.uleb128 0x49
+ 519 0070 13       		.uleb128 0x13
+ 520 0071 01       		.uleb128 0x1
+ 521 0072 13       		.uleb128 0x13
+ 522 0073 00       		.byte	0x0
+ 523 0074 00       		.byte	0x0
+ 524 0075 0A       		.uleb128 0xa
+ 525 0076 21       		.uleb128 0x21
+ 526 0077 00       		.byte	0x0
+ 527 0078 49       		.uleb128 0x49
+ 528 0079 13       		.uleb128 0x13
+ 529 007a 2F       		.uleb128 0x2f
+ 530 007b 0B       		.uleb128 0xb
+ 531 007c 00       		.byte	0x0
+ 532 007d 00       		.byte	0x0
+ 533 007e 0B       		.uleb128 0xb
+ 534 007f 34       		.uleb128 0x34
+ 535 0080 00       		.byte	0x0
+ 536 0081 03       		.uleb128 0x3
+ 537 0082 08       		.uleb128 0x8
+ 538 0083 3A       		.uleb128 0x3a
+ 539 0084 0B       		.uleb128 0xb
+ 540 0085 3B       		.uleb128 0x3b
+ 541 0086 0B       		.uleb128 0xb
+ 542 0087 49       		.uleb128 0x49
+ 543 0088 13       		.uleb128 0x13
+ 544 0089 3F       		.uleb128 0x3f
+ 545 008a 0C       		.uleb128 0xc
+ 546 008b 02       		.uleb128 0x2
+ 547 008c 0A       		.uleb128 0xa
+ 548 008d 00       		.byte	0x0
+ 549 008e 00       		.byte	0x0
+ 550 008f 00       		.byte	0x0
+ 551              		.section	.debug_pubnames,"dr"
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 14
+
+
+ 552 0000 3E000000 		.long	0x3e
+ 553 0004 0200     		.word	0x2
+ 554 0006 00000000 		.secrel32	Ldebug_info0
+ 555 000a FE010000 		.long	0x1fe
+ 556 000e 54010000 		.long	0x154
+ 557 0012 5265706F 		.ascii "ReportDebugError\0"
+ 557      72744465 
+ 557      62756745 
+ 557      72726F72 
+ 557      00
+ 558 0023 A8010000 		.long	0x1a8
+ 559 0027 5265706F 		.ascii "ReportError\0"
+ 559      72744572 
+ 559      726F7200 
+ 560 0033 E8010000 		.long	0x1e8
+ 561 0037 6572726F 		.ascii "errors\0"
+ 561      727300
+ 562 003e 00000000 		.long	0x0
+ 563              		.section	.debug_aranges,"dr"
+ 564 0000 1C000000 		.long	0x1c
+ 565 0004 0200     		.word	0x2
+ 566 0006 00000000 		.secrel32	Ldebug_info0
+ 567 000a 04       		.byte	0x4
+ 568 000b 00       		.byte	0x0
+ 569 000c 0000     		.word	0x0
+ 570 000e 0000     		.word	0x0
+ 571 0010 00000000 		.long	Ltext0
+ 572 0014 83000000 		.long	Letext0-Ltext0
+ 573 0018 00000000 		.long	0x0
+ 574 001c 00000000 		.long	0x0
+ 575              		.section	.debug_str,"dr"
+ 576              	LASF0:
+ 577 0000 6572726F 		.ascii "error_code\0"
+ 577      725F636F 
+ 577      646500
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 Error.c
+/cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s:17     .text:00000000 _ReportDebugError
+/cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s:145    .data:00000000 _errors
+/cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccPdeYMZ.s:56     .text:00000050 _ReportError
+
+UNDEFINED SYMBOLS
+_fprintf
+___getreent

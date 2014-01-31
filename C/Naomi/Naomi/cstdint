@@ -1,0 +1,9 @@
+// cstdint
+// The c++ include file for stdint.h
+
+#ifndef CSTDINT_
+#define CSTDINT_
+
+#include <stdint.h>
+
+#endif

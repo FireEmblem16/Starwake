@@ -1,0 +1,616 @@
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 1
+
+
+   1              		.file	"Defines.c"
+   2              		.section	.debug_abbrev,"dr"
+   3              	Ldebug_abbrev0:
+   4              		.section	.debug_info,"dr"
+   5              	Ldebug_info0:
+   6              		.section	.debug_line,"dr"
+   7              	Ldebug_line0:
+   8 0000 63000000 		.text
+   8      02004100 
+   8      00000101 
+   8      FB0E0D00 
+   8      01010101 
+   9              	Ltext0:
+  10              		.p2align 4,,15
+  11              	.globl _isnumber
+  13              	_isnumber:
+  14              	LFB6:
+  15              		.file 1 "./Source/Defines.c"
+   1:./Source/Defines.c **** /*
+   2:./Source/Defines.c **** ///////////////////////////////////////////////////////////////////////////////////
+   3:./Source/Defines.c **** //////////////////////////////////// Defines.h ////////////////////////////////////
+   4:./Source/Defines.c **** ///////////////////////////////////////////////////////////////////////////////////
+   5:./Source/Defines.c **** /// Contains a bunch of standard definitions that we can simply include.        ///
+   6:./Source/Defines.c **** ///////////////////////////////////////////////////////////////////////////////////
+   7:./Source/Defines.c **** ///////////////////////////////////////////////////////////////////////////////////
+   8:./Source/Defines.c **** */
+   9:./Source/Defines.c **** #ifndef _DEFINES_C
+  10:./Source/Defines.c **** #define _DEFINES_C
+  11:./Source/Defines.c **** 
+  12:./Source/Defines.c **** #include <ctype.h>
+  13:./Source/Defines.c **** #include "../Headers/Defines.h"
+  14:./Source/Defines.c **** 
+  15:./Source/Defines.c **** /* Returns TRUE if str is a number and FALSE otherwise.
+  16:./Source/Defines.c ****  */
+  17:./Source/Defines.c **** uint32_t isnumber(uint8_t* str)
+  18:./Source/Defines.c **** {
+  16              		.loc 1 18 0
+  17              	LVL0:
+  18 0000 55       		pushl	%ebp
+  19              	LCFI0:
+  20 0001 89E5     		movl	%esp, %ebp
+  21              	LCFI1:
+  22 0003 53       		pushl	%ebx
+  23              	LCFI2:
+  24              		.loc 1 18 0
+  25 0004 8B4D08   		movl	8(%ebp), %ecx
+  19:./Source/Defines.c ****     /* If our number is negative then ignore the minus sign */
+  20:./Source/Defines.c ****     if(*str == '-')
+  26              		.loc 1 20 0
+  27 0007 0FB611   		movzbl	(%ecx), %edx
+  28 000a 80FA2D   		cmpb	$45, %dl
+  29 000d 7422     		je	L9
+  30              	LVL1:
+  31              	L2:
+  21:./Source/Defines.c ****         str++;
+  22:./Source/Defines.c **** 
+  23:./Source/Defines.c ****     /* Loop for anything that isn't a number */
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 2
+
+
+  24:./Source/Defines.c ****     while(*str)
+  25:./Source/Defines.c ****         if(!isdigit(*str++))
+  32              		.loc 1 25 0
+  33 000f A1000000 		movl	__imp____ctype_ptr__, %eax
+  33      00
+  34 0014 8B18     		movl	(%eax), %ebx
+  35 0016 EB06     		jmp	L5
+  36              		.p2align 4,,7
+  37              	L3:
+  38 0018 83C101   		addl	$1, %ecx
+  39 001b 0FB611   		movzbl	(%ecx), %edx
+  40              	LVL2:
+  41              	L5:
+  24:./Source/Defines.c ****     while(*str)
+  42              		.loc 1 24 0
+  43 001e 84D2     		testb	%dl, %dl
+  44 0020 741E     		je	L10
+  45              		.loc 1 25 0
+  46 0022 0FB6C2   		movzbl	%dl, %eax
+  47 0025 F6440301 		testb	$4, 1(%ebx,%eax)
+  47      04
+  48 002a 75EC     		jne	L3
+  49 002c 31C0     		xorl	%eax, %eax
+  26:./Source/Defines.c ****             return FALSE;
+  27:./Source/Defines.c **** 
+  28:./Source/Defines.c ****     /* We didn't detect anything wrong */
+  29:./Source/Defines.c ****     return TRUE;
+  30:./Source/Defines.c **** }
+  50              		.loc 1 30 0
+  51 002e 5B       		popl	%ebx
+  52 002f 5D       		popl	%ebp
+  53 0030 C3       		ret
+  54              		.p2align 4,,7
+  55              	L9:
+  21:./Source/Defines.c ****         str++;
+  56              		.loc 1 21 0
+  57 0031 83C101   		addl	$1, %ecx
+  58 0034 0FB611   		movzbl	(%ecx), %edx
+  59 0037 EBD6     		jmp	L2
+  60              	LVL3:
+  61 0039 8DB42600 		.p2align 4,,7
+  61      000000
+  62              	L10:
+  24:./Source/Defines.c ****     while(*str)
+  63              		.loc 1 24 0
+  64 0040 B8010000 		movl	$1, %eax
+  64      00
+  65              		.loc 1 30 0
+  66 0045 5B       		popl	%ebx
+  67 0046 5D       		popl	%ebp
+  68 0047 C3       		ret
+  69              	LFE6:
+  70 0048 908DB426 		.p2align 4,,15
+  70      00000000 
+  71              	.globl _roundf
+  73              	_roundf:
+  74              	LFB7:
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 3
+
+
+  31:./Source/Defines.c **** 
+  32:./Source/Defines.c **** /* Returns the closest integer to the given number */
+  33:./Source/Defines.c **** float roundf(float a)
+  34:./Source/Defines.c **** {
+  35:./Source/Defines.c ****     return (float)((int)(a + 0.5f));
+  36:./Source/Defines.c **** }
+  75              		.loc 1 36 0
+  76              	LVL4:
+  77 0050 55       		pushl	%ebp
+  78              	LCFI3:
+  79 0051 89E5     		movl	%esp, %ebp
+  80              	LCFI4:
+  81 0053 83EC08   		subl	$8, %esp
+  82              	LCFI5:
+  83              		.loc 1 36 0
+  84 0056 D97DFE   		fnstcw	-2(%ebp)
+  85 0059 D9050000 		flds	LC0
+  85      0000
+  86 005f D84508   		fadds	8(%ebp)
+  87 0062 0FB745FE 		movzwl	-2(%ebp), %eax
+  88 0066 B40C     		movb	$12, %ah
+  89 0068 668945FC 		movw	%ax, -4(%ebp)
+  90 006c D96DFC   		fldcw	-4(%ebp)
+  91 006f DB5DF8   		fistpl	-8(%ebp)
+  92 0072 D96DFE   		fldcw	-2(%ebp)
+  93 0075 8B45F8   		movl	-8(%ebp), %eax
+  94 0078 50       		pushl	%eax
+  95 0079 DB0424   		fildl	(%esp)
+  96 007c 83C404   		addl	$4, %esp
+  97 007f C9       		leave
+  98 0080 C3       		ret
+  99              	LFE7:
+ 100              		.section .rdata,"dr"
+ 101              		.align 4
+ 102              	LC0:
+ 103 0000 0000003F 		.long	1056964608
+ 104              		.section	.debug_frame,"dr"
+ 105              	Lframe0:
+ 106 0000 10000000 		.long	LECIE0-LSCIE0
+ 107              	LSCIE0:
+ 108 0004 FFFFFFFF 		.long	0xffffffff
+ 109 0008 01       		.byte	0x1
+ 110 0009 00       		.ascii "\0"
+ 111 000a 01       		.uleb128 0x1
+ 112 000b 7C       		.sleb128 -4
+ 113 000c 08       		.byte	0x8
+ 114 000d 0C       		.byte	0xc
+ 115 000e 04       		.uleb128 0x4
+ 116 000f 04       		.uleb128 0x4
+ 117 0010 88       		.byte	0x88
+ 118 0011 01       		.uleb128 0x1
+ 119 0012 0000     		.align 4
+ 120              	LECIE0:
+ 121              	LSFDE0:
+ 122 0014 18000000 		.long	LEFDE0-LASFDE0
+ 123              	LASFDE0:
+ 124 0018 00000000 		.secrel32	Lframe0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 4
+
+
+ 125 001c 00000000 		.long	LFB6
+ 126 0020 48000000 		.long	LFE6-LFB6
+ 127 0024 41       		.byte	0x4
+ 128              		.long	LCFI0-LFB6
+ 129 0025 0E       		.byte	0xe
+ 130 0026 08       		.uleb128 0x8
+ 131 0027 85       		.byte	0x85
+ 132 0028 02       		.uleb128 0x2
+ 133 0029 42       		.byte	0x4
+ 134              		.long	LCFI1-LCFI0
+ 135 002a 0D       		.byte	0xd
+ 136 002b 05       		.uleb128 0x5
+ 137 002c 41       		.byte	0x4
+ 138              		.long	LCFI2-LCFI1
+ 139 002d 83       		.byte	0x83
+ 140 002e 03       		.uleb128 0x3
+ 141 002f 00       		.align 4
+ 142              	LEFDE0:
+ 143              	LSFDE2:
+ 144 0030 14000000 		.long	LEFDE2-LASFDE2
+ 145              	LASFDE2:
+ 146 0034 00000000 		.secrel32	Lframe0
+ 147 0038 50000000 		.long	LFB7
+ 148 003c 31000000 		.long	LFE7-LFB7
+ 149 0040 41       		.byte	0x4
+ 150              		.long	LCFI3-LFB7
+ 151 0041 0E       		.byte	0xe
+ 152 0042 08       		.uleb128 0x8
+ 153 0043 85       		.byte	0x85
+ 154 0044 02       		.uleb128 0x2
+ 155 0045 42       		.byte	0x4
+ 156              		.long	LCFI4-LCFI3
+ 157 0046 0D       		.byte	0xd
+ 158 0047 05       		.uleb128 0x5
+ 159              		.align 4
+ 160              	LEFDE2:
+ 161              		.text
+ 162              	Letext0:
+ 163 0081 90909090 		.section	.debug_loc,"dr"
+ 163      90909090 
+ 163      90909090 
+ 163      909090
+ 164              	Ldebug_loc0:
+ 165              	LLST0:
+ 166 0000 00000000 		.long	LFB6-Ltext0
+ 167 0004 01000000 		.long	LCFI0-Ltext0
+ 168 0008 0200     		.word	0x2
+ 169 000a 74       		.byte	0x74
+ 170 000b 04       		.sleb128 4
+ 171 000c 01000000 		.long	LCFI0-Ltext0
+ 172 0010 03000000 		.long	LCFI1-Ltext0
+ 173 0014 0200     		.word	0x2
+ 174 0016 74       		.byte	0x74
+ 175 0017 08       		.sleb128 8
+ 176 0018 03000000 		.long	LCFI1-Ltext0
+ 177 001c 48000000 		.long	LFE6-Ltext0
+ 178 0020 0200     		.word	0x2
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 5
+
+
+ 179 0022 75       		.byte	0x75
+ 180 0023 08       		.sleb128 8
+ 181 0024 00000000 		.long	0x0
+ 182 0028 00000000 		.long	0x0
+ 183              	LLST1:
+ 184 002c 00000000 		.long	LVL0-Ltext0
+ 185 0030 0F000000 		.long	LVL1-Ltext0
+ 186 0034 0200     		.word	0x2
+ 187 0036 91       		.byte	0x91
+ 188 0037 00       		.sleb128 0
+ 189 0038 0F000000 		.long	LVL1-Ltext0
+ 190 003c 48000000 		.long	LFE6-Ltext0
+ 191 0040 0100     		.word	0x1
+ 192 0042 51       		.byte	0x51
+ 193 0043 00000000 		.long	0x0
+ 194 0047 00000000 		.long	0x0
+ 195              	LLST2:
+ 196 004b 50000000 		.long	LFB7-Ltext0
+ 197 004f 51000000 		.long	LCFI3-Ltext0
+ 198 0053 0200     		.word	0x2
+ 199 0055 74       		.byte	0x74
+ 200 0056 04       		.sleb128 4
+ 201 0057 51000000 		.long	LCFI3-Ltext0
+ 202 005b 53000000 		.long	LCFI4-Ltext0
+ 203 005f 0200     		.word	0x2
+ 204 0061 74       		.byte	0x74
+ 205 0062 08       		.sleb128 8
+ 206 0063 53000000 		.long	LCFI4-Ltext0
+ 207 0067 81000000 		.long	LFE7-Ltext0
+ 208 006b 0200     		.word	0x2
+ 209 006d 75       		.byte	0x75
+ 210 006e 08       		.sleb128 8
+ 211 006f 00000000 		.long	0x0
+ 212 0073 00000000 		.long	0x0
+ 213              		.file 2 "/usr/include/ctype.h"
+ 214              		.section	.debug_info,"dr"
+ 215 0000 CD010000 		.long	0x1cd
+ 216 0004 0200     		.word	0x2
+ 217 0006 00000000 		.secrel32	Ldebug_abbrev0
+ 218 000a 04       		.byte	0x4
+ 219 000b 01       		.uleb128 0x1
+ 220 000c 474E5520 		.ascii "GNU C 4.3.4 20090804 (release) 1\0"
+ 220      4320342E 
+ 220      332E3420 
+ 220      32303039 
+ 220      30383034 
+ 221 002d 01       		.byte	0x1
+ 222 002e 2E2F536F 		.ascii "./Source/Defines.c\0"
+ 222      75726365 
+ 222      2F446566 
+ 222      696E6573 
+ 222      2E6300
+ 223 0041 2F637967 		.ascii "/cygdrive/c/Users/The Science Guy/Documents/NetBeansProjects/C Project\0"
+ 223      64726976 
+ 223      652F632F 
+ 223      55736572 
+ 223      732F5468 
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 6
+
+
+ 224 0088 00000000 		.long	Ltext0
+ 225 008c 81000000 		.long	Letext0
+ 226 0090 00000000 		.secrel32	Ldebug_line0
+ 227 0094 02       		.uleb128 0x2
+ 228 0095 04       		.byte	0x4
+ 229 0096 07       		.byte	0x7
+ 230 0097 756E7369 		.ascii "unsigned int\0"
+ 230      676E6564 
+ 230      20696E74 
+ 230      00
+ 231 00a4 02       		.uleb128 0x2
+ 232 00a5 01       		.byte	0x1
+ 233 00a6 06       		.byte	0x6
+ 234 00a7 63686172 		.ascii "char\0"
+ 234      00
+ 235 00ac 02       		.uleb128 0x2
+ 236 00ad 01       		.byte	0x1
+ 237 00ae 06       		.byte	0x6
+ 238 00af 7369676E 		.ascii "signed char\0"
+ 238      65642063 
+ 238      68617200 
+ 239 00bb 02       		.uleb128 0x2
+ 240 00bc 01       		.byte	0x1
+ 241 00bd 08       		.byte	0x8
+ 242 00be 756E7369 		.ascii "unsigned char\0"
+ 242      676E6564 
+ 242      20636861 
+ 242      7200
+ 243 00cc 02       		.uleb128 0x2
+ 244 00cd 02       		.byte	0x2
+ 245 00ce 05       		.byte	0x5
+ 246 00cf 73686F72 		.ascii "short int\0"
+ 246      7420696E 
+ 246      7400
+ 247 00d9 02       		.uleb128 0x2
+ 248 00da 02       		.byte	0x2
+ 249 00db 07       		.byte	0x7
+ 250 00dc 73686F72 		.ascii "short unsigned int\0"
+ 250      7420756E 
+ 250      7369676E 
+ 250      65642069 
+ 250      6E7400
+ 251 00ef 02       		.uleb128 0x2
+ 252 00f0 04       		.byte	0x4
+ 253 00f1 05       		.byte	0x5
+ 254 00f2 696E7400 		.ascii "int\0"
+ 255 00f6 02       		.uleb128 0x2
+ 256 00f7 08       		.byte	0x8
+ 257 00f8 05       		.byte	0x5
+ 258 00f9 6C6F6E67 		.ascii "long long int\0"
+ 258      206C6F6E 
+ 258      6720696E 
+ 258      7400
+ 259 0107 02       		.uleb128 0x2
+ 260 0108 08       		.byte	0x8
+ 261 0109 07       		.byte	0x7
+ 262 010a 6C6F6E67 		.ascii "long long unsigned int\0"
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 7
+
+
+ 262      206C6F6E 
+ 262      6720756E 
+ 262      7369676E 
+ 262      65642069 
+ 263 0121 02       		.uleb128 0x2
+ 264 0122 04       		.byte	0x4
+ 265 0123 05       		.byte	0x5
+ 266 0124 6C6F6E67 		.ascii "long int\0"
+ 266      20696E74 
+ 266      00
+ 267 012d 03       		.uleb128 0x3
+ 268 012e 04       		.byte	0x4
+ 269 012f 07       		.byte	0x7
+ 270 0130 02       		.uleb128 0x2
+ 271 0131 04       		.byte	0x4
+ 272 0132 07       		.byte	0x7
+ 273 0133 6C6F6E67 		.ascii "long unsigned int\0"
+ 273      20756E73 
+ 273      69676E65 
+ 273      6420696E 
+ 273      7400
+ 274 0145 04       		.uleb128 0x4
+ 275 0146 04       		.byte	0x4
+ 276 0147 BB000000 		.long	0xbb
+ 277 014b 04       		.uleb128 0x4
+ 278 014c 04       		.byte	0x4
+ 279 014d A4000000 		.long	0xa4
+ 280 0151 05       		.uleb128 0x5
+ 281 0152 01       		.byte	0x1
+ 282 0153 69736E75 		.ascii "isnumber\0"
+ 282      6D626572 
+ 282      00
+ 283 015c 01       		.byte	0x1
+ 284 015d 12       		.byte	0x12
+ 285 015e 01       		.byte	0x1
+ 286 015f 94000000 		.long	0x94
+ 287 0163 00000000 		.long	LFB6
+ 288 0167 48000000 		.long	LFE6
+ 289 016b 00000000 		.secrel32	LLST0
+ 290 016f 83010000 		.long	0x183
+ 291 0173 06       		.uleb128 0x6
+ 292 0174 73747200 		.ascii "str\0"
+ 293 0178 01       		.byte	0x1
+ 294 0179 11       		.byte	0x11
+ 295 017a 45010000 		.long	0x145
+ 296 017e 2C000000 		.secrel32	LLST1
+ 297 0182 00       		.byte	0x0
+ 298 0183 05       		.uleb128 0x5
+ 299 0184 01       		.byte	0x1
+ 300 0185 726F756E 		.ascii "roundf\0"
+ 300      646600
+ 301 018c 01       		.byte	0x1
+ 302 018d 22       		.byte	0x22
+ 303 018e 01       		.byte	0x1
+ 304 018f B0010000 		.long	0x1b0
+ 305 0193 50000000 		.long	LFB7
+ 306 0197 81000000 		.long	LFE7
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 8
+
+
+ 307 019b 4B000000 		.secrel32	LLST2
+ 308 019f B0010000 		.long	0x1b0
+ 309 01a3 07       		.uleb128 0x7
+ 310 01a4 6100     		.ascii "a\0"
+ 311 01a6 01       		.byte	0x1
+ 312 01a7 21       		.byte	0x21
+ 313 01a8 B0010000 		.long	0x1b0
+ 314 01ac 02       		.byte	0x2
+ 315 01ad 91       		.byte	0x91
+ 316 01ae 00       		.sleb128 0
+ 317 01af 00       		.byte	0x0
+ 318 01b0 02       		.uleb128 0x2
+ 319 01b1 04       		.byte	0x4
+ 320 01b2 04       		.byte	0x4
+ 321 01b3 666C6F61 		.ascii "float\0"
+ 321      7400
+ 322 01b9 08       		.uleb128 0x8
+ 323 01ba 5F5F6374 		.ascii "__ctype_ptr__\0"
+ 323      7970655F 
+ 323      7074725F 
+ 323      5F00
+ 324 01c8 02       		.byte	0x2
+ 325 01c9 2D       		.byte	0x2d
+ 326 01ca 4B010000 		.long	0x14b
+ 327 01ce 01       		.byte	0x1
+ 328 01cf 01       		.byte	0x1
+ 329 01d0 00       		.byte	0x0
+ 330              		.section	.debug_abbrev,"dr"
+ 331 0000 01       		.uleb128 0x1
+ 332 0001 11       		.uleb128 0x11
+ 333 0002 01       		.byte	0x1
+ 334 0003 25       		.uleb128 0x25
+ 335 0004 08       		.uleb128 0x8
+ 336 0005 13       		.uleb128 0x13
+ 337 0006 0B       		.uleb128 0xb
+ 338 0007 03       		.uleb128 0x3
+ 339 0008 08       		.uleb128 0x8
+ 340 0009 1B       		.uleb128 0x1b
+ 341 000a 08       		.uleb128 0x8
+ 342 000b 11       		.uleb128 0x11
+ 343 000c 01       		.uleb128 0x1
+ 344 000d 12       		.uleb128 0x12
+ 345 000e 01       		.uleb128 0x1
+ 346 000f 10       		.uleb128 0x10
+ 347 0010 06       		.uleb128 0x6
+ 348 0011 00       		.byte	0x0
+ 349 0012 00       		.byte	0x0
+ 350 0013 02       		.uleb128 0x2
+ 351 0014 24       		.uleb128 0x24
+ 352 0015 00       		.byte	0x0
+ 353 0016 0B       		.uleb128 0xb
+ 354 0017 0B       		.uleb128 0xb
+ 355 0018 3E       		.uleb128 0x3e
+ 356 0019 0B       		.uleb128 0xb
+ 357 001a 03       		.uleb128 0x3
+ 358 001b 08       		.uleb128 0x8
+ 359 001c 00       		.byte	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 9
+
+
+ 360 001d 00       		.byte	0x0
+ 361 001e 03       		.uleb128 0x3
+ 362 001f 24       		.uleb128 0x24
+ 363 0020 00       		.byte	0x0
+ 364 0021 0B       		.uleb128 0xb
+ 365 0022 0B       		.uleb128 0xb
+ 366 0023 3E       		.uleb128 0x3e
+ 367 0024 0B       		.uleb128 0xb
+ 368 0025 00       		.byte	0x0
+ 369 0026 00       		.byte	0x0
+ 370 0027 04       		.uleb128 0x4
+ 371 0028 0F       		.uleb128 0xf
+ 372 0029 00       		.byte	0x0
+ 373 002a 0B       		.uleb128 0xb
+ 374 002b 0B       		.uleb128 0xb
+ 375 002c 49       		.uleb128 0x49
+ 376 002d 13       		.uleb128 0x13
+ 377 002e 00       		.byte	0x0
+ 378 002f 00       		.byte	0x0
+ 379 0030 05       		.uleb128 0x5
+ 380 0031 2E       		.uleb128 0x2e
+ 381 0032 01       		.byte	0x1
+ 382 0033 3F       		.uleb128 0x3f
+ 383 0034 0C       		.uleb128 0xc
+ 384 0035 03       		.uleb128 0x3
+ 385 0036 08       		.uleb128 0x8
+ 386 0037 3A       		.uleb128 0x3a
+ 387 0038 0B       		.uleb128 0xb
+ 388 0039 3B       		.uleb128 0x3b
+ 389 003a 0B       		.uleb128 0xb
+ 390 003b 27       		.uleb128 0x27
+ 391 003c 0C       		.uleb128 0xc
+ 392 003d 49       		.uleb128 0x49
+ 393 003e 13       		.uleb128 0x13
+ 394 003f 11       		.uleb128 0x11
+ 395 0040 01       		.uleb128 0x1
+ 396 0041 12       		.uleb128 0x12
+ 397 0042 01       		.uleb128 0x1
+ 398 0043 40       		.uleb128 0x40
+ 399 0044 06       		.uleb128 0x6
+ 400 0045 01       		.uleb128 0x1
+ 401 0046 13       		.uleb128 0x13
+ 402 0047 00       		.byte	0x0
+ 403 0048 00       		.byte	0x0
+ 404 0049 06       		.uleb128 0x6
+ 405 004a 05       		.uleb128 0x5
+ 406 004b 00       		.byte	0x0
+ 407 004c 03       		.uleb128 0x3
+ 408 004d 08       		.uleb128 0x8
+ 409 004e 3A       		.uleb128 0x3a
+ 410 004f 0B       		.uleb128 0xb
+ 411 0050 3B       		.uleb128 0x3b
+ 412 0051 0B       		.uleb128 0xb
+ 413 0052 49       		.uleb128 0x49
+ 414 0053 13       		.uleb128 0x13
+ 415 0054 02       		.uleb128 0x2
+ 416 0055 06       		.uleb128 0x6
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 10
+
+
+ 417 0056 00       		.byte	0x0
+ 418 0057 00       		.byte	0x0
+ 419 0058 07       		.uleb128 0x7
+ 420 0059 05       		.uleb128 0x5
+ 421 005a 00       		.byte	0x0
+ 422 005b 03       		.uleb128 0x3
+ 423 005c 08       		.uleb128 0x8
+ 424 005d 3A       		.uleb128 0x3a
+ 425 005e 0B       		.uleb128 0xb
+ 426 005f 3B       		.uleb128 0x3b
+ 427 0060 0B       		.uleb128 0xb
+ 428 0061 49       		.uleb128 0x49
+ 429 0062 13       		.uleb128 0x13
+ 430 0063 02       		.uleb128 0x2
+ 431 0064 0A       		.uleb128 0xa
+ 432 0065 00       		.byte	0x0
+ 433 0066 00       		.byte	0x0
+ 434 0067 08       		.uleb128 0x8
+ 435 0068 34       		.uleb128 0x34
+ 436 0069 00       		.byte	0x0
+ 437 006a 03       		.uleb128 0x3
+ 438 006b 08       		.uleb128 0x8
+ 439 006c 3A       		.uleb128 0x3a
+ 440 006d 0B       		.uleb128 0xb
+ 441 006e 3B       		.uleb128 0x3b
+ 442 006f 0B       		.uleb128 0xb
+ 443 0070 49       		.uleb128 0x49
+ 444 0071 13       		.uleb128 0x13
+ 445 0072 3F       		.uleb128 0x3f
+ 446 0073 0C       		.uleb128 0xc
+ 447 0074 3C       		.uleb128 0x3c
+ 448 0075 0C       		.uleb128 0xc
+ 449 0076 00       		.byte	0x0
+ 450 0077 00       		.byte	0x0
+ 451 0078 00       		.byte	0x0
+ 452              		.section	.debug_pubnames,"dr"
+ 453 0000 26000000 		.long	0x26
+ 454 0004 0200     		.word	0x2
+ 455 0006 00000000 		.secrel32	Ldebug_info0
+ 456 000a D1010000 		.long	0x1d1
+ 457 000e 51010000 		.long	0x151
+ 458 0012 69736E75 		.ascii "isnumber\0"
+ 458      6D626572 
+ 458      00
+ 459 001b 83010000 		.long	0x183
+ 460 001f 726F756E 		.ascii "roundf\0"
+ 460      646600
+ 461 0026 00000000 		.long	0x0
+ 462              		.section	.debug_aranges,"dr"
+ 463 0000 1C000000 		.long	0x1c
+ 464 0004 0200     		.word	0x2
+ 465 0006 00000000 		.secrel32	Ldebug_info0
+ 466 000a 04       		.byte	0x4
+ 467 000b 00       		.byte	0x0
+ 468 000c 0000     		.word	0x0
+ 469 000e 0000     		.word	0x0
+ 470 0010 00000000 		.long	Ltext0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 11
+
+
+ 471 0014 81000000 		.long	Letext0-Ltext0
+ 472 0018 00000000 		.long	0x0
+ 473 001c 00000000 		.long	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 Defines.c
+/cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s:13     .text:00000000 _isnumber
+/cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccXu6J6J.s:73     .text:00000050 _roundf
+
+UNDEFINED SYMBOLS
+__imp____ctype_ptr__

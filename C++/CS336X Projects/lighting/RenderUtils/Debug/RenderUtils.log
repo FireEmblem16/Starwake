@@ -1,0 +1,18 @@
+﻿Build started 11/20/2012 1:33:17 PM.
+     1>Project "C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\RenderUtils\RenderUtils.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\RenderUtils.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       Lib:
+         All outputs are up-to-date.
+         RenderUtils.vcxproj -> C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\Debug\RenderUtils.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\RenderUtils.unsuccessfulbuild".
+         Touching "Debug\RenderUtils.lastbuildstate".
+     1>Done Building Project "C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\RenderUtils\RenderUtils.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.03

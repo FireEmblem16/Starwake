@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Naomi">
+</Property><Property Name="Solution File" Value="C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Naomi.sln">
+</Property><Property Name="User Options File" Value="C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Naomi.suo">
+</Property><Property Name="Date" Value="Wednesday, August 04, 2010">
+</Property><Property Name="Time" Value="17:56 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Naomi.sln" Description="File successfully backed up as C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Naomi.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="Naomi.suo" Description="File successfully backed up as C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Naomi.suo.old">
+</Event><Event ErrorLevel="0" Project="Naomi" Source="Naomi\Naomi.vcproj" Description="Converting project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Naomi\Naomi.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Naomi" Source="Naomi\Naomi.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="Naomi" Source="Naomi\Naomi.vcproj" Description="Attribute 'OptimizeForWindows98' of 'VCLinkerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="Naomi" Source="Naomi\Naomi.vcproj" Description="MSB8012: $(TargetExt) ('.exe') does not match the Linker's OutputFile property value 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Kernel\NAOMI.SYS' ('.SYS') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetExt) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="Naomi" Source="Naomi\Naomi.vcproj" Description="MSB8012: $(TargetPath) ('C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Kernel\Naomi.exe') does not match the Linker's OutputFile property value 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Kernel\NAOMI.SYS' ('C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Kernel\NAOMI.SYS') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="Naomi" Source="Naomi\Naomi.vcproj" Description="Done converting to new project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Naomi\Naomi.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Naomi" Source="Naomi\Naomi.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Stdlib" Source="Stdlib\Stdlib.vcproj" Description="Converting project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Stdlib\Stdlib.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Stdlib" Source="Stdlib\Stdlib.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="Stdlib" Source="Stdlib\Stdlib.vcproj" Description="Done converting to new project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Stdlib\Stdlib.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Stdlib" Source="Stdlib\Stdlib.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Hal" Source="Hal\Hal.vcproj" Description="Converting project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Hal\Hal.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Hal" Source="Hal\Hal.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="Hal" Source="Hal\Hal.vcproj" Description="Done converting to new project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Hal\Hal.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Hal" Source="Hal\Hal.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Keyboard" Source="Keyboard\Keyboard.vcproj" Description="Converting project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Keyboard\Keyboard.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Keyboard" Source="Keyboard\Keyboard.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="Keyboard" Source="Keyboard\Keyboard.vcproj" Description="Done converting to new project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Keyboard\Keyboard.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Keyboard" Source="Keyboard\Keyboard.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Floppy Disk" Source="Floppy Disk\Floppy Disk.vcproj" Description="Converting project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Floppy Disk\Floppy Disk.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Floppy Disk" Source="Floppy Disk\Floppy Disk.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="Floppy Disk" Source="Floppy Disk\Floppy Disk.vcproj" Description="MSB8012: $(TargetName) ('Floppy Disk') does not match the Librarian's OutputFile property value 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Lib\FloppyDisk.lib' ('FloppyDisk') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetName) property value matches the value specified in %(Lib.OutputFile).">
+</Event><Event ErrorLevel="1" Project="Floppy Disk" Source="Floppy Disk\Floppy Disk.vcproj" Description="MSB8012: $(TargetPath) ('C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Lib\Floppy Disk.lib') does not match the Librarian's OutputFile property value 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Lib\FloppyDisk.lib' ('C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Lib\FloppyDisk.lib') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).">
+</Event><Event ErrorLevel="0" Project="Floppy Disk" Source="Floppy Disk\Floppy Disk.vcproj" Description="Done converting to new project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\Floppy Disk\Floppy Disk.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Floppy Disk" Source="Floppy Disk\Floppy Disk.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="FAT12" Source="FAT12\FAT12.vcproj" Description="Converting project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\FAT12\FAT12.vcproj'.">
+</Event><Event ErrorLevel="1" Project="FAT12" Source="FAT12\FAT12.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="FAT12" Source="FAT12\FAT12.vcproj" Description="Done converting to new project file 'C:\Users\Omacron Naomi\Documents\Visual Studio 2008\Projects\Naomi\FAT12\FAT12.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="FAT12" Source="FAT12\FAT12.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Naomi.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Naomi.sln" Description="Converted">
+</Event></UpgradeLog>

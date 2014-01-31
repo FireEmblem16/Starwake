@@ -1,0 +1,2765 @@
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 1
+
+
+   1              		.file	"makesquare.c"
+   2              		.section	.debug_abbrev,"dr"
+   3              	Ldebug_abbrev0:
+   4              		.section	.debug_info,"dr"
+   5              	Ldebug_info0:
+   6              		.section	.debug_line,"dr"
+   7              	Ldebug_line0:
+   8 0000 45010000 		.text
+   8      02005000 
+   8      00000101 
+   8      FB0E0D00 
+   8      01010101 
+   9              	Ltext0:
+  10              		.section .rdata,"dr"
+  11              	LC0:
+  12 0000 257300   		.ascii "%s\0"
+  13              	LC1:
+  14 0003 2D6300   		.ascii "-c\0"
+  15              	LC2:
+  16 0006 2D627700 		.ascii "-bw\0"
+  17              	LC3:
+  18 000a 25752575 		.ascii "%u%u%u%u\0"
+  18      25752575 
+  18      00
+  19              	LC4:
+  20 0013 257500   		.ascii "%u\0"
+  21              	LC5:
+  22 0016 25752575 		.ascii "%u%u%u\0"
+  22      257500
+  23 001d 000000   		.text
+  24              		.p2align 4,,15
+  25              	.globl _read_arguments
+  27              	_read_arguments:
+  28              	LFB7:
+  29              		.file 1 "./Source/makesquare.c"
+   1:./Source/makesquare.c **** /*
+   2:./Source/makesquare.c **** ///////////////////////////////////////////////////////////////////////////////////
+   3:./Source/makesquare.c **** ////////////////////////////////// makesquare.c ///////////////////////////////////
+   4:./Source/makesquare.c **** ///////////////////////////////////////////////////////////////////////////////////
+   5:./Source/makesquare.c **** /// Creates a cs229 image file that contains a left-top aligned rectangle as    ///
+   6:./Source/makesquare.c **** /// as specified by the command arguments or by stdin if no command arguments   ///
+   7:./Source/makesquare.c **** /// are given.                                                                  ///
+   8:./Source/makesquare.c **** /// The arguments are as follows: [-bw/-c] -bw -> black white image             ///
+   9:./Source/makesquare.c **** /// -c -> color image, uint32_t picture width, uint32_t picture height,         ///
+  10:./Source/makesquare.c **** /// uint32_t square width, uint32_t square height, if -bw given (uint8_t) for   ///
+  11:./Source/makesquare.c **** /// the color to make the square and (uint8_t,uint8_t,uint8_t) for -c [These    ///
+  12:./Source/makesquare.c **** /// colors should be given as number with a space between each].                ///
+  13:./Source/makesquare.c **** /// All numbers are to be given as a char* and negative numbers are treated as  ///
+  14:./Source/makesquare.c **** /// their equivalant unsigned number.                                           ///
+  15:./Source/makesquare.c **** /// If an invalid size for the square (or image) is given and error is sent     ///
+  16:./Source/makesquare.c **** /// to stderr and no image is produced (Note that zero is an acceptable size).  ///
+  17:./Source/makesquare.c **** /// If color values exceed the channel size they will be forced to the channel  ///
+  18:./Source/makesquare.c **** /// size, in this case a single byte.                                           ///
+  19:./Source/makesquare.c **** ///////////////////////////////////////////////////////////////////////////////////
+  20:./Source/makesquare.c **** ///////////////////////////////////////////////////////////////////////////////////
+  21:./Source/makesquare.c **** */
+  22:./Source/makesquare.c **** #ifndef _MAKESQUARE_C
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 2
+
+
+  23:./Source/makesquare.c **** #define _MAKESQUARE_C
+  24:./Source/makesquare.c **** 
+  25:./Source/makesquare.c **** #include <stdlib.h>
+  26:./Source/makesquare.c **** #include <string.h>
+  27:./Source/makesquare.c **** #include "../Headers/Defines.h"
+  28:./Source/makesquare.c **** #include "../Headers/Error.h"
+  29:./Source/makesquare.c **** #include "../Headers/CS229Image.h"
+  30:./Source/makesquare.c **** 
+  31:./Source/makesquare.c **** /* Prototypes */
+  32:./Source/makesquare.c **** uint32_t read_arguments(uint32_t,uint8_t**,PCSPIC,uint32_t[],uint32_t*,uint32_t*);
+  33:./Source/makesquare.c **** 
+  34:./Source/makesquare.c **** /* See start of makesquare.c file.
+  35:./Source/makesquare.c ****  */
+  36:./Source/makesquare.c **** int main(int argc, char** argv)
+  37:./Source/makesquare.c **** {
+  38:./Source/makesquare.c ****     /* Create local variables */
+  39:./Source/makesquare.c ****     uint32_t s_width;
+  40:./Source/makesquare.c ****     uint32_t s_height;
+  41:./Source/makesquare.c ****     uint8_t colors[3];
+  42:./Source/makesquare.c ****     uint32_t color[3];
+  43:./Source/makesquare.c ****     uint32_t i;
+  44:./Source/makesquare.c ****     uint32_t j;
+  45:./Source/makesquare.c ****     uint32_t len;
+  46:./Source/makesquare.c ****     uint32_t err;
+  47:./Source/makesquare.c ****     
+  48:./Source/makesquare.c ****     /* Create the picture we are going to output to our cs229 file and initialize it */
+  49:./Source/makesquare.c ****     CSPIC picture;
+  50:./Source/makesquare.c ****     picture.magic_number = CS229_MAGIC_NUMBER;
+  51:./Source/makesquare.c ****     picture.first_channel.red_channel_size = EIGHT_BIT_CHANNEL;
+  52:./Source/makesquare.c ****     picture.green_channel_size = EIGHT_BIT_CHANNEL;
+  53:./Source/makesquare.c ****     picture.blue_channel_size = EIGHT_BIT_CHANNEL;
+  54:./Source/makesquare.c **** 
+  55:./Source/makesquare.c ****     /* Parse the arguments given by stdin or the command line (use mul as a temp variable) */
+  56:./Source/makesquare.c ****     err = read_arguments((uint32_t)argc,(uint8_t**)argv,(PCSPIC)&picture,color,&s_width,&s_height);
+  57:./Source/makesquare.c **** 
+  58:./Source/makesquare.c ****     /* If we got an error report it and return FAIL */
+  59:./Source/makesquare.c ****     if(err)
+  60:./Source/makesquare.c ****     {
+  61:./Source/makesquare.c ****         ReportError(err);
+  62:./Source/makesquare.c ****         return FAIL;
+  63:./Source/makesquare.c ****     }
+  64:./Source/makesquare.c **** 
+  65:./Source/makesquare.c ****     /* Check that our square is less than or equal to the image size */
+  66:./Source/makesquare.c ****     if(s_width > picture.width.value || s_height > picture.height.value)
+  67:./Source/makesquare.c ****     {
+  68:./Source/makesquare.c ****         ReportError(INVALID_ARGUMENT);
+  69:./Source/makesquare.c ****         return FAIL;
+  70:./Source/makesquare.c ****     }
+  71:./Source/makesquare.c **** 
+  72:./Source/makesquare.c ****     /* Prepare to create the image */
+  73:./Source/makesquare.c ****     len = picture.height.value * picture.width.value;
+  74:./Source/makesquare.c ****     colors[0] = (uint8_t)color[0];
+  75:./Source/makesquare.c ****     colors[1] = (uint8_t)color[1];
+  76:./Source/makesquare.c ****     colors[2] = (uint8_t)color[2];
+  77:./Source/makesquare.c **** 
+  78:./Source/makesquare.c ****     /* If we are making a color image then the data will be three times as long */
+  79:./Source/makesquare.c ****     if(picture.color_mode == MODE_COLOR)
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 3
+
+
+  80:./Source/makesquare.c ****         len *= 3;
+  81:./Source/makesquare.c ****     
+  82:./Source/makesquare.c ****     /* Allocate the image data space */
+  83:./Source/makesquare.c ****     picture.data = (uint8_t*)malloc((size_t)len);
+  84:./Source/makesquare.c **** 
+  85:./Source/makesquare.c ****     /* Initialize the picture data to white */
+  86:./Source/makesquare.c ****     for(i = 0;i < len;i++)
+  87:./Source/makesquare.c ****         picture.data[i] = 0xFF;
+  88:./Source/makesquare.c **** 
+  89:./Source/makesquare.c ****     /* Create a new scope so we don't have variable clutter */
+  90:./Source/makesquare.c ****     {
+  91:./Source/makesquare.c ****         /* We are going to do some pre-loop math to save time */
+  92:./Source/makesquare.c ****         int i_base;
+  93:./Source/makesquare.c ****         int j_base;
+  94:./Source/makesquare.c **** 
+  95:./Source/makesquare.c ****         /* Find out where to center the square at. We subtract and extra one only if the square and
+  96:./Source/makesquare.c ****            image has a odd width or height. */
+  97:./Source/makesquare.c ****         i_base = (picture.height.value >> 1) - (s_height >> 1) - (s_height & 0x1 ? (picture.height.
+  98:./Source/makesquare.c ****         j_base = (picture.width.value >> 1) - (s_width >> 1) - (s_width & 0x1 ? (picture.width.valu
+  99:./Source/makesquare.c **** 
+ 100:./Source/makesquare.c ****         /* Create our square */
+ 101:./Source/makesquare.c ****         for(i = i_base;i < i_base + s_height;i++) /* Square height = s_height */
+ 102:./Source/makesquare.c ****             for(j = j_base;j < j_base + s_width;j++) /* Square width = s_width */
+ 103:./Source/makesquare.c ****                 if(picture.color_mode == MODE_BLACKWHITE) /* Black and white has one byte per pixel
+ 104:./Source/makesquare.c ****                     picture.data[i * picture.width.value + j] = colors[0];
+ 105:./Source/makesquare.c ****                 else /* Color has three bytes per pixel */
+ 106:./Source/makesquare.c ****                 {
+ 107:./Source/makesquare.c ****                     picture.data[i * picture.width.value * 3 + j * 3] = colors[0];
+ 108:./Source/makesquare.c ****                     picture.data[i * picture.width.value * 3 + j * 3 + 1] = colors[1];
+ 109:./Source/makesquare.c ****                     picture.data[i * picture.width.value * 3 + j * 3 + 2] = colors[2];
+ 110:./Source/makesquare.c ****                 }
+ 111:./Source/makesquare.c ****     }
+ 112:./Source/makesquare.c **** 
+ 113:./Source/makesquare.c ****     /* Write our image data to disk */
+ 114:./Source/makesquare.c ****     err = write_cs229_image(&picture,stdout);
+ 115:./Source/makesquare.c **** 
+ 116:./Source/makesquare.c ****     /* If we got an error report it and return FAIL */
+ 117:./Source/makesquare.c ****     if(err)
+ 118:./Source/makesquare.c ****     {
+ 119:./Source/makesquare.c ****         ReportError(err);
+ 120:./Source/makesquare.c ****         return FAIL;
+ 121:./Source/makesquare.c ****     }
+ 122:./Source/makesquare.c **** 
+ 123:./Source/makesquare.c ****     /* We sucessfully executed the program */
+ 124:./Source/makesquare.c ****     return SUCCESS;
+ 125:./Source/makesquare.c **** }
+ 126:./Source/makesquare.c **** 
+ 127:./Source/makesquare.c **** #endif
+ 128:./Source/makesquare.c **** 
+ 129:./Source/makesquare.c **** /* This function will take arguments from argv or from stdin if not given in argv
+ 130:./Source/makesquare.c ****  * and puts them into the locations given in the prameters. If reading from stdin
+ 131:./Source/makesquare.c ****  * the buffer is expected to be at the very first parameter at time of passing.
+ 132:./Source/makesquare.c ****  * The uint32_t[] should have at least three elements to ensure no segfaults occur.
+ 133:./Source/makesquare.c ****  */
+ 134:./Source/makesquare.c **** uint32_t read_arguments(uint32_t argc, uint8_t** argv, PCSPIC picture, uint32_t color[], uint32_t* 
+ 135:./Source/makesquare.c **** {
+  30              		.loc 1 135 0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 4
+
+
+  31              	LVL0:
+  32 0000 55       		pushl	%ebp
+  33              	LCFI0:
+  34 0001 89E5     		movl	%esp, %ebp
+  35              	LCFI1:
+  36 0003 83EC38   		subl	$56, %esp
+  37              	LCFI2:
+  38 0006 895DF4   		movl	%ebx, -12(%ebp)
+  39              	LCFI3:
+  40 0009 8B5D08   		movl	8(%ebp), %ebx
+  41 000c 8975F8   		movl	%esi, -8(%ebp)
+  42              	LCFI4:
+  43 000f 897DFC   		movl	%edi, -4(%ebp)
+  44              	LCFI5:
+ 136:./Source/makesquare.c ****     /* Create an place to catch error return values */
+ 137:./Source/makesquare.c ****     uint32_t err;
+ 138:./Source/makesquare.c ****     
+ 139:./Source/makesquare.c ****     /* If we were given no arguments then we need to ask for them from stadard input.
+ 140:./Source/makesquare.c ****        The first argument that is always passed is the executed file that is the program.*/
+ 141:./Source/makesquare.c ****     if(argc == 1) /* One argument is valid for stdin input */
+  45              		.loc 1 141 0
+  46 0012 83FB01   		cmpl	$1, %ebx
+  47 0015 0F848600 		je	L21
+  47      0000
+  48              	LVL1:
+ 142:./Source/makesquare.c ****     {
+ 143:./Source/makesquare.c ****         /* Create a place to hold our first string arugment and to be safe make sure it is a c stri
+ 144:./Source/makesquare.c ****         uint8_t cmd[0x10];
+ 145:./Source/makesquare.c ****         cmd[0xF] = '\0';
+ 146:./Source/makesquare.c **** 
+ 147:./Source/makesquare.c ****         /* Read in -bw or -c hopefully */
+ 148:./Source/makesquare.c ****         if((err = fscanf(stdin,"%s",cmd)) == EOF)
+ 149:./Source/makesquare.c ****             return UNEXPECTED_END_OF_FILE;
+ 150:./Source/makesquare.c **** 
+ 151:./Source/makesquare.c ****         /* Check that we read all of our arguments properly */
+ 152:./Source/makesquare.c ****         if(err != 1)
+ 153:./Source/makesquare.c ****             return INVALID_ARGUMENT_STRING_EXPECTED;
+ 154:./Source/makesquare.c **** 
+ 155:./Source/makesquare.c ****         /* Check what we read */
+ 156:./Source/makesquare.c ****         if(!strcmp((const char*)cmd,"-c")) /* We read the parameter for color images */
+ 157:./Source/makesquare.c ****             picture->color_mode = MODE_COLOR;
+ 158:./Source/makesquare.c ****         else if(!strcmp((const char*)cmd,"-bw")) /* We read the parameter for black and white image
+ 159:./Source/makesquare.c ****             picture->color_mode = MODE_BLACKWHITE;
+ 160:./Source/makesquare.c ****         else /* We recieved something invalid */
+ 161:./Source/makesquare.c ****             return INVALID_IMAGE_COLOR_FORMAT;
+ 162:./Source/makesquare.c **** 
+ 163:./Source/makesquare.c ****         /* Read in the dimensions of the image and square */
+ 164:./Source/makesquare.c ****         if((err = fscanf(stdin,"%u%u%u%u",&picture->width.value,&picture->height.value,s_width,s_he
+ 165:./Source/makesquare.c ****             return UNEXPECTED_END_OF_FILE;
+ 166:./Source/makesquare.c **** 
+ 167:./Source/makesquare.c ****         /* Check that we read all of our arguments properly */
+ 168:./Source/makesquare.c ****         if(err != 4)
+ 169:./Source/makesquare.c ****             return INVALID_ARGUMENT_NUMBER_EXPECTED;
+ 170:./Source/makesquare.c **** 
+ 171:./Source/makesquare.c ****         /* Read in the color the square should be */
+ 172:./Source/makesquare.c ****         if(picture->color_mode == MODE_BLACKWHITE)
+ 173:./Source/makesquare.c ****         {
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 5
+
+
+ 174:./Source/makesquare.c ****             /* Black and white images only need one number */
+ 175:./Source/makesquare.c ****             if((err = fscanf(stdin,"%u",color)) == EOF)
+ 176:./Source/makesquare.c ****                 return UNEXPECTED_END_OF_FILE;
+ 177:./Source/makesquare.c **** 
+ 178:./Source/makesquare.c ****             /* Check that we read all of our arguments properly */
+ 179:./Source/makesquare.c ****             if(err != 1)
+ 180:./Source/makesquare.c ****                 return INVALID_ARGUMENT_NUMBER_EXPECTED;
+ 181:./Source/makesquare.c ****         }
+ 182:./Source/makesquare.c ****         else if(picture->color_mode == MODE_COLOR)
+ 183:./Source/makesquare.c ****         {
+ 184:./Source/makesquare.c ****             /* Color images need three number to represent a pixel */
+ 185:./Source/makesquare.c ****             if((err = fscanf(stdin,"%u%u%u",color,&color[1],&color[2])) == EOF)
+ 186:./Source/makesquare.c ****                 return UNEXPECTED_END_OF_FILE;
+ 187:./Source/makesquare.c **** 
+ 188:./Source/makesquare.c ****             /* Check that we read all of our arguments properly */
+ 189:./Source/makesquare.c ****             if(err != 3)
+ 190:./Source/makesquare.c ****                 return INVALID_ARGUMENT_NUMBER_EXPECTED;
+ 191:./Source/makesquare.c ****         }
+ 192:./Source/makesquare.c ****         else /* We somehow have an invalid color format */
+ 193:./Source/makesquare.c ****             return INVALID_IMAGE_COLOR_FORMAT;
+ 194:./Source/makesquare.c ****     }
+ 195:./Source/makesquare.c ****     else if(argc == 7 || argc == 9) /* Seven or nine arguments is valid for -bw and -c respectivly 
+  49              		.loc 1 195 0
+  50 001b 83FB07   		cmpl	$7, %ebx
+  51 001e 7417     		je	L12
+  52 0020 83FB09   		cmpl	$9, %ebx
+  53 0023 B8030000 		movl	$3, %eax
+  53      00
+  54 0028 740D     		je	L12
+  55              	LVL2:
+  56              	L5:
+ 196:./Source/makesquare.c ****     {
+ 197:./Source/makesquare.c ****         /* Check what type of image color we are supposed to make */
+ 198:./Source/makesquare.c ****         if(!strcmp((const char*)argv[1],"-c")) /* -c indicates color images should be made */
+ 199:./Source/makesquare.c ****             picture->color_mode = MODE_COLOR;
+ 200:./Source/makesquare.c ****         else if(!strcmp((const char*)argv[1],"-bw")) /* -bw indicates black and white images whould
+ 201:./Source/makesquare.c ****             picture->color_mode = MODE_BLACKWHITE;
+ 202:./Source/makesquare.c ****         else /* We were given an invalid parameter */
+ 203:./Source/makesquare.c ****             return INVALID_IMAGE_COLOR_FORMAT;
+ 204:./Source/makesquare.c **** 
+ 205:./Source/makesquare.c ****         /* Check if we have the apporpriate number of arguments for our image type */
+ 206:./Source/makesquare.c ****         if(picture->color_mode == MODE_BLACKWHITE && argc != 7)
+ 207:./Source/makesquare.c ****             return (argc < 7 ? TOO_FEW_ARGUMENTS : TOO_MANY_ARGUMENTS);
+ 208:./Source/makesquare.c ****         else if(picture->color_mode == MODE_COLOR && argc != 9)
+ 209:./Source/makesquare.c ****             return (argc < 9 ? TOO_FEW_ARGUMENTS : TOO_MANY_ARGUMENTS);
+ 210:./Source/makesquare.c **** 
+ 211:./Source/makesquare.c ****         /* Perform some error checking (use err for loop counter to save space) */
+ 212:./Source/makesquare.c ****         for(err = 2;err < 6;err++)
+ 213:./Source/makesquare.c ****             if(!isnumber(argv[err]))
+ 214:./Source/makesquare.c ****                 return INVALID_ARGUMENT_NUMBER_EXPECTED;
+ 215:./Source/makesquare.c **** 
+ 216:./Source/makesquare.c ****         /* Obtain out image and square dimensions */
+ 217:./Source/makesquare.c ****         picture->width.value = atoi((const char*)argv[2]);
+ 218:./Source/makesquare.c ****         picture->height.value = atoi((const char*)argv[3]);
+ 219:./Source/makesquare.c ****         *s_width = atoi((const char*)argv[4]);
+ 220:./Source/makesquare.c ****         *s_height = atoi((const char*)argv[5]);
+ 221:./Source/makesquare.c **** 
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 6
+
+
+ 222:./Source/makesquare.c ****         /* Obtain the color that we should output our square too. */
+ 223:./Source/makesquare.c ****         if(picture->color_mode == MODE_BLACKWHITE)
+ 224:./Source/makesquare.c ****         {
+ 225:./Source/makesquare.c ****             if(!isnumber(argv[6]))
+ 226:./Source/makesquare.c ****                 return INVALID_ARGUMENT_NUMBER_EXPECTED;
+ 227:./Source/makesquare.c **** 
+ 228:./Source/makesquare.c ****             color[0] = atoi((const char*)argv[6]);
+ 229:./Source/makesquare.c ****         }
+ 230:./Source/makesquare.c ****         else
+ 231:./Source/makesquare.c ****         {
+ 232:./Source/makesquare.c ****             /* Perform some error checking (use err for loop counter to save space) */
+ 233:./Source/makesquare.c ****             for(err = 6;err < 9;err++)
+ 234:./Source/makesquare.c ****                 if(!isnumber(argv[err]))
+ 235:./Source/makesquare.c ****                     return INVALID_ARGUMENT_NUMBER_EXPECTED;
+ 236:./Source/makesquare.c **** 
+ 237:./Source/makesquare.c ****             color[0] = atoi((const char*)argv[6]);
+ 238:./Source/makesquare.c ****             color[1] = atoi((const char*)argv[7]);
+ 239:./Source/makesquare.c ****             color[2] = atoi((const char*)argv[8]);
+ 240:./Source/makesquare.c ****         }
+ 241:./Source/makesquare.c ****     }
+ 242:./Source/makesquare.c ****     else /* We were given an invalid number of arguments */
+ 243:./Source/makesquare.c ****         return INVALID_NUMBER_OF_ARGUMENTS;
+ 244:./Source/makesquare.c **** 
+ 245:./Source/makesquare.c ****     /* The function executed sucessfully */
+ 246:./Source/makesquare.c ****     return SUCCESS;
+ 247:./Source/makesquare.c **** }
+  57              		.loc 1 247 0
+  58 002a 8B5DF4   		movl	-12(%ebp), %ebx
+  59 002d 8B75F8   		movl	-8(%ebp), %esi
+  60 0030 8B7DFC   		movl	-4(%ebp), %edi
+  61 0033 89EC     		movl	%ebp, %esp
+  62 0035 5D       		popl	%ebp
+  63 0036 C3       		ret
+  64              	LVL3:
+  65              		.p2align 4,,7
+  66              	L12:
+ 198:./Source/makesquare.c ****         if(!strcmp((const char*)argv[1],"-c")) /* -c indicates color images should be made */
+  67              		.loc 1 198 0
+  68 0037 8B750C   		movl	12(%ebp), %esi
+  69 003a BF030000 		movl	$LC1, %edi
+  69      00
+  70 003f B9030000 		movl	$3, %ecx
+  70      00
+  71 0044 8B7604   		movl	4(%esi), %esi
+  72 0047 8975E0   		movl	%esi, -32(%ebp)
+  73 004a F3A6     		repe cmpsb
+  74 004c 7522     		jne	L13
+  75              	LVL4:
+ 199:./Source/makesquare.c ****             picture->color_mode = MODE_COLOR;
+  76              		.loc 1 199 0
+  77 004e 8B4510   		movl	16(%ebp), %eax
+ 208:./Source/makesquare.c ****         else if(picture->color_mode == MODE_COLOR && argc != 9)
+  78              		.loc 1 208 0
+  79 0051 83FB09   		cmpl	$9, %ebx
+ 199:./Source/makesquare.c ****             picture->color_mode = MODE_COLOR;
+  80              		.loc 1 199 0
+  81 0054 C64001FF 		movb	$-1, 1(%eax)
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 7
+
+
+ 208:./Source/makesquare.c ****         else if(picture->color_mode == MODE_COLOR && argc != 9)
+  82              		.loc 1 208 0
+  83 0058 0F845201 		je	L15
+  83      0000
+  84              	LVL5:
+ 209:./Source/makesquare.c ****             return (argc < 9 ? TOO_FEW_ARGUMENTS : TOO_MANY_ARGUMENTS);
+  85              		.loc 1 209 0
+  86 005e 83FB08   		cmpl	$8, %ebx
+  87 0061 7737     		ja	L17
+  88              	L16:
+ 239:./Source/makesquare.c ****             color[2] = atoi((const char*)argv[8]);
+  89              		.loc 1 239 0
+  90 0063 B8020000 		movl	$2, %eax
+  90      00
+  91 0068 EBC0     		jmp	L5
+  92              	LVL6:
+  93 006a 8DB60000 		.p2align 4,,7
+  93      0000
+  94              	L13:
+ 200:./Source/makesquare.c ****         else if(!strcmp((const char*)argv[1],"-bw")) /* -bw indicates black and white images whould
+  95              		.loc 1 200 0
+  96 0070 8B75E0   		movl	-32(%ebp), %esi
+  97 0073 BF060000 		movl	$LC2, %edi
+  97      00
+  98 0078 B9040000 		movl	$4, %ecx
+  98      00
+  99 007d F3A6     		repe cmpsb
+ 100 007f 0F852001 		jne	L8
+ 100      0000
+ 201:./Source/makesquare.c ****             picture->color_mode = MODE_BLACKWHITE;
+ 101              		.loc 1 201 0
+ 102 0085 8B4510   		movl	16(%ebp), %eax
+ 206:./Source/makesquare.c ****         if(picture->color_mode == MODE_BLACKWHITE && argc != 7)
+ 103              		.loc 1 206 0
+ 104 0088 83FB07   		cmpl	$7, %ebx
+ 201:./Source/makesquare.c ****             picture->color_mode = MODE_BLACKWHITE;
+ 105              		.loc 1 201 0
+ 106 008b C6400100 		movb	$0, 1(%eax)
+ 206:./Source/makesquare.c ****         if(picture->color_mode == MODE_BLACKWHITE && argc != 7)
+ 107              		.loc 1 206 0
+ 108 008f 0F841B01 		je	L15
+ 108      0000
+ 109              	LVL7:
+ 207:./Source/makesquare.c ****             return (argc < 7 ? TOO_FEW_ARGUMENTS : TOO_MANY_ARGUMENTS);
+ 110              		.loc 1 207 0
+ 111 0095 83FB06   		cmpl	$6, %ebx
+ 112 0098 76C9     		jbe	L16
+ 113              	L17:
+ 239:./Source/makesquare.c ****             color[2] = atoi((const char*)argv[8]);
+ 114              		.loc 1 239 0
+ 115 009a B8010000 		movl	$1, %eax
+ 115      00
+ 116 009f EB89     		jmp	L5
+ 117              	LVL8:
+ 118              		.p2align 4,,7
+ 119              	L21:
+ 120              	LBB2:
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 8
+
+
+ 145:./Source/makesquare.c ****         cmd[0xF] = '\0';
+ 121              		.loc 1 145 0
+ 122 00a1 C645F300 		movb	$0, -13(%ebp)
+ 148:./Source/makesquare.c ****         if((err = fscanf(stdin,"%s",cmd)) == EOF)
+ 123              		.loc 1 148 0
+ 124 00a5 8D5DE4   		leal	-28(%ebp), %ebx
+ 125              	LVL9:
+ 126 00a8 E8000000 		call	___getreent
+ 126      00
+ 127 00ad 895C2408 		movl	%ebx, 8(%esp)
+ 128 00b1 C7442404 		movl	$LC0, 4(%esp)
+ 128      00000000 
+ 129 00b9 8B4004   		movl	4(%eax), %eax
+ 130 00bc 890424   		movl	%eax, (%esp)
+ 131 00bf E8000000 		call	_fscanf
+ 131      00
+ 132 00c4 83F8FF   		cmpl	$-1, %eax
+ 133 00c7 89C2     		movl	%eax, %edx
+ 134 00c9 0F84A101 		je	L3
+ 134      0000
+ 152:./Source/makesquare.c ****         if(err != 1)
+ 135              		.loc 1 152 0
+ 136 00cf 83EA01   		subl	$1, %edx
+ 137 00d2 B8070000 		movl	$7, %eax
+ 137      00
+ 138 00d7 0F854DFF 		jne	L5
+ 138      FFFF
+ 156:./Source/makesquare.c ****         if(!strcmp((const char*)cmd,"-c")) /* We read the parameter for color images */
+ 139              		.loc 1 156 0
+ 140 00dd BF030000 		movl	$LC1, %edi
+ 140      00
+ 141 00e2 B9030000 		movl	$3, %ecx
+ 141      00
+ 142 00e7 89DE     		movl	%ebx, %esi
+ 143 00e9 F3A6     		repe cmpsb
+ 144 00eb 0F85F801 		jne	L6
+ 144      0000
+ 157:./Source/makesquare.c ****             picture->color_mode = MODE_COLOR;
+ 145              		.loc 1 157 0
+ 146 00f1 8B4510   		movl	16(%ebp), %eax
+ 147 00f4 C64001FF 		movb	$-1, 1(%eax)
+ 148              	LVL10:
+ 149              	L7:
+ 164:./Source/makesquare.c ****         if((err = fscanf(stdin,"%u%u%u%u",&picture->width.value,&picture->height.value,s_width,s_he
+ 150              		.loc 1 164 0
+ 151 00f8 E8000000 		call	___getreent
+ 151      00
+ 152 00fd 8B551C   		movl	28(%ebp), %edx
+ 153 0100 8B7518   		movl	24(%ebp), %esi
+ 154 0103 C7442404 		movl	$LC3, 4(%esp)
+ 154      0A000000 
+ 155 010b 89542414 		movl	%edx, 20(%esp)
+ 156 010f 8B5510   		movl	16(%ebp), %edx
+ 157 0112 89742410 		movl	%esi, 16(%esp)
+ 158 0116 83C208   		addl	$8, %edx
+ 159 0119 8954240C 		movl	%edx, 12(%esp)
+ 160 011d 8B5510   		movl	16(%ebp), %edx
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 9
+
+
+ 161 0120 83C20C   		addl	$12, %edx
+ 162 0123 89542408 		movl	%edx, 8(%esp)
+ 163 0127 8B4004   		movl	4(%eax), %eax
+ 164 012a 890424   		movl	%eax, (%esp)
+ 165 012d E8000000 		call	_fscanf
+ 165      00
+ 166 0132 83F8FF   		cmpl	$-1, %eax
+ 167 0135 0F843501 		je	L3
+ 167      0000
+ 168              	LVL11:
+ 168:./Source/makesquare.c ****         if(err != 4)
+ 169              		.loc 1 168 0
+ 170 013b 83F804   		cmpl	$4, %eax
+ 171 013e 0F851D01 		jne	L9
+ 171      0000
+ 172:./Source/makesquare.c ****         if(picture->color_mode == MODE_BLACKWHITE)
+ 172              		.loc 1 172 0
+ 173 0144 8B5510   		movl	16(%ebp), %edx
+ 174 0147 0FB64201 		movzbl	1(%edx), %eax
+ 175 014b 84C0     		testb	%al, %al
+ 176 014d 0F84D001 		je	L22
+ 176      0000
+ 182:./Source/makesquare.c ****         else if(picture->color_mode == MODE_COLOR)
+ 177              		.loc 1 182 0
+ 178 0153 0401     		addb	$1, %al
+ 179 0155 754E     		jne	L8
+ 185:./Source/makesquare.c ****             if((err = fscanf(stdin,"%u%u%u",color,&color[1],&color[2])) == EOF)
+ 180              		.loc 1 185 0
+ 181 0157 E8000000 		call	___getreent
+ 181      00
+ 182 015c 8B5514   		movl	20(%ebp), %edx
+ 183 015f C7442404 		movl	$LC5, 4(%esp)
+ 183      16000000 
+ 184 0167 83C208   		addl	$8, %edx
+ 185 016a 89542410 		movl	%edx, 16(%esp)
+ 186 016e 8B5514   		movl	20(%ebp), %edx
+ 187 0171 83C204   		addl	$4, %edx
+ 188 0174 8954240C 		movl	%edx, 12(%esp)
+ 189 0178 8B5514   		movl	20(%ebp), %edx
+ 190 017b 89542408 		movl	%edx, 8(%esp)
+ 191 017f 8B4004   		movl	4(%eax), %eax
+ 192 0182 890424   		movl	%eax, (%esp)
+ 193 0185 E8000000 		call	_fscanf
+ 193      00
+ 194 018a 83F8FF   		cmpl	$-1, %eax
+ 195 018d 0F84DD00 		je	L3
+ 195      0000
+ 196              	LVL12:
+ 189:./Source/makesquare.c ****             if(err != 3)
+ 197              		.loc 1 189 0
+ 198 0193 83F803   		cmpl	$3, %eax
+ 199 0196 0F85C500 		jne	L9
+ 199      0000
+ 200              	LBE2:
+ 239:./Source/makesquare.c ****             color[2] = atoi((const char*)argv[8]);
+ 201              		.loc 1 239 0
+ 202 019c 31C0     		xorl	%eax, %eax
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 10
+
+
+ 203 019e 6690     		.p2align 4,,5
+ 204 01a0 E985FEFF 		jmp	L5
+ 204      FF
+ 205              	LVL13:
+ 206              		.p2align 4,,7
+ 207              	L8:
+ 208 01a5 B8040000 		movl	$4, %eax
+ 208      00
+ 209              		.p2align 4,,5
+ 210 01aa E97BFEFF 		jmp	L5
+ 210      FF
+ 211              	LVL14:
+ 212 01af 90       		.p2align 4,,7
+ 213              	L15:
+ 213:./Source/makesquare.c ****             if(!isnumber(argv[err]))
+ 214              		.loc 1 213 0
+ 215 01b0 8B550C   		movl	12(%ebp), %edx
+ 216 01b3 8B4208   		movl	8(%edx), %eax
+ 217 01b6 890424   		movl	%eax, (%esp)
+ 218 01b9 E8000000 		call	_isnumber
+ 218      00
+ 219 01be 85C0     		testl	%eax, %eax
+ 220 01c0 0F849B00 		je	L9
+ 220      0000
+ 221 01c6 8B750C   		movl	12(%ebp), %esi
+ 222 01c9 8B460C   		movl	12(%esi), %eax
+ 223 01cc 890424   		movl	%eax, (%esp)
+ 224 01cf E8000000 		call	_isnumber
+ 224      00
+ 225 01d4 85C0     		testl	%eax, %eax
+ 226 01d6 0F848500 		je	L9
+ 226      0000
+ 227 01dc 8B4610   		movl	16(%esi), %eax
+ 228 01df 890424   		movl	%eax, (%esp)
+ 229 01e2 E8000000 		call	_isnumber
+ 229      00
+ 230 01e7 85C0     		testl	%eax, %eax
+ 231 01e9 7476     		je	L9
+ 232 01eb 8B4614   		movl	20(%esi), %eax
+ 233 01ee 890424   		movl	%eax, (%esp)
+ 234 01f1 E8000000 		call	_isnumber
+ 234      00
+ 235 01f6 85C0     		testl	%eax, %eax
+ 236 01f8 7467     		je	L9
+ 217:./Source/makesquare.c ****         picture->width.value = atoi((const char*)argv[2]);
+ 237              		.loc 1 217 0
+ 238 01fa 8B4608   		movl	8(%esi), %eax
+ 239 01fd 890424   		movl	%eax, (%esp)
+ 240 0200 E8000000 		call	_atoi
+ 240      00
+ 241 0205 8B5510   		movl	16(%ebp), %edx
+ 242 0208 89420C   		movl	%eax, 12(%edx)
+ 218:./Source/makesquare.c ****         picture->height.value = atoi((const char*)argv[3]);
+ 243              		.loc 1 218 0
+ 244 020b 8B460C   		movl	12(%esi), %eax
+ 245 020e 890424   		movl	%eax, (%esp)
+ 246 0211 E8000000 		call	_atoi
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 11
+
+
+ 246      00
+ 247 0216 8B7510   		movl	16(%ebp), %esi
+ 248 0219 894608   		movl	%eax, 8(%esi)
+ 219:./Source/makesquare.c ****         *s_width = atoi((const char*)argv[4]);
+ 249              		.loc 1 219 0
+ 250 021c 8B550C   		movl	12(%ebp), %edx
+ 251 021f 8B4210   		movl	16(%edx), %eax
+ 252 0222 890424   		movl	%eax, (%esp)
+ 253 0225 E8000000 		call	_atoi
+ 253      00
+ 254 022a 8B7518   		movl	24(%ebp), %esi
+ 220:./Source/makesquare.c ****         *s_height = atoi((const char*)argv[5]);
+ 255              		.loc 1 220 0
+ 256 022d 8B550C   		movl	12(%ebp), %edx
+ 219:./Source/makesquare.c ****         *s_width = atoi((const char*)argv[4]);
+ 257              		.loc 1 219 0
+ 258 0230 8906     		movl	%eax, (%esi)
+ 220:./Source/makesquare.c ****         *s_height = atoi((const char*)argv[5]);
+ 259              		.loc 1 220 0
+ 260 0232 8B4214   		movl	20(%edx), %eax
+ 261 0235 890424   		movl	%eax, (%esp)
+ 262 0238 E8000000 		call	_atoi
+ 262      00
+ 263 023d 8B751C   		movl	28(%ebp), %esi
+ 264 0240 8906     		movl	%eax, (%esi)
+ 223:./Source/makesquare.c ****         if(picture->color_mode == MODE_BLACKWHITE)
+ 265              		.loc 1 223 0
+ 266 0242 8B4510   		movl	16(%ebp), %eax
+ 267 0245 80780100 		cmpb	$0, 1(%eax)
+ 268 0249 7535     		jne	L18
+ 269              	LVL15:
+ 225:./Source/makesquare.c ****             if(!isnumber(argv[6]))
+ 270              		.loc 1 225 0
+ 271 024b 8B550C   		movl	12(%ebp), %edx
+ 272 024e 8B4218   		movl	24(%edx), %eax
+ 273 0251 890424   		movl	%eax, (%esp)
+ 274 0254 E8000000 		call	_isnumber
+ 274      00
+ 275 0259 85C0     		testl	%eax, %eax
+ 276 025b 0F85A800 		jne	L23
+ 276      0000
+ 277              	LVL16:
+ 278              	L9:
+ 239:./Source/makesquare.c ****             color[2] = atoi((const char*)argv[8]);
+ 279              		.loc 1 239 0
+ 280 0261 B8060000 		movl	$6, %eax
+ 280      00
+ 281 0266 E9BFFDFF 		jmp	L5
+ 281      FF
+ 282              	LVL17:
+ 283 026b 908D7426 		.p2align 4,,7
+ 283      00
+ 284              	L3:
+ 285 0270 B8080000 		movl	$8, %eax
+ 285      00
+ 286              		.p2align 4,,5
+ 287 0275 E9B0FDFF 		jmp	L5
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 12
+
+
+ 287      FF
+ 288              	LVL18:
+ 289 027a 8DB60000 		.p2align 4,,7
+ 289      0000
+ 290              	L18:
+ 234:./Source/makesquare.c ****                 if(!isnumber(argv[err]))
+ 291              		.loc 1 234 0
+ 292 0280 8B750C   		movl	12(%ebp), %esi
+ 293 0283 8B4618   		movl	24(%esi), %eax
+ 294 0286 890424   		movl	%eax, (%esp)
+ 295 0289 E8000000 		call	_isnumber
+ 295      00
+ 296 028e 85C0     		testl	%eax, %eax
+ 297 0290 74CF     		je	L9
+ 298 0292 8B461C   		movl	28(%esi), %eax
+ 299 0295 890424   		movl	%eax, (%esp)
+ 300 0298 E8000000 		call	_isnumber
+ 300      00
+ 301 029d 85C0     		testl	%eax, %eax
+ 302 029f 74C0     		je	L9
+ 303 02a1 8B4620   		movl	32(%esi), %eax
+ 304 02a4 890424   		movl	%eax, (%esp)
+ 305 02a7 E8000000 		call	_isnumber
+ 305      00
+ 306 02ac 85C0     		testl	%eax, %eax
+ 307 02ae 74B1     		je	L9
+ 237:./Source/makesquare.c ****             color[0] = atoi((const char*)argv[6]);
+ 308              		.loc 1 237 0
+ 309 02b0 8B4618   		movl	24(%esi), %eax
+ 310 02b3 890424   		movl	%eax, (%esp)
+ 311 02b6 E8000000 		call	_atoi
+ 311      00
+ 312 02bb 8B5514   		movl	20(%ebp), %edx
+ 313 02be 8902     		movl	%eax, (%edx)
+ 238:./Source/makesquare.c ****             color[1] = atoi((const char*)argv[7]);
+ 314              		.loc 1 238 0
+ 315 02c0 8B461C   		movl	28(%esi), %eax
+ 316 02c3 890424   		movl	%eax, (%esp)
+ 317 02c6 E8000000 		call	_atoi
+ 317      00
+ 318 02cb 8B7514   		movl	20(%ebp), %esi
+ 239:./Source/makesquare.c ****             color[2] = atoi((const char*)argv[8]);
+ 319              		.loc 1 239 0
+ 320 02ce 8B550C   		movl	12(%ebp), %edx
+ 238:./Source/makesquare.c ****             color[1] = atoi((const char*)argv[7]);
+ 321              		.loc 1 238 0
+ 322 02d1 894604   		movl	%eax, 4(%esi)
+ 239:./Source/makesquare.c ****             color[2] = atoi((const char*)argv[8]);
+ 323              		.loc 1 239 0
+ 324 02d4 8B4220   		movl	32(%edx), %eax
+ 325 02d7 890424   		movl	%eax, (%esp)
+ 326 02da E8000000 		call	_atoi
+ 326      00
+ 327 02df 894608   		movl	%eax, 8(%esi)
+ 328 02e2 31C0     		xorl	%eax, %eax
+ 329 02e4 E941FDFF 		jmp	L5
+ 329      FF
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 13
+
+
+ 330              	LVL19:
+ 331              	L6:
+ 332              	LBB3:
+ 158:./Source/makesquare.c ****         else if(!strcmp((const char*)cmd,"-bw")) /* We read the parameter for black and white image
+ 333              		.loc 1 158 0
+ 334 02e9 BF060000 		movl	$LC2, %edi
+ 334      00
+ 335 02ee B9040000 		movl	$4, %ecx
+ 335      00
+ 336 02f3 89DE     		movl	%ebx, %esi
+ 337 02f5 F3A6     		repe cmpsb
+ 338 02f7 0F85A8FE 		jne	L8
+ 338      FFFF
+ 159:./Source/makesquare.c ****             picture->color_mode = MODE_BLACKWHITE;
+ 339              		.loc 1 159 0
+ 340 02fd 8B4510   		movl	16(%ebp), %eax
+ 341 0300 C6400100 		movb	$0, 1(%eax)
+ 342 0304 E9EFFDFF 		jmp	L7
+ 342      FF
+ 343              	LVL20:
+ 344              	L23:
+ 345              	LBE3:
+ 228:./Source/makesquare.c ****             color[0] = atoi((const char*)argv[6]);
+ 346              		.loc 1 228 0
+ 347 0309 8B750C   		movl	12(%ebp), %esi
+ 348 030c 8B4618   		movl	24(%esi), %eax
+ 349 030f 890424   		movl	%eax, (%esp)
+ 350 0312 E8000000 		call	_atoi
+ 350      00
+ 351 0317 8B5514   		movl	20(%ebp), %edx
+ 352 031a 8902     		movl	%eax, (%edx)
+ 353 031c 31C0     		xorl	%eax, %eax
+ 354 031e E907FDFF 		jmp	L5
+ 354      FF
+ 355              	LVL21:
+ 356              	L22:
+ 357              	LBB4:
+ 175:./Source/makesquare.c ****             if((err = fscanf(stdin,"%u",color)) == EOF)
+ 358              		.loc 1 175 0
+ 359 0323 E8000000 		call	___getreent
+ 359      00
+ 360 0328 8B7514   		movl	20(%ebp), %esi
+ 361 032b C7442404 		movl	$LC4, 4(%esp)
+ 361      13000000 
+ 362 0333 89742408 		movl	%esi, 8(%esp)
+ 363 0337 8B4004   		movl	4(%eax), %eax
+ 364 033a 890424   		movl	%eax, (%esp)
+ 365 033d E8000000 		call	_fscanf
+ 365      00
+ 366 0342 83F8FF   		cmpl	$-1, %eax
+ 367 0345 0F8425FF 		je	L3
+ 367      FFFF
+ 368              	LVL22:
+ 179:./Source/makesquare.c ****             if(err != 1)
+ 369              		.loc 1 179 0
+ 370 034b 83E801   		subl	$1, %eax
+ 371 034e 0F850DFF 		jne	L9
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 14
+
+
+ 371      FFFF
+ 372              	LBE4:
+ 239:./Source/makesquare.c ****             color[2] = atoi((const char*)argv[8]);
+ 373              		.loc 1 239 0
+ 374 0354 31C0     		xorl	%eax, %eax
+ 375              		.p2align 4,,5
+ 376 0356 E9CFFCFF 		jmp	L5
+ 376      FF
+ 377              	LFE7:
+ 379 035b 908D7426 		.p2align 4,,15
+ 379      00
+ 380              	.globl _main
+ 382              	_main:
+ 383              	LFB6:
+  37:./Source/makesquare.c **** {
+ 384              		.loc 1 37 0
+ 385              	LVL23:
+ 386 0360 8D4C2404 		leal	4(%esp), %ecx
+ 387              	LCFI6:
+ 388 0364 83E4F0   		andl	$-16, %esp
+ 389 0367 FF71FC   		pushl	-4(%ecx)
+ 390              	LCFI7:
+ 391 036a 55       		pushl	%ebp
+ 392              	LCFI8:
+ 393 036b 89E5     		movl	%esp, %ebp
+ 394              	LCFI9:
+ 395 036d 57       		pushl	%edi
+ 396              	LCFI10:
+ 397 036e 56       		pushl	%esi
+ 398              	LCFI11:
+ 399 036f 53       		pushl	%ebx
+ 400              	LCFI12:
+ 401 0370 51       		pushl	%ecx
+ 402              	LCFI13:
+ 403 0371 83EC68   		subl	$104, %esp
+ 404              	LCFI14:
+  37:./Source/makesquare.c **** {
+ 405              		.loc 1 37 0
+ 406 0374 8B31     		movl	(%ecx), %esi
+ 407 0376 8B5904   		movl	4(%ecx), %ebx
+ 408 0379 E8000000 		call	___main
+ 408      00
+  56:./Source/makesquare.c ****     err = read_arguments((uint32_t)argc,(uint8_t**)argv,(PCSPIC)&picture,color,&s_width,&s_height);
+ 409              		.loc 1 56 0
+ 410 037e 8D45E8   		leal	-24(%ebp), %eax
+  50:./Source/makesquare.c ****     picture.magic_number = CS229_MAGIC_NUMBER;
+ 411              		.loc 1 50 0
+ 412 0381 C645C842 		movb	$66, -56(%ebp)
+  51:./Source/makesquare.c ****     picture.first_channel.red_channel_size = EIGHT_BIT_CHANNEL;
+ 413              		.loc 1 51 0
+ 414 0385 C645CA02 		movb	$2, -54(%ebp)
+  52:./Source/makesquare.c ****     picture.green_channel_size = EIGHT_BIT_CHANNEL;
+ 415              		.loc 1 52 0
+ 416 0389 C645CB02 		movb	$2, -53(%ebp)
+  53:./Source/makesquare.c ****     picture.blue_channel_size = EIGHT_BIT_CHANNEL;
+ 417              		.loc 1 53 0
+ 418 038d C645CC02 		movb	$2, -52(%ebp)
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 15
+
+
+  56:./Source/makesquare.c ****     err = read_arguments((uint32_t)argc,(uint8_t**)argv,(PCSPIC)&picture,color,&s_width,&s_height);
+ 419              		.loc 1 56 0
+ 420 0391 89442414 		movl	%eax, 20(%esp)
+ 421 0395 8D45EC   		leal	-20(%ebp), %eax
+ 422 0398 89442410 		movl	%eax, 16(%esp)
+ 423 039c 8D45DC   		leal	-36(%ebp), %eax
+ 424 039f 8944240C 		movl	%eax, 12(%esp)
+ 425 03a3 8D45C8   		leal	-56(%ebp), %eax
+ 426 03a6 89442408 		movl	%eax, 8(%esp)
+ 427 03aa 895C2404 		movl	%ebx, 4(%esp)
+ 428 03ae 893424   		movl	%esi, (%esp)
+ 429 03b1 E84AFCFF 		call	_read_arguments
+ 429      FF
+  59:./Source/makesquare.c ****     if(err)
+ 430              		.loc 1 59 0
+ 431 03b6 85C0     		testl	%eax, %eax
+ 432              	LVL24:
+ 433 03b8 0F859F01 		jne	L48
+ 433      0000
+ 434              	LVL25:
+  66:./Source/makesquare.c ****     if(s_width > picture.width.value || s_height > picture.height.value)
+ 435              		.loc 1 66 0
+ 436 03be 8B55D4   		movl	-44(%ebp), %edx
+ 437 03c1 3B55EC   		cmpl	-20(%ebp), %edx
+ 438              	LVL26:
+ 439 03c4 0F827601 		jb	L27
+ 439      0000
+ 440 03ca 8B45D0   		movl	-48(%ebp), %eax
+ 441              	LVL27:
+ 442 03cd 3B45E8   		cmpl	-24(%ebp), %eax
+ 443              	LVL28:
+ 444 03d0 0F826A01 		jb	L27
+ 444      0000
+  73:./Source/makesquare.c ****     len = picture.height.value * picture.width.value;
+ 445              		.loc 1 73 0
+ 446 03d6 89C3     		movl	%eax, %ebx
+ 447              	LVL29:
+  75:./Source/makesquare.c ****     colors[1] = (uint8_t)color[1];
+ 448              		.loc 1 75 0
+ 449 03d8 0FB645E0 		movzbl	-32(%ebp), %eax
+  73:./Source/makesquare.c ****     len = picture.height.value * picture.width.value;
+ 450              		.loc 1 73 0
+ 451 03dc 0FAFDA   		imull	%edx, %ebx
+  74:./Source/makesquare.c ****     colors[0] = (uint8_t)color[0];
+ 452              		.loc 1 74 0
+ 453 03df 0FB655DC 		movzbl	-36(%ebp), %edx
+  79:./Source/makesquare.c ****     if(picture.color_mode == MODE_COLOR)
+ 454              		.loc 1 79 0
+ 455 03e3 807DC9FF 		cmpb	$-1, -55(%ebp)
+  75:./Source/makesquare.c ****     colors[1] = (uint8_t)color[1];
+ 456              		.loc 1 75 0
+ 457 03e7 8845BA   		movb	%al, -70(%ebp)
+  74:./Source/makesquare.c ****     colors[0] = (uint8_t)color[0];
+ 458              		.loc 1 74 0
+ 459 03ea 8855AF   		movb	%dl, -81(%ebp)
+  76:./Source/makesquare.c ****     colors[2] = (uint8_t)color[2];
+ 460              		.loc 1 76 0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 16
+
+
+ 461 03ed 0FB655E4 		movzbl	-28(%ebp), %edx
+  80:./Source/makesquare.c ****         len *= 3;
+ 462              		.loc 1 80 0
+ 463 03f1 8D045B   		leal	(%ebx,%ebx,2), %eax
+ 464 03f4 0F44D8   		cmove	%eax, %ebx
+  76:./Source/makesquare.c ****     colors[2] = (uint8_t)color[2];
+ 465              		.loc 1 76 0
+ 466 03f7 8855BB   		movb	%dl, -69(%ebp)
+  83:./Source/makesquare.c ****     picture.data = (uint8_t*)malloc((size_t)len);
+ 467              		.loc 1 83 0
+ 468 03fa 891C24   		movl	%ebx, (%esp)
+ 469 03fd E8000000 		call	_malloc
+ 469      00
+  86:./Source/makesquare.c ****     for(i = 0;i < len;i++)
+ 470              		.loc 1 86 0
+ 471 0402 85DB     		testl	%ebx, %ebx
+  83:./Source/makesquare.c ****     picture.data = (uint8_t*)malloc((size_t)len);
+ 472              		.loc 1 83 0
+ 473 0404 8945D8   		movl	%eax, -40(%ebp)
+  86:./Source/makesquare.c ****     for(i = 0;i < len;i++)
+ 474              		.loc 1 86 0
+ 475 0407 7415     		je	L30
+ 476 0409 31D2     		xorl	%edx, %edx
+ 477              	LVL30:
+ 478 040b 908D7426 		.p2align 4,,7
+ 478      00
+ 479              	L31:
+  87:./Source/makesquare.c ****         picture.data[i] = 0xFF;
+ 480              		.loc 1 87 0
+ 481 0410 8B45D8   		movl	-40(%ebp), %eax
+ 482 0413 C60410FF 		movb	$-1, (%eax,%edx)
+  86:./Source/makesquare.c ****     for(i = 0;i < len;i++)
+ 483              		.loc 1 86 0
+ 484 0417 83C201   		addl	$1, %edx
+ 485 041a 39D3     		cmpl	%edx, %ebx
+ 486 041c 77F2     		ja	L31
+ 487              	L30:
+ 488              	LBB5:
+  97:./Source/makesquare.c ****         i_base = (picture.height.value >> 1) - (s_height >> 1) - (s_height & 0x1 ? (picture.height.
+ 489              		.loc 1 97 0
+ 490 041e 8B5DE8   		movl	-24(%ebp), %ebx
+ 491              	LVL31:
+ 492 0421 31D2     		xorl	%edx, %edx
+ 493              	LVL32:
+ 494 0423 8B45D0   		movl	-48(%ebp), %eax
+ 495 0426 F6C301   		testb	$1, %bl
+ 496 0429 0F855401 		jne	L49
+ 496      0000
+ 497              	L33:
+ 498 042f D1E8     		shrl	%eax
+  98:./Source/makesquare.c ****         j_base = (picture.width.value >> 1) - (s_width >> 1) - (s_width & 0x1 ? (picture.width.valu
+ 499              		.loc 1 98 0
+ 500 0431 31C9     		xorl	%ecx, %ecx
+  97:./Source/makesquare.c ****         i_base = (picture.height.value >> 1) - (s_height >> 1) - (s_height & 0x1 ? (picture.height.
+ 501              		.loc 1 97 0
+ 502 0433 8945BC   		movl	%eax, -68(%ebp)
+ 503              	LVL33:
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 17
+
+
+ 504 0436 89D8     		movl	%ebx, %eax
+ 505 0438 D1E8     		shrl	%eax
+ 506 043a 2945BC   		subl	%eax, -68(%ebp)
+ 507              	LVL34:
+ 508 043d 2955BC   		subl	%edx, -68(%ebp)
+ 509              	LVL35:
+  98:./Source/makesquare.c ****         j_base = (picture.width.value >> 1) - (s_width >> 1) - (s_width & 0x1 ? (picture.width.valu
+ 510              		.loc 1 98 0
+ 511 0440 8B55EC   		movl	-20(%ebp), %edx
+ 512 0443 8B45D4   		movl	-44(%ebp), %eax
+ 513 0446 F6C201   		testb	$1, %dl
+ 514 0449 0F852701 		jne	L50
+ 514      0000
+ 515              	L35:
+ 516 044f 89C6     		movl	%eax, %esi
+ 517              	LVL36:
+ 101:./Source/makesquare.c ****         for(i = i_base;i < i_base + s_height;i++) /* Square height = s_height */
+ 518              		.loc 1 101 0
+ 519 0451 8B45BC   		movl	-68(%ebp), %eax
+  98:./Source/makesquare.c ****         j_base = (picture.width.value >> 1) - (s_width >> 1) - (s_width & 0x1 ? (picture.width.valu
+ 520              		.loc 1 98 0
+ 521 0454 D1EE     		shrl	%esi
+ 522 0456 D1EA     		shrl	%edx
+ 523 0458 29D6     		subl	%edx, %esi
+ 101:./Source/makesquare.c ****         for(i = i_base;i < i_base + s_height;i++) /* Square height = s_height */
+ 524              		.loc 1 101 0
+ 525 045a 01D8     		addl	%ebx, %eax
+ 526 045c 8B5DBC   		movl	-68(%ebp), %ebx
+  98:./Source/makesquare.c ****         j_base = (picture.width.value >> 1) - (s_width >> 1) - (s_width & 0x1 ? (picture.width.valu
+ 527              		.loc 1 98 0
+ 528 045f 29CE     		subl	%ecx, %esi
+ 101:./Source/makesquare.c ****         for(i = i_base;i < i_base + s_height;i++) /* Square height = s_height */
+ 529              		.loc 1 101 0
+ 530 0461 39C3     		cmpl	%eax, %ebx
+ 531 0463 0F839A00 		jae	L36
+ 531      0000
+ 532              	LVL37:
+ 533 0469 8DB42600 		.p2align 4,,7
+ 533      000000
+ 534              	L37:
+ 102:./Source/makesquare.c ****             for(j = j_base;j < j_base + s_width;j++) /* Square width = s_width */
+ 535              		.loc 1 102 0
+ 536 0470 89F0     		movl	%esi, %eax
+ 101:./Source/makesquare.c ****         for(i = i_base;i < i_base + s_height;i++) /* Square height = s_height */
+ 537              		.loc 1 101 0
+ 538 0472 89F1     		movl	%esi, %ecx
+ 102:./Source/makesquare.c ****             for(j = j_base;j < j_base + s_width;j++) /* Square width = s_width */
+ 539              		.loc 1 102 0
+ 540 0474 0345EC   		addl	-20(%ebp), %eax
+ 541 0477 39C6     		cmpl	%eax, %esi
+ 542 0479 7223     		jb	L45
+ 543 047b EB75     		jmp	L42
+ 544 047d 8D7600   		.p2align 4,,7
+ 545              	L51:
+ 104:./Source/makesquare.c ****                     picture.data[i * picture.width.value + j] = colors[0];
+ 546              		.loc 1 104 0
+ 547 0480 8B45D8   		movl	-40(%ebp), %eax
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 18
+
+
+ 548 0483 89DF     		movl	%ebx, %edi
+ 549 0485 0FB655AF 		movzbl	-81(%ebp), %edx
+ 550 0489 0FAF7DD4 		imull	-44(%ebp), %edi
+ 551 048d 01C8     		addl	%ecx, %eax
+ 102:./Source/makesquare.c ****             for(j = j_base;j < j_base + s_width;j++) /* Square width = s_width */
+ 552              		.loc 1 102 0
+ 553 048f 83C101   		addl	$1, %ecx
+ 554              	LVL38:
+ 104:./Source/makesquare.c ****                     picture.data[i * picture.width.value + j] = colors[0];
+ 555              		.loc 1 104 0
+ 556 0492 881438   		movb	%dl, (%eax,%edi)
+ 102:./Source/makesquare.c ****             for(j = j_base;j < j_base + s_width;j++) /* Square width = s_width */
+ 557              		.loc 1 102 0
+ 558 0495 89F0     		movl	%esi, %eax
+ 559 0497 0345EC   		addl	-20(%ebp), %eax
+ 560 049a 39C8     		cmpl	%ecx, %eax
+ 561 049c 7654     		jbe	L42
+ 562              	LVL39:
+ 563              	L45:
+ 103:./Source/makesquare.c ****                 if(picture.color_mode == MODE_BLACKWHITE) /* Black and white has one byte per pixel
+ 564              		.loc 1 103 0
+ 565 049e 807DC900 		cmpb	$0, -55(%ebp)
+ 566 04a2 74DC     		je	L51
+ 107:./Source/makesquare.c ****                     picture.data[i * picture.width.value * 3 + j * 3] = colors[0];
+ 567              		.loc 1 107 0
+ 568 04a4 89D8     		movl	%ebx, %eax
+ 569 04a6 0FB655AF 		movzbl	-81(%ebp), %edx
+ 570 04aa 0FAF45D4 		imull	-44(%ebp), %eax
+ 571 04ae 8B7DD8   		movl	-40(%ebp), %edi
+ 572 04b1 8D0401   		leal	(%ecx,%eax), %eax
+ 573 04b4 8D0440   		leal	(%eax,%eax,2), %eax
+ 574 04b7 881438   		movb	%dl, (%eax,%edi)
+ 108:./Source/makesquare.c ****                     picture.data[i * picture.width.value * 3 + j * 3 + 1] = colors[1];
+ 575              		.loc 1 108 0
+ 576 04ba 89D8     		movl	%ebx, %eax
+ 577 04bc 0FB655BA 		movzbl	-70(%ebp), %edx
+ 578 04c0 0FAF45D4 		imull	-44(%ebp), %eax
+ 579 04c4 8D0401   		leal	(%ecx,%eax), %eax
+ 580 04c7 8D0440   		leal	(%eax,%eax,2), %eax
+ 581 04ca 0345D8   		addl	-40(%ebp), %eax
+ 582 04cd 885001   		movb	%dl, 1(%eax)
+ 109:./Source/makesquare.c ****                     picture.data[i * picture.width.value * 3 + j * 3 + 2] = colors[2];
+ 583              		.loc 1 109 0
+ 584 04d0 89D8     		movl	%ebx, %eax
+ 585 04d2 0FB655BB 		movzbl	-69(%ebp), %edx
+ 586 04d6 0FAF45D4 		imull	-44(%ebp), %eax
+ 587 04da 8D0401   		leal	(%ecx,%eax), %eax
+ 102:./Source/makesquare.c ****             for(j = j_base;j < j_base + s_width;j++) /* Square width = s_width */
+ 588              		.loc 1 102 0
+ 589 04dd 83C101   		addl	$1, %ecx
+ 590              	LVL40:
+ 109:./Source/makesquare.c ****                     picture.data[i * picture.width.value * 3 + j * 3 + 2] = colors[2];
+ 591              		.loc 1 109 0
+ 592 04e0 8D0440   		leal	(%eax,%eax,2), %eax
+ 593 04e3 0345D8   		addl	-40(%ebp), %eax
+ 594 04e6 885002   		movb	%dl, 2(%eax)
+ 102:./Source/makesquare.c ****             for(j = j_base;j < j_base + s_width;j++) /* Square width = s_width */
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 19
+
+
+ 595              		.loc 1 102 0
+ 596 04e9 89F0     		movl	%esi, %eax
+ 597 04eb 0345EC   		addl	-20(%ebp), %eax
+ 598 04ee 39C8     		cmpl	%ecx, %eax
+ 599 04f0 77AC     		ja	L45
+ 600              	L42:
+ 101:./Source/makesquare.c ****         for(i = i_base;i < i_base + s_height;i++) /* Square height = s_height */
+ 601              		.loc 1 101 0
+ 602 04f2 8B45BC   		movl	-68(%ebp), %eax
+ 603 04f5 83C301   		addl	$1, %ebx
+ 604 04f8 0345E8   		addl	-24(%ebp), %eax
+ 605 04fb 39D8     		cmpl	%ebx, %eax
+ 606 04fd 0F876DFF 		ja	L37
+ 606      FFFF
+ 607              	LVL41:
+ 608              	L36:
+ 609              	LBE5:
+ 114:./Source/makesquare.c ****     err = write_cs229_image(&picture,stdout);
+ 610              		.loc 1 114 0
+ 611 0503 E8000000 		call	___getreent
+ 611      00
+ 612 0508 8D7DC8   		leal	-56(%ebp), %edi
+ 613 050b 8B4008   		movl	8(%eax), %eax
+ 614 050e 893C24   		movl	%edi, (%esp)
+ 615 0511 89442404 		movl	%eax, 4(%esp)
+ 616 0515 E8000000 		call	_write_cs229_image
+ 616      00
+ 617 051a 89C2     		movl	%eax, %edx
+ 618              	LVL42:
+ 117:./Source/makesquare.c ****     if(err)
+ 619              		.loc 1 117 0
+ 620 051c 31C0     		xorl	%eax, %eax
+ 621 051e 85D2     		testl	%edx, %edx
+ 622 0520 742F     		je	L26
+ 119:./Source/makesquare.c ****         ReportError(err);
+ 623              		.loc 1 119 0
+ 624 0522 891424   		movl	%edx, (%esp)
+ 625 0525 E8000000 		call	_ReportError
+ 625      00
+ 626              	LVL43:
+ 125:./Source/makesquare.c **** }
+ 627              		.loc 1 125 0
+ 628 052a 83C468   		addl	$104, %esp
+ 119:./Source/makesquare.c ****         ReportError(err);
+ 629              		.loc 1 119 0
+ 630 052d B8010000 		movl	$1, %eax
+ 630      00
+ 125:./Source/makesquare.c **** }
+ 631              		.loc 1 125 0
+ 632 0532 59       		popl	%ecx
+ 633 0533 5B       		popl	%ebx
+ 634              	LVL44:
+ 635 0534 5E       		popl	%esi
+ 636              	LVL45:
+ 637 0535 5F       		popl	%edi
+ 638 0536 5D       		popl	%ebp
+ 639 0537 8D61FC   		leal	-4(%ecx), %esp
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 20
+
+
+ 640 053a C3       		ret
+ 641              	LVL46:
+ 642 053b 908D7426 		.p2align 4,,7
+ 642      00
+ 643              	L27:
+  68:./Source/makesquare.c ****         ReportError(INVALID_ARGUMENT);
+ 644              		.loc 1 68 0
+ 645 0540 C7042405 		movl	$5, (%esp)
+ 645      000000
+ 646 0547 E8000000 		call	_ReportError
+ 646      00
+ 647              	LVL47:
+ 648 054c B8010000 		movl	$1, %eax
+ 648      00
+ 649              	LVL48:
+ 650              	L26:
+ 125:./Source/makesquare.c **** }
+ 651              		.loc 1 125 0
+ 652 0551 83C468   		addl	$104, %esp
+ 653 0554 59       		popl	%ecx
+ 654 0555 5B       		popl	%ebx
+ 655              	LVL49:
+ 656 0556 5E       		popl	%esi
+ 657              	LVL50:
+ 658 0557 5F       		popl	%edi
+ 659 0558 5D       		popl	%ebp
+ 660 0559 8D61FC   		leal	-4(%ecx), %esp
+ 661 055c C3       		ret
+ 662              	LVL51:
+ 663              	L48:
+  61:./Source/makesquare.c ****         ReportError(err);
+ 664              		.loc 1 61 0
+ 665 055d 890424   		movl	%eax, (%esp)
+ 666 0560 E8000000 		call	_ReportError
+ 666      00
+ 667              	LVL52:
+ 125:./Source/makesquare.c **** }
+ 668              		.loc 1 125 0
+ 669 0565 83C468   		addl	$104, %esp
+  61:./Source/makesquare.c ****         ReportError(err);
+ 670              		.loc 1 61 0
+ 671 0568 B8010000 		movl	$1, %eax
+ 671      00
+ 125:./Source/makesquare.c **** }
+ 672              		.loc 1 125 0
+ 673 056d 59       		popl	%ecx
+ 674 056e 5B       		popl	%ebx
+ 675              	LVL53:
+ 676 056f 5E       		popl	%esi
+ 677              	LVL54:
+ 678 0570 5F       		popl	%edi
+ 679 0571 5D       		popl	%ebp
+ 680 0572 8D61FC   		leal	-4(%ecx), %esp
+ 681 0575 C3       		ret
+ 682              	LVL55:
+ 683              	L50:
+ 684              	LBB6:
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 21
+
+
+  98:./Source/makesquare.c ****         j_base = (picture.width.value >> 1) - (s_width >> 1) - (s_width & 0x1 ? (picture.width.valu
+ 685              		.loc 1 98 0
+ 686 0576 89C1     		movl	%eax, %ecx
+ 687 0578 83F101   		xorl	$1, %ecx
+ 688 057b 83E101   		andl	$1, %ecx
+ 689 057e E9CCFEFF 		jmp	L35
+ 689      FF
+ 690              	LVL56:
+ 691              	L49:
+  97:./Source/makesquare.c ****         i_base = (picture.height.value >> 1) - (s_height >> 1) - (s_height & 0x1 ? (picture.height.
+ 692              		.loc 1 97 0
+ 693 0583 89C2     		movl	%eax, %edx
+ 694 0585 83F201   		xorl	$1, %edx
+ 695 0588 83E201   		andl	$1, %edx
+ 696 058b E99FFEFF 		jmp	L33
+ 696      FF
+ 697              	LBE6:
+ 698              	LFE6:
+ 699              		.section	.debug_frame,"dr"
+ 700              	Lframe0:
+ 701 0000 10000000 		.long	LECIE0-LSCIE0
+ 702              	LSCIE0:
+ 703 0004 FFFFFFFF 		.long	0xffffffff
+ 704 0008 01       		.byte	0x1
+ 705 0009 00       		.ascii "\0"
+ 706 000a 01       		.uleb128 0x1
+ 707 000b 7C       		.sleb128 -4
+ 708 000c 08       		.byte	0x8
+ 709 000d 0C       		.byte	0xc
+ 710 000e 04       		.uleb128 0x4
+ 711 000f 04       		.uleb128 0x4
+ 712 0010 88       		.byte	0x88
+ 713 0011 01       		.uleb128 0x1
+ 714 0012 0000     		.align 4
+ 715              	LECIE0:
+ 716              	LSFDE0:
+ 717 0014 1C000000 		.long	LEFDE0-LASFDE0
+ 718              	LASFDE0:
+ 719 0018 00000000 		.secrel32	Lframe0
+ 720 001c 00000000 		.long	LFB7
+ 721 0020 5B030000 		.long	LFE7-LFB7
+ 722 0024 41       		.byte	0x4
+ 723              		.long	LCFI0-LFB7
+ 724 0025 0E       		.byte	0xe
+ 725 0026 08       		.uleb128 0x8
+ 726 0027 85       		.byte	0x85
+ 727 0028 02       		.uleb128 0x2
+ 728 0029 42       		.byte	0x4
+ 729              		.long	LCFI1-LCFI0
+ 730 002a 0D       		.byte	0xd
+ 731 002b 05       		.uleb128 0x5
+ 732 002c 46       		.byte	0x4
+ 733              		.long	LCFI3-LCFI1
+ 734 002d 83       		.byte	0x83
+ 735 002e 05       		.uleb128 0x5
+ 736 002f 49       		.byte	0x4
+ 737              		.long	LCFI5-LCFI3
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 22
+
+
+ 738 0030 87       		.byte	0x87
+ 739 0031 03       		.uleb128 0x3
+ 740 0032 86       		.byte	0x86
+ 741 0033 04       		.uleb128 0x4
+ 742              		.align 4
+ 743              	LEFDE0:
+ 744              	LSFDE2:
+ 745 0034 28000000 		.long	LEFDE2-LASFDE2
+ 746              	LASFDE2:
+ 747 0038 00000000 		.secrel32	Lframe0
+ 748 003c 60030000 		.long	LFB6
+ 749 0040 30020000 		.long	LFE6-LFB6
+ 750 0044 44       		.byte	0x4
+ 751              		.long	LCFI6-LFB6
+ 752 0045 0C       		.byte	0xc
+ 753 0046 01       		.uleb128 0x1
+ 754 0047 00       		.uleb128 0x0
+ 755 0048 09       		.byte	0x9
+ 756 0049 04       		.uleb128 0x4
+ 757 004a 01       		.uleb128 0x1
+ 758 004b 46       		.byte	0x4
+ 759              		.long	LCFI7-LCFI6
+ 760 004c 0C       		.byte	0xc
+ 761 004d 04       		.uleb128 0x4
+ 762 004e 04       		.uleb128 0x4
+ 763 004f 41       		.byte	0x4
+ 764              		.long	LCFI8-LCFI7
+ 765 0050 0E       		.byte	0xe
+ 766 0051 08       		.uleb128 0x8
+ 767 0052 85       		.byte	0x85
+ 768 0053 02       		.uleb128 0x2
+ 769 0054 42       		.byte	0x4
+ 770              		.long	LCFI9-LCFI8
+ 771 0055 0D       		.byte	0xd
+ 772 0056 05       		.uleb128 0x5
+ 773 0057 44       		.byte	0x4
+ 774              		.long	LCFI13-LCFI9
+ 775 0058 84       		.byte	0x84
+ 776 0059 06       		.uleb128 0x6
+ 777 005a 83       		.byte	0x83
+ 778 005b 05       		.uleb128 0x5
+ 779 005c 86       		.byte	0x86
+ 780 005d 04       		.uleb128 0x4
+ 781 005e 87       		.byte	0x87
+ 782 005f 03       		.uleb128 0x3
+ 783              		.align 4
+ 784              	LEFDE2:
+ 785              		.text
+ 786              	Letext0:
+ 787              		.section	.debug_loc,"dr"
+ 788              	Ldebug_loc0:
+ 789              	LLST0:
+ 790 0000 00000000 		.long	LFB7-Ltext0
+ 791 0004 01000000 		.long	LCFI0-Ltext0
+ 792 0008 0200     		.word	0x2
+ 793 000a 74       		.byte	0x74
+ 794 000b 04       		.sleb128 4
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 23
+
+
+ 795 000c 01000000 		.long	LCFI0-Ltext0
+ 796 0010 03000000 		.long	LCFI1-Ltext0
+ 797 0014 0200     		.word	0x2
+ 798 0016 74       		.byte	0x74
+ 799 0017 08       		.sleb128 8
+ 800 0018 03000000 		.long	LCFI1-Ltext0
+ 801 001c 5B030000 		.long	LFE7-Ltext0
+ 802 0020 0200     		.word	0x2
+ 803 0022 75       		.byte	0x75
+ 804 0023 08       		.sleb128 8
+ 805 0024 00000000 		.long	0x0
+ 806 0028 00000000 		.long	0x0
+ 807              	LLST1:
+ 808 002c 00000000 		.long	LVL0-Ltext0
+ 809 0030 1B000000 		.long	LVL1-Ltext0
+ 810 0034 0200     		.word	0x2
+ 811 0036 91       		.byte	0x91
+ 812 0037 00       		.sleb128 0
+ 813 0038 1B000000 		.long	LVL1-Ltext0
+ 814 003c 2A000000 		.long	LVL2-Ltext0
+ 815 0040 0100     		.word	0x1
+ 816 0042 53       		.byte	0x53
+ 817 0043 2A000000 		.long	LVL2-Ltext0
+ 818 0047 37000000 		.long	LVL3-Ltext0
+ 819 004b 0200     		.word	0x2
+ 820 004d 75       		.byte	0x75
+ 821 004e 08       		.sleb128 8
+ 822 004f 37000000 		.long	LVL3-Ltext0
+ 823 0053 A8000000 		.long	LVL9-Ltext0
+ 824 0057 0100     		.word	0x1
+ 825 0059 53       		.byte	0x53
+ 826 005a A8000000 		.long	LVL9-Ltext0
+ 827 005e AF010000 		.long	LVL14-Ltext0
+ 828 0062 0200     		.word	0x2
+ 829 0064 75       		.byte	0x75
+ 830 0065 08       		.sleb128 8
+ 831 0066 AF010000 		.long	LVL14-Ltext0
+ 832 006a 61020000 		.long	LVL16-Ltext0
+ 833 006e 0100     		.word	0x1
+ 834 0070 53       		.byte	0x53
+ 835 0071 61020000 		.long	LVL16-Ltext0
+ 836 0075 7A020000 		.long	LVL18-Ltext0
+ 837 0079 0200     		.word	0x2
+ 838 007b 75       		.byte	0x75
+ 839 007c 08       		.sleb128 8
+ 840 007d 7A020000 		.long	LVL18-Ltext0
+ 841 0081 E9020000 		.long	LVL19-Ltext0
+ 842 0085 0100     		.word	0x1
+ 843 0087 53       		.byte	0x53
+ 844 0088 E9020000 		.long	LVL19-Ltext0
+ 845 008c 09030000 		.long	LVL20-Ltext0
+ 846 0090 0200     		.word	0x2
+ 847 0092 75       		.byte	0x75
+ 848 0093 08       		.sleb128 8
+ 849 0094 09030000 		.long	LVL20-Ltext0
+ 850 0098 23030000 		.long	LVL21-Ltext0
+ 851 009c 0100     		.word	0x1
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 24
+
+
+ 852 009e 53       		.byte	0x53
+ 853 009f 23030000 		.long	LVL21-Ltext0
+ 854 00a3 5B030000 		.long	LFE7-Ltext0
+ 855 00a7 0200     		.word	0x2
+ 856 00a9 75       		.byte	0x75
+ 857 00aa 08       		.sleb128 8
+ 858 00ab 00000000 		.long	0x0
+ 859 00af 00000000 		.long	0x0
+ 860              	LLST2:
+ 861 00b3 00000000 		.long	LVL0-Ltext0
+ 862 00b7 4E000000 		.long	LVL4-Ltext0
+ 863 00bb 0200     		.word	0x2
+ 864 00bd 91       		.byte	0x91
+ 865 00be 04       		.sleb128 4
+ 866 00bf 4E000000 		.long	LVL4-Ltext0
+ 867 00c3 A1000000 		.long	LVL8-Ltext0
+ 868 00c7 0200     		.word	0x2
+ 869 00c9 75       		.byte	0x75
+ 870 00ca 0C       		.sleb128 12
+ 871 00cb A1000000 		.long	LVL8-Ltext0
+ 872 00cf AF010000 		.long	LVL14-Ltext0
+ 873 00d3 0200     		.word	0x2
+ 874 00d5 91       		.byte	0x91
+ 875 00d6 04       		.sleb128 4
+ 876 00d7 AF010000 		.long	LVL14-Ltext0
+ 877 00db 61020000 		.long	LVL16-Ltext0
+ 878 00df 0200     		.word	0x2
+ 879 00e1 75       		.byte	0x75
+ 880 00e2 0C       		.sleb128 12
+ 881 00e3 61020000 		.long	LVL16-Ltext0
+ 882 00e7 7A020000 		.long	LVL18-Ltext0
+ 883 00eb 0200     		.word	0x2
+ 884 00ed 91       		.byte	0x91
+ 885 00ee 04       		.sleb128 4
+ 886 00ef 7A020000 		.long	LVL18-Ltext0
+ 887 00f3 E9020000 		.long	LVL19-Ltext0
+ 888 00f7 0200     		.word	0x2
+ 889 00f9 75       		.byte	0x75
+ 890 00fa 0C       		.sleb128 12
+ 891 00fb E9020000 		.long	LVL19-Ltext0
+ 892 00ff 09030000 		.long	LVL20-Ltext0
+ 893 0103 0200     		.word	0x2
+ 894 0105 91       		.byte	0x91
+ 895 0106 04       		.sleb128 4
+ 896 0107 09030000 		.long	LVL20-Ltext0
+ 897 010b 23030000 		.long	LVL21-Ltext0
+ 898 010f 0200     		.word	0x2
+ 899 0111 75       		.byte	0x75
+ 900 0112 0C       		.sleb128 12
+ 901 0113 23030000 		.long	LVL21-Ltext0
+ 902 0117 5B030000 		.long	LFE7-Ltext0
+ 903 011b 0200     		.word	0x2
+ 904 011d 91       		.byte	0x91
+ 905 011e 04       		.sleb128 4
+ 906 011f 00000000 		.long	0x0
+ 907 0123 00000000 		.long	0x0
+ 908              	LLST3:
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 25
+
+
+ 909 0127 00000000 		.long	LVL0-Ltext0
+ 910 012b 5E000000 		.long	LVL5-Ltext0
+ 911 012f 0200     		.word	0x2
+ 912 0131 91       		.byte	0x91
+ 913 0132 08       		.sleb128 8
+ 914 0133 5E000000 		.long	LVL5-Ltext0
+ 915 0137 6A000000 		.long	LVL6-Ltext0
+ 916 013b 0200     		.word	0x2
+ 917 013d 75       		.byte	0x75
+ 918 013e 10       		.sleb128 16
+ 919 013f 6A000000 		.long	LVL6-Ltext0
+ 920 0143 95000000 		.long	LVL7-Ltext0
+ 921 0147 0200     		.word	0x2
+ 922 0149 91       		.byte	0x91
+ 923 014a 08       		.sleb128 8
+ 924 014b 95000000 		.long	LVL7-Ltext0
+ 925 014f A1000000 		.long	LVL8-Ltext0
+ 926 0153 0200     		.word	0x2
+ 927 0155 75       		.byte	0x75
+ 928 0156 10       		.sleb128 16
+ 929 0157 A1000000 		.long	LVL8-Ltext0
+ 930 015b F8000000 		.long	LVL10-Ltext0
+ 931 015f 0200     		.word	0x2
+ 932 0161 91       		.byte	0x91
+ 933 0162 08       		.sleb128 8
+ 934 0163 F8000000 		.long	LVL10-Ltext0
+ 935 0167 A5010000 		.long	LVL13-Ltext0
+ 936 016b 0200     		.word	0x2
+ 937 016d 75       		.byte	0x75
+ 938 016e 10       		.sleb128 16
+ 939 016f A5010000 		.long	LVL13-Ltext0
+ 940 0173 AF010000 		.long	LVL14-Ltext0
+ 941 0177 0200     		.word	0x2
+ 942 0179 91       		.byte	0x91
+ 943 017a 08       		.sleb128 8
+ 944 017b AF010000 		.long	LVL14-Ltext0
+ 945 017f 6B020000 		.long	LVL17-Ltext0
+ 946 0183 0200     		.word	0x2
+ 947 0185 75       		.byte	0x75
+ 948 0186 10       		.sleb128 16
+ 949 0187 6B020000 		.long	LVL17-Ltext0
+ 950 018b 7A020000 		.long	LVL18-Ltext0
+ 951 018f 0200     		.word	0x2
+ 952 0191 91       		.byte	0x91
+ 953 0192 08       		.sleb128 8
+ 954 0193 7A020000 		.long	LVL18-Ltext0
+ 955 0197 E9020000 		.long	LVL19-Ltext0
+ 956 019b 0200     		.word	0x2
+ 957 019d 75       		.byte	0x75
+ 958 019e 10       		.sleb128 16
+ 959 019f E9020000 		.long	LVL19-Ltext0
+ 960 01a3 09030000 		.long	LVL20-Ltext0
+ 961 01a7 0200     		.word	0x2
+ 962 01a9 91       		.byte	0x91
+ 963 01aa 08       		.sleb128 8
+ 964 01ab 09030000 		.long	LVL20-Ltext0
+ 965 01af 5B030000 		.long	LFE7-Ltext0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 26
+
+
+ 966 01b3 0200     		.word	0x2
+ 967 01b5 75       		.byte	0x75
+ 968 01b6 10       		.sleb128 16
+ 969 01b7 00000000 		.long	0x0
+ 970 01bb 00000000 		.long	0x0
+ 971              	LLST4:
+ 972 01bf 00000000 		.long	LVL0-Ltext0
+ 973 01c3 93010000 		.long	LVL12-Ltext0
+ 974 01c7 0200     		.word	0x2
+ 975 01c9 91       		.byte	0x91
+ 976 01ca 0C       		.sleb128 12
+ 977 01cb 93010000 		.long	LVL12-Ltext0
+ 978 01cf A5010000 		.long	LVL13-Ltext0
+ 979 01d3 0200     		.word	0x2
+ 980 01d5 75       		.byte	0x75
+ 981 01d6 14       		.sleb128 20
+ 982 01d7 A5010000 		.long	LVL13-Ltext0
+ 983 01db 4B030000 		.long	LVL22-Ltext0
+ 984 01df 0200     		.word	0x2
+ 985 01e1 91       		.byte	0x91
+ 986 01e2 0C       		.sleb128 12
+ 987 01e3 4B030000 		.long	LVL22-Ltext0
+ 988 01e7 5B030000 		.long	LFE7-Ltext0
+ 989 01eb 0200     		.word	0x2
+ 990 01ed 75       		.byte	0x75
+ 991 01ee 14       		.sleb128 20
+ 992 01ef 00000000 		.long	0x0
+ 993 01f3 00000000 		.long	0x0
+ 994              	LLST5:
+ 995 01f7 00000000 		.long	LVL0-Ltext0
+ 996 01fb 3B010000 		.long	LVL11-Ltext0
+ 997 01ff 0200     		.word	0x2
+ 998 0201 91       		.byte	0x91
+ 999 0202 10       		.sleb128 16
+ 1000 0203 3B010000 		.long	LVL11-Ltext0
+ 1001 0207 A5010000 		.long	LVL13-Ltext0
+ 1002 020b 0200     		.word	0x2
+ 1003 020d 75       		.byte	0x75
+ 1004 020e 18       		.sleb128 24
+ 1005 020f A5010000 		.long	LVL13-Ltext0
+ 1006 0213 4B020000 		.long	LVL15-Ltext0
+ 1007 0217 0200     		.word	0x2
+ 1008 0219 91       		.byte	0x91
+ 1009 021a 10       		.sleb128 16
+ 1010 021b 4B020000 		.long	LVL15-Ltext0
+ 1011 021f 61020000 		.long	LVL16-Ltext0
+ 1012 0223 0200     		.word	0x2
+ 1013 0225 75       		.byte	0x75
+ 1014 0226 18       		.sleb128 24
+ 1015 0227 61020000 		.long	LVL16-Ltext0
+ 1016 022b 7A020000 		.long	LVL18-Ltext0
+ 1017 022f 0200     		.word	0x2
+ 1018 0231 91       		.byte	0x91
+ 1019 0232 10       		.sleb128 16
+ 1020 0233 7A020000 		.long	LVL18-Ltext0
+ 1021 0237 E9020000 		.long	LVL19-Ltext0
+ 1022 023b 0200     		.word	0x2
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 27
+
+
+ 1023 023d 75       		.byte	0x75
+ 1024 023e 18       		.sleb128 24
+ 1025 023f E9020000 		.long	LVL19-Ltext0
+ 1026 0243 09030000 		.long	LVL20-Ltext0
+ 1027 0247 0200     		.word	0x2
+ 1028 0249 91       		.byte	0x91
+ 1029 024a 10       		.sleb128 16
+ 1030 024b 09030000 		.long	LVL20-Ltext0
+ 1031 024f 5B030000 		.long	LFE7-Ltext0
+ 1032 0253 0200     		.word	0x2
+ 1033 0255 75       		.byte	0x75
+ 1034 0256 18       		.sleb128 24
+ 1035 0257 00000000 		.long	0x0
+ 1036 025b 00000000 		.long	0x0
+ 1037              	LLST6:
+ 1038 025f 00000000 		.long	LVL0-Ltext0
+ 1039 0263 3B010000 		.long	LVL11-Ltext0
+ 1040 0267 0200     		.word	0x2
+ 1041 0269 91       		.byte	0x91
+ 1042 026a 14       		.sleb128 20
+ 1043 026b 3B010000 		.long	LVL11-Ltext0
+ 1044 026f A5010000 		.long	LVL13-Ltext0
+ 1045 0273 0200     		.word	0x2
+ 1046 0275 75       		.byte	0x75
+ 1047 0276 1C       		.sleb128 28
+ 1048 0277 A5010000 		.long	LVL13-Ltext0
+ 1049 027b 4B020000 		.long	LVL15-Ltext0
+ 1050 027f 0200     		.word	0x2
+ 1051 0281 91       		.byte	0x91
+ 1052 0282 14       		.sleb128 20
+ 1053 0283 4B020000 		.long	LVL15-Ltext0
+ 1054 0287 61020000 		.long	LVL16-Ltext0
+ 1055 028b 0200     		.word	0x2
+ 1056 028d 75       		.byte	0x75
+ 1057 028e 1C       		.sleb128 28
+ 1058 028f 61020000 		.long	LVL16-Ltext0
+ 1059 0293 7A020000 		.long	LVL18-Ltext0
+ 1060 0297 0200     		.word	0x2
+ 1061 0299 91       		.byte	0x91
+ 1062 029a 14       		.sleb128 20
+ 1063 029b 7A020000 		.long	LVL18-Ltext0
+ 1064 029f E9020000 		.long	LVL19-Ltext0
+ 1065 02a3 0200     		.word	0x2
+ 1066 02a5 75       		.byte	0x75
+ 1067 02a6 1C       		.sleb128 28
+ 1068 02a7 E9020000 		.long	LVL19-Ltext0
+ 1069 02ab 09030000 		.long	LVL20-Ltext0
+ 1070 02af 0200     		.word	0x2
+ 1071 02b1 91       		.byte	0x91
+ 1072 02b2 14       		.sleb128 20
+ 1073 02b3 09030000 		.long	LVL20-Ltext0
+ 1074 02b7 5B030000 		.long	LFE7-Ltext0
+ 1075 02bb 0200     		.word	0x2
+ 1076 02bd 75       		.byte	0x75
+ 1077 02be 1C       		.sleb128 28
+ 1078 02bf 00000000 		.long	0x0
+ 1079 02c3 00000000 		.long	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 28
+
+
+ 1080              	LLST7:
+ 1081 02c7 60030000 		.long	LFB6-Ltext0
+ 1082 02cb 64030000 		.long	LCFI6-Ltext0
+ 1083 02cf 0200     		.word	0x2
+ 1084 02d1 74       		.byte	0x74
+ 1085 02d2 04       		.sleb128 4
+ 1086 02d3 64030000 		.long	LCFI6-Ltext0
+ 1087 02d7 6A030000 		.long	LCFI7-Ltext0
+ 1088 02db 0100     		.word	0x1
+ 1089 02dd 51       		.byte	0x51
+ 1090 02de 6A030000 		.long	LCFI7-Ltext0
+ 1091 02e2 6B030000 		.long	LCFI8-Ltext0
+ 1092 02e6 0200     		.word	0x2
+ 1093 02e8 74       		.byte	0x74
+ 1094 02e9 04       		.sleb128 4
+ 1095 02ea 6B030000 		.long	LCFI8-Ltext0
+ 1096 02ee 6D030000 		.long	LCFI9-Ltext0
+ 1097 02f2 0200     		.word	0x2
+ 1098 02f4 74       		.byte	0x74
+ 1099 02f5 08       		.sleb128 8
+ 1100 02f6 6D030000 		.long	LCFI9-Ltext0
+ 1101 02fa 90050000 		.long	LFE6-Ltext0
+ 1102 02fe 0200     		.word	0x2
+ 1103 0300 75       		.byte	0x75
+ 1104 0301 08       		.sleb128 8
+ 1105 0302 00000000 		.long	0x0
+ 1106 0306 00000000 		.long	0x0
+ 1107              	LLST8:
+ 1108 030a 60030000 		.long	LVL23-Ltext0
+ 1109 030e BE030000 		.long	LVL25-Ltext0
+ 1110 0312 0200     		.word	0x2
+ 1111 0314 71       		.byte	0x71
+ 1112 0315 00       		.sleb128 0
+ 1113 0316 BE030000 		.long	LVL25-Ltext0
+ 1114 031a 51040000 		.long	LVL36-Ltext0
+ 1115 031e 0100     		.word	0x1
+ 1116 0320 56       		.byte	0x56
+ 1117 0321 51040000 		.long	LVL36-Ltext0
+ 1118 0325 3B050000 		.long	LVL46-Ltext0
+ 1119 0329 0200     		.word	0x2
+ 1120 032b 71       		.byte	0x71
+ 1121 032c 00       		.sleb128 0
+ 1122 032d 3B050000 		.long	LVL46-Ltext0
+ 1123 0331 51050000 		.long	LVL48-Ltext0
+ 1124 0335 0100     		.word	0x1
+ 1125 0337 56       		.byte	0x56
+ 1126 0338 51050000 		.long	LVL48-Ltext0
+ 1127 033c 5D050000 		.long	LVL51-Ltext0
+ 1128 0340 0200     		.word	0x2
+ 1129 0342 71       		.byte	0x71
+ 1130 0343 00       		.sleb128 0
+ 1131 0344 5D050000 		.long	LVL51-Ltext0
+ 1132 0348 70050000 		.long	LVL54-Ltext0
+ 1133 034c 0100     		.word	0x1
+ 1134 034e 56       		.byte	0x56
+ 1135 034f 70050000 		.long	LVL54-Ltext0
+ 1136 0353 76050000 		.long	LVL55-Ltext0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 29
+
+
+ 1137 0357 0200     		.word	0x2
+ 1138 0359 71       		.byte	0x71
+ 1139 035a 00       		.sleb128 0
+ 1140 035b 76050000 		.long	LVL55-Ltext0
+ 1141 035f 90050000 		.long	LFE6-Ltext0
+ 1142 0363 0100     		.word	0x1
+ 1143 0365 56       		.byte	0x56
+ 1144 0366 00000000 		.long	0x0
+ 1145 036a 00000000 		.long	0x0
+ 1146              	LLST9:
+ 1147 036e 60030000 		.long	LVL23-Ltext0
+ 1148 0372 BE030000 		.long	LVL25-Ltext0
+ 1149 0376 0200     		.word	0x2
+ 1150 0378 71       		.byte	0x71
+ 1151 0379 04       		.sleb128 4
+ 1152 037a BE030000 		.long	LVL25-Ltext0
+ 1153 037e D8030000 		.long	LVL29-Ltext0
+ 1154 0382 0100     		.word	0x1
+ 1155 0384 53       		.byte	0x53
+ 1156 0385 D8030000 		.long	LVL29-Ltext0
+ 1157 0389 3B050000 		.long	LVL46-Ltext0
+ 1158 038d 0200     		.word	0x2
+ 1159 038f 71       		.byte	0x71
+ 1160 0390 04       		.sleb128 4
+ 1161 0391 3B050000 		.long	LVL46-Ltext0
+ 1162 0395 51050000 		.long	LVL48-Ltext0
+ 1163 0399 0100     		.word	0x1
+ 1164 039b 53       		.byte	0x53
+ 1165 039c 51050000 		.long	LVL48-Ltext0
+ 1166 03a0 5D050000 		.long	LVL51-Ltext0
+ 1167 03a4 0200     		.word	0x2
+ 1168 03a6 71       		.byte	0x71
+ 1169 03a7 04       		.sleb128 4
+ 1170 03a8 5D050000 		.long	LVL51-Ltext0
+ 1171 03ac 6F050000 		.long	LVL53-Ltext0
+ 1172 03b0 0100     		.word	0x1
+ 1173 03b2 53       		.byte	0x53
+ 1174 03b3 6F050000 		.long	LVL53-Ltext0
+ 1175 03b7 90050000 		.long	LFE6-Ltext0
+ 1176 03bb 0200     		.word	0x2
+ 1177 03bd 71       		.byte	0x71
+ 1178 03be 04       		.sleb128 4
+ 1179 03bf 00000000 		.long	0x0
+ 1180 03c3 00000000 		.long	0x0
+ 1181              	LLST10:
+ 1182 03c7 C4030000 		.long	LVL26-Ltext0
+ 1183 03cb 5D050000 		.long	LVL51-Ltext0
+ 1184 03cf 0200     		.word	0x2
+ 1185 03d1 75       		.byte	0x75
+ 1186 03d2 6C       		.sleb128 -20
+ 1187 03d3 76050000 		.long	LVL55-Ltext0
+ 1188 03d7 90050000 		.long	LFE6-Ltext0
+ 1189 03db 0200     		.word	0x2
+ 1190 03dd 75       		.byte	0x75
+ 1191 03de 6C       		.sleb128 -20
+ 1192 03df 00000000 		.long	0x0
+ 1193 03e3 00000000 		.long	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 30
+
+
+ 1194              	LLST11:
+ 1195 03e7 D0030000 		.long	LVL28-Ltext0
+ 1196 03eb 5D050000 		.long	LVL51-Ltext0
+ 1197 03ef 0200     		.word	0x2
+ 1198 03f1 75       		.byte	0x75
+ 1199 03f2 68       		.sleb128 -24
+ 1200 03f3 76050000 		.long	LVL55-Ltext0
+ 1201 03f7 90050000 		.long	LFE6-Ltext0
+ 1202 03fb 0200     		.word	0x2
+ 1203 03fd 75       		.byte	0x75
+ 1204 03fe 68       		.sleb128 -24
+ 1205 03ff 00000000 		.long	0x0
+ 1206 0403 00000000 		.long	0x0
+ 1207              	LLST12:
+ 1208 0407 0B040000 		.long	LVL30-Ltext0
+ 1209 040b 23040000 		.long	LVL32-Ltext0
+ 1210 040f 0100     		.word	0x1
+ 1211 0411 52       		.byte	0x52
+ 1212 0412 36040000 		.long	LVL33-Ltext0
+ 1213 0416 69040000 		.long	LVL37-Ltext0
+ 1214 041a 0300     		.word	0x3
+ 1215 041c 75       		.byte	0x75
+ 1216 041d BC7F     		.sleb128 -68
+ 1217 041f 69040000 		.long	LVL37-Ltext0
+ 1218 0423 34050000 		.long	LVL44-Ltext0
+ 1219 0427 0100     		.word	0x1
+ 1220 0429 53       		.byte	0x53
+ 1221 042a 34050000 		.long	LVL44-Ltext0
+ 1222 042e 3B050000 		.long	LVL46-Ltext0
+ 1223 0432 0300     		.word	0x3
+ 1224 0434 75       		.byte	0x75
+ 1225 0435 BC7F     		.sleb128 -68
+ 1226 0437 51050000 		.long	LVL48-Ltext0
+ 1227 043b 56050000 		.long	LVL49-Ltext0
+ 1228 043f 0100     		.word	0x1
+ 1229 0441 53       		.byte	0x53
+ 1230 0442 56050000 		.long	LVL49-Ltext0
+ 1231 0446 5D050000 		.long	LVL51-Ltext0
+ 1232 044a 0300     		.word	0x3
+ 1233 044c 75       		.byte	0x75
+ 1234 044d BC7F     		.sleb128 -68
+ 1235 044f 76050000 		.long	LVL55-Ltext0
+ 1236 0453 83050000 		.long	LVL56-Ltext0
+ 1237 0457 0300     		.word	0x3
+ 1238 0459 75       		.byte	0x75
+ 1239 045a BC7F     		.sleb128 -68
+ 1240 045c 00000000 		.long	0x0
+ 1241 0460 00000000 		.long	0x0
+ 1242              	LLST13:
+ 1243 0464 51040000 		.long	LVL36-Ltext0
+ 1244 0468 92040000 		.long	LVL38-Ltext0
+ 1245 046c 0100     		.word	0x1
+ 1246 046e 56       		.byte	0x56
+ 1247 046f 92040000 		.long	LVL38-Ltext0
+ 1248 0473 9E040000 		.long	LVL39-Ltext0
+ 1249 0477 0100     		.word	0x1
+ 1250 0479 51       		.byte	0x51
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 31
+
+
+ 1251 047a 9E040000 		.long	LVL39-Ltext0
+ 1252 047e E0040000 		.long	LVL40-Ltext0
+ 1253 0482 0100     		.word	0x1
+ 1254 0484 56       		.byte	0x56
+ 1255 0485 E0040000 		.long	LVL40-Ltext0
+ 1256 0489 03050000 		.long	LVL41-Ltext0
+ 1257 048d 0100     		.word	0x1
+ 1258 048f 51       		.byte	0x51
+ 1259 0490 03050000 		.long	LVL41-Ltext0
+ 1260 0494 35050000 		.long	LVL45-Ltext0
+ 1261 0498 0100     		.word	0x1
+ 1262 049a 56       		.byte	0x56
+ 1263 049b 51050000 		.long	LVL48-Ltext0
+ 1264 049f 57050000 		.long	LVL50-Ltext0
+ 1265 04a3 0100     		.word	0x1
+ 1266 04a5 56       		.byte	0x56
+ 1267 04a6 00000000 		.long	0x0
+ 1268 04aa 00000000 		.long	0x0
+ 1269              	LLST14:
+ 1270 04ae D8030000 		.long	LVL29-Ltext0
+ 1271 04b2 21040000 		.long	LVL31-Ltext0
+ 1272 04b6 0100     		.word	0x1
+ 1273 04b8 53       		.byte	0x53
+ 1274 04b9 00000000 		.long	0x0
+ 1275 04bd 00000000 		.long	0x0
+ 1276              	LLST15:
+ 1277 04c1 B8030000 		.long	LVL24-Ltext0
+ 1278 04c5 CD030000 		.long	LVL27-Ltext0
+ 1279 04c9 0100     		.word	0x1
+ 1280 04cb 50       		.byte	0x50
+ 1281 04cc 1C050000 		.long	LVL42-Ltext0
+ 1282 04d0 2A050000 		.long	LVL43-Ltext0
+ 1283 04d4 0100     		.word	0x1
+ 1284 04d6 52       		.byte	0x52
+ 1285 04d7 3B050000 		.long	LVL46-Ltext0
+ 1286 04db 4C050000 		.long	LVL47-Ltext0
+ 1287 04df 0100     		.word	0x1
+ 1288 04e1 50       		.byte	0x50
+ 1289 04e2 51050000 		.long	LVL48-Ltext0
+ 1290 04e6 5D050000 		.long	LVL51-Ltext0
+ 1291 04ea 0100     		.word	0x1
+ 1292 04ec 52       		.byte	0x52
+ 1293 04ed 5D050000 		.long	LVL51-Ltext0
+ 1294 04f1 65050000 		.long	LVL52-Ltext0
+ 1295 04f5 0100     		.word	0x1
+ 1296 04f7 50       		.byte	0x50
+ 1297 04f8 00000000 		.long	0x0
+ 1298 04fc 00000000 		.long	0x0
+ 1299              		.file 2 "./Source/../Headers/CS229Image.h"
+ 1300              		.section	.debug_info,"dr"
+ 1301 0000 D2040000 		.long	0x4d2
+ 1302 0004 0200     		.word	0x2
+ 1303 0006 00000000 		.secrel32	Ldebug_abbrev0
+ 1304 000a 04       		.byte	0x4
+ 1305 000b 01       		.uleb128 0x1
+ 1306 000c 474E5520 		.ascii "GNU C 4.3.4 20090804 (release) 1\0"
+ 1306      4320342E 
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 32
+
+
+ 1306      332E3420 
+ 1306      32303039 
+ 1306      30383034 
+ 1307 002d 01       		.byte	0x1
+ 1308 002e 2E2F536F 		.ascii "./Source/makesquare.c\0"
+ 1308      75726365 
+ 1308      2F6D616B 
+ 1308      65737175 
+ 1308      6172652E 
+ 1309 0044 2F637967 		.ascii "/cygdrive/c/Users/The Science Guy/Documents/NetBeansProjects/C Project\0"
+ 1309      64726976 
+ 1309      652F632F 
+ 1309      55736572 
+ 1309      732F5468 
+ 1310 008b 00000000 		.long	Ltext0
+ 1311 008f 90050000 		.long	Letext0
+ 1312 0093 00000000 		.secrel32	Ldebug_line0
+ 1313 0097 02       		.uleb128 0x2
+ 1314 0098 04       		.byte	0x4
+ 1315 0099 07       		.byte	0x7
+ 1316 009a 756E7369 		.ascii "unsigned int\0"
+ 1316      676E6564 
+ 1316      20696E74 
+ 1316      00
+ 1317 00a7 02       		.uleb128 0x2
+ 1318 00a8 02       		.byte	0x2
+ 1319 00a9 07       		.byte	0x7
+ 1320 00aa 73686F72 		.ascii "short unsigned int\0"
+ 1320      7420756E 
+ 1320      7369676E 
+ 1320      65642069 
+ 1320      6E7400
+ 1321 00bd 02       		.uleb128 0x2
+ 1322 00be 01       		.byte	0x1
+ 1323 00bf 06       		.byte	0x6
+ 1324 00c0 7369676E 		.ascii "signed char\0"
+ 1324      65642063 
+ 1324      68617200 
+ 1325 00cc 02       		.uleb128 0x2
+ 1326 00cd 01       		.byte	0x1
+ 1327 00ce 08       		.byte	0x8
+ 1328 00cf 756E7369 		.ascii "unsigned char\0"
+ 1328      676E6564 
+ 1328      20636861 
+ 1328      7200
+ 1329 00dd 02       		.uleb128 0x2
+ 1330 00de 02       		.byte	0x2
+ 1331 00df 05       		.byte	0x5
+ 1332 00e0 73686F72 		.ascii "short int\0"
+ 1332      7420696E 
+ 1332      7400
+ 1333 00ea 02       		.uleb128 0x2
+ 1334 00eb 04       		.byte	0x4
+ 1335 00ec 05       		.byte	0x5
+ 1336 00ed 696E7400 		.ascii "int\0"
+ 1337 00f1 02       		.uleb128 0x2
+ 1338 00f2 08       		.byte	0x8
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 33
+
+
+ 1339 00f3 05       		.byte	0x5
+ 1340 00f4 6C6F6E67 		.ascii "long long int\0"
+ 1340      206C6F6E 
+ 1340      6720696E 
+ 1340      7400
+ 1341 0102 02       		.uleb128 0x2
+ 1342 0103 08       		.byte	0x8
+ 1343 0104 07       		.byte	0x7
+ 1344 0105 6C6F6E67 		.ascii "long long unsigned int\0"
+ 1344      206C6F6E 
+ 1344      6720756E 
+ 1344      7369676E 
+ 1344      65642069 
+ 1345 011c 02       		.uleb128 0x2
+ 1346 011d 04       		.byte	0x4
+ 1347 011e 05       		.byte	0x5
+ 1348 011f 6C6F6E67 		.ascii "long int\0"
+ 1348      20696E74 
+ 1348      00
+ 1349 0128 03       		.uleb128 0x3
+ 1350 0129 04       		.byte	0x4
+ 1351 012a 07       		.byte	0x7
+ 1352 012b 02       		.uleb128 0x2
+ 1353 012c 04       		.byte	0x4
+ 1354 012d 07       		.byte	0x7
+ 1355 012e 6C6F6E67 		.ascii "long unsigned int\0"
+ 1355      20756E73 
+ 1355      69676E65 
+ 1355      6420696E 
+ 1355      7400
+ 1356 0140 04       		.uleb128 0x4
+ 1357 0141 04       		.byte	0x4
+ 1358 0142 CC000000 		.long	0xcc
+ 1359 0146 04       		.uleb128 0x4
+ 1360 0147 04       		.byte	0x4
+ 1361 0148 4C010000 		.long	0x14c
+ 1362 014c 02       		.uleb128 0x2
+ 1363 014d 01       		.byte	0x1
+ 1364 014e 06       		.byte	0x6
+ 1365 014f 63686172 		.ascii "char\0"
+ 1365      00
+ 1366 0154 05       		.uleb128 0x5
+ 1367 0155 CC000000 		.long	0xcc
+ 1368 0159 64010000 		.long	0x164
+ 1369 015d 06       		.uleb128 0x6
+ 1370 015e 28010000 		.long	0x128
+ 1371 0162 02       		.byte	0x2
+ 1372 0163 00       		.byte	0x0
+ 1373 0164 07       		.uleb128 0x7
+ 1374 0165 04       		.byte	0x4
+ 1375 0166 02       		.byte	0x2
+ 1376 0167 24       		.byte	0x24
+ 1377 0168 AD010000 		.long	0x1ad
+ 1378 016c 08       		.uleb128 0x8
+ 1379 016d 62797465 		.ascii "byte1\0"
+ 1379      3100
+ 1380 0173 02       		.byte	0x2
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 34
+
+
+ 1381 0174 25       		.byte	0x25
+ 1382 0175 CC000000 		.long	0xcc
+ 1383 0179 02       		.byte	0x2
+ 1384 017a 23       		.byte	0x23
+ 1385 017b 00       		.uleb128 0x0
+ 1386 017c 08       		.uleb128 0x8
+ 1387 017d 62797465 		.ascii "byte2\0"
+ 1387      3200
+ 1388 0183 02       		.byte	0x2
+ 1389 0184 26       		.byte	0x26
+ 1390 0185 CC000000 		.long	0xcc
+ 1391 0189 02       		.byte	0x2
+ 1392 018a 23       		.byte	0x23
+ 1393 018b 01       		.uleb128 0x1
+ 1394 018c 08       		.uleb128 0x8
+ 1395 018d 62797465 		.ascii "byte3\0"
+ 1395      3300
+ 1396 0193 02       		.byte	0x2
+ 1397 0194 27       		.byte	0x27
+ 1398 0195 CC000000 		.long	0xcc
+ 1399 0199 02       		.byte	0x2
+ 1400 019a 23       		.byte	0x23
+ 1401 019b 02       		.uleb128 0x2
+ 1402 019c 08       		.uleb128 0x8
+ 1403 019d 62797465 		.ascii "byte4\0"
+ 1403      3400
+ 1404 01a3 02       		.byte	0x2
+ 1405 01a4 28       		.byte	0x28
+ 1406 01a5 CC000000 		.long	0xcc
+ 1407 01a9 02       		.byte	0x2
+ 1408 01aa 23       		.byte	0x23
+ 1409 01ab 03       		.uleb128 0x3
+ 1410 01ac 00       		.byte	0x0
+ 1411 01ad 09       		.uleb128 0x9
+ 1412 01ae 63733232 		.ascii "cs229dimension\0"
+ 1412      3964696D 
+ 1412      656E7369 
+ 1412      6F6E00
+ 1413 01bd 04       		.byte	0x4
+ 1414 01be 02       		.byte	0x2
+ 1415 01bf 22       		.byte	0x22
+ 1416 01c0 DF010000 		.long	0x1df
+ 1417 01c4 0A       		.uleb128 0xa
+ 1418 01c5 62797465 		.ascii "bytes\0"
+ 1418      7300
+ 1419 01cb 02       		.byte	0x2
+ 1420 01cc 29       		.byte	0x29
+ 1421 01cd 64010000 		.long	0x164
+ 1422 01d1 0A       		.uleb128 0xa
+ 1423 01d2 76616C75 		.ascii "value\0"
+ 1423      6500
+ 1424 01d8 02       		.byte	0x2
+ 1425 01d9 2B       		.byte	0x2b
+ 1426 01da 97000000 		.long	0x97
+ 1427 01de 00       		.byte	0x0
+ 1428 01df 0B       		.uleb128 0xb
+ 1429 01e0 43534449 		.ascii "CSDIM\0"
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 35
+
+
+ 1429      4D00
+ 1430 01e6 02       		.byte	0x2
+ 1431 01e7 2C       		.byte	0x2c
+ 1432 01e8 AD010000 		.long	0x1ad
+ 1433 01ec 0C       		.uleb128 0xc
+ 1434 01ed 01       		.byte	0x1
+ 1435 01ee 02       		.byte	0x2
+ 1436 01ef 36       		.byte	0x36
+ 1437 01f0 2C020000 		.long	0x22c
+ 1438 01f4 0A       		.uleb128 0xa
+ 1439 01f5 7265645F 		.ascii "red_channel_size\0"
+ 1439      6368616E 
+ 1439      6E656C5F 
+ 1439      73697A65 
+ 1439      00
+ 1440 0206 02       		.byte	0x2
+ 1441 0207 37       		.byte	0x37
+ 1442 0208 CC000000 		.long	0xcc
+ 1443 020c 0A       		.uleb128 0xa
+ 1444 020d 626C6163 		.ascii "blackwhite_channel_size\0"
+ 1444      6B776869 
+ 1444      74655F63 
+ 1444      68616E6E 
+ 1444      656C5F73 
+ 1445 0225 02       		.byte	0x2
+ 1446 0226 38       		.byte	0x38
+ 1447 0227 CC000000 		.long	0xcc
+ 1448 022b 00       		.byte	0x0
+ 1449 022c 0D       		.uleb128 0xd
+ 1450 022d 63733232 		.ascii "cs229image\0"
+ 1450      39696D61 
+ 1450      676500
+ 1451 0238 14       		.byte	0x14
+ 1452 0239 02       		.byte	0x2
+ 1453 023a 30       		.byte	0x30
+ 1454 023b ED020000 		.long	0x2ed
+ 1455 023f 08       		.uleb128 0x8
+ 1456 0240 6D616769 		.ascii "magic_number\0"
+ 1456      635F6E75 
+ 1456      6D626572 
+ 1456      00
+ 1457 024d 02       		.byte	0x2
+ 1458 024e 31       		.byte	0x31
+ 1459 024f CC000000 		.long	0xcc
+ 1460 0253 02       		.byte	0x2
+ 1461 0254 23       		.byte	0x23
+ 1462 0255 00       		.uleb128 0x0
+ 1463 0256 08       		.uleb128 0x8
+ 1464 0257 636F6C6F 		.ascii "color_mode\0"
+ 1464      725F6D6F 
+ 1464      646500
+ 1465 0262 02       		.byte	0x2
+ 1466 0263 33       		.byte	0x33
+ 1467 0264 CC000000 		.long	0xcc
+ 1468 0268 02       		.byte	0x2
+ 1469 0269 23       		.byte	0x23
+ 1470 026a 01       		.uleb128 0x1
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 36
+
+
+ 1471 026b 08       		.uleb128 0x8
+ 1472 026c 66697273 		.ascii "first_channel\0"
+ 1472      745F6368 
+ 1472      616E6E65 
+ 1472      6C00
+ 1473 027a 02       		.byte	0x2
+ 1474 027b 39       		.byte	0x39
+ 1475 027c EC010000 		.long	0x1ec
+ 1476 0280 02       		.byte	0x2
+ 1477 0281 23       		.byte	0x23
+ 1478 0282 02       		.uleb128 0x2
+ 1479 0283 08       		.uleb128 0x8
+ 1480 0284 67726565 		.ascii "green_channel_size\0"
+ 1480      6E5F6368 
+ 1480      616E6E65 
+ 1480      6C5F7369 
+ 1480      7A6500
+ 1481 0297 02       		.byte	0x2
+ 1482 0298 3A       		.byte	0x3a
+ 1483 0299 CC000000 		.long	0xcc
+ 1484 029d 02       		.byte	0x2
+ 1485 029e 23       		.byte	0x23
+ 1486 029f 03       		.uleb128 0x3
+ 1487 02a0 08       		.uleb128 0x8
+ 1488 02a1 626C7565 		.ascii "blue_channel_size\0"
+ 1488      5F636861 
+ 1488      6E6E656C 
+ 1488      5F73697A 
+ 1488      6500
+ 1489 02b3 02       		.byte	0x2
+ 1490 02b4 3B       		.byte	0x3b
+ 1491 02b5 CC000000 		.long	0xcc
+ 1492 02b9 02       		.byte	0x2
+ 1493 02ba 23       		.byte	0x23
+ 1494 02bb 04       		.uleb128 0x4
+ 1495 02bc 08       		.uleb128 0x8
+ 1496 02bd 68656967 		.ascii "height\0"
+ 1496      687400
+ 1497 02c4 02       		.byte	0x2
+ 1498 02c5 3D       		.byte	0x3d
+ 1499 02c6 DF010000 		.long	0x1df
+ 1500 02ca 02       		.byte	0x2
+ 1501 02cb 23       		.byte	0x23
+ 1502 02cc 08       		.uleb128 0x8
+ 1503 02cd 08       		.uleb128 0x8
+ 1504 02ce 77696474 		.ascii "width\0"
+ 1504      6800
+ 1505 02d4 02       		.byte	0x2
+ 1506 02d5 3E       		.byte	0x3e
+ 1507 02d6 DF010000 		.long	0x1df
+ 1508 02da 02       		.byte	0x2
+ 1509 02db 23       		.byte	0x23
+ 1510 02dc 0C       		.uleb128 0xc
+ 1511 02dd 08       		.uleb128 0x8
+ 1512 02de 64617461 		.ascii "data\0"
+ 1512      00
+ 1513 02e3 02       		.byte	0x2
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 37
+
+
+ 1514 02e4 40       		.byte	0x40
+ 1515 02e5 40010000 		.long	0x140
+ 1516 02e9 02       		.byte	0x2
+ 1517 02ea 23       		.byte	0x23
+ 1518 02eb 10       		.uleb128 0x10
+ 1519 02ec 00       		.byte	0x0
+ 1520 02ed 0B       		.uleb128 0xb
+ 1521 02ee 43535049 		.ascii "CSPIC\0"
+ 1521      4300
+ 1522 02f4 02       		.byte	0x2
+ 1523 02f5 41       		.byte	0x41
+ 1524 02f6 2C020000 		.long	0x22c
+ 1525 02fa 0B       		.uleb128 0xb
+ 1526 02fb 50435350 		.ascii "PCSPIC\0"
+ 1526      494300
+ 1527 0302 02       		.byte	0x2
+ 1528 0303 41       		.byte	0x41
+ 1529 0304 08030000 		.long	0x308
+ 1530 0308 04       		.uleb128 0x4
+ 1531 0309 04       		.byte	0x4
+ 1532 030a 2C020000 		.long	0x22c
+ 1533 030e 0E       		.uleb128 0xe
+ 1534 030f 01       		.byte	0x1
+ 1535 0310 72656164 		.ascii "read_arguments\0"
+ 1535      5F617267 
+ 1535      756D656E 
+ 1535      747300
+ 1536 031f 01       		.byte	0x1
+ 1537 0320 87       		.byte	0x87
+ 1538 0321 01       		.byte	0x1
+ 1539 0322 97000000 		.long	0x97
+ 1540 0326 00000000 		.long	LFB7
+ 1541 032a 5B030000 		.long	LFE7
+ 1542 032e 00000000 		.secrel32	LLST0
+ 1543 0332 BC030000 		.long	0x3bc
+ 1544 0336 0F       		.uleb128 0xf
+ 1545 0337 61726763 		.ascii "argc\0"
+ 1545      00
+ 1546 033c 01       		.byte	0x1
+ 1547 033d 86       		.byte	0x86
+ 1548 033e 97000000 		.long	0x97
+ 1549 0342 2C000000 		.secrel32	LLST1
+ 1550 0346 0F       		.uleb128 0xf
+ 1551 0347 61726776 		.ascii "argv\0"
+ 1551      00
+ 1552 034c 01       		.byte	0x1
+ 1553 034d 86       		.byte	0x86
+ 1554 034e BC030000 		.long	0x3bc
+ 1555 0352 B3000000 		.secrel32	LLST2
+ 1556 0356 0F       		.uleb128 0xf
+ 1557 0357 70696374 		.ascii "picture\0"
+ 1557      75726500 
+ 1558 035f 01       		.byte	0x1
+ 1559 0360 86       		.byte	0x86
+ 1560 0361 FA020000 		.long	0x2fa
+ 1561 0365 27010000 		.secrel32	LLST3
+ 1562 0369 0F       		.uleb128 0xf
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 38
+
+
+ 1563 036a 636F6C6F 		.ascii "color\0"
+ 1563      7200
+ 1564 0370 01       		.byte	0x1
+ 1565 0371 86       		.byte	0x86
+ 1566 0372 C2030000 		.long	0x3c2
+ 1567 0376 BF010000 		.secrel32	LLST4
+ 1568 037a 0F       		.uleb128 0xf
+ 1569 037b 735F7769 		.ascii "s_width\0"
+ 1569      64746800 
+ 1570 0383 01       		.byte	0x1
+ 1571 0384 86       		.byte	0x86
+ 1572 0385 C2030000 		.long	0x3c2
+ 1573 0389 F7010000 		.secrel32	LLST5
+ 1574 038d 10       		.uleb128 0x10
+ 1575 038e 00000000 		.secrel32	LASF0
+ 1576 0392 01       		.byte	0x1
+ 1577 0393 86       		.byte	0x86
+ 1578 0394 C2030000 		.long	0x3c2
+ 1579 0398 5F020000 		.secrel32	LLST6
+ 1580 039c 11       		.uleb128 0x11
+ 1581 039d 65727200 		.ascii "err\0"
+ 1582 03a1 01       		.byte	0x1
+ 1583 03a2 89       		.byte	0x89
+ 1584 03a3 97000000 		.long	0x97
+ 1585 03a7 12       		.uleb128 0x12
+ 1586 03a8 00000000 		.secrel32	Ldebug_ranges0+0x0
+ 1587 03ac 13       		.uleb128 0x13
+ 1588 03ad 636D6400 		.ascii "cmd\0"
+ 1589 03b1 01       		.byte	0x1
+ 1590 03b2 90       		.byte	0x90
+ 1591 03b3 C8030000 		.long	0x3c8
+ 1592 03b7 02       		.byte	0x2
+ 1593 03b8 91       		.byte	0x91
+ 1594 03b9 5C       		.sleb128 -36
+ 1595 03ba 00       		.byte	0x0
+ 1596 03bb 00       		.byte	0x0
+ 1597 03bc 04       		.uleb128 0x4
+ 1598 03bd 04       		.byte	0x4
+ 1599 03be 40010000 		.long	0x140
+ 1600 03c2 04       		.uleb128 0x4
+ 1601 03c3 04       		.byte	0x4
+ 1602 03c4 97000000 		.long	0x97
+ 1603 03c8 05       		.uleb128 0x5
+ 1604 03c9 CC000000 		.long	0xcc
+ 1605 03cd D8030000 		.long	0x3d8
+ 1606 03d1 06       		.uleb128 0x6
+ 1607 03d2 28010000 		.long	0x128
+ 1608 03d6 0F       		.byte	0xf
+ 1609 03d7 00       		.byte	0x0
+ 1610 03d8 0E       		.uleb128 0xe
+ 1611 03d9 01       		.byte	0x1
+ 1612 03da 6D61696E 		.ascii "main\0"
+ 1612      00
+ 1613 03df 01       		.byte	0x1
+ 1614 03e0 25       		.byte	0x25
+ 1615 03e1 01       		.byte	0x1
+ 1616 03e2 EA000000 		.long	0xea
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 39
+
+
+ 1617 03e6 60030000 		.long	LFB6
+ 1618 03ea 90050000 		.long	LFE6
+ 1619 03ee C7020000 		.secrel32	LLST7
+ 1620 03f2 C3040000 		.long	0x4c3
+ 1621 03f6 0F       		.uleb128 0xf
+ 1622 03f7 61726763 		.ascii "argc\0"
+ 1622      00
+ 1623 03fc 01       		.byte	0x1
+ 1624 03fd 24       		.byte	0x24
+ 1625 03fe EA000000 		.long	0xea
+ 1626 0402 0A030000 		.secrel32	LLST8
+ 1627 0406 0F       		.uleb128 0xf
+ 1628 0407 61726776 		.ascii "argv\0"
+ 1628      00
+ 1629 040c 01       		.byte	0x1
+ 1630 040d 24       		.byte	0x24
+ 1631 040e C3040000 		.long	0x4c3
+ 1632 0412 6E030000 		.secrel32	LLST9
+ 1633 0416 14       		.uleb128 0x14
+ 1634 0417 735F7769 		.ascii "s_width\0"
+ 1634      64746800 
+ 1635 041f 01       		.byte	0x1
+ 1636 0420 27       		.byte	0x27
+ 1637 0421 97000000 		.long	0x97
+ 1638 0425 C7030000 		.secrel32	LLST10
+ 1639 0429 15       		.uleb128 0x15
+ 1640 042a 00000000 		.secrel32	LASF0
+ 1641 042e 01       		.byte	0x1
+ 1642 042f 28       		.byte	0x28
+ 1643 0430 97000000 		.long	0x97
+ 1644 0434 E7030000 		.secrel32	LLST11
+ 1645 0438 11       		.uleb128 0x11
+ 1646 0439 636F6C6F 		.ascii "colors\0"
+ 1646      727300
+ 1647 0440 01       		.byte	0x1
+ 1648 0441 29       		.byte	0x29
+ 1649 0442 54010000 		.long	0x154
+ 1650 0446 13       		.uleb128 0x13
+ 1651 0447 636F6C6F 		.ascii "color\0"
+ 1651      7200
+ 1652 044d 01       		.byte	0x1
+ 1653 044e 2A       		.byte	0x2a
+ 1654 044f C9040000 		.long	0x4c9
+ 1655 0453 02       		.byte	0x2
+ 1656 0454 91       		.byte	0x91
+ 1657 0455 54       		.sleb128 -44
+ 1658 0456 14       		.uleb128 0x14
+ 1659 0457 6900     		.ascii "i\0"
+ 1660 0459 01       		.byte	0x1
+ 1661 045a 2B       		.byte	0x2b
+ 1662 045b 97000000 		.long	0x97
+ 1663 045f 07040000 		.secrel32	LLST12
+ 1664 0463 14       		.uleb128 0x14
+ 1665 0464 6A00     		.ascii "j\0"
+ 1666 0466 01       		.byte	0x1
+ 1667 0467 2C       		.byte	0x2c
+ 1668 0468 97000000 		.long	0x97
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 40
+
+
+ 1669 046c 64040000 		.secrel32	LLST13
+ 1670 0470 14       		.uleb128 0x14
+ 1671 0471 6C656E00 		.ascii "len\0"
+ 1672 0475 01       		.byte	0x1
+ 1673 0476 2D       		.byte	0x2d
+ 1674 0477 97000000 		.long	0x97
+ 1675 047b AE040000 		.secrel32	LLST14
+ 1676 047f 14       		.uleb128 0x14
+ 1677 0480 65727200 		.ascii "err\0"
+ 1678 0484 01       		.byte	0x1
+ 1679 0485 2E       		.byte	0x2e
+ 1680 0486 97000000 		.long	0x97
+ 1681 048a C1040000 		.secrel32	LLST15
+ 1682 048e 13       		.uleb128 0x13
+ 1683 048f 70696374 		.ascii "picture\0"
+ 1683      75726500 
+ 1684 0497 01       		.byte	0x1
+ 1685 0498 31       		.byte	0x31
+ 1686 0499 ED020000 		.long	0x2ed
+ 1687 049d 02       		.byte	0x2
+ 1688 049e 91       		.byte	0x91
+ 1689 049f 40       		.sleb128 -64
+ 1690 04a0 12       		.uleb128 0x12
+ 1691 04a1 20000000 		.secrel32	Ldebug_ranges0+0x20
+ 1692 04a5 11       		.uleb128 0x11
+ 1693 04a6 695F6261 		.ascii "i_base\0"
+ 1693      736500
+ 1694 04ad 01       		.byte	0x1
+ 1695 04ae 5C       		.byte	0x5c
+ 1696 04af EA000000 		.long	0xea
+ 1697 04b3 11       		.uleb128 0x11
+ 1698 04b4 6A5F6261 		.ascii "j_base\0"
+ 1698      736500
+ 1699 04bb 01       		.byte	0x1
+ 1700 04bc 5D       		.byte	0x5d
+ 1701 04bd EA000000 		.long	0xea
+ 1702 04c1 00       		.byte	0x0
+ 1703 04c2 00       		.byte	0x0
+ 1704 04c3 04       		.uleb128 0x4
+ 1705 04c4 04       		.byte	0x4
+ 1706 04c5 46010000 		.long	0x146
+ 1707 04c9 16       		.uleb128 0x16
+ 1708 04ca 97000000 		.long	0x97
+ 1709 04ce 06       		.uleb128 0x6
+ 1710 04cf 28010000 		.long	0x128
+ 1711 04d3 02       		.byte	0x2
+ 1712 04d4 00       		.byte	0x0
+ 1713 04d5 00       		.byte	0x0
+ 1714              		.section	.debug_abbrev,"dr"
+ 1715 0000 01       		.uleb128 0x1
+ 1716 0001 11       		.uleb128 0x11
+ 1717 0002 01       		.byte	0x1
+ 1718 0003 25       		.uleb128 0x25
+ 1719 0004 08       		.uleb128 0x8
+ 1720 0005 13       		.uleb128 0x13
+ 1721 0006 0B       		.uleb128 0xb
+ 1722 0007 03       		.uleb128 0x3
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 41
+
+
+ 1723 0008 08       		.uleb128 0x8
+ 1724 0009 1B       		.uleb128 0x1b
+ 1725 000a 08       		.uleb128 0x8
+ 1726 000b 11       		.uleb128 0x11
+ 1727 000c 01       		.uleb128 0x1
+ 1728 000d 12       		.uleb128 0x12
+ 1729 000e 01       		.uleb128 0x1
+ 1730 000f 10       		.uleb128 0x10
+ 1731 0010 06       		.uleb128 0x6
+ 1732 0011 00       		.byte	0x0
+ 1733 0012 00       		.byte	0x0
+ 1734 0013 02       		.uleb128 0x2
+ 1735 0014 24       		.uleb128 0x24
+ 1736 0015 00       		.byte	0x0
+ 1737 0016 0B       		.uleb128 0xb
+ 1738 0017 0B       		.uleb128 0xb
+ 1739 0018 3E       		.uleb128 0x3e
+ 1740 0019 0B       		.uleb128 0xb
+ 1741 001a 03       		.uleb128 0x3
+ 1742 001b 08       		.uleb128 0x8
+ 1743 001c 00       		.byte	0x0
+ 1744 001d 00       		.byte	0x0
+ 1745 001e 03       		.uleb128 0x3
+ 1746 001f 24       		.uleb128 0x24
+ 1747 0020 00       		.byte	0x0
+ 1748 0021 0B       		.uleb128 0xb
+ 1749 0022 0B       		.uleb128 0xb
+ 1750 0023 3E       		.uleb128 0x3e
+ 1751 0024 0B       		.uleb128 0xb
+ 1752 0025 00       		.byte	0x0
+ 1753 0026 00       		.byte	0x0
+ 1754 0027 04       		.uleb128 0x4
+ 1755 0028 0F       		.uleb128 0xf
+ 1756 0029 00       		.byte	0x0
+ 1757 002a 0B       		.uleb128 0xb
+ 1758 002b 0B       		.uleb128 0xb
+ 1759 002c 49       		.uleb128 0x49
+ 1760 002d 13       		.uleb128 0x13
+ 1761 002e 00       		.byte	0x0
+ 1762 002f 00       		.byte	0x0
+ 1763 0030 05       		.uleb128 0x5
+ 1764 0031 01       		.uleb128 0x1
+ 1765 0032 01       		.byte	0x1
+ 1766 0033 49       		.uleb128 0x49
+ 1767 0034 13       		.uleb128 0x13
+ 1768 0035 01       		.uleb128 0x1
+ 1769 0036 13       		.uleb128 0x13
+ 1770 0037 00       		.byte	0x0
+ 1771 0038 00       		.byte	0x0
+ 1772 0039 06       		.uleb128 0x6
+ 1773 003a 21       		.uleb128 0x21
+ 1774 003b 00       		.byte	0x0
+ 1775 003c 49       		.uleb128 0x49
+ 1776 003d 13       		.uleb128 0x13
+ 1777 003e 2F       		.uleb128 0x2f
+ 1778 003f 0B       		.uleb128 0xb
+ 1779 0040 00       		.byte	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 42
+
+
+ 1780 0041 00       		.byte	0x0
+ 1781 0042 07       		.uleb128 0x7
+ 1782 0043 13       		.uleb128 0x13
+ 1783 0044 01       		.byte	0x1
+ 1784 0045 0B       		.uleb128 0xb
+ 1785 0046 0B       		.uleb128 0xb
+ 1786 0047 3A       		.uleb128 0x3a
+ 1787 0048 0B       		.uleb128 0xb
+ 1788 0049 3B       		.uleb128 0x3b
+ 1789 004a 0B       		.uleb128 0xb
+ 1790 004b 01       		.uleb128 0x1
+ 1791 004c 13       		.uleb128 0x13
+ 1792 004d 00       		.byte	0x0
+ 1793 004e 00       		.byte	0x0
+ 1794 004f 08       		.uleb128 0x8
+ 1795 0050 0D       		.uleb128 0xd
+ 1796 0051 00       		.byte	0x0
+ 1797 0052 03       		.uleb128 0x3
+ 1798 0053 08       		.uleb128 0x8
+ 1799 0054 3A       		.uleb128 0x3a
+ 1800 0055 0B       		.uleb128 0xb
+ 1801 0056 3B       		.uleb128 0x3b
+ 1802 0057 0B       		.uleb128 0xb
+ 1803 0058 49       		.uleb128 0x49
+ 1804 0059 13       		.uleb128 0x13
+ 1805 005a 38       		.uleb128 0x38
+ 1806 005b 0A       		.uleb128 0xa
+ 1807 005c 00       		.byte	0x0
+ 1808 005d 00       		.byte	0x0
+ 1809 005e 09       		.uleb128 0x9
+ 1810 005f 17       		.uleb128 0x17
+ 1811 0060 01       		.byte	0x1
+ 1812 0061 03       		.uleb128 0x3
+ 1813 0062 08       		.uleb128 0x8
+ 1814 0063 0B       		.uleb128 0xb
+ 1815 0064 0B       		.uleb128 0xb
+ 1816 0065 3A       		.uleb128 0x3a
+ 1817 0066 0B       		.uleb128 0xb
+ 1818 0067 3B       		.uleb128 0x3b
+ 1819 0068 0B       		.uleb128 0xb
+ 1820 0069 01       		.uleb128 0x1
+ 1821 006a 13       		.uleb128 0x13
+ 1822 006b 00       		.byte	0x0
+ 1823 006c 00       		.byte	0x0
+ 1824 006d 0A       		.uleb128 0xa
+ 1825 006e 0D       		.uleb128 0xd
+ 1826 006f 00       		.byte	0x0
+ 1827 0070 03       		.uleb128 0x3
+ 1828 0071 08       		.uleb128 0x8
+ 1829 0072 3A       		.uleb128 0x3a
+ 1830 0073 0B       		.uleb128 0xb
+ 1831 0074 3B       		.uleb128 0x3b
+ 1832 0075 0B       		.uleb128 0xb
+ 1833 0076 49       		.uleb128 0x49
+ 1834 0077 13       		.uleb128 0x13
+ 1835 0078 00       		.byte	0x0
+ 1836 0079 00       		.byte	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 43
+
+
+ 1837 007a 0B       		.uleb128 0xb
+ 1838 007b 16       		.uleb128 0x16
+ 1839 007c 00       		.byte	0x0
+ 1840 007d 03       		.uleb128 0x3
+ 1841 007e 08       		.uleb128 0x8
+ 1842 007f 3A       		.uleb128 0x3a
+ 1843 0080 0B       		.uleb128 0xb
+ 1844 0081 3B       		.uleb128 0x3b
+ 1845 0082 0B       		.uleb128 0xb
+ 1846 0083 49       		.uleb128 0x49
+ 1847 0084 13       		.uleb128 0x13
+ 1848 0085 00       		.byte	0x0
+ 1849 0086 00       		.byte	0x0
+ 1850 0087 0C       		.uleb128 0xc
+ 1851 0088 17       		.uleb128 0x17
+ 1852 0089 01       		.byte	0x1
+ 1853 008a 0B       		.uleb128 0xb
+ 1854 008b 0B       		.uleb128 0xb
+ 1855 008c 3A       		.uleb128 0x3a
+ 1856 008d 0B       		.uleb128 0xb
+ 1857 008e 3B       		.uleb128 0x3b
+ 1858 008f 0B       		.uleb128 0xb
+ 1859 0090 01       		.uleb128 0x1
+ 1860 0091 13       		.uleb128 0x13
+ 1861 0092 00       		.byte	0x0
+ 1862 0093 00       		.byte	0x0
+ 1863 0094 0D       		.uleb128 0xd
+ 1864 0095 13       		.uleb128 0x13
+ 1865 0096 01       		.byte	0x1
+ 1866 0097 03       		.uleb128 0x3
+ 1867 0098 08       		.uleb128 0x8
+ 1868 0099 0B       		.uleb128 0xb
+ 1869 009a 0B       		.uleb128 0xb
+ 1870 009b 3A       		.uleb128 0x3a
+ 1871 009c 0B       		.uleb128 0xb
+ 1872 009d 3B       		.uleb128 0x3b
+ 1873 009e 0B       		.uleb128 0xb
+ 1874 009f 01       		.uleb128 0x1
+ 1875 00a0 13       		.uleb128 0x13
+ 1876 00a1 00       		.byte	0x0
+ 1877 00a2 00       		.byte	0x0
+ 1878 00a3 0E       		.uleb128 0xe
+ 1879 00a4 2E       		.uleb128 0x2e
+ 1880 00a5 01       		.byte	0x1
+ 1881 00a6 3F       		.uleb128 0x3f
+ 1882 00a7 0C       		.uleb128 0xc
+ 1883 00a8 03       		.uleb128 0x3
+ 1884 00a9 08       		.uleb128 0x8
+ 1885 00aa 3A       		.uleb128 0x3a
+ 1886 00ab 0B       		.uleb128 0xb
+ 1887 00ac 3B       		.uleb128 0x3b
+ 1888 00ad 0B       		.uleb128 0xb
+ 1889 00ae 27       		.uleb128 0x27
+ 1890 00af 0C       		.uleb128 0xc
+ 1891 00b0 49       		.uleb128 0x49
+ 1892 00b1 13       		.uleb128 0x13
+ 1893 00b2 11       		.uleb128 0x11
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 44
+
+
+ 1894 00b3 01       		.uleb128 0x1
+ 1895 00b4 12       		.uleb128 0x12
+ 1896 00b5 01       		.uleb128 0x1
+ 1897 00b6 40       		.uleb128 0x40
+ 1898 00b7 06       		.uleb128 0x6
+ 1899 00b8 01       		.uleb128 0x1
+ 1900 00b9 13       		.uleb128 0x13
+ 1901 00ba 00       		.byte	0x0
+ 1902 00bb 00       		.byte	0x0
+ 1903 00bc 0F       		.uleb128 0xf
+ 1904 00bd 05       		.uleb128 0x5
+ 1905 00be 00       		.byte	0x0
+ 1906 00bf 03       		.uleb128 0x3
+ 1907 00c0 08       		.uleb128 0x8
+ 1908 00c1 3A       		.uleb128 0x3a
+ 1909 00c2 0B       		.uleb128 0xb
+ 1910 00c3 3B       		.uleb128 0x3b
+ 1911 00c4 0B       		.uleb128 0xb
+ 1912 00c5 49       		.uleb128 0x49
+ 1913 00c6 13       		.uleb128 0x13
+ 1914 00c7 02       		.uleb128 0x2
+ 1915 00c8 06       		.uleb128 0x6
+ 1916 00c9 00       		.byte	0x0
+ 1917 00ca 00       		.byte	0x0
+ 1918 00cb 10       		.uleb128 0x10
+ 1919 00cc 05       		.uleb128 0x5
+ 1920 00cd 00       		.byte	0x0
+ 1921 00ce 03       		.uleb128 0x3
+ 1922 00cf 0E       		.uleb128 0xe
+ 1923 00d0 3A       		.uleb128 0x3a
+ 1924 00d1 0B       		.uleb128 0xb
+ 1925 00d2 3B       		.uleb128 0x3b
+ 1926 00d3 0B       		.uleb128 0xb
+ 1927 00d4 49       		.uleb128 0x49
+ 1928 00d5 13       		.uleb128 0x13
+ 1929 00d6 02       		.uleb128 0x2
+ 1930 00d7 06       		.uleb128 0x6
+ 1931 00d8 00       		.byte	0x0
+ 1932 00d9 00       		.byte	0x0
+ 1933 00da 11       		.uleb128 0x11
+ 1934 00db 34       		.uleb128 0x34
+ 1935 00dc 00       		.byte	0x0
+ 1936 00dd 03       		.uleb128 0x3
+ 1937 00de 08       		.uleb128 0x8
+ 1938 00df 3A       		.uleb128 0x3a
+ 1939 00e0 0B       		.uleb128 0xb
+ 1940 00e1 3B       		.uleb128 0x3b
+ 1941 00e2 0B       		.uleb128 0xb
+ 1942 00e3 49       		.uleb128 0x49
+ 1943 00e4 13       		.uleb128 0x13
+ 1944 00e5 00       		.byte	0x0
+ 1945 00e6 00       		.byte	0x0
+ 1946 00e7 12       		.uleb128 0x12
+ 1947 00e8 0B       		.uleb128 0xb
+ 1948 00e9 01       		.byte	0x1
+ 1949 00ea 55       		.uleb128 0x55
+ 1950 00eb 06       		.uleb128 0x6
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 45
+
+
+ 1951 00ec 00       		.byte	0x0
+ 1952 00ed 00       		.byte	0x0
+ 1953 00ee 13       		.uleb128 0x13
+ 1954 00ef 34       		.uleb128 0x34
+ 1955 00f0 00       		.byte	0x0
+ 1956 00f1 03       		.uleb128 0x3
+ 1957 00f2 08       		.uleb128 0x8
+ 1958 00f3 3A       		.uleb128 0x3a
+ 1959 00f4 0B       		.uleb128 0xb
+ 1960 00f5 3B       		.uleb128 0x3b
+ 1961 00f6 0B       		.uleb128 0xb
+ 1962 00f7 49       		.uleb128 0x49
+ 1963 00f8 13       		.uleb128 0x13
+ 1964 00f9 02       		.uleb128 0x2
+ 1965 00fa 0A       		.uleb128 0xa
+ 1966 00fb 00       		.byte	0x0
+ 1967 00fc 00       		.byte	0x0
+ 1968 00fd 14       		.uleb128 0x14
+ 1969 00fe 34       		.uleb128 0x34
+ 1970 00ff 00       		.byte	0x0
+ 1971 0100 03       		.uleb128 0x3
+ 1972 0101 08       		.uleb128 0x8
+ 1973 0102 3A       		.uleb128 0x3a
+ 1974 0103 0B       		.uleb128 0xb
+ 1975 0104 3B       		.uleb128 0x3b
+ 1976 0105 0B       		.uleb128 0xb
+ 1977 0106 49       		.uleb128 0x49
+ 1978 0107 13       		.uleb128 0x13
+ 1979 0108 02       		.uleb128 0x2
+ 1980 0109 06       		.uleb128 0x6
+ 1981 010a 00       		.byte	0x0
+ 1982 010b 00       		.byte	0x0
+ 1983 010c 15       		.uleb128 0x15
+ 1984 010d 34       		.uleb128 0x34
+ 1985 010e 00       		.byte	0x0
+ 1986 010f 03       		.uleb128 0x3
+ 1987 0110 0E       		.uleb128 0xe
+ 1988 0111 3A       		.uleb128 0x3a
+ 1989 0112 0B       		.uleb128 0xb
+ 1990 0113 3B       		.uleb128 0x3b
+ 1991 0114 0B       		.uleb128 0xb
+ 1992 0115 49       		.uleb128 0x49
+ 1993 0116 13       		.uleb128 0x13
+ 1994 0117 02       		.uleb128 0x2
+ 1995 0118 06       		.uleb128 0x6
+ 1996 0119 00       		.byte	0x0
+ 1997 011a 00       		.byte	0x0
+ 1998 011b 16       		.uleb128 0x16
+ 1999 011c 01       		.uleb128 0x1
+ 2000 011d 01       		.byte	0x1
+ 2001 011e 49       		.uleb128 0x49
+ 2002 011f 13       		.uleb128 0x13
+ 2003 0120 00       		.byte	0x0
+ 2004 0121 00       		.byte	0x0
+ 2005 0122 00       		.byte	0x0
+ 2006              		.section	.debug_pubnames,"dr"
+ 2007 0000 2A000000 		.long	0x2a
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 46
+
+
+ 2008 0004 0200     		.word	0x2
+ 2009 0006 00000000 		.secrel32	Ldebug_info0
+ 2010 000a D6040000 		.long	0x4d6
+ 2011 000e 0E030000 		.long	0x30e
+ 2012 0012 72656164 		.ascii "read_arguments\0"
+ 2012      5F617267 
+ 2012      756D656E 
+ 2012      747300
+ 2013 0021 D8030000 		.long	0x3d8
+ 2014 0025 6D61696E 		.ascii "main\0"
+ 2014      00
+ 2015 002a 00000000 		.long	0x0
+ 2016              		.section	.debug_aranges,"dr"
+ 2017 0000 1C000000 		.long	0x1c
+ 2018 0004 0200     		.word	0x2
+ 2019 0006 00000000 		.secrel32	Ldebug_info0
+ 2020 000a 04       		.byte	0x4
+ 2021 000b 00       		.byte	0x0
+ 2022 000c 0000     		.word	0x0
+ 2023 000e 0000     		.word	0x0
+ 2024 0010 00000000 		.long	Ltext0
+ 2025 0014 90050000 		.long	Letext0-Ltext0
+ 2026 0018 00000000 		.long	0x0
+ 2027 001c 00000000 		.long	0x0
+ 2028              		.section	.debug_ranges,"dr"
+ 2029              	Ldebug_ranges0:
+ 2030 0000 A1000000 		.long	LBB2-Ltext0
+ 2031 0004 9C010000 		.long	LBE2-Ltext0
+ 2032 0008 23030000 		.long	LBB4-Ltext0
+ 2033 000c 54030000 		.long	LBE4-Ltext0
+ 2034 0010 E9020000 		.long	LBB3-Ltext0
+ 2035 0014 09030000 		.long	LBE3-Ltext0
+ 2036 0018 00000000 		.long	0x0
+ 2037 001c 00000000 		.long	0x0
+ 2038 0020 1E040000 		.long	LBB5-Ltext0
+ 2039 0024 03050000 		.long	LBE5-Ltext0
+ 2040 0028 76050000 		.long	LBB6-Ltext0
+ 2041 002c 90050000 		.long	LBE6-Ltext0
+ 2042 0030 00000000 		.long	0x0
+ 2043 0034 00000000 		.long	0x0
+ 2044              		.section	.debug_str,"dr"
+ 2045              	LASF0:
+ 2046 0000 735F6865 		.ascii "s_height\0"
+ 2046      69676874 
+ 2046      00
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s 			page 47
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 makesquare.c
+/cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s:27     .text:00000000 _read_arguments
+/cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccjB6KiP.s:382    .text:00000360 _main
+
+UNDEFINED SYMBOLS
+___main
+_malloc
+_write_cs229_image
+_ReportError
+_fscanf
+___getreent
+_isnumber
+_atoi

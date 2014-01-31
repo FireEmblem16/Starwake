@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Naomi", "Naomi\Naomi.vcxproj", "{566CA634-460F-45D2-9B94-938011D6726E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lib", "Stdlib\Stdlib.vcxproj", "{3AA1285D-4847-40D3-9888-AB79E5BE915B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hal", "Hal\Hal.vcxproj", "{B37B9CBD-3137-4613-A1FC-6DA779CF9137}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Keyboard", "Keyboard\Keyboard.vcxproj", "{6AB51A57-51DA-4E9C-B484-BF1A03193030}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Floppy Disk", "Floppy Disk\Floppy Disk.vcxproj", "{3DB6D143-6C93-4ED6-908F-25BC6DF59305}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FAT12", "FAT12\FAT12.vcxproj", "{85425D3E-1BB7-4022-92F1-198246C33E96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{566CA634-460F-45D2-9B94-938011D6726E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{566CA634-460F-45D2-9B94-938011D6726E}.Debug|Win32.Build.0 = Debug|Win32
+		{566CA634-460F-45D2-9B94-938011D6726E}.Release|Win32.ActiveCfg = Release|Win32
+		{566CA634-460F-45D2-9B94-938011D6726E}.Release|Win32.Build.0 = Release|Win32
+		{3AA1285D-4847-40D3-9888-AB79E5BE915B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3AA1285D-4847-40D3-9888-AB79E5BE915B}.Debug|Win32.Build.0 = Debug|Win32
+		{3AA1285D-4847-40D3-9888-AB79E5BE915B}.Release|Win32.ActiveCfg = Release|Win32
+		{3AA1285D-4847-40D3-9888-AB79E5BE915B}.Release|Win32.Build.0 = Release|Win32
+		{B37B9CBD-3137-4613-A1FC-6DA779CF9137}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B37B9CBD-3137-4613-A1FC-6DA779CF9137}.Debug|Win32.Build.0 = Debug|Win32
+		{B37B9CBD-3137-4613-A1FC-6DA779CF9137}.Release|Win32.ActiveCfg = Release|Win32
+		{B37B9CBD-3137-4613-A1FC-6DA779CF9137}.Release|Win32.Build.0 = Release|Win32
+		{6AB51A57-51DA-4E9C-B484-BF1A03193030}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6AB51A57-51DA-4E9C-B484-BF1A03193030}.Debug|Win32.Build.0 = Debug|Win32
+		{6AB51A57-51DA-4E9C-B484-BF1A03193030}.Release|Win32.ActiveCfg = Release|Win32
+		{6AB51A57-51DA-4E9C-B484-BF1A03193030}.Release|Win32.Build.0 = Release|Win32
+		{3DB6D143-6C93-4ED6-908F-25BC6DF59305}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3DB6D143-6C93-4ED6-908F-25BC6DF59305}.Debug|Win32.Build.0 = Debug|Win32
+		{3DB6D143-6C93-4ED6-908F-25BC6DF59305}.Release|Win32.ActiveCfg = Release|Win32
+		{3DB6D143-6C93-4ED6-908F-25BC6DF59305}.Release|Win32.Build.0 = Release|Win32
+		{85425D3E-1BB7-4022-92F1-198246C33E96}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85425D3E-1BB7-4022-92F1-198246C33E96}.Debug|Win32.Build.0 = Debug|Win32
+		{85425D3E-1BB7-4022-92F1-198246C33E96}.Release|Win32.ActiveCfg = Release|Win32
+		{85425D3E-1BB7-4022-92F1-198246C33E96}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

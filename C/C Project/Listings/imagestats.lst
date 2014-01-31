@@ -1,0 +1,3346 @@
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 1
+
+
+   1              		.file	"imagestats.c"
+   2              		.section	.debug_abbrev,"dr"
+   3              	Ldebug_abbrev0:
+   4              		.section	.debug_info,"dr"
+   5              	Ldebug_info0:
+   6              		.section	.debug_line,"dr"
+   7              	Ldebug_line0:
+   8 0000 5F010000 		.text
+   8      0200DD00 
+   8      00000101 
+   8      FB0E0D00 
+   8      01010101 
+   9              	Ltext0:
+  11              		.section .rdata,"dr"
+  12              	LC0:
+  13 0000 7200     		.ascii "r\0"
+  14              	LC1:
+  15 0002 636F6C6F 		.ascii "color\0"
+  15      7200
+  16              	LC2:
+  17 0008 626C6163 		.ascii "black and white\0"
+  17      6B20616E 
+  17      64207768 
+  17      69746500 
+  18              		.align 4
+  19              	LC3:
+  20 0018 54686520 		.ascii "The given image is a %s image.\12\0"
+  20      67697665 
+  20      6E20696D 
+  20      61676520 
+  20      69732061 
+  21              		.align 4
+  22              	LC4:
+  23 0038 54686520 		.ascii "The image is %u by %u pixels.\12\0"
+  23      696D6167 
+  23      65206973 
+  23      20257520 
+  23      62792025 
+  24              	LC5:
+  25 0057 50697865 		.ascii "Pixel channel size: %u bits\12\0"
+  25      6C206368 
+  25      616E6E65 
+  25      6C207369 
+  25      7A653A20 
+  26              	LC6:
+  27 0074 52656420 		.ascii "Red channel size: %u bits\12\0"
+  27      6368616E 
+  27      6E656C20 
+  27      73697A65 
+  27      3A202575 
+  28              	LC7:
+  29 008f 47726565 		.ascii "Green channel size: %u bits\12\0"
+  29      6E206368 
+  29      616E6E65 
+  29      6C207369 
+  29      7A653A20 
+  30              	LC8:
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 2
+
+
+  31 00ac 426C7565 		.ascii "Blue channel size: %u bits\12\0"
+  31      20636861 
+  31      6E6E656C 
+  31      2073697A 
+  31      653A2025 
+  32              		.align 4
+  33              	LC10:
+  34 00c8 50657263 		.ascii "Percent of pixels that are white: %.2f%%\12\0"
+  34      656E7420 
+  34      6F662070 
+  34      6978656C 
+  34      73207468 
+  35 00f2 0000     		.align 4
+  36              	LC11:
+  37 00f4 50657263 		.ascii "Percent of pixels that are black: %.2f%%\0"
+  37      656E7420 
+  37      6F662070 
+  37      6978656C 
+  37      73207468 
+  38              		.text
+  39              		.p2align 4,,15
+  40              	.globl _main
+  42              	_main:
+  43              	LFB6:
+  44              		.file 1 "./Source/imagestats.c"
+   1:./Source/imagestats.c **** /*
+   2:./Source/imagestats.c **** ///////////////////////////////////////////////////////////////////////////////////
+   3:./Source/imagestats.c **** ////////////////////////////////// imagestats.c ///////////////////////////////////
+   4:./Source/imagestats.c **** ///////////////////////////////////////////////////////////////////////////////////
+   5:./Source/imagestats.c **** /// Takes a cs229 image and produces statistics that are feed to stdout.        ///
+   6:./Source/imagestats.c **** /// If a file path (relative or absolute) is supplied, this program will read   ///
+   7:./Source/imagestats.c **** /// from that. Otherwise it will expect the image to be supplied from stdin.    ///
+   8:./Source/imagestats.c **** ///////////////////////////////////////////////////////////////////////////////////
+   9:./Source/imagestats.c **** ///////////////////////////////////////////////////////////////////////////////////
+  10:./Source/imagestats.c **** */
+  11:./Source/imagestats.c **** #ifndef _IMAGESTATS_C
+  12:./Source/imagestats.c **** #define _IMAGESTATS_C
+  13:./Source/imagestats.c **** 
+  14:./Source/imagestats.c **** #include <stdio.h>
+  15:./Source/imagestats.c **** #include "../Headers/Defines.h"
+  16:./Source/imagestats.c **** #include "../Headers/Error.h"
+  17:./Source/imagestats.c **** #include "../Headers/CS229Image.h"
+  18:./Source/imagestats.c **** 
+  19:./Source/imagestats.c **** /* See start of imagestats.c file.
+  20:./Source/imagestats.c ****  */
+  21:./Source/imagestats.c **** int main(int argc, char** argv)
+  22:./Source/imagestats.c **** {
+  45              		.loc 1 22 0
+  46              	LVL0:
+  47 0000 8D4C2404 		leal	4(%esp), %ecx
+  48              	LCFI0:
+  49 0004 83E4F0   		andl	$-16, %esp
+  50 0007 FF71FC   		pushl	-4(%ecx)
+  51              	LCFI1:
+  52 000a 55       		pushl	%ebp
+  53              	LCFI2:
+  54 000b 89E5     		movl	%esp, %ebp
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 3
+
+
+  55              	LCFI3:
+  56 000d 83EC48   		subl	$72, %esp
+  57              	LCFI4:
+  58 0010 894DF0   		movl	%ecx, -16(%ebp)
+  59              	LCFI5:
+  60 0013 895DF4   		movl	%ebx, -12(%ebp)
+  61              	LCFI6:
+  62 0016 8975F8   		movl	%esi, -8(%ebp)
+  63              	LCFI7:
+  64 0019 897DFC   		movl	%edi, -4(%ebp)
+  65              	LCFI8:
+  66              		.loc 1 22 0
+  67 001c 8B19     		movl	(%ecx), %ebx
+  68 001e 8B7104   		movl	4(%ecx), %esi
+  69 0021 E8000000 		call	___main
+  69      00
+  23:./Source/imagestats.c ****     /* We will store our picture here for processing. */
+  24:./Source/imagestats.c ****     CSPIC picture;
+  25:./Source/imagestats.c ****     
+  26:./Source/imagestats.c ****     /* Create for error checking */
+  27:./Source/imagestats.c ****     uint32_t err;
+  28:./Source/imagestats.c **** 
+  29:./Source/imagestats.c ****     /* If we were not given an argument we should read from stdin */
+  30:./Source/imagestats.c ****     if(argc == 1)
+  70              		.loc 1 30 0
+  71 0026 83FB01   		cmpl	$1, %ebx
+  72 0029 0F843102 		je	L22
+  72      0000
+  73              	LVL1:
+  31:./Source/imagestats.c ****     {
+  32:./Source/imagestats.c ****         err = read_cs229picture(&picture,stdin);
+  33:./Source/imagestats.c **** 
+  34:./Source/imagestats.c ****         /* If we got an error report it and return FAIL */
+  35:./Source/imagestats.c ****         if(err)
+  36:./Source/imagestats.c ****         {
+  37:./Source/imagestats.c ****             ReportError(err);
+  38:./Source/imagestats.c ****             return FAIL;
+  39:./Source/imagestats.c ****         }
+  40:./Source/imagestats.c ****     }
+  41:./Source/imagestats.c ****     else if(argc == 2) /* We were given a file to read from so do so */
+  74              		.loc 1 41 0
+  75 002f 83FB02   		cmpl	$2, %ebx
+  76 0032 742C     		je	L23
+  42:./Source/imagestats.c ****     {
+  43:./Source/imagestats.c ****         /* Create a file structure so we can read in our image */
+  44:./Source/imagestats.c ****         PFILE f;
+  45:./Source/imagestats.c **** 
+  46:./Source/imagestats.c ****         /* Open our file for reading, do so, then close the file */
+  47:./Source/imagestats.c ****         f = fopen((const char*)argv[1],"r");
+  48:./Source/imagestats.c ****         err = read_cs229picture(&picture,f);
+  49:./Source/imagestats.c ****         if(f)
+  50:./Source/imagestats.c ****             fclose(f);
+  51:./Source/imagestats.c **** 
+  52:./Source/imagestats.c ****         /* If we got an error report it and return FAIL */
+  53:./Source/imagestats.c ****         if(err)
+  54:./Source/imagestats.c ****         {
+  55:./Source/imagestats.c ****             ReportError(err);
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 4
+
+
+  56:./Source/imagestats.c ****             return FAIL;
+  57:./Source/imagestats.c ****         }
+  58:./Source/imagestats.c ****     }
+  59:./Source/imagestats.c ****     else
+  60:./Source/imagestats.c ****     {
+  61:./Source/imagestats.c ****         /* We recieved too many arguments and we don't know what to do */
+  62:./Source/imagestats.c ****         ReportError(TOO_MANY_ARGUMENTS);
+  77              		.loc 1 62 0
+  78 0034 C7042401 		movl	$1, (%esp)
+  78      000000
+  79 003b 908D7426 		.p2align 4,,5
+  79      00
+  80 0040 E8000000 		call	_ReportError
+  80      00
+  81 0045 B8010000 		movl	$1, %eax
+  81      00
+  82              	LVL2:
+  83              	L4:
+  63:./Source/imagestats.c ****         return FAIL;
+  64:./Source/imagestats.c ****     }
+  65:./Source/imagestats.c **** 
+  66:./Source/imagestats.c ****     /* Report the type of image we were asked to analyize */
+  67:./Source/imagestats.c ****     printf("The given image is a %s image.\n",picture.color_mode == MODE_BLACKWHITE ? "black and wh
+  68:./Source/imagestats.c **** 
+  69:./Source/imagestats.c ****     /* Report the size of the image */
+  70:./Source/imagestats.c ****     printf("The image is %u by %u pixels.\n",picture.width.value,picture.height.value);
+  71:./Source/imagestats.c **** 
+  72:./Source/imagestats.c ****     /* Report the bits in each relevant channel */
+  73:./Source/imagestats.c ****     if(picture.color_mode == MODE_BLACKWHITE)
+  74:./Source/imagestats.c ****         printf("Pixel channel size: %u bits\n",picture.first_channel.blackwhite_channel_size * 4);
+  75:./Source/imagestats.c ****     else
+  76:./Source/imagestats.c ****     {
+  77:./Source/imagestats.c ****         printf("Red channel size: %u bits\n",picture.first_channel.red_channel_size * 4);
+  78:./Source/imagestats.c ****         printf("Green channel size: %u bits\n",picture.green_channel_size * 4);
+  79:./Source/imagestats.c ****         printf("Blue channel size: %u bits\n",picture.blue_channel_size * 4);
+  80:./Source/imagestats.c ****     }
+  81:./Source/imagestats.c **** 
+  82:./Source/imagestats.c ****     /* Determine how many white and black pixels there are as a percentage */
+  83:./Source/imagestats.c ****     {
+  84:./Source/imagestats.c ****         uint32_t size;
+  85:./Source/imagestats.c ****         uint32_t color[3];
+  86:./Source/imagestats.c **** 
+  87:./Source/imagestats.c ****         /* Create a white pixel */
+  88:./Source/imagestats.c ****         /* Set the first value */
+  89:./Source/imagestats.c ****         if(picture.first_channel.blackwhite_channel_size == FOUR_BIT_CHANNEL)
+  90:./Source/imagestats.c ****             color[0] = 0xF;
+  91:./Source/imagestats.c ****         else if(picture.first_channel.blackwhite_channel_size == EIGHT_BIT_CHANNEL)
+  92:./Source/imagestats.c ****             color[0] = 0xFF;
+  93:./Source/imagestats.c ****         else if(picture.first_channel.blackwhite_channel_size == SIXTEEN_BIT_CHANNEL)
+  94:./Source/imagestats.c ****             color[0] = 0xFFFF;
+  95:./Source/imagestats.c **** 
+  96:./Source/imagestats.c ****         /* If we have a color image we need to set two more values */
+  97:./Source/imagestats.c ****         if(picture.color_mode == MODE_COLOR)
+  98:./Source/imagestats.c ****         {
+  99:./Source/imagestats.c ****             /* Set the second value */
+ 100:./Source/imagestats.c ****             if(picture.green_channel_size == FOUR_BIT_CHANNEL)
+ 101:./Source/imagestats.c ****                 color[1] = 0xF;
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 5
+
+
+ 102:./Source/imagestats.c ****             else if(picture.green_channel_size == EIGHT_BIT_CHANNEL)
+ 103:./Source/imagestats.c ****                 color[1] = 0xFF;
+ 104:./Source/imagestats.c ****             else if(picture.green_channel_size == SIXTEEN_BIT_CHANNEL)
+ 105:./Source/imagestats.c ****                 color[1] = 0xFFFF;
+ 106:./Source/imagestats.c **** 
+ 107:./Source/imagestats.c ****             /* Set the third value */
+ 108:./Source/imagestats.c ****             if(picture.blue_channel_size == FOUR_BIT_CHANNEL)
+ 109:./Source/imagestats.c ****                 color[2] = 0xF;
+ 110:./Source/imagestats.c ****             else if(picture.blue_channel_size == EIGHT_BIT_CHANNEL)
+ 111:./Source/imagestats.c ****                 color[2] = 0xFF;
+ 112:./Source/imagestats.c ****             else if(picture.blue_channel_size == SIXTEEN_BIT_CHANNEL)
+ 113:./Source/imagestats.c ****                 color[2] = 0xFFFF;
+ 114:./Source/imagestats.c ****         }
+ 115:./Source/imagestats.c **** 
+ 116:./Source/imagestats.c ****         /* Figure out how big the image is */
+ 117:./Source/imagestats.c ****         size = picture.height.value * picture.width.value;
+ 118:./Source/imagestats.c **** 
+ 119:./Source/imagestats.c ****         /* Print the percent of white pixels we have */
+ 120:./Source/imagestats.c ****         printf("Percent of pixels that are white: %.2f%%\n",((float)count_pixels_of_color(&picture,
+ 121:./Source/imagestats.c **** 
+ 122:./Source/imagestats.c ****         /* Create a black pixel */
+ 123:./Source/imagestats.c ****         color[0] = 0x0;
+ 124:./Source/imagestats.c ****         color[1] = 0x0;
+ 125:./Source/imagestats.c ****         color[2] = 0x0;
+ 126:./Source/imagestats.c **** 
+ 127:./Source/imagestats.c ****         /* Print the percent of black pixels we have */
+ 128:./Source/imagestats.c ****         printf("Percent of pixels that are black: %.2f%%",((float)count_pixels_of_color(&picture,co
+ 129:./Source/imagestats.c ****     }
+ 130:./Source/imagestats.c **** 
+ 131:./Source/imagestats.c ****     /* Program executed successfully */
+ 132:./Source/imagestats.c ****     return SUCCESS;
+ 133:./Source/imagestats.c **** }
+  84              		.loc 1 133 0
+  85 004a 8B4DF0   		movl	-16(%ebp), %ecx
+  86 004d 8B5DF4   		movl	-12(%ebp), %ebx
+  87              	LVL3:
+  88 0050 8B75F8   		movl	-8(%ebp), %esi
+  89              	LVL4:
+  90 0053 8B7DFC   		movl	-4(%ebp), %edi
+  91 0056 89EC     		movl	%ebp, %esp
+  92 0058 5D       		popl	%ebp
+  93 0059 8D61FC   		leal	-4(%ecx), %esp
+  94 005c C3       		ret
+  95              	LVL5:
+  96 005d 8D7600   		.p2align 4,,7
+  97              	L23:
+  98              	LBB2:
+  47:./Source/imagestats.c ****         f = fopen((const char*)argv[1],"r");
+  99              		.loc 1 47 0
+ 100 0060 C7442404 		movl	$LC0, 4(%esp)
+ 100      00000000 
+ 101 0068 8B4604   		movl	4(%esi), %eax
+  48:./Source/imagestats.c ****         err = read_cs229picture(&picture,f);
+ 102              		.loc 1 48 0
+ 103 006b 8D7DD0   		leal	-48(%ebp), %edi
+  47:./Source/imagestats.c ****         f = fopen((const char*)argv[1],"r");
+ 104              		.loc 1 47 0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 6
+
+
+ 105 006e 890424   		movl	%eax, (%esp)
+ 106 0071 E8000000 		call	_fopen
+ 106      00
+  48:./Source/imagestats.c ****         err = read_cs229picture(&picture,f);
+ 107              		.loc 1 48 0
+ 108 0076 893C24   		movl	%edi, (%esp)
+ 109 0079 89442404 		movl	%eax, 4(%esp)
+ 110              	LVL6:
+  47:./Source/imagestats.c ****         f = fopen((const char*)argv[1],"r");
+ 111              		.loc 1 47 0
+ 112 007d 89C3     		movl	%eax, %ebx
+ 113              	LVL7:
+  48:./Source/imagestats.c ****         err = read_cs229picture(&picture,f);
+ 114              		.loc 1 48 0
+ 115 007f E8000000 		call	_read_cs229picture
+ 115      00
+  49:./Source/imagestats.c ****         if(f)
+ 116              		.loc 1 49 0
+ 117 0084 85DB     		testl	%ebx, %ebx
+  48:./Source/imagestats.c ****         err = read_cs229picture(&picture,f);
+ 118              		.loc 1 48 0
+ 119 0086 89C6     		movl	%eax, %esi
+ 120              	LVL8:
+  49:./Source/imagestats.c ****         if(f)
+ 121              		.loc 1 49 0
+ 122 0088 7408     		je	L6
+  50:./Source/imagestats.c ****             fclose(f);
+ 123              		.loc 1 50 0
+ 124 008a 891C24   		movl	%ebx, (%esp)
+ 125 008d E8000000 		call	_fclose
+ 125      00
+ 126              	L6:
+  53:./Source/imagestats.c ****         if(err)
+ 127              		.loc 1 53 0
+ 128 0092 85F6     		testl	%esi, %esi
+ 129 0094 0F85F701 		jne	L24
+ 129      0000
+ 130              	LVL9:
+ 131              	L3:
+ 132              	LBE2:
+  67:./Source/imagestats.c ****     printf("The given image is a %s image.\n",picture.color_mode == MODE_BLACKWHITE ? "black and wh
+ 133              		.loc 1 67 0
+ 134 009a 807DD100 		cmpb	$0, -47(%ebp)
+ 135 009e BA080000 		movl	$LC2, %edx
+ 135      00
+ 136 00a3 B8020000 		movl	$LC1, %eax
+ 136      00
+ 137              	LVL10:
+ 138 00a8 C7042418 		movl	$LC3, (%esp)
+ 138      000000
+ 139 00af 0F44C2   		cmove	%edx, %eax
+ 140 00b2 89442404 		movl	%eax, 4(%esp)
+ 141 00b6 E8000000 		call	_printf
+ 141      00
+  70:./Source/imagestats.c ****     printf("The image is %u by %u pixels.\n",picture.width.value,picture.height.value);
+ 142              		.loc 1 70 0
+ 143 00bb 8B45D8   		movl	-40(%ebp), %eax
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 7
+
+
+ 144 00be 89442408 		movl	%eax, 8(%esp)
+ 145 00c2 8B45DC   		movl	-36(%ebp), %eax
+ 146 00c5 C7042438 		movl	$LC4, (%esp)
+ 146      000000
+ 147 00cc 89442404 		movl	%eax, 4(%esp)
+ 148 00d0 E8000000 		call	_printf
+ 148      00
+  73:./Source/imagestats.c ****     if(picture.color_mode == MODE_BLACKWHITE)
+ 149              		.loc 1 73 0
+ 150 00d5 807DD100 		cmpb	$0, -47(%ebp)
+ 151 00d9 0F840101 		je	L25
+ 151      0000
+  77:./Source/imagestats.c ****         printf("Red channel size: %u bits\n",picture.first_channel.red_channel_size * 4);
+ 152              		.loc 1 77 0
+ 153 00df 0FB645D2 		movzbl	-46(%ebp), %eax
+ 154 00e3 C7042474 		movl	$LC6, (%esp)
+ 154      000000
+ 155 00ea C1E002   		sall	$2, %eax
+ 156 00ed 89442404 		movl	%eax, 4(%esp)
+ 157 00f1 E8000000 		call	_printf
+ 157      00
+  78:./Source/imagestats.c ****         printf("Green channel size: %u bits\n",picture.green_channel_size * 4);
+ 158              		.loc 1 78 0
+ 159 00f6 0FB645D3 		movzbl	-45(%ebp), %eax
+ 160 00fa C704248F 		movl	$LC7, (%esp)
+ 160      000000
+ 161 0101 C1E002   		sall	$2, %eax
+ 162 0104 89442404 		movl	%eax, 4(%esp)
+ 163 0108 E8000000 		call	_printf
+ 163      00
+  79:./Source/imagestats.c ****         printf("Blue channel size: %u bits\n",picture.blue_channel_size * 4);
+ 164              		.loc 1 79 0
+ 165 010d 0FB645D4 		movzbl	-44(%ebp), %eax
+ 166 0111 C70424AC 		movl	$LC8, (%esp)
+ 166      000000
+ 167 0118 C1E002   		sall	$2, %eax
+ 168 011b 89442404 		movl	%eax, 4(%esp)
+ 169 011f E8000000 		call	_printf
+ 169      00
+ 170              	LBB3:
+  89:./Source/imagestats.c ****         if(picture.first_channel.blackwhite_channel_size == FOUR_BIT_CHANNEL)
+ 171              		.loc 1 89 0
+ 172 0124 0FB645D2 		movzbl	-46(%ebp), %eax
+ 173 0128 3C01     		cmpb	$1, %al
+ 174 012a 0F84D300 		je	L26
+ 174      0000
+ 175              	L11:
+  91:./Source/imagestats.c ****         else if(picture.first_channel.blackwhite_channel_size == EIGHT_BIT_CHANNEL)
+ 176              		.loc 1 91 0
+ 177 0130 3C02     		cmpb	$2, %al
+ 178 0132 0F846D01 		je	L27
+ 178      0000
+  93:./Source/imagestats.c ****         else if(picture.first_channel.blackwhite_channel_size == SIXTEEN_BIT_CHANNEL)
+ 179              		.loc 1 93 0
+ 180 0138 3C04     		cmpb	$4, %al
+ 181              		.p2align 4,,3
+ 182 013a 0F848001 		je	L28
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 8
+
+
+ 182      0000
+ 183              	L12:
+  97:./Source/imagestats.c ****         if(picture.color_mode == MODE_COLOR)
+ 184              		.loc 1 97 0
+ 185 0140 807DD1FF 		cmpb	$-1, -47(%ebp)
+ 186              		.p2align 4,,5
+ 187 0144 0F84CA00 		je	L29
+ 187      0000
+ 188              	L14:
+ 117:./Source/imagestats.c ****         size = picture.height.value * picture.width.value;
+ 189              		.loc 1 117 0
+ 190 014a 8B5DDC   		movl	-36(%ebp), %ebx
+ 191              	LVL11:
+ 120:./Source/imagestats.c ****         printf("Percent of pixels that are white: %.2f%%\n",((float)count_pixels_of_color(&picture,
+ 192              		.loc 1 120 0
+ 193 014d 8D75E4   		leal	-28(%ebp), %esi
+ 194              	LVL12:
+ 117:./Source/imagestats.c ****         size = picture.height.value * picture.width.value;
+ 195              		.loc 1 117 0
+ 196 0150 0FAF5DD8 		imull	-40(%ebp), %ebx
+ 120:./Source/imagestats.c ****         printf("Percent of pixels that are white: %.2f%%\n",((float)count_pixels_of_color(&picture,
+ 197              		.loc 1 120 0
+ 198 0154 89742404 		movl	%esi, 4(%esp)
+ 199 0158 893C24   		movl	%edi, (%esp)
+ 200 015b E8000000 		call	_count_pixels_of_color
+ 200      00
+ 201 0160 31C9     		xorl	%ecx, %ecx
+ 202              	LVL13:
+ 203 0162 31D2     		xorl	%edx, %edx
+ 204 0164 51       		pushl	%ecx
+ 205 0165 53       		pushl	%ebx
+ 206 0166 DF2C24   		fildq	(%esp)
+ 207 0169 83C408   		addl	$8, %esp
+ 208 016c D95DCC   		fstps	-52(%ebp)
+ 209 016f 52       		pushl	%edx
+ 210 0170 50       		pushl	%eax
+ 211 0171 DF2C24   		fildq	(%esp)
+ 212 0174 83C408   		addl	$8, %esp
+ 213 0177 D875CC   		fdivs	-52(%ebp)
+ 214 017a C70424C8 		movl	$LC10, (%esp)
+ 214      000000
+ 215 0181 D80D2001 		fmuls	LC9
+ 215      0000
+ 216 0187 DD5C2404 		fstpl	4(%esp)
+ 217 018b E8000000 		call	_printf
+ 217      00
+ 218              	LVL14:
+ 123:./Source/imagestats.c ****         color[0] = 0x0;
+ 219              		.loc 1 123 0
+ 220 0190 C745E400 		movl	$0, -28(%ebp)
+ 220      000000
+ 124:./Source/imagestats.c ****         color[1] = 0x0;
+ 221              		.loc 1 124 0
+ 222 0197 C745E800 		movl	$0, -24(%ebp)
+ 222      000000
+ 125:./Source/imagestats.c ****         color[2] = 0x0;
+ 223              		.loc 1 125 0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 9
+
+
+ 224 019e C745EC00 		movl	$0, -20(%ebp)
+ 224      000000
+ 128:./Source/imagestats.c ****         printf("Percent of pixels that are black: %.2f%%",((float)count_pixels_of_color(&picture,co
+ 225              		.loc 1 128 0
+ 226 01a5 89742404 		movl	%esi, 4(%esp)
+ 227 01a9 893C24   		movl	%edi, (%esp)
+ 228 01ac E8000000 		call	_count_pixels_of_color
+ 228      00
+ 229 01b1 31D2     		xorl	%edx, %edx
+ 230 01b3 52       		pushl	%edx
+ 231 01b4 50       		pushl	%eax
+ 232 01b5 DF2C24   		fildq	(%esp)
+ 233 01b8 83C408   		addl	$8, %esp
+ 234 01bb D875CC   		fdivs	-52(%ebp)
+ 235 01be C70424F4 		movl	$LC11, (%esp)
+ 235      000000
+ 236 01c5 D80D2001 		fmuls	LC9
+ 236      0000
+ 237 01cb DD5C2404 		fstpl	4(%esp)
+ 238 01cf E8000000 		call	_printf
+ 238      00
+ 239 01d4 31C0     		xorl	%eax, %eax
+ 240 01d6 E96FFEFF 		jmp	L4
+ 240      FF
+ 241              	LVL15:
+ 242 01db 908D7426 		.p2align 4,,7
+ 242      00
+ 243              	L25:
+ 244              	LBE3:
+  74:./Source/imagestats.c ****         printf("Pixel channel size: %u bits\n",picture.first_channel.blackwhite_channel_size * 4);
+ 245              		.loc 1 74 0
+ 246 01e0 0FB645D2 		movzbl	-46(%ebp), %eax
+ 247 01e4 C7042457 		movl	$LC5, (%esp)
+ 247      000000
+ 248 01eb C1E002   		sall	$2, %eax
+ 249 01ee 89442404 		movl	%eax, 4(%esp)
+ 250 01f2 E8000000 		call	_printf
+ 250      00
+ 251              	LBB4:
+  89:./Source/imagestats.c ****         if(picture.first_channel.blackwhite_channel_size == FOUR_BIT_CHANNEL)
+ 252              		.loc 1 89 0
+ 253 01f7 0FB645D2 		movzbl	-46(%ebp), %eax
+ 254 01fb 3C01     		cmpb	$1, %al
+ 255 01fd 0F852DFF 		jne	L11
+ 255      FFFF
+ 256              	L26:
+  97:./Source/imagestats.c ****         if(picture.color_mode == MODE_COLOR)
+ 257              		.loc 1 97 0
+ 258 0203 807DD1FF 		cmpb	$-1, -47(%ebp)
+  90:./Source/imagestats.c ****             color[0] = 0xF;
+ 259              		.loc 1 90 0
+ 260 0207 C745E40F 		movl	$15, -28(%ebp)
+ 260      000000
+  97:./Source/imagestats.c ****         if(picture.color_mode == MODE_COLOR)
+ 261              		.loc 1 97 0
+ 262 020e 0F8536FF 		jne	L14
+ 262      FFFF
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 10
+
+
+ 263              	L29:
+ 100:./Source/imagestats.c ****             if(picture.green_channel_size == FOUR_BIT_CHANNEL)
+ 264              		.loc 1 100 0
+ 265 0214 0FB645D3 		movzbl	-45(%ebp), %eax
+ 266 0218 3C01     		cmpb	$1, %al
+ 267 021a 0F84B000 		je	L30
+ 267      0000
+ 102:./Source/imagestats.c ****             else if(picture.green_channel_size == EIGHT_BIT_CHANNEL)
+ 268              		.loc 1 102 0
+ 269 0220 3C02     		cmpb	$2, %al
+ 270 0222 0F848900 		je	L31
+ 270      0000
+ 104:./Source/imagestats.c ****             else if(picture.green_channel_size == SIXTEEN_BIT_CHANNEL)
+ 271              		.loc 1 104 0
+ 272 0228 3C04     		cmpb	$4, %al
+ 273              		.p2align 4,,3
+ 274 022a 0F84D000 		je	L32
+ 274      0000
+ 275              	L16:
+ 108:./Source/imagestats.c ****             if(picture.blue_channel_size == FOUR_BIT_CHANNEL)
+ 276              		.loc 1 108 0
+ 277 0230 0FB645D4 		movzbl	-44(%ebp), %eax
+ 278 0234 3C01     		cmpb	$1, %al
+ 279              		.p2align 4,,3
+ 280 0236 0F84A400 		je	L33
+ 280      0000
+ 110:./Source/imagestats.c ****             else if(picture.blue_channel_size == EIGHT_BIT_CHANNEL)
+ 281              		.loc 1 110 0
+ 282 023c 3C02     		cmpb	$2, %al
+ 283 023e 6690     		.p2align 4,,3
+ 284 0240 0F84AA00 		je	L34
+ 284      0000
+ 112:./Source/imagestats.c ****             else if(picture.blue_channel_size == SIXTEEN_BIT_CHANNEL)
+ 285              		.loc 1 112 0
+ 286 0246 3C04     		cmpb	$4, %al
+ 287              		.p2align 4,,3
+ 288 0248 0F85FCFE 		jne	L14
+ 288      FFFF
+ 113:./Source/imagestats.c ****                 color[2] = 0xFFFF;
+ 289              		.loc 1 113 0
+ 290 024e C745ECFF 		movl	$65535, -20(%ebp)
+ 290      FF0000
+ 291              		.p2align 4,,5
+ 292 0255 E9F0FEFF 		jmp	L14
+ 292      FF
+ 293              	LVL16:
+ 294 025a 8DB60000 		.p2align 4,,7
+ 294      0000
+ 295              	L22:
+ 296              	LBE4:
+  32:./Source/imagestats.c ****         err = read_cs229picture(&picture,stdin);
+ 297              		.loc 1 32 0
+ 298              		.p2align 4,,7
+ 299 0260 E8000000 		call	___getreent
+ 299      00
+ 300 0265 8D7DD0   		leal	-48(%ebp), %edi
+ 301 0268 8B4004   		movl	4(%eax), %eax
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 11
+
+
+ 302 026b 893C24   		movl	%edi, (%esp)
+ 303 026e 89442404 		movl	%eax, 4(%esp)
+ 304 0272 E8000000 		call	_read_cs229picture
+ 304      00
+  35:./Source/imagestats.c ****         if(err)
+ 305              		.loc 1 35 0
+ 306 0277 85C0     		testl	%eax, %eax
+ 307              	LVL17:
+ 308 0279 0F841BFE 		je	L3
+ 308      FFFF
+  37:./Source/imagestats.c ****             ReportError(err);
+ 309              		.loc 1 37 0
+ 310 027f 890424   		movl	%eax, (%esp)
+ 311 0282 E8000000 		call	_ReportError
+ 311      00
+ 312              	LVL18:
+ 313 0287 B8010000 		movl	$1, %eax
+ 313      00
+ 314              		.p2align 4,,2
+ 315 028c E9B9FDFF 		jmp	L4
+ 315      FF
+ 316              	LVL19:
+ 317              		.p2align 4,,7
+ 318              	L24:
+ 319              	LBB5:
+  55:./Source/imagestats.c ****             ReportError(err);
+ 320              		.loc 1 55 0
+ 321 0291 893424   		movl	%esi, (%esp)
+ 322 0294 E8000000 		call	_ReportError
+ 322      00
+ 323 0299 B8010000 		movl	$1, %eax
+ 323      00
+ 324 029e 6690     		.p2align 4,,2
+ 325 02a0 E9A5FDFF 		jmp	L4
+ 325      FF
+ 326              	LVL20:
+ 327              		.p2align 4,,7
+ 328              	L27:
+ 329              	LBE5:
+ 330              	LBB6:
+  92:./Source/imagestats.c ****             color[0] = 0xFF;
+ 331              		.loc 1 92 0
+ 332 02a5 C745E4FF 		movl	$255, -28(%ebp)
+ 332      000000
+ 333              		.p2align 4,,2
+ 334 02ac E98FFEFF 		jmp	L12
+ 334      FF
+ 335              		.p2align 4,,7
+ 336              	L31:
+ 103:./Source/imagestats.c ****                 color[1] = 0xFF;
+ 337              		.loc 1 103 0
+ 338 02b1 C745E8FF 		movl	$255, -24(%ebp)
+ 338      000000
+ 339              		.p2align 4,,5
+ 340 02b8 E973FFFF 		jmp	L16
+ 340      FF
+ 341 02bd 8D7600   		.p2align 4,,7
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 12
+
+
+ 342              	L28:
+  94:./Source/imagestats.c ****             color[0] = 0xFFFF;
+ 343              		.loc 1 94 0
+ 344 02c0 C745E4FF 		movl	$65535, -28(%ebp)
+ 344      FF0000
+ 345              		.p2align 4,,5
+ 346 02c7 E974FEFF 		jmp	L12
+ 346      FF
+ 347 02cc 8D742600 		.p2align 4,,7
+ 348              	L30:
+ 101:./Source/imagestats.c ****                 color[1] = 0xF;
+ 349              		.loc 1 101 0
+ 350 02d0 C745E80F 		movl	$15, -24(%ebp)
+ 350      000000
+ 351              		.p2align 4,,5
+ 352 02d7 E954FFFF 		jmp	L16
+ 352      FF
+ 353 02dc 8D742600 		.p2align 4,,7
+ 354              	L33:
+ 109:./Source/imagestats.c ****                 color[2] = 0xF;
+ 355              		.loc 1 109 0
+ 356 02e0 C745EC0F 		movl	$15, -20(%ebp)
+ 356      000000
+ 357              		.p2align 4,,5
+ 358 02e7 E95EFEFF 		jmp	L14
+ 358      FF
+ 359 02ec 8D742600 		.p2align 4,,7
+ 360              	L34:
+ 111:./Source/imagestats.c ****                 color[2] = 0xFF;
+ 361              		.loc 1 111 0
+ 362 02f0 C745ECFF 		movl	$255, -20(%ebp)
+ 362      000000
+ 363              		.p2align 4,,5
+ 364 02f7 E94EFEFF 		jmp	L14
+ 364      FF
+ 365 02fc 8D742600 		.p2align 4,,7
+ 366              	L32:
+ 105:./Source/imagestats.c ****                 color[1] = 0xFFFF;
+ 367              		.loc 1 105 0
+ 368 0300 C745E8FF 		movl	$65535, -24(%ebp)
+ 368      FF0000
+ 369              		.p2align 4,,5
+ 370 0307 E924FFFF 		jmp	L16
+ 370      FF
+ 371              	LBE6:
+ 372              	LFE6:
+ 373              		.section .rdata,"dr"
+ 374 011d 000000   		.align 4
+ 375              	LC9:
+ 376 0120 0000C842 		.long	1120403456
+ 377              		.section	.debug_frame,"dr"
+ 378              	Lframe0:
+ 379 0000 10000000 		.long	LECIE0-LSCIE0
+ 380              	LSCIE0:
+ 381 0004 FFFFFFFF 		.long	0xffffffff
+ 382 0008 01       		.byte	0x1
+ 383 0009 00       		.ascii "\0"
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 13
+
+
+ 384 000a 01       		.uleb128 0x1
+ 385 000b 7C       		.sleb128 -4
+ 386 000c 08       		.byte	0x8
+ 387 000d 0C       		.byte	0xc
+ 388 000e 04       		.uleb128 0x4
+ 389 000f 04       		.uleb128 0x4
+ 390 0010 88       		.byte	0x88
+ 391 0011 01       		.uleb128 0x1
+ 392 0012 0000     		.align 4
+ 393              	LECIE0:
+ 394              	LSFDE0:
+ 395 0014 28000000 		.long	LEFDE0-LASFDE0
+ 396              	LASFDE0:
+ 397 0018 00000000 		.secrel32	Lframe0
+ 398 001c 00000000 		.long	LFB6
+ 399 0020 0C030000 		.long	LFE6-LFB6
+ 400 0024 44       		.byte	0x4
+ 401              		.long	LCFI0-LFB6
+ 402 0025 0C       		.byte	0xc
+ 403 0026 01       		.uleb128 0x1
+ 404 0027 00       		.uleb128 0x0
+ 405 0028 09       		.byte	0x9
+ 406 0029 04       		.uleb128 0x4
+ 407 002a 01       		.uleb128 0x1
+ 408 002b 46       		.byte	0x4
+ 409              		.long	LCFI1-LCFI0
+ 410 002c 0C       		.byte	0xc
+ 411 002d 04       		.uleb128 0x4
+ 412 002e 04       		.uleb128 0x4
+ 413 002f 41       		.byte	0x4
+ 414              		.long	LCFI2-LCFI1
+ 415 0030 0E       		.byte	0xe
+ 416 0031 08       		.uleb128 0x8
+ 417 0032 85       		.byte	0x85
+ 418 0033 02       		.uleb128 0x2
+ 419 0034 42       		.byte	0x4
+ 420              		.long	LCFI3-LCFI2
+ 421 0035 0D       		.byte	0xd
+ 422 0036 05       		.uleb128 0x5
+ 423 0037 4F       		.byte	0x4
+ 424              		.long	LCFI8-LCFI3
+ 425 0038 87       		.byte	0x87
+ 426 0039 03       		.uleb128 0x3
+ 427 003a 86       		.byte	0x86
+ 428 003b 04       		.uleb128 0x4
+ 429 003c 83       		.byte	0x83
+ 430 003d 05       		.uleb128 0x5
+ 431 003e 84       		.byte	0x84
+ 432 003f 06       		.uleb128 0x6
+ 433              		.align 4
+ 434              	LEFDE0:
+ 435              		.text
+ 436              	Letext0:
+ 437 030c 90909090 		.section	.debug_loc,"dr"
+ 438              	Ldebug_loc0:
+ 439              	LLST0:
+ 440 0000 00000000 		.long	LFB6-Ltext0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 14
+
+
+ 441 0004 04000000 		.long	LCFI0-Ltext0
+ 442 0008 0200     		.word	0x2
+ 443 000a 74       		.byte	0x74
+ 444 000b 04       		.sleb128 4
+ 445 000c 04000000 		.long	LCFI0-Ltext0
+ 446 0010 0A000000 		.long	LCFI1-Ltext0
+ 447 0014 0100     		.word	0x1
+ 448 0016 51       		.byte	0x51
+ 449 0017 0A000000 		.long	LCFI1-Ltext0
+ 450 001b 0B000000 		.long	LCFI2-Ltext0
+ 451 001f 0200     		.word	0x2
+ 452 0021 74       		.byte	0x74
+ 453 0022 04       		.sleb128 4
+ 454 0023 0B000000 		.long	LCFI2-Ltext0
+ 455 0027 0D000000 		.long	LCFI3-Ltext0
+ 456 002b 0200     		.word	0x2
+ 457 002d 74       		.byte	0x74
+ 458 002e 08       		.sleb128 8
+ 459 002f 0D000000 		.long	LCFI3-Ltext0
+ 460 0033 0C030000 		.long	LFE6-Ltext0
+ 461 0037 0200     		.word	0x2
+ 462 0039 75       		.byte	0x75
+ 463 003a 08       		.sleb128 8
+ 464 003b 00000000 		.long	0x0
+ 465 003f 00000000 		.long	0x0
+ 466              	LLST1:
+ 467 0043 00000000 		.long	LVL0-Ltext0
+ 468 0047 2F000000 		.long	LVL1-Ltext0
+ 469 004b 0200     		.word	0x2
+ 470 004d 71       		.byte	0x71
+ 471 004e 00       		.sleb128 0
+ 472 004f 2F000000 		.long	LVL1-Ltext0
+ 473 0053 4A000000 		.long	LVL2-Ltext0
+ 474 0057 0100     		.word	0x1
+ 475 0059 53       		.byte	0x53
+ 476 005a 4A000000 		.long	LVL2-Ltext0
+ 477 005e 5D000000 		.long	LVL5-Ltext0
+ 478 0062 0200     		.word	0x2
+ 479 0064 71       		.byte	0x71
+ 480 0065 00       		.sleb128 0
+ 481 0066 5D000000 		.long	LVL5-Ltext0
+ 482 006a 7F000000 		.long	LVL7-Ltext0
+ 483 006e 0100     		.word	0x1
+ 484 0070 53       		.byte	0x53
+ 485 0071 7F000000 		.long	LVL7-Ltext0
+ 486 0075 5A020000 		.long	LVL16-Ltext0
+ 487 0079 0200     		.word	0x2
+ 488 007b 71       		.byte	0x71
+ 489 007c 00       		.sleb128 0
+ 490 007d 5A020000 		.long	LVL16-Ltext0
+ 491 0081 91020000 		.long	LVL19-Ltext0
+ 492 0085 0100     		.word	0x1
+ 493 0087 53       		.byte	0x53
+ 494 0088 91020000 		.long	LVL19-Ltext0
+ 495 008c 0C030000 		.long	LFE6-Ltext0
+ 496 0090 0200     		.word	0x2
+ 497 0092 71       		.byte	0x71
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 15
+
+
+ 498 0093 00       		.sleb128 0
+ 499 0094 00000000 		.long	0x0
+ 500 0098 00000000 		.long	0x0
+ 501              	LLST2:
+ 502 009c 00000000 		.long	LVL0-Ltext0
+ 503 00a0 2F000000 		.long	LVL1-Ltext0
+ 504 00a4 0200     		.word	0x2
+ 505 00a6 71       		.byte	0x71
+ 506 00a7 04       		.sleb128 4
+ 507 00a8 2F000000 		.long	LVL1-Ltext0
+ 508 00ac 4A000000 		.long	LVL2-Ltext0
+ 509 00b0 0100     		.word	0x1
+ 510 00b2 56       		.byte	0x56
+ 511 00b3 4A000000 		.long	LVL2-Ltext0
+ 512 00b7 5D000000 		.long	LVL5-Ltext0
+ 513 00bb 0200     		.word	0x2
+ 514 00bd 71       		.byte	0x71
+ 515 00be 04       		.sleb128 4
+ 516 00bf 5D000000 		.long	LVL5-Ltext0
+ 517 00c3 88000000 		.long	LVL8-Ltext0
+ 518 00c7 0100     		.word	0x1
+ 519 00c9 56       		.byte	0x56
+ 520 00ca 88000000 		.long	LVL8-Ltext0
+ 521 00ce 5A020000 		.long	LVL16-Ltext0
+ 522 00d2 0200     		.word	0x2
+ 523 00d4 71       		.byte	0x71
+ 524 00d5 04       		.sleb128 4
+ 525 00d6 5A020000 		.long	LVL16-Ltext0
+ 526 00da 91020000 		.long	LVL19-Ltext0
+ 527 00de 0100     		.word	0x1
+ 528 00e0 56       		.byte	0x56
+ 529 00e1 91020000 		.long	LVL19-Ltext0
+ 530 00e5 0C030000 		.long	LFE6-Ltext0
+ 531 00e9 0200     		.word	0x2
+ 532 00eb 71       		.byte	0x71
+ 533 00ec 04       		.sleb128 4
+ 534 00ed 00000000 		.long	0x0
+ 535 00f1 00000000 		.long	0x0
+ 536              	LLST3:
+ 537 00f5 4A000000 		.long	LVL2-Ltext0
+ 538 00f9 53000000 		.long	LVL4-Ltext0
+ 539 00fd 0100     		.word	0x1
+ 540 00ff 56       		.byte	0x56
+ 541 0100 88000000 		.long	LVL8-Ltext0
+ 542 0104 9A000000 		.long	LVL9-Ltext0
+ 543 0108 0100     		.word	0x1
+ 544 010a 56       		.byte	0x56
+ 545 010b 9A000000 		.long	LVL9-Ltext0
+ 546 010f A8000000 		.long	LVL10-Ltext0
+ 547 0113 0100     		.word	0x1
+ 548 0115 50       		.byte	0x50
+ 549 0116 A8000000 		.long	LVL10-Ltext0
+ 550 011a 50010000 		.long	LVL12-Ltext0
+ 551 011e 0100     		.word	0x1
+ 552 0120 56       		.byte	0x56
+ 553 0121 DB010000 		.long	LVL15-Ltext0
+ 554 0125 5A020000 		.long	LVL16-Ltext0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 16
+
+
+ 555 0129 0100     		.word	0x1
+ 556 012b 56       		.byte	0x56
+ 557 012c 79020000 		.long	LVL17-Ltext0
+ 558 0130 87020000 		.long	LVL18-Ltext0
+ 559 0134 0100     		.word	0x1
+ 560 0136 50       		.byte	0x50
+ 561 0137 91020000 		.long	LVL19-Ltext0
+ 562 013b 0C030000 		.long	LFE6-Ltext0
+ 563 013f 0100     		.word	0x1
+ 564 0141 56       		.byte	0x56
+ 565 0142 00000000 		.long	0x0
+ 566 0146 00000000 		.long	0x0
+ 567              	LLST4:
+ 568 014a 4A000000 		.long	LVL2-Ltext0
+ 569 014e 50000000 		.long	LVL3-Ltext0
+ 570 0152 0100     		.word	0x1
+ 571 0154 53       		.byte	0x53
+ 572 0155 7D000000 		.long	LVL6-Ltext0
+ 573 0159 7F000000 		.long	LVL7-Ltext0
+ 574 015d 0100     		.word	0x1
+ 575 015f 50       		.byte	0x50
+ 576 0160 DB010000 		.long	LVL15-Ltext0
+ 577 0164 5A020000 		.long	LVL16-Ltext0
+ 578 0168 0100     		.word	0x1
+ 579 016a 53       		.byte	0x53
+ 580 016b 91020000 		.long	LVL19-Ltext0
+ 581 016f 0C030000 		.long	LFE6-Ltext0
+ 582 0173 0100     		.word	0x1
+ 583 0175 53       		.byte	0x53
+ 584 0176 00000000 		.long	0x0
+ 585 017a 00000000 		.long	0x0
+ 586              	LLST5:
+ 587 017e 4A000000 		.long	LVL2-Ltext0
+ 588 0182 50000000 		.long	LVL3-Ltext0
+ 589 0186 0100     		.word	0x1
+ 590 0188 53       		.byte	0x53
+ 591 0189 4D010000 		.long	LVL11-Ltext0
+ 592 018d 62010000 		.long	LVL13-Ltext0
+ 593 0191 0100     		.word	0x1
+ 594 0193 53       		.byte	0x53
+ 595 0194 62010000 		.long	LVL13-Ltext0
+ 596 0198 90010000 		.long	LVL14-Ltext0
+ 597 019c 0600     		.word	0x6
+ 598 019e 53       		.byte	0x53
+ 599 019f 93       		.byte	0x93
+ 600 01a0 04       		.uleb128 0x4
+ 601 01a1 51       		.byte	0x51
+ 602 01a2 93       		.byte	0x93
+ 603 01a3 04       		.uleb128 0x4
+ 604 01a4 90010000 		.long	LVL14-Ltext0
+ 605 01a8 DB010000 		.long	LVL15-Ltext0
+ 606 01ac 0100     		.word	0x1
+ 607 01ae 53       		.byte	0x53
+ 608 01af 00000000 		.long	0x0
+ 609 01b3 00000000 		.long	0x0
+ 610              		.file 2 "/usr/include/sys/lock.h"
+ 611              		.file 3 "/usr/include/sys/_types.h"
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 17
+
+
+ 612              		.file 4 "/usr/lib/gcc/i686-pc-cygwin/4.3.4/include/stddef.h"
+ 613              		.file 5 "/usr/include/sys/reent.h"
+ 614              		.file 6 "/usr/include/stdio.h"
+ 615              		.file 7 "./Source/../Headers/Defines.h"
+ 616              		.file 8 "./Source/../Headers/CS229Image.h"
+ 617              		.section	.debug_info,"dr"
+ 618 0000 D20E0000 		.long	0xed2
+ 619 0004 0200     		.word	0x2
+ 620 0006 00000000 		.secrel32	Ldebug_abbrev0
+ 621 000a 04       		.byte	0x4
+ 622 000b 01       		.uleb128 0x1
+ 623 000c 474E5520 		.ascii "GNU C 4.3.4 20090804 (release) 1\0"
+ 623      4320342E 
+ 623      332E3420 
+ 623      32303039 
+ 623      30383034 
+ 624 002d 01       		.byte	0x1
+ 625 002e 2E2F536F 		.ascii "./Source/imagestats.c\0"
+ 625      75726365 
+ 625      2F696D61 
+ 625      67657374 
+ 625      6174732E 
+ 626 0044 2F637967 		.ascii "/cygdrive/c/Users/The Science Guy/Documents/NetBeansProjects/C Project\0"
+ 626      64726976 
+ 626      652F632F 
+ 626      55736572 
+ 626      732F5468 
+ 627 008b 00000000 		.long	Ltext0
+ 628 008f 0C030000 		.long	Letext0
+ 629 0093 00000000 		.secrel32	Ldebug_line0
+ 630 0097 02       		.uleb128 0x2
+ 631 0098 04       		.byte	0x4
+ 632 0099 07       		.byte	0x7
+ 633 009a 756E7369 		.ascii "unsigned int\0"
+ 633      676E6564 
+ 633      20696E74 
+ 633      00
+ 634 00a7 02       		.uleb128 0x2
+ 635 00a8 01       		.byte	0x1
+ 636 00a9 06       		.byte	0x6
+ 637 00aa 63686172 		.ascii "char\0"
+ 637      00
+ 638 00af 02       		.uleb128 0x2
+ 639 00b0 01       		.byte	0x1
+ 640 00b1 06       		.byte	0x6
+ 641 00b2 7369676E 		.ascii "signed char\0"
+ 641      65642063 
+ 641      68617200 
+ 642 00be 02       		.uleb128 0x2
+ 643 00bf 01       		.byte	0x1
+ 644 00c0 08       		.byte	0x8
+ 645 00c1 756E7369 		.ascii "unsigned char\0"
+ 645      676E6564 
+ 645      20636861 
+ 645      7200
+ 646 00cf 02       		.uleb128 0x2
+ 647 00d0 02       		.byte	0x2
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 18
+
+
+ 648 00d1 05       		.byte	0x5
+ 649 00d2 73686F72 		.ascii "short int\0"
+ 649      7420696E 
+ 649      7400
+ 650 00dc 02       		.uleb128 0x2
+ 651 00dd 02       		.byte	0x2
+ 652 00de 07       		.byte	0x7
+ 653 00df 73686F72 		.ascii "short unsigned int\0"
+ 653      7420756E 
+ 653      7369676E 
+ 653      65642069 
+ 653      6E7400
+ 654 00f2 02       		.uleb128 0x2
+ 655 00f3 04       		.byte	0x4
+ 656 00f4 05       		.byte	0x5
+ 657 00f5 696E7400 		.ascii "int\0"
+ 658 00f9 02       		.uleb128 0x2
+ 659 00fa 08       		.byte	0x8
+ 660 00fb 05       		.byte	0x5
+ 661 00fc 6C6F6E67 		.ascii "long long int\0"
+ 661      206C6F6E 
+ 661      6720696E 
+ 661      7400
+ 662 010a 02       		.uleb128 0x2
+ 663 010b 08       		.byte	0x8
+ 664 010c 07       		.byte	0x7
+ 665 010d 6C6F6E67 		.ascii "long long unsigned int\0"
+ 665      206C6F6E 
+ 665      6720756E 
+ 665      7369676E 
+ 665      65642069 
+ 666 0124 03       		.uleb128 0x3
+ 667 0125 5F4C4F43 		.ascii "_LOCK_T\0"
+ 667      4B5F5400 
+ 668 012d 02       		.byte	0x2
+ 669 012e 0E       		.byte	0xe
+ 670 012f 33010000 		.long	0x133
+ 671 0133 04       		.uleb128 0x4
+ 672 0134 04       		.byte	0x4
+ 673 0135 02       		.uleb128 0x2
+ 674 0136 04       		.byte	0x4
+ 675 0137 05       		.byte	0x5
+ 676 0138 6C6F6E67 		.ascii "long int\0"
+ 676      20696E74 
+ 676      00
+ 677 0141 03       		.uleb128 0x3
+ 678 0142 5F6F6666 		.ascii "_off64_t\0"
+ 678      36345F74 
+ 678      00
+ 679 014b 03       		.byte	0x3
+ 680 014c 24       		.byte	0x24
+ 681 014d F9000000 		.long	0xf9
+ 682 0151 03       		.uleb128 0x3
+ 683 0152 5F66706F 		.ascii "_fpos_t\0"
+ 683      735F7400 
+ 684 015a 03       		.byte	0x3
+ 685 015b 2C       		.byte	0x2c
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 19
+
+
+ 686 015c 35010000 		.long	0x135
+ 687 0160 03       		.uleb128 0x3
+ 688 0161 5F66706F 		.ascii "_fpos64_t\0"
+ 688      7336345F 
+ 688      7400
+ 689 016b 03       		.byte	0x3
+ 690 016c 32       		.byte	0x32
+ 691 016d 41010000 		.long	0x141
+ 692 0171 03       		.uleb128 0x3
+ 693 0172 5F737369 		.ascii "_ssize_t\0"
+ 693      7A655F74 
+ 693      00
+ 694 017b 03       		.byte	0x3
+ 695 017c 38       		.byte	0x38
+ 696 017d F2000000 		.long	0xf2
+ 697 0181 05       		.uleb128 0x5
+ 698 0182 77696E74 		.ascii "wint_t\0"
+ 698      5F7400
+ 699 0189 04       		.byte	0x4
+ 700 018a 6301     		.word	0x163
+ 701 018c 97000000 		.long	0x97
+ 702 0190 06       		.uleb128 0x6
+ 703 0191 04       		.byte	0x4
+ 704 0192 03       		.byte	0x3
+ 705 0193 47       		.byte	0x47
+ 706 0194 B4010000 		.long	0x1b4
+ 707 0198 07       		.uleb128 0x7
+ 708 0199 5F5F7763 		.ascii "__wch\0"
+ 708      6800
+ 709 019f 03       		.byte	0x3
+ 710 01a0 48       		.byte	0x48
+ 711 01a1 81010000 		.long	0x181
+ 712 01a5 07       		.uleb128 0x7
+ 713 01a6 5F5F7763 		.ascii "__wchb\0"
+ 713      686200
+ 714 01ad 03       		.byte	0x3
+ 715 01ae 49       		.byte	0x49
+ 716 01af B4010000 		.long	0x1b4
+ 717 01b3 00       		.byte	0x0
+ 718 01b4 08       		.uleb128 0x8
+ 719 01b5 BE000000 		.long	0xbe
+ 720 01b9 C4010000 		.long	0x1c4
+ 721 01bd 09       		.uleb128 0x9
+ 722 01be C4010000 		.long	0x1c4
+ 723 01c2 03       		.byte	0x3
+ 724 01c3 00       		.byte	0x0
+ 725 01c4 0A       		.uleb128 0xa
+ 726 01c5 04       		.byte	0x4
+ 727 01c6 07       		.byte	0x7
+ 728 01c7 0B       		.uleb128 0xb
+ 729 01c8 08       		.byte	0x8
+ 730 01c9 03       		.byte	0x3
+ 731 01ca 44       		.byte	0x44
+ 732 01cb F4010000 		.long	0x1f4
+ 733 01cf 0C       		.uleb128 0xc
+ 734 01d0 5F5F636F 		.ascii "__count\0"
+ 734      756E7400 
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 20
+
+
+ 735 01d8 03       		.byte	0x3
+ 736 01d9 45       		.byte	0x45
+ 737 01da F2000000 		.long	0xf2
+ 738 01de 02       		.byte	0x2
+ 739 01df 23       		.byte	0x23
+ 740 01e0 00       		.uleb128 0x0
+ 741 01e1 0C       		.uleb128 0xc
+ 742 01e2 5F5F7661 		.ascii "__value\0"
+ 742      6C756500 
+ 743 01ea 03       		.byte	0x3
+ 744 01eb 4A       		.byte	0x4a
+ 745 01ec 90010000 		.long	0x190
+ 746 01f0 02       		.byte	0x2
+ 747 01f1 23       		.byte	0x23
+ 748 01f2 04       		.uleb128 0x4
+ 749 01f3 00       		.byte	0x0
+ 750 01f4 03       		.uleb128 0x3
+ 751 01f5 5F6D6273 		.ascii "_mbstate_t\0"
+ 751      74617465 
+ 751      5F7400
+ 752 0200 03       		.byte	0x3
+ 753 0201 4B       		.byte	0x4b
+ 754 0202 C7010000 		.long	0x1c7
+ 755 0206 03       		.uleb128 0x3
+ 756 0207 5F666C6F 		.ascii "_flock_t\0"
+ 756      636B5F74 
+ 756      00
+ 757 0210 03       		.byte	0x3
+ 758 0211 4F       		.byte	0x4f
+ 759 0212 24010000 		.long	0x124
+ 760 0216 03       		.uleb128 0x3
+ 761 0217 5F5F554C 		.ascii "__ULong\0"
+ 761      6F6E6700 
+ 762 021f 05       		.byte	0x5
+ 763 0220 15       		.byte	0x15
+ 764 0221 25020000 		.long	0x225
+ 765 0225 02       		.uleb128 0x2
+ 766 0226 04       		.byte	0x4
+ 767 0227 07       		.byte	0x7
+ 768 0228 6C6F6E67 		.ascii "long unsigned int\0"
+ 768      20756E73 
+ 768      69676E65 
+ 768      6420696E 
+ 768      7400
+ 769 023a 0D       		.uleb128 0xd
+ 770 023b 5F426967 		.ascii "_Bigint\0"
+ 770      696E7400 
+ 771 0243 18       		.byte	0x18
+ 772 0244 05       		.byte	0x5
+ 773 0245 2D       		.byte	0x2d
+ 774 0246 A6020000 		.long	0x2a6
+ 775 024a 0C       		.uleb128 0xc
+ 776 024b 5F6E6578 		.ascii "_next\0"
+ 776      7400
+ 777 0251 05       		.byte	0x5
+ 778 0252 2E       		.byte	0x2e
+ 779 0253 A6020000 		.long	0x2a6
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 21
+
+
+ 780 0257 02       		.byte	0x2
+ 781 0258 23       		.byte	0x23
+ 782 0259 00       		.uleb128 0x0
+ 783 025a 0C       		.uleb128 0xc
+ 784 025b 5F6B00   		.ascii "_k\0"
+ 785 025e 05       		.byte	0x5
+ 786 025f 2F       		.byte	0x2f
+ 787 0260 F2000000 		.long	0xf2
+ 788 0264 02       		.byte	0x2
+ 789 0265 23       		.byte	0x23
+ 790 0266 04       		.uleb128 0x4
+ 791 0267 0C       		.uleb128 0xc
+ 792 0268 5F6D6178 		.ascii "_maxwds\0"
+ 792      77647300 
+ 793 0270 05       		.byte	0x5
+ 794 0271 2F       		.byte	0x2f
+ 795 0272 F2000000 		.long	0xf2
+ 796 0276 02       		.byte	0x2
+ 797 0277 23       		.byte	0x23
+ 798 0278 08       		.uleb128 0x8
+ 799 0279 0C       		.uleb128 0xc
+ 800 027a 5F736967 		.ascii "_sign\0"
+ 800      6E00
+ 801 0280 05       		.byte	0x5
+ 802 0281 2F       		.byte	0x2f
+ 803 0282 F2000000 		.long	0xf2
+ 804 0286 02       		.byte	0x2
+ 805 0287 23       		.byte	0x23
+ 806 0288 0C       		.uleb128 0xc
+ 807 0289 0C       		.uleb128 0xc
+ 808 028a 5F776473 		.ascii "_wds\0"
+ 808      00
+ 809 028f 05       		.byte	0x5
+ 810 0290 2F       		.byte	0x2f
+ 811 0291 F2000000 		.long	0xf2
+ 812 0295 02       		.byte	0x2
+ 813 0296 23       		.byte	0x23
+ 814 0297 10       		.uleb128 0x10
+ 815 0298 0C       		.uleb128 0xc
+ 816 0299 5F7800   		.ascii "_x\0"
+ 817 029c 05       		.byte	0x5
+ 818 029d 30       		.byte	0x30
+ 819 029e AC020000 		.long	0x2ac
+ 820 02a2 02       		.byte	0x2
+ 821 02a3 23       		.byte	0x23
+ 822 02a4 14       		.uleb128 0x14
+ 823 02a5 00       		.byte	0x0
+ 824 02a6 0E       		.uleb128 0xe
+ 825 02a7 04       		.byte	0x4
+ 826 02a8 3A020000 		.long	0x23a
+ 827 02ac 08       		.uleb128 0x8
+ 828 02ad 16020000 		.long	0x216
+ 829 02b1 BC020000 		.long	0x2bc
+ 830 02b5 09       		.uleb128 0x9
+ 831 02b6 C4010000 		.long	0x1c4
+ 832 02ba 00       		.byte	0x0
+ 833 02bb 00       		.byte	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 22
+
+
+ 834 02bc 0D       		.uleb128 0xd
+ 835 02bd 5F5F746D 		.ascii "__tm\0"
+ 835      00
+ 836 02c2 24       		.byte	0x24
+ 837 02c3 05       		.byte	0x5
+ 838 02c4 35       		.byte	0x35
+ 839 02c5 7C030000 		.long	0x37c
+ 840 02c9 0C       		.uleb128 0xc
+ 841 02ca 5F5F746D 		.ascii "__tm_sec\0"
+ 841      5F736563 
+ 841      00
+ 842 02d3 05       		.byte	0x5
+ 843 02d4 36       		.byte	0x36
+ 844 02d5 F2000000 		.long	0xf2
+ 845 02d9 02       		.byte	0x2
+ 846 02da 23       		.byte	0x23
+ 847 02db 00       		.uleb128 0x0
+ 848 02dc 0C       		.uleb128 0xc
+ 849 02dd 5F5F746D 		.ascii "__tm_min\0"
+ 849      5F6D696E 
+ 849      00
+ 850 02e6 05       		.byte	0x5
+ 851 02e7 37       		.byte	0x37
+ 852 02e8 F2000000 		.long	0xf2
+ 853 02ec 02       		.byte	0x2
+ 854 02ed 23       		.byte	0x23
+ 855 02ee 04       		.uleb128 0x4
+ 856 02ef 0C       		.uleb128 0xc
+ 857 02f0 5F5F746D 		.ascii "__tm_hour\0"
+ 857      5F686F75 
+ 857      7200
+ 858 02fa 05       		.byte	0x5
+ 859 02fb 38       		.byte	0x38
+ 860 02fc F2000000 		.long	0xf2
+ 861 0300 02       		.byte	0x2
+ 862 0301 23       		.byte	0x23
+ 863 0302 08       		.uleb128 0x8
+ 864 0303 0C       		.uleb128 0xc
+ 865 0304 5F5F746D 		.ascii "__tm_mday\0"
+ 865      5F6D6461 
+ 865      7900
+ 866 030e 05       		.byte	0x5
+ 867 030f 39       		.byte	0x39
+ 868 0310 F2000000 		.long	0xf2
+ 869 0314 02       		.byte	0x2
+ 870 0315 23       		.byte	0x23
+ 871 0316 0C       		.uleb128 0xc
+ 872 0317 0C       		.uleb128 0xc
+ 873 0318 5F5F746D 		.ascii "__tm_mon\0"
+ 873      5F6D6F6E 
+ 873      00
+ 874 0321 05       		.byte	0x5
+ 875 0322 3A       		.byte	0x3a
+ 876 0323 F2000000 		.long	0xf2
+ 877 0327 02       		.byte	0x2
+ 878 0328 23       		.byte	0x23
+ 879 0329 10       		.uleb128 0x10
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 23
+
+
+ 880 032a 0C       		.uleb128 0xc
+ 881 032b 5F5F746D 		.ascii "__tm_year\0"
+ 881      5F796561 
+ 881      7200
+ 882 0335 05       		.byte	0x5
+ 883 0336 3B       		.byte	0x3b
+ 884 0337 F2000000 		.long	0xf2
+ 885 033b 02       		.byte	0x2
+ 886 033c 23       		.byte	0x23
+ 887 033d 14       		.uleb128 0x14
+ 888 033e 0C       		.uleb128 0xc
+ 889 033f 5F5F746D 		.ascii "__tm_wday\0"
+ 889      5F776461 
+ 889      7900
+ 890 0349 05       		.byte	0x5
+ 891 034a 3C       		.byte	0x3c
+ 892 034b F2000000 		.long	0xf2
+ 893 034f 02       		.byte	0x2
+ 894 0350 23       		.byte	0x23
+ 895 0351 18       		.uleb128 0x18
+ 896 0352 0C       		.uleb128 0xc
+ 897 0353 5F5F746D 		.ascii "__tm_yday\0"
+ 897      5F796461 
+ 897      7900
+ 898 035d 05       		.byte	0x5
+ 899 035e 3D       		.byte	0x3d
+ 900 035f F2000000 		.long	0xf2
+ 901 0363 02       		.byte	0x2
+ 902 0364 23       		.byte	0x23
+ 903 0365 1C       		.uleb128 0x1c
+ 904 0366 0C       		.uleb128 0xc
+ 905 0367 5F5F746D 		.ascii "__tm_isdst\0"
+ 905      5F697364 
+ 905      737400
+ 906 0372 05       		.byte	0x5
+ 907 0373 3E       		.byte	0x3e
+ 908 0374 F2000000 		.long	0xf2
+ 909 0378 02       		.byte	0x2
+ 910 0379 23       		.byte	0x23
+ 911 037a 20       		.uleb128 0x20
+ 912 037b 00       		.byte	0x0
+ 913 037c 0F       		.uleb128 0xf
+ 914 037d 00000000 		.secrel32	LASF0
+ 915 0381 0801     		.word	0x108
+ 916 0383 05       		.byte	0x5
+ 917 0384 47       		.byte	0x47
+ 918 0385 DA030000 		.long	0x3da
+ 919 0389 0C       		.uleb128 0xc
+ 920 038a 5F666E61 		.ascii "_fnargs\0"
+ 920      72677300 
+ 921 0392 05       		.byte	0x5
+ 922 0393 48       		.byte	0x48
+ 923 0394 DA030000 		.long	0x3da
+ 924 0398 02       		.byte	0x2
+ 925 0399 23       		.byte	0x23
+ 926 039a 00       		.uleb128 0x0
+ 927 039b 0C       		.uleb128 0xc
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 24
+
+
+ 928 039c 5F64736F 		.ascii "_dso_handle\0"
+ 928      5F68616E 
+ 928      646C6500 
+ 929 03a8 05       		.byte	0x5
+ 930 03a9 49       		.byte	0x49
+ 931 03aa DA030000 		.long	0x3da
+ 932 03ae 03       		.byte	0x3
+ 933 03af 23       		.byte	0x23
+ 934 03b0 8001     		.uleb128 0x80
+ 935 03b2 0C       		.uleb128 0xc
+ 936 03b3 5F666E74 		.ascii "_fntypes\0"
+ 936      79706573 
+ 936      00
+ 937 03bc 05       		.byte	0x5
+ 938 03bd 4B       		.byte	0x4b
+ 939 03be 16020000 		.long	0x216
+ 940 03c2 03       		.byte	0x3
+ 941 03c3 23       		.byte	0x23
+ 942 03c4 8002     		.uleb128 0x100
+ 943 03c6 0C       		.uleb128 0xc
+ 944 03c7 5F69735F 		.ascii "_is_cxa\0"
+ 944      63786100 
+ 945 03cf 05       		.byte	0x5
+ 946 03d0 4E       		.byte	0x4e
+ 947 03d1 16020000 		.long	0x216
+ 948 03d5 03       		.byte	0x3
+ 949 03d6 23       		.byte	0x23
+ 950 03d7 8402     		.uleb128 0x104
+ 951 03d9 00       		.byte	0x0
+ 952 03da 08       		.uleb128 0x8
+ 953 03db 33010000 		.long	0x133
+ 954 03df EA030000 		.long	0x3ea
+ 955 03e3 09       		.uleb128 0x9
+ 956 03e4 C4010000 		.long	0x1c4
+ 957 03e8 1F       		.byte	0x1f
+ 958 03e9 00       		.byte	0x0
+ 959 03ea 10       		.uleb128 0x10
+ 960 03eb 5F617465 		.ascii "_atexit\0"
+ 960      78697400 
+ 961 03f3 9001     		.word	0x190
+ 962 03f5 05       		.byte	0x5
+ 963 03f6 59       		.byte	0x59
+ 964 03f7 39040000 		.long	0x439
+ 965 03fb 0C       		.uleb128 0xc
+ 966 03fc 5F6E6578 		.ascii "_next\0"
+ 966      7400
+ 967 0402 05       		.byte	0x5
+ 968 0403 5A       		.byte	0x5a
+ 969 0404 39040000 		.long	0x439
+ 970 0408 02       		.byte	0x2
+ 971 0409 23       		.byte	0x23
+ 972 040a 00       		.uleb128 0x0
+ 973 040b 0C       		.uleb128 0xc
+ 974 040c 5F696E64 		.ascii "_ind\0"
+ 974      00
+ 975 0411 05       		.byte	0x5
+ 976 0412 5B       		.byte	0x5b
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 25
+
+
+ 977 0413 F2000000 		.long	0xf2
+ 978 0417 02       		.byte	0x2
+ 979 0418 23       		.byte	0x23
+ 980 0419 04       		.uleb128 0x4
+ 981 041a 0C       		.uleb128 0xc
+ 982 041b 5F666E73 		.ascii "_fns\0"
+ 982      00
+ 983 0420 05       		.byte	0x5
+ 984 0421 5D       		.byte	0x5d
+ 985 0422 3F040000 		.long	0x43f
+ 986 0426 02       		.byte	0x2
+ 987 0427 23       		.byte	0x23
+ 988 0428 08       		.uleb128 0x8
+ 989 0429 11       		.uleb128 0x11
+ 990 042a 00000000 		.secrel32	LASF0
+ 991 042e 05       		.byte	0x5
+ 992 042f 5E       		.byte	0x5e
+ 993 0430 7C030000 		.long	0x37c
+ 994 0434 03       		.byte	0x3
+ 995 0435 23       		.byte	0x23
+ 996 0436 8801     		.uleb128 0x88
+ 997 0438 00       		.byte	0x0
+ 998 0439 0E       		.uleb128 0xe
+ 999 043a 04       		.byte	0x4
+ 1000 043b EA030000 		.long	0x3ea
+ 1001 043f 08       		.uleb128 0x8
+ 1002 0440 51040000 		.long	0x451
+ 1003 0444 4F040000 		.long	0x44f
+ 1004 0448 09       		.uleb128 0x9
+ 1005 0449 C4010000 		.long	0x1c4
+ 1006 044d 1F       		.byte	0x1f
+ 1007 044e 00       		.byte	0x0
+ 1008 044f 12       		.uleb128 0x12
+ 1009 0450 01       		.byte	0x1
+ 1010 0451 0E       		.uleb128 0xe
+ 1011 0452 04       		.byte	0x4
+ 1012 0453 4F040000 		.long	0x44f
+ 1013 0457 0D       		.uleb128 0xd
+ 1014 0458 5F5F7362 		.ascii "__sbuf\0"
+ 1014      756600
+ 1015 045f 08       		.byte	0x8
+ 1016 0460 05       		.byte	0x5
+ 1017 0461 69       		.byte	0x69
+ 1018 0462 87040000 		.long	0x487
+ 1019 0466 0C       		.uleb128 0xc
+ 1020 0467 5F626173 		.ascii "_base\0"
+ 1020      6500
+ 1021 046d 05       		.byte	0x5
+ 1022 046e 6A       		.byte	0x6a
+ 1023 046f 87040000 		.long	0x487
+ 1024 0473 02       		.byte	0x2
+ 1025 0474 23       		.byte	0x23
+ 1026 0475 00       		.uleb128 0x0
+ 1027 0476 0C       		.uleb128 0xc
+ 1028 0477 5F73697A 		.ascii "_size\0"
+ 1028      6500
+ 1029 047d 05       		.byte	0x5
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 26
+
+
+ 1030 047e 6B       		.byte	0x6b
+ 1031 047f F2000000 		.long	0xf2
+ 1032 0483 02       		.byte	0x2
+ 1033 0484 23       		.byte	0x23
+ 1034 0485 04       		.uleb128 0x4
+ 1035 0486 00       		.byte	0x0
+ 1036 0487 0E       		.uleb128 0xe
+ 1037 0488 04       		.byte	0x4
+ 1038 0489 BE000000 		.long	0xbe
+ 1039 048d 13       		.uleb128 0x13
+ 1040 048e 01       		.byte	0x1
+ 1041 048f 71010000 		.long	0x171
+ 1042 0493 AC040000 		.long	0x4ac
+ 1043 0497 14       		.uleb128 0x14
+ 1044 0498 AC040000 		.long	0x4ac
+ 1045 049c 14       		.uleb128 0x14
+ 1046 049d 33010000 		.long	0x133
+ 1047 04a1 14       		.uleb128 0x14
+ 1048 04a2 7D060000 		.long	0x67d
+ 1049 04a6 14       		.uleb128 0x14
+ 1050 04a7 F2000000 		.long	0xf2
+ 1051 04ab 00       		.byte	0x0
+ 1052 04ac 0E       		.uleb128 0xe
+ 1053 04ad 04       		.byte	0x4
+ 1054 04ae B2040000 		.long	0x4b2
+ 1055 04b2 10       		.uleb128 0x10
+ 1056 04b3 5F726565 		.ascii "_reent\0"
+ 1056      6E7400
+ 1057 04ba 4004     		.word	0x440
+ 1058 04bc 05       		.byte	0x5
+ 1059 04bd 25       		.byte	0x25
+ 1060 04be 7D060000 		.long	0x67d
+ 1061 04c2 15       		.uleb128 0x15
+ 1062 04c3 5F657272 		.ascii "_errno\0"
+ 1062      6E6F00
+ 1063 04ca 05       		.byte	0x5
+ 1064 04cb 4602     		.word	0x246
+ 1065 04cd F2000000 		.long	0xf2
+ 1066 04d1 02       		.byte	0x2
+ 1067 04d2 23       		.byte	0x23
+ 1068 04d3 00       		.uleb128 0x0
+ 1069 04d4 15       		.uleb128 0x15
+ 1070 04d5 5F737464 		.ascii "_stdin\0"
+ 1070      696E00
+ 1071 04dc 05       		.byte	0x5
+ 1072 04dd 4B02     		.word	0x24b
+ 1073 04df 42090000 		.long	0x942
+ 1074 04e3 02       		.byte	0x2
+ 1075 04e4 23       		.byte	0x23
+ 1076 04e5 04       		.uleb128 0x4
+ 1077 04e6 15       		.uleb128 0x15
+ 1078 04e7 5F737464 		.ascii "_stdout\0"
+ 1078      6F757400 
+ 1079 04ef 05       		.byte	0x5
+ 1080 04f0 4B02     		.word	0x24b
+ 1081 04f2 42090000 		.long	0x942
+ 1082 04f6 02       		.byte	0x2
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 27
+
+
+ 1083 04f7 23       		.byte	0x23
+ 1084 04f8 08       		.uleb128 0x8
+ 1085 04f9 15       		.uleb128 0x15
+ 1086 04fa 5F737464 		.ascii "_stderr\0"
+ 1086      65727200 
+ 1087 0502 05       		.byte	0x5
+ 1088 0503 4B02     		.word	0x24b
+ 1089 0505 42090000 		.long	0x942
+ 1090 0509 02       		.byte	0x2
+ 1091 050a 23       		.byte	0x23
+ 1092 050b 0C       		.uleb128 0xc
+ 1093 050c 15       		.uleb128 0x15
+ 1094 050d 5F696E63 		.ascii "_inc\0"
+ 1094      00
+ 1095 0512 05       		.byte	0x5
+ 1096 0513 4D02     		.word	0x24d
+ 1097 0515 F2000000 		.long	0xf2
+ 1098 0519 02       		.byte	0x2
+ 1099 051a 23       		.byte	0x23
+ 1100 051b 10       		.uleb128 0x10
+ 1101 051c 15       		.uleb128 0x15
+ 1102 051d 5F656D65 		.ascii "_emergency\0"
+ 1102      7267656E 
+ 1102      637900
+ 1103 0528 05       		.byte	0x5
+ 1104 0529 4E02     		.word	0x24e
+ 1105 052b 210C0000 		.long	0xc21
+ 1106 052f 02       		.byte	0x2
+ 1107 0530 23       		.byte	0x23
+ 1108 0531 14       		.uleb128 0x14
+ 1109 0532 15       		.uleb128 0x15
+ 1110 0533 5F637572 		.ascii "_current_category\0"
+ 1110      72656E74 
+ 1110      5F636174 
+ 1110      65676F72 
+ 1110      7900
+ 1111 0545 05       		.byte	0x5
+ 1112 0546 5002     		.word	0x250
+ 1113 0548 F2000000 		.long	0xf2
+ 1114 054c 02       		.byte	0x2
+ 1115 054d 23       		.byte	0x23
+ 1116 054e 30       		.uleb128 0x30
+ 1117 054f 15       		.uleb128 0x15
+ 1118 0550 5F637572 		.ascii "_current_locale\0"
+ 1118      72656E74 
+ 1118      5F6C6F63 
+ 1118      616C6500 
+ 1119 0560 05       		.byte	0x5
+ 1120 0561 5102     		.word	0x251
+ 1121 0563 A8060000 		.long	0x6a8
+ 1122 0567 02       		.byte	0x2
+ 1123 0568 23       		.byte	0x23
+ 1124 0569 34       		.uleb128 0x34
+ 1125 056a 15       		.uleb128 0x15
+ 1126 056b 5F5F7364 		.ascii "__sdidinit\0"
+ 1126      6964696E 
+ 1126      697400
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 28
+
+
+ 1127 0576 05       		.byte	0x5
+ 1128 0577 5302     		.word	0x253
+ 1129 0579 F2000000 		.long	0xf2
+ 1130 057d 02       		.byte	0x2
+ 1131 057e 23       		.byte	0x23
+ 1132 057f 38       		.uleb128 0x38
+ 1133 0580 15       		.uleb128 0x15
+ 1134 0581 5F5F636C 		.ascii "__cleanup\0"
+ 1134      65616E75 
+ 1134      7000
+ 1135 058b 05       		.byte	0x5
+ 1136 058c 5502     		.word	0x255
+ 1137 058e 3D0C0000 		.long	0xc3d
+ 1138 0592 02       		.byte	0x2
+ 1139 0593 23       		.byte	0x23
+ 1140 0594 3C       		.uleb128 0x3c
+ 1141 0595 15       		.uleb128 0x15
+ 1142 0596 5F726573 		.ascii "_result\0"
+ 1142      756C7400 
+ 1143 059e 05       		.byte	0x5
+ 1144 059f 5802     		.word	0x258
+ 1145 05a1 A6020000 		.long	0x2a6
+ 1146 05a5 02       		.byte	0x2
+ 1147 05a6 23       		.byte	0x23
+ 1148 05a7 40       		.uleb128 0x40
+ 1149 05a8 15       		.uleb128 0x15
+ 1150 05a9 5F726573 		.ascii "_result_k\0"
+ 1150      756C745F 
+ 1150      6B00
+ 1151 05b3 05       		.byte	0x5
+ 1152 05b4 5902     		.word	0x259
+ 1153 05b6 F2000000 		.long	0xf2
+ 1154 05ba 02       		.byte	0x2
+ 1155 05bb 23       		.byte	0x23
+ 1156 05bc 44       		.uleb128 0x44
+ 1157 05bd 15       		.uleb128 0x15
+ 1158 05be 5F703573 		.ascii "_p5s\0"
+ 1158      00
+ 1159 05c3 05       		.byte	0x5
+ 1160 05c4 5A02     		.word	0x25a
+ 1161 05c6 A6020000 		.long	0x2a6
+ 1162 05ca 02       		.byte	0x2
+ 1163 05cb 23       		.byte	0x23
+ 1164 05cc 48       		.uleb128 0x48
+ 1165 05cd 15       		.uleb128 0x15
+ 1166 05ce 5F667265 		.ascii "_freelist\0"
+ 1166      656C6973 
+ 1166      7400
+ 1167 05d8 05       		.byte	0x5
+ 1168 05d9 5B02     		.word	0x25b
+ 1169 05db 430C0000 		.long	0xc43
+ 1170 05df 02       		.byte	0x2
+ 1171 05e0 23       		.byte	0x23
+ 1172 05e1 4C       		.uleb128 0x4c
+ 1173 05e2 15       		.uleb128 0x15
+ 1174 05e3 5F637674 		.ascii "_cvtlen\0"
+ 1174      6C656E00 
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 29
+
+
+ 1175 05eb 05       		.byte	0x5
+ 1176 05ec 5E02     		.word	0x25e
+ 1177 05ee F2000000 		.long	0xf2
+ 1178 05f2 02       		.byte	0x2
+ 1179 05f3 23       		.byte	0x23
+ 1180 05f4 50       		.uleb128 0x50
+ 1181 05f5 15       		.uleb128 0x15
+ 1182 05f6 5F637674 		.ascii "_cvtbuf\0"
+ 1182      62756600 
+ 1183 05fe 05       		.byte	0x5
+ 1184 05ff 5F02     		.word	0x25f
+ 1185 0601 7D060000 		.long	0x67d
+ 1186 0605 02       		.byte	0x2
+ 1187 0606 23       		.byte	0x23
+ 1188 0607 54       		.uleb128 0x54
+ 1189 0608 15       		.uleb128 0x15
+ 1190 0609 5F6E6577 		.ascii "_new\0"
+ 1190      00
+ 1191 060e 05       		.byte	0x5
+ 1192 060f 8202     		.word	0x282
+ 1193 0611 F80B0000 		.long	0xbf8
+ 1194 0615 02       		.byte	0x2
+ 1195 0616 23       		.byte	0x23
+ 1196 0617 58       		.uleb128 0x58
+ 1197 0618 15       		.uleb128 0x15
+ 1198 0619 5F617465 		.ascii "_atexit\0"
+ 1198      78697400 
+ 1199 0621 05       		.byte	0x5
+ 1200 0622 8502     		.word	0x285
+ 1201 0624 39040000 		.long	0x439
+ 1202 0628 03       		.byte	0x3
+ 1203 0629 23       		.byte	0x23
+ 1204 062a C802     		.uleb128 0x148
+ 1205 062c 15       		.uleb128 0x15
+ 1206 062d 5F617465 		.ascii "_atexit0\0"
+ 1206      78697430 
+ 1206      00
+ 1207 0636 05       		.byte	0x5
+ 1208 0637 8602     		.word	0x286
+ 1209 0639 EA030000 		.long	0x3ea
+ 1210 063d 03       		.byte	0x3
+ 1211 063e 23       		.byte	0x23
+ 1212 063f CC02     		.uleb128 0x14c
+ 1213 0641 15       		.uleb128 0x15
+ 1214 0642 5F736967 		.ascii "_sig_func\0"
+ 1214      5F66756E 
+ 1214      6300
+ 1215 064c 05       		.byte	0x5
+ 1216 064d 8902     		.word	0x289
+ 1217 064f 550C0000 		.long	0xc55
+ 1218 0653 03       		.byte	0x3
+ 1219 0654 23       		.byte	0x23
+ 1220 0655 DC05     		.uleb128 0x2dc
+ 1221 0657 15       		.uleb128 0x15
+ 1222 0658 5F5F7367 		.ascii "__sglue\0"
+ 1222      6C756500 
+ 1223 0660 05       		.byte	0x5
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 30
+
+
+ 1224 0661 8E02     		.word	0x28e
+ 1225 0663 F8080000 		.long	0x8f8
+ 1226 0667 03       		.byte	0x3
+ 1227 0668 23       		.byte	0x23
+ 1228 0669 E005     		.uleb128 0x2e0
+ 1229 066b 15       		.uleb128 0x15
+ 1230 066c 5F5F7366 		.ascii "__sf\0"
+ 1230      00
+ 1231 0671 05       		.byte	0x5
+ 1232 0672 8F02     		.word	0x28f
+ 1233 0674 610C0000 		.long	0xc61
+ 1234 0678 03       		.byte	0x3
+ 1235 0679 23       		.byte	0x23
+ 1236 067a F005     		.uleb128 0x2f0
+ 1237 067c 00       		.byte	0x0
+ 1238 067d 0E       		.uleb128 0xe
+ 1239 067e 04       		.byte	0x4
+ 1240 067f A7000000 		.long	0xa7
+ 1241 0683 0E       		.uleb128 0xe
+ 1242 0684 04       		.byte	0x4
+ 1243 0685 8D040000 		.long	0x48d
+ 1244 0689 13       		.uleb128 0x13
+ 1245 068a 01       		.byte	0x1
+ 1246 068b 71010000 		.long	0x171
+ 1247 068f A8060000 		.long	0x6a8
+ 1248 0693 14       		.uleb128 0x14
+ 1249 0694 AC040000 		.long	0x4ac
+ 1250 0698 14       		.uleb128 0x14
+ 1251 0699 33010000 		.long	0x133
+ 1252 069d 14       		.uleb128 0x14
+ 1253 069e A8060000 		.long	0x6a8
+ 1254 06a2 14       		.uleb128 0x14
+ 1255 06a3 F2000000 		.long	0xf2
+ 1256 06a7 00       		.byte	0x0
+ 1257 06a8 0E       		.uleb128 0xe
+ 1258 06a9 04       		.byte	0x4
+ 1259 06aa AE060000 		.long	0x6ae
+ 1260 06ae 16       		.uleb128 0x16
+ 1261 06af A7000000 		.long	0xa7
+ 1262 06b3 0E       		.uleb128 0xe
+ 1263 06b4 04       		.byte	0x4
+ 1264 06b5 89060000 		.long	0x689
+ 1265 06b9 13       		.uleb128 0x13
+ 1266 06ba 01       		.byte	0x1
+ 1267 06bb 51010000 		.long	0x151
+ 1268 06bf D8060000 		.long	0x6d8
+ 1269 06c3 14       		.uleb128 0x14
+ 1270 06c4 AC040000 		.long	0x4ac
+ 1271 06c8 14       		.uleb128 0x14
+ 1272 06c9 33010000 		.long	0x133
+ 1273 06cd 14       		.uleb128 0x14
+ 1274 06ce 51010000 		.long	0x151
+ 1275 06d2 14       		.uleb128 0x14
+ 1276 06d3 F2000000 		.long	0xf2
+ 1277 06d7 00       		.byte	0x0
+ 1278 06d8 0E       		.uleb128 0xe
+ 1279 06d9 04       		.byte	0x4
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 31
+
+
+ 1280 06da B9060000 		.long	0x6b9
+ 1281 06de 13       		.uleb128 0x13
+ 1282 06df 01       		.byte	0x1
+ 1283 06e0 F2000000 		.long	0xf2
+ 1284 06e4 F3060000 		.long	0x6f3
+ 1285 06e8 14       		.uleb128 0x14
+ 1286 06e9 AC040000 		.long	0x4ac
+ 1287 06ed 14       		.uleb128 0x14
+ 1288 06ee 33010000 		.long	0x133
+ 1289 06f2 00       		.byte	0x0
+ 1290 06f3 0E       		.uleb128 0xe
+ 1291 06f4 04       		.byte	0x4
+ 1292 06f5 DE060000 		.long	0x6de
+ 1293 06f9 08       		.uleb128 0x8
+ 1294 06fa BE000000 		.long	0xbe
+ 1295 06fe 09070000 		.long	0x709
+ 1296 0702 09       		.uleb128 0x9
+ 1297 0703 C4010000 		.long	0x1c4
+ 1298 0707 02       		.byte	0x2
+ 1299 0708 00       		.byte	0x0
+ 1300 0709 08       		.uleb128 0x8
+ 1301 070a BE000000 		.long	0xbe
+ 1302 070e 19070000 		.long	0x719
+ 1303 0712 09       		.uleb128 0x9
+ 1304 0713 C4010000 		.long	0x1c4
+ 1305 0717 00       		.byte	0x0
+ 1306 0718 00       		.byte	0x0
+ 1307 0719 0D       		.uleb128 0xd
+ 1308 071a 5F5F7346 		.ascii "__sFILE64\0"
+ 1308      494C4536 
+ 1308      3400
+ 1309 0724 70       		.byte	0x70
+ 1310 0725 05       		.byte	0x5
+ 1311 0726 E2       		.byte	0xe2
+ 1312 0727 C4080000 		.long	0x8c4
+ 1313 072b 0C       		.uleb128 0xc
+ 1314 072c 5F7000   		.ascii "_p\0"
+ 1315 072f 05       		.byte	0x5
+ 1316 0730 E3       		.byte	0xe3
+ 1317 0731 87040000 		.long	0x487
+ 1318 0735 02       		.byte	0x2
+ 1319 0736 23       		.byte	0x23
+ 1320 0737 00       		.uleb128 0x0
+ 1321 0738 0C       		.uleb128 0xc
+ 1322 0739 5F7200   		.ascii "_r\0"
+ 1323 073c 05       		.byte	0x5
+ 1324 073d E4       		.byte	0xe4
+ 1325 073e F2000000 		.long	0xf2
+ 1326 0742 02       		.byte	0x2
+ 1327 0743 23       		.byte	0x23
+ 1328 0744 04       		.uleb128 0x4
+ 1329 0745 0C       		.uleb128 0xc
+ 1330 0746 5F7700   		.ascii "_w\0"
+ 1331 0749 05       		.byte	0x5
+ 1332 074a E5       		.byte	0xe5
+ 1333 074b F2000000 		.long	0xf2
+ 1334 074f 02       		.byte	0x2
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 32
+
+
+ 1335 0750 23       		.byte	0x23
+ 1336 0751 08       		.uleb128 0x8
+ 1337 0752 0C       		.uleb128 0xc
+ 1338 0753 5F666C61 		.ascii "_flags\0"
+ 1338      677300
+ 1339 075a 05       		.byte	0x5
+ 1340 075b E6       		.byte	0xe6
+ 1341 075c CF000000 		.long	0xcf
+ 1342 0760 02       		.byte	0x2
+ 1343 0761 23       		.byte	0x23
+ 1344 0762 0C       		.uleb128 0xc
+ 1345 0763 0C       		.uleb128 0xc
+ 1346 0764 5F66696C 		.ascii "_file\0"
+ 1346      6500
+ 1347 076a 05       		.byte	0x5
+ 1348 076b E7       		.byte	0xe7
+ 1349 076c CF000000 		.long	0xcf
+ 1350 0770 02       		.byte	0x2
+ 1351 0771 23       		.byte	0x23
+ 1352 0772 0E       		.uleb128 0xe
+ 1353 0773 0C       		.uleb128 0xc
+ 1354 0774 5F626600 		.ascii "_bf\0"
+ 1355 0778 05       		.byte	0x5
+ 1356 0779 E8       		.byte	0xe8
+ 1357 077a 57040000 		.long	0x457
+ 1358 077e 02       		.byte	0x2
+ 1359 077f 23       		.byte	0x23
+ 1360 0780 10       		.uleb128 0x10
+ 1361 0781 0C       		.uleb128 0xc
+ 1362 0782 5F6C6266 		.ascii "_lbfsize\0"
+ 1362      73697A65 
+ 1362      00
+ 1363 078b 05       		.byte	0x5
+ 1364 078c E9       		.byte	0xe9
+ 1365 078d F2000000 		.long	0xf2
+ 1366 0791 02       		.byte	0x2
+ 1367 0792 23       		.byte	0x23
+ 1368 0793 18       		.uleb128 0x18
+ 1369 0794 0C       		.uleb128 0xc
+ 1370 0795 5F646174 		.ascii "_data\0"
+ 1370      6100
+ 1371 079b 05       		.byte	0x5
+ 1372 079c EB       		.byte	0xeb
+ 1373 079d AC040000 		.long	0x4ac
+ 1374 07a1 02       		.byte	0x2
+ 1375 07a2 23       		.byte	0x23
+ 1376 07a3 1C       		.uleb128 0x1c
+ 1377 07a4 0C       		.uleb128 0xc
+ 1378 07a5 5F636F6F 		.ascii "_cookie\0"
+ 1378      6B696500 
+ 1379 07ad 05       		.byte	0x5
+ 1380 07ae EE       		.byte	0xee
+ 1381 07af 33010000 		.long	0x133
+ 1382 07b3 02       		.byte	0x2
+ 1383 07b4 23       		.byte	0x23
+ 1384 07b5 20       		.uleb128 0x20
+ 1385 07b6 0C       		.uleb128 0xc
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 33
+
+
+ 1386 07b7 5F726561 		.ascii "_read\0"
+ 1386      6400
+ 1387 07bd 05       		.byte	0x5
+ 1388 07be F0       		.byte	0xf0
+ 1389 07bf 83060000 		.long	0x683
+ 1390 07c3 02       		.byte	0x2
+ 1391 07c4 23       		.byte	0x23
+ 1392 07c5 24       		.uleb128 0x24
+ 1393 07c6 0C       		.uleb128 0xc
+ 1394 07c7 5F777269 		.ascii "_write\0"
+ 1394      746500
+ 1395 07ce 05       		.byte	0x5
+ 1396 07cf F2       		.byte	0xf2
+ 1397 07d0 B3060000 		.long	0x6b3
+ 1398 07d4 02       		.byte	0x2
+ 1399 07d5 23       		.byte	0x23
+ 1400 07d6 28       		.uleb128 0x28
+ 1401 07d7 0C       		.uleb128 0xc
+ 1402 07d8 5F736565 		.ascii "_seek\0"
+ 1402      6B00
+ 1403 07de 05       		.byte	0x5
+ 1404 07df F4       		.byte	0xf4
+ 1405 07e0 D8060000 		.long	0x6d8
+ 1406 07e4 02       		.byte	0x2
+ 1407 07e5 23       		.byte	0x23
+ 1408 07e6 2C       		.uleb128 0x2c
+ 1409 07e7 0C       		.uleb128 0xc
+ 1410 07e8 5F636C6F 		.ascii "_close\0"
+ 1410      736500
+ 1411 07ef 05       		.byte	0x5
+ 1412 07f0 F5       		.byte	0xf5
+ 1413 07f1 F3060000 		.long	0x6f3
+ 1414 07f5 02       		.byte	0x2
+ 1415 07f6 23       		.byte	0x23
+ 1416 07f7 30       		.uleb128 0x30
+ 1417 07f8 0C       		.uleb128 0xc
+ 1418 07f9 5F756200 		.ascii "_ub\0"
+ 1419 07fd 05       		.byte	0x5
+ 1420 07fe F8       		.byte	0xf8
+ 1421 07ff 57040000 		.long	0x457
+ 1422 0803 02       		.byte	0x2
+ 1423 0804 23       		.byte	0x23
+ 1424 0805 34       		.uleb128 0x34
+ 1425 0806 0C       		.uleb128 0xc
+ 1426 0807 5F757000 		.ascii "_up\0"
+ 1427 080b 05       		.byte	0x5
+ 1428 080c F9       		.byte	0xf9
+ 1429 080d 87040000 		.long	0x487
+ 1430 0811 02       		.byte	0x2
+ 1431 0812 23       		.byte	0x23
+ 1432 0813 3C       		.uleb128 0x3c
+ 1433 0814 0C       		.uleb128 0xc
+ 1434 0815 5F757200 		.ascii "_ur\0"
+ 1435 0819 05       		.byte	0x5
+ 1436 081a FA       		.byte	0xfa
+ 1437 081b F2000000 		.long	0xf2
+ 1438 081f 02       		.byte	0x2
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 34
+
+
+ 1439 0820 23       		.byte	0x23
+ 1440 0821 40       		.uleb128 0x40
+ 1441 0822 0C       		.uleb128 0xc
+ 1442 0823 5F756275 		.ascii "_ubuf\0"
+ 1442      6600
+ 1443 0829 05       		.byte	0x5
+ 1444 082a FD       		.byte	0xfd
+ 1445 082b F9060000 		.long	0x6f9
+ 1446 082f 02       		.byte	0x2
+ 1447 0830 23       		.byte	0x23
+ 1448 0831 44       		.uleb128 0x44
+ 1449 0832 0C       		.uleb128 0xc
+ 1450 0833 5F6E6275 		.ascii "_nbuf\0"
+ 1450      6600
+ 1451 0839 05       		.byte	0x5
+ 1452 083a FE       		.byte	0xfe
+ 1453 083b 09070000 		.long	0x709
+ 1454 083f 02       		.byte	0x2
+ 1455 0840 23       		.byte	0x23
+ 1456 0841 47       		.uleb128 0x47
+ 1457 0842 15       		.uleb128 0x15
+ 1458 0843 5F6C6200 		.ascii "_lb\0"
+ 1459 0847 05       		.byte	0x5
+ 1460 0848 0101     		.word	0x101
+ 1461 084a 57040000 		.long	0x457
+ 1462 084e 02       		.byte	0x2
+ 1463 084f 23       		.byte	0x23
+ 1464 0850 48       		.uleb128 0x48
+ 1465 0851 15       		.uleb128 0x15
+ 1466 0852 5F626C6B 		.ascii "_blksize\0"
+ 1466      73697A65 
+ 1466      00
+ 1467 085b 05       		.byte	0x5
+ 1468 085c 0401     		.word	0x104
+ 1469 085e F2000000 		.long	0xf2
+ 1470 0862 02       		.byte	0x2
+ 1471 0863 23       		.byte	0x23
+ 1472 0864 50       		.uleb128 0x50
+ 1473 0865 15       		.uleb128 0x15
+ 1474 0866 5F666C61 		.ascii "_flags2\0"
+ 1474      67733200 
+ 1475 086e 05       		.byte	0x5
+ 1476 086f 0501     		.word	0x105
+ 1477 0871 F2000000 		.long	0xf2
+ 1478 0875 02       		.byte	0x2
+ 1479 0876 23       		.byte	0x23
+ 1480 0877 54       		.uleb128 0x54
+ 1481 0878 15       		.uleb128 0x15
+ 1482 0879 5F6F6666 		.ascii "_offset\0"
+ 1482      73657400 
+ 1483 0881 05       		.byte	0x5
+ 1484 0882 0701     		.word	0x107
+ 1485 0884 41010000 		.long	0x141
+ 1486 0888 02       		.byte	0x2
+ 1487 0889 23       		.byte	0x23
+ 1488 088a 58       		.uleb128 0x58
+ 1489 088b 15       		.uleb128 0x15
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 35
+
+
+ 1490 088c 5F736565 		.ascii "_seek64\0"
+ 1490      6B363400 
+ 1491 0894 05       		.byte	0x5
+ 1492 0895 0801     		.word	0x108
+ 1493 0897 E3080000 		.long	0x8e3
+ 1494 089b 02       		.byte	0x2
+ 1495 089c 23       		.byte	0x23
+ 1496 089d 60       		.uleb128 0x60
+ 1497 089e 15       		.uleb128 0x15
+ 1498 089f 5F6C6F63 		.ascii "_lock\0"
+ 1498      6B00
+ 1499 08a5 05       		.byte	0x5
+ 1500 08a6 0B01     		.word	0x10b
+ 1501 08a8 06020000 		.long	0x206
+ 1502 08ac 02       		.byte	0x2
+ 1503 08ad 23       		.byte	0x23
+ 1504 08ae 64       		.uleb128 0x64
+ 1505 08af 15       		.uleb128 0x15
+ 1506 08b0 5F6D6273 		.ascii "_mbstate\0"
+ 1506      74617465 
+ 1506      00
+ 1507 08b9 05       		.byte	0x5
+ 1508 08ba 0D01     		.word	0x10d
+ 1509 08bc F4010000 		.long	0x1f4
+ 1510 08c0 02       		.byte	0x2
+ 1511 08c1 23       		.byte	0x23
+ 1512 08c2 68       		.uleb128 0x68
+ 1513 08c3 00       		.byte	0x0
+ 1514 08c4 13       		.uleb128 0x13
+ 1515 08c5 01       		.byte	0x1
+ 1516 08c6 60010000 		.long	0x160
+ 1517 08ca E3080000 		.long	0x8e3
+ 1518 08ce 14       		.uleb128 0x14
+ 1519 08cf AC040000 		.long	0x4ac
+ 1520 08d3 14       		.uleb128 0x14
+ 1521 08d4 33010000 		.long	0x133
+ 1522 08d8 14       		.uleb128 0x14
+ 1523 08d9 60010000 		.long	0x160
+ 1524 08dd 14       		.uleb128 0x14
+ 1525 08de F2000000 		.long	0xf2
+ 1526 08e2 00       		.byte	0x0
+ 1527 08e3 0E       		.uleb128 0xe
+ 1528 08e4 04       		.byte	0x4
+ 1529 08e5 C4080000 		.long	0x8c4
+ 1530 08e9 05       		.uleb128 0x5
+ 1531 08ea 5F5F4649 		.ascii "__FILE\0"
+ 1531      4C4500
+ 1532 08f1 05       		.byte	0x5
+ 1533 08f2 0F01     		.word	0x10f
+ 1534 08f4 19070000 		.long	0x719
+ 1535 08f8 17       		.uleb128 0x17
+ 1536 08f9 5F676C75 		.ascii "_glue\0"
+ 1536      6500
+ 1537 08ff 0C       		.byte	0xc
+ 1538 0900 05       		.byte	0x5
+ 1539 0901 1601     		.word	0x116
+ 1540 0903 3C090000 		.long	0x93c
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 36
+
+
+ 1541 0907 15       		.uleb128 0x15
+ 1542 0908 5F6E6578 		.ascii "_next\0"
+ 1542      7400
+ 1543 090e 05       		.byte	0x5
+ 1544 090f 1701     		.word	0x117
+ 1545 0911 3C090000 		.long	0x93c
+ 1546 0915 02       		.byte	0x2
+ 1547 0916 23       		.byte	0x23
+ 1548 0917 00       		.uleb128 0x0
+ 1549 0918 15       		.uleb128 0x15
+ 1550 0919 5F6E696F 		.ascii "_niobs\0"
+ 1550      627300
+ 1551 0920 05       		.byte	0x5
+ 1552 0921 1801     		.word	0x118
+ 1553 0923 F2000000 		.long	0xf2
+ 1554 0927 02       		.byte	0x2
+ 1555 0928 23       		.byte	0x23
+ 1556 0929 04       		.uleb128 0x4
+ 1557 092a 15       		.uleb128 0x15
+ 1558 092b 5F696F62 		.ascii "_iobs\0"
+ 1558      7300
+ 1559 0931 05       		.byte	0x5
+ 1560 0932 1901     		.word	0x119
+ 1561 0934 42090000 		.long	0x942
+ 1562 0938 02       		.byte	0x2
+ 1563 0939 23       		.byte	0x23
+ 1564 093a 08       		.uleb128 0x8
+ 1565 093b 00       		.byte	0x0
+ 1566 093c 0E       		.uleb128 0xe
+ 1567 093d 04       		.byte	0x4
+ 1568 093e F8080000 		.long	0x8f8
+ 1569 0942 0E       		.uleb128 0xe
+ 1570 0943 04       		.byte	0x4
+ 1571 0944 E9080000 		.long	0x8e9
+ 1572 0948 17       		.uleb128 0x17
+ 1573 0949 5F72616E 		.ascii "_rand48\0"
+ 1573      64343800 
+ 1574 0951 0E       		.byte	0xe
+ 1575 0952 05       		.byte	0x5
+ 1576 0953 3101     		.word	0x131
+ 1577 0955 8C090000 		.long	0x98c
+ 1578 0959 15       		.uleb128 0x15
+ 1579 095a 5F736565 		.ascii "_seed\0"
+ 1579      6400
+ 1580 0960 05       		.byte	0x5
+ 1581 0961 3201     		.word	0x132
+ 1582 0963 8C090000 		.long	0x98c
+ 1583 0967 02       		.byte	0x2
+ 1584 0968 23       		.byte	0x23
+ 1585 0969 00       		.uleb128 0x0
+ 1586 096a 15       		.uleb128 0x15
+ 1587 096b 5F6D756C 		.ascii "_mult\0"
+ 1587      7400
+ 1588 0971 05       		.byte	0x5
+ 1589 0972 3301     		.word	0x133
+ 1590 0974 8C090000 		.long	0x98c
+ 1591 0978 02       		.byte	0x2
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 37
+
+
+ 1592 0979 23       		.byte	0x23
+ 1593 097a 06       		.uleb128 0x6
+ 1594 097b 15       		.uleb128 0x15
+ 1595 097c 5F616464 		.ascii "_add\0"
+ 1595      00
+ 1596 0981 05       		.byte	0x5
+ 1597 0982 3401     		.word	0x134
+ 1598 0984 DC000000 		.long	0xdc
+ 1599 0988 02       		.byte	0x2
+ 1600 0989 23       		.byte	0x23
+ 1601 098a 0C       		.uleb128 0xc
+ 1602 098b 00       		.byte	0x0
+ 1603 098c 08       		.uleb128 0x8
+ 1604 098d DC000000 		.long	0xdc
+ 1605 0991 9C090000 		.long	0x99c
+ 1606 0995 09       		.uleb128 0x9
+ 1607 0996 C4010000 		.long	0x1c4
+ 1608 099a 02       		.byte	0x2
+ 1609 099b 00       		.byte	0x0
+ 1610 099c 18       		.uleb128 0x18
+ 1611 099d D0       		.byte	0xd0
+ 1612 099e 05       		.byte	0x5
+ 1613 099f 6402     		.word	0x264
+ 1614 09a1 780B0000 		.long	0xb78
+ 1615 09a5 15       		.uleb128 0x15
+ 1616 09a6 5F756E75 		.ascii "_unused_rand\0"
+ 1616      7365645F 
+ 1616      72616E64 
+ 1616      00
+ 1617 09b3 05       		.byte	0x5
+ 1618 09b4 6502     		.word	0x265
+ 1619 09b6 97000000 		.long	0x97
+ 1620 09ba 02       		.byte	0x2
+ 1621 09bb 23       		.byte	0x23
+ 1622 09bc 00       		.uleb128 0x0
+ 1623 09bd 15       		.uleb128 0x15
+ 1624 09be 5F737472 		.ascii "_strtok_last\0"
+ 1624      746F6B5F 
+ 1624      6C617374 
+ 1624      00
+ 1625 09cb 05       		.byte	0x5
+ 1626 09cc 6602     		.word	0x266
+ 1627 09ce 7D060000 		.long	0x67d
+ 1628 09d2 02       		.byte	0x2
+ 1629 09d3 23       		.byte	0x23
+ 1630 09d4 04       		.uleb128 0x4
+ 1631 09d5 15       		.uleb128 0x15
+ 1632 09d6 5F617363 		.ascii "_asctime_buf\0"
+ 1632      74696D65 
+ 1632      5F627566 
+ 1632      00
+ 1633 09e3 05       		.byte	0x5
+ 1634 09e4 6702     		.word	0x267
+ 1635 09e6 780B0000 		.long	0xb78
+ 1636 09ea 02       		.byte	0x2
+ 1637 09eb 23       		.byte	0x23
+ 1638 09ec 08       		.uleb128 0x8
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 38
+
+
+ 1639 09ed 15       		.uleb128 0x15
+ 1640 09ee 5F6C6F63 		.ascii "_localtime_buf\0"
+ 1640      616C7469 
+ 1640      6D655F62 
+ 1640      756600
+ 1641 09fd 05       		.byte	0x5
+ 1642 09fe 6802     		.word	0x268
+ 1643 0a00 BC020000 		.long	0x2bc
+ 1644 0a04 02       		.byte	0x2
+ 1645 0a05 23       		.byte	0x23
+ 1646 0a06 24       		.uleb128 0x24
+ 1647 0a07 15       		.uleb128 0x15
+ 1648 0a08 5F67616D 		.ascii "_gamma_signgam\0"
+ 1648      6D615F73 
+ 1648      69676E67 
+ 1648      616D00
+ 1649 0a17 05       		.byte	0x5
+ 1650 0a18 6902     		.word	0x269
+ 1651 0a1a F2000000 		.long	0xf2
+ 1652 0a1e 02       		.byte	0x2
+ 1653 0a1f 23       		.byte	0x23
+ 1654 0a20 48       		.uleb128 0x48
+ 1655 0a21 15       		.uleb128 0x15
+ 1656 0a22 5F72616E 		.ascii "_rand_next\0"
+ 1656      645F6E65 
+ 1656      787400
+ 1657 0a2d 05       		.byte	0x5
+ 1658 0a2e 6A02     		.word	0x26a
+ 1659 0a30 0A010000 		.long	0x10a
+ 1660 0a34 02       		.byte	0x2
+ 1661 0a35 23       		.byte	0x23
+ 1662 0a36 50       		.uleb128 0x50
+ 1663 0a37 15       		.uleb128 0x15
+ 1664 0a38 5F723438 		.ascii "_r48\0"
+ 1664      00
+ 1665 0a3d 05       		.byte	0x5
+ 1666 0a3e 6B02     		.word	0x26b
+ 1667 0a40 48090000 		.long	0x948
+ 1668 0a44 02       		.byte	0x2
+ 1669 0a45 23       		.byte	0x23
+ 1670 0a46 58       		.uleb128 0x58
+ 1671 0a47 15       		.uleb128 0x15
+ 1672 0a48 5F6D626C 		.ascii "_mblen_state\0"
+ 1672      656E5F73 
+ 1672      74617465 
+ 1672      00
+ 1673 0a55 05       		.byte	0x5
+ 1674 0a56 6C02     		.word	0x26c
+ 1675 0a58 F4010000 		.long	0x1f4
+ 1676 0a5c 02       		.byte	0x2
+ 1677 0a5d 23       		.byte	0x23
+ 1678 0a5e 68       		.uleb128 0x68
+ 1679 0a5f 15       		.uleb128 0x15
+ 1680 0a60 5F6D6274 		.ascii "_mbtowc_state\0"
+ 1680      6F77635F 
+ 1680      73746174 
+ 1680      6500
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 39
+
+
+ 1681 0a6e 05       		.byte	0x5
+ 1682 0a6f 6D02     		.word	0x26d
+ 1683 0a71 F4010000 		.long	0x1f4
+ 1684 0a75 02       		.byte	0x2
+ 1685 0a76 23       		.byte	0x23
+ 1686 0a77 70       		.uleb128 0x70
+ 1687 0a78 15       		.uleb128 0x15
+ 1688 0a79 5F776374 		.ascii "_wctomb_state\0"
+ 1688      6F6D625F 
+ 1688      73746174 
+ 1688      6500
+ 1689 0a87 05       		.byte	0x5
+ 1690 0a88 6E02     		.word	0x26e
+ 1691 0a8a F4010000 		.long	0x1f4
+ 1692 0a8e 02       		.byte	0x2
+ 1693 0a8f 23       		.byte	0x23
+ 1694 0a90 78       		.uleb128 0x78
+ 1695 0a91 15       		.uleb128 0x15
+ 1696 0a92 5F6C3634 		.ascii "_l64a_buf\0"
+ 1696      615F6275 
+ 1696      6600
+ 1697 0a9c 05       		.byte	0x5
+ 1698 0a9d 6F02     		.word	0x26f
+ 1699 0a9f 880B0000 		.long	0xb88
+ 1700 0aa3 03       		.byte	0x3
+ 1701 0aa4 23       		.byte	0x23
+ 1702 0aa5 8001     		.uleb128 0x80
+ 1703 0aa7 15       		.uleb128 0x15
+ 1704 0aa8 5F736967 		.ascii "_signal_buf\0"
+ 1704      6E616C5F 
+ 1704      62756600 
+ 1705 0ab4 05       		.byte	0x5
+ 1706 0ab5 7002     		.word	0x270
+ 1707 0ab7 980B0000 		.long	0xb98
+ 1708 0abb 03       		.byte	0x3
+ 1709 0abc 23       		.byte	0x23
+ 1710 0abd 8801     		.uleb128 0x88
+ 1711 0abf 15       		.uleb128 0x15
+ 1712 0ac0 5F676574 		.ascii "_getdate_err\0"
+ 1712      64617465 
+ 1712      5F657272 
+ 1712      00
+ 1713 0acd 05       		.byte	0x5
+ 1714 0ace 7102     		.word	0x271
+ 1715 0ad0 F2000000 		.long	0xf2
+ 1716 0ad4 03       		.byte	0x3
+ 1717 0ad5 23       		.byte	0x23
+ 1718 0ad6 A001     		.uleb128 0xa0
+ 1719 0ad8 15       		.uleb128 0x15
+ 1720 0ad9 5F6D6272 		.ascii "_mbrlen_state\0"
+ 1720      6C656E5F 
+ 1720      73746174 
+ 1720      6500
+ 1721 0ae7 05       		.byte	0x5
+ 1722 0ae8 7202     		.word	0x272
+ 1723 0aea F4010000 		.long	0x1f4
+ 1724 0aee 03       		.byte	0x3
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 40
+
+
+ 1725 0aef 23       		.byte	0x23
+ 1726 0af0 A401     		.uleb128 0xa4
+ 1727 0af2 15       		.uleb128 0x15
+ 1728 0af3 5F6D6272 		.ascii "_mbrtowc_state\0"
+ 1728      746F7763 
+ 1728      5F737461 
+ 1728      746500
+ 1729 0b02 05       		.byte	0x5
+ 1730 0b03 7302     		.word	0x273
+ 1731 0b05 F4010000 		.long	0x1f4
+ 1732 0b09 03       		.byte	0x3
+ 1733 0b0a 23       		.byte	0x23
+ 1734 0b0b AC01     		.uleb128 0xac
+ 1735 0b0d 15       		.uleb128 0x15
+ 1736 0b0e 5F6D6273 		.ascii "_mbsrtowcs_state\0"
+ 1736      72746F77 
+ 1736      63735F73 
+ 1736      74617465 
+ 1736      00
+ 1737 0b1f 05       		.byte	0x5
+ 1738 0b20 7402     		.word	0x274
+ 1739 0b22 F4010000 		.long	0x1f4
+ 1740 0b26 03       		.byte	0x3
+ 1741 0b27 23       		.byte	0x23
+ 1742 0b28 B401     		.uleb128 0xb4
+ 1743 0b2a 15       		.uleb128 0x15
+ 1744 0b2b 5F776372 		.ascii "_wcrtomb_state\0"
+ 1744      746F6D62 
+ 1744      5F737461 
+ 1744      746500
+ 1745 0b3a 05       		.byte	0x5
+ 1746 0b3b 7502     		.word	0x275
+ 1747 0b3d F4010000 		.long	0x1f4
+ 1748 0b41 03       		.byte	0x3
+ 1749 0b42 23       		.byte	0x23
+ 1750 0b43 BC01     		.uleb128 0xbc
+ 1751 0b45 15       		.uleb128 0x15
+ 1752 0b46 5F776373 		.ascii "_wcsrtombs_state\0"
+ 1752      72746F6D 
+ 1752      62735F73 
+ 1752      74617465 
+ 1752      00
+ 1753 0b57 05       		.byte	0x5
+ 1754 0b58 7602     		.word	0x276
+ 1755 0b5a F4010000 		.long	0x1f4
+ 1756 0b5e 03       		.byte	0x3
+ 1757 0b5f 23       		.byte	0x23
+ 1758 0b60 C401     		.uleb128 0xc4
+ 1759 0b62 15       		.uleb128 0x15
+ 1760 0b63 5F685F65 		.ascii "_h_errno\0"
+ 1760      72726E6F 
+ 1760      00
+ 1761 0b6c 05       		.byte	0x5
+ 1762 0b6d 7702     		.word	0x277
+ 1763 0b6f F2000000 		.long	0xf2
+ 1764 0b73 03       		.byte	0x3
+ 1765 0b74 23       		.byte	0x23
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 41
+
+
+ 1766 0b75 CC01     		.uleb128 0xcc
+ 1767 0b77 00       		.byte	0x0
+ 1768 0b78 08       		.uleb128 0x8
+ 1769 0b79 A7000000 		.long	0xa7
+ 1770 0b7d 880B0000 		.long	0xb88
+ 1771 0b81 09       		.uleb128 0x9
+ 1772 0b82 C4010000 		.long	0x1c4
+ 1773 0b86 19       		.byte	0x19
+ 1774 0b87 00       		.byte	0x0
+ 1775 0b88 08       		.uleb128 0x8
+ 1776 0b89 A7000000 		.long	0xa7
+ 1777 0b8d 980B0000 		.long	0xb98
+ 1778 0b91 09       		.uleb128 0x9
+ 1779 0b92 C4010000 		.long	0x1c4
+ 1780 0b96 07       		.byte	0x7
+ 1781 0b97 00       		.byte	0x0
+ 1782 0b98 08       		.uleb128 0x8
+ 1783 0b99 A7000000 		.long	0xa7
+ 1784 0b9d A80B0000 		.long	0xba8
+ 1785 0ba1 09       		.uleb128 0x9
+ 1786 0ba2 C4010000 		.long	0x1c4
+ 1787 0ba6 17       		.byte	0x17
+ 1788 0ba7 00       		.byte	0x0
+ 1789 0ba8 18       		.uleb128 0x18
+ 1790 0ba9 F0       		.byte	0xf0
+ 1791 0baa 05       		.byte	0x5
+ 1792 0bab 7D02     		.word	0x27d
+ 1793 0bad D80B0000 		.long	0xbd8
+ 1794 0bb1 15       		.uleb128 0x15
+ 1795 0bb2 5F6E6578 		.ascii "_nextf\0"
+ 1795      746600
+ 1796 0bb9 05       		.byte	0x5
+ 1797 0bba 7F02     		.word	0x27f
+ 1798 0bbc D80B0000 		.long	0xbd8
+ 1799 0bc0 02       		.byte	0x2
+ 1800 0bc1 23       		.byte	0x23
+ 1801 0bc2 00       		.uleb128 0x0
+ 1802 0bc3 15       		.uleb128 0x15
+ 1803 0bc4 5F6E6D61 		.ascii "_nmalloc\0"
+ 1803      6C6C6F63 
+ 1803      00
+ 1804 0bcd 05       		.byte	0x5
+ 1805 0bce 8002     		.word	0x280
+ 1806 0bd0 E80B0000 		.long	0xbe8
+ 1807 0bd4 02       		.byte	0x2
+ 1808 0bd5 23       		.byte	0x23
+ 1809 0bd6 78       		.uleb128 0x78
+ 1810 0bd7 00       		.byte	0x0
+ 1811 0bd8 08       		.uleb128 0x8
+ 1812 0bd9 87040000 		.long	0x487
+ 1813 0bdd E80B0000 		.long	0xbe8
+ 1814 0be1 09       		.uleb128 0x9
+ 1815 0be2 C4010000 		.long	0x1c4
+ 1816 0be6 1D       		.byte	0x1d
+ 1817 0be7 00       		.byte	0x0
+ 1818 0be8 08       		.uleb128 0x8
+ 1819 0be9 97000000 		.long	0x97
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 42
+
+
+ 1820 0bed F80B0000 		.long	0xbf8
+ 1821 0bf1 09       		.uleb128 0x9
+ 1822 0bf2 C4010000 		.long	0x1c4
+ 1823 0bf6 1D       		.byte	0x1d
+ 1824 0bf7 00       		.byte	0x0
+ 1825 0bf8 19       		.uleb128 0x19
+ 1826 0bf9 F0       		.byte	0xf0
+ 1827 0bfa 05       		.byte	0x5
+ 1828 0bfb 6202     		.word	0x262
+ 1829 0bfd 210C0000 		.long	0xc21
+ 1830 0c01 1A       		.uleb128 0x1a
+ 1831 0c02 5F726565 		.ascii "_reent\0"
+ 1831      6E7400
+ 1832 0c09 05       		.byte	0x5
+ 1833 0c0a 7802     		.word	0x278
+ 1834 0c0c 9C090000 		.long	0x99c
+ 1835 0c10 1A       		.uleb128 0x1a
+ 1836 0c11 5F756E75 		.ascii "_unused\0"
+ 1836      73656400 
+ 1837 0c19 05       		.byte	0x5
+ 1838 0c1a 8102     		.word	0x281
+ 1839 0c1c A80B0000 		.long	0xba8
+ 1840 0c20 00       		.byte	0x0
+ 1841 0c21 08       		.uleb128 0x8
+ 1842 0c22 A7000000 		.long	0xa7
+ 1843 0c26 310C0000 		.long	0xc31
+ 1844 0c2a 09       		.uleb128 0x9
+ 1845 0c2b C4010000 		.long	0x1c4
+ 1846 0c2f 18       		.byte	0x18
+ 1847 0c30 00       		.byte	0x0
+ 1848 0c31 1B       		.uleb128 0x1b
+ 1849 0c32 01       		.byte	0x1
+ 1850 0c33 3D0C0000 		.long	0xc3d
+ 1851 0c37 14       		.uleb128 0x14
+ 1852 0c38 AC040000 		.long	0x4ac
+ 1853 0c3c 00       		.byte	0x0
+ 1854 0c3d 0E       		.uleb128 0xe
+ 1855 0c3e 04       		.byte	0x4
+ 1856 0c3f 310C0000 		.long	0xc31
+ 1857 0c43 0E       		.uleb128 0xe
+ 1858 0c44 04       		.byte	0x4
+ 1859 0c45 A6020000 		.long	0x2a6
+ 1860 0c49 1B       		.uleb128 0x1b
+ 1861 0c4a 01       		.byte	0x1
+ 1862 0c4b 550C0000 		.long	0xc55
+ 1863 0c4f 14       		.uleb128 0x14
+ 1864 0c50 F2000000 		.long	0xf2
+ 1865 0c54 00       		.byte	0x0
+ 1866 0c55 0E       		.uleb128 0xe
+ 1867 0c56 04       		.byte	0x4
+ 1868 0c57 5B0C0000 		.long	0xc5b
+ 1869 0c5b 0E       		.uleb128 0xe
+ 1870 0c5c 04       		.byte	0x4
+ 1871 0c5d 490C0000 		.long	0xc49
+ 1872 0c61 08       		.uleb128 0x8
+ 1873 0c62 E9080000 		.long	0x8e9
+ 1874 0c66 710C0000 		.long	0xc71
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 43
+
+
+ 1875 0c6a 09       		.uleb128 0x9
+ 1876 0c6b C4010000 		.long	0x1c4
+ 1877 0c6f 02       		.byte	0x2
+ 1878 0c70 00       		.byte	0x0
+ 1879 0c71 03       		.uleb128 0x3
+ 1880 0c72 46494C45 		.ascii "FILE\0"
+ 1880      00
+ 1881 0c77 06       		.byte	0x6
+ 1882 0c78 32       		.byte	0x32
+ 1883 0c79 E9080000 		.long	0x8e9
+ 1884 0c7d 03       		.uleb128 0x3
+ 1885 0c7e 5046494C 		.ascii "PFILE\0"
+ 1885      4500
+ 1886 0c84 07       		.byte	0x7
+ 1887 0c85 1D       		.byte	0x1d
+ 1888 0c86 8A0C0000 		.long	0xc8a
+ 1889 0c8a 0E       		.uleb128 0xe
+ 1890 0c8b 04       		.byte	0x4
+ 1891 0c8c 710C0000 		.long	0xc71
+ 1892 0c90 0B       		.uleb128 0xb
+ 1893 0c91 04       		.byte	0x4
+ 1894 0c92 08       		.byte	0x8
+ 1895 0c93 24       		.byte	0x24
+ 1896 0c94 D90C0000 		.long	0xcd9
+ 1897 0c98 0C       		.uleb128 0xc
+ 1898 0c99 62797465 		.ascii "byte1\0"
+ 1898      3100
+ 1899 0c9f 08       		.byte	0x8
+ 1900 0ca0 25       		.byte	0x25
+ 1901 0ca1 BE000000 		.long	0xbe
+ 1902 0ca5 02       		.byte	0x2
+ 1903 0ca6 23       		.byte	0x23
+ 1904 0ca7 00       		.uleb128 0x0
+ 1905 0ca8 0C       		.uleb128 0xc
+ 1906 0ca9 62797465 		.ascii "byte2\0"
+ 1906      3200
+ 1907 0caf 08       		.byte	0x8
+ 1908 0cb0 26       		.byte	0x26
+ 1909 0cb1 BE000000 		.long	0xbe
+ 1910 0cb5 02       		.byte	0x2
+ 1911 0cb6 23       		.byte	0x23
+ 1912 0cb7 01       		.uleb128 0x1
+ 1913 0cb8 0C       		.uleb128 0xc
+ 1914 0cb9 62797465 		.ascii "byte3\0"
+ 1914      3300
+ 1915 0cbf 08       		.byte	0x8
+ 1916 0cc0 27       		.byte	0x27
+ 1917 0cc1 BE000000 		.long	0xbe
+ 1918 0cc5 02       		.byte	0x2
+ 1919 0cc6 23       		.byte	0x23
+ 1920 0cc7 02       		.uleb128 0x2
+ 1921 0cc8 0C       		.uleb128 0xc
+ 1922 0cc9 62797465 		.ascii "byte4\0"
+ 1922      3400
+ 1923 0ccf 08       		.byte	0x8
+ 1924 0cd0 28       		.byte	0x28
+ 1925 0cd1 BE000000 		.long	0xbe
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 44
+
+
+ 1926 0cd5 02       		.byte	0x2
+ 1927 0cd6 23       		.byte	0x23
+ 1928 0cd7 03       		.uleb128 0x3
+ 1929 0cd8 00       		.byte	0x0
+ 1930 0cd9 1C       		.uleb128 0x1c
+ 1931 0cda 63733232 		.ascii "cs229dimension\0"
+ 1931      3964696D 
+ 1931      656E7369 
+ 1931      6F6E00
+ 1932 0ce9 04       		.byte	0x4
+ 1933 0cea 08       		.byte	0x8
+ 1934 0ceb 22       		.byte	0x22
+ 1935 0cec 0B0D0000 		.long	0xd0b
+ 1936 0cf0 07       		.uleb128 0x7
+ 1937 0cf1 62797465 		.ascii "bytes\0"
+ 1937      7300
+ 1938 0cf7 08       		.byte	0x8
+ 1939 0cf8 29       		.byte	0x29
+ 1940 0cf9 900C0000 		.long	0xc90
+ 1941 0cfd 07       		.uleb128 0x7
+ 1942 0cfe 76616C75 		.ascii "value\0"
+ 1942      6500
+ 1943 0d04 08       		.byte	0x8
+ 1944 0d05 2B       		.byte	0x2b
+ 1945 0d06 97000000 		.long	0x97
+ 1946 0d0a 00       		.byte	0x0
+ 1947 0d0b 03       		.uleb128 0x3
+ 1948 0d0c 43534449 		.ascii "CSDIM\0"
+ 1948      4D00
+ 1949 0d12 08       		.byte	0x8
+ 1950 0d13 2C       		.byte	0x2c
+ 1951 0d14 D90C0000 		.long	0xcd9
+ 1952 0d18 06       		.uleb128 0x6
+ 1953 0d19 01       		.byte	0x1
+ 1954 0d1a 08       		.byte	0x8
+ 1955 0d1b 36       		.byte	0x36
+ 1956 0d1c 580D0000 		.long	0xd58
+ 1957 0d20 07       		.uleb128 0x7
+ 1958 0d21 7265645F 		.ascii "red_channel_size\0"
+ 1958      6368616E 
+ 1958      6E656C5F 
+ 1958      73697A65 
+ 1958      00
+ 1959 0d32 08       		.byte	0x8
+ 1960 0d33 37       		.byte	0x37
+ 1961 0d34 BE000000 		.long	0xbe
+ 1962 0d38 07       		.uleb128 0x7
+ 1963 0d39 626C6163 		.ascii "blackwhite_channel_size\0"
+ 1963      6B776869 
+ 1963      74655F63 
+ 1963      68616E6E 
+ 1963      656C5F73 
+ 1964 0d51 08       		.byte	0x8
+ 1965 0d52 38       		.byte	0x38
+ 1966 0d53 BE000000 		.long	0xbe
+ 1967 0d57 00       		.byte	0x0
+ 1968 0d58 0D       		.uleb128 0xd
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 45
+
+
+ 1969 0d59 63733232 		.ascii "cs229image\0"
+ 1969      39696D61 
+ 1969      676500
+ 1970 0d64 14       		.byte	0x14
+ 1971 0d65 08       		.byte	0x8
+ 1972 0d66 30       		.byte	0x30
+ 1973 0d67 190E0000 		.long	0xe19
+ 1974 0d6b 0C       		.uleb128 0xc
+ 1975 0d6c 6D616769 		.ascii "magic_number\0"
+ 1975      635F6E75 
+ 1975      6D626572 
+ 1975      00
+ 1976 0d79 08       		.byte	0x8
+ 1977 0d7a 31       		.byte	0x31
+ 1978 0d7b BE000000 		.long	0xbe
+ 1979 0d7f 02       		.byte	0x2
+ 1980 0d80 23       		.byte	0x23
+ 1981 0d81 00       		.uleb128 0x0
+ 1982 0d82 0C       		.uleb128 0xc
+ 1983 0d83 636F6C6F 		.ascii "color_mode\0"
+ 1983      725F6D6F 
+ 1983      646500
+ 1984 0d8e 08       		.byte	0x8
+ 1985 0d8f 33       		.byte	0x33
+ 1986 0d90 BE000000 		.long	0xbe
+ 1987 0d94 02       		.byte	0x2
+ 1988 0d95 23       		.byte	0x23
+ 1989 0d96 01       		.uleb128 0x1
+ 1990 0d97 0C       		.uleb128 0xc
+ 1991 0d98 66697273 		.ascii "first_channel\0"
+ 1991      745F6368 
+ 1991      616E6E65 
+ 1991      6C00
+ 1992 0da6 08       		.byte	0x8
+ 1993 0da7 39       		.byte	0x39
+ 1994 0da8 180D0000 		.long	0xd18
+ 1995 0dac 02       		.byte	0x2
+ 1996 0dad 23       		.byte	0x23
+ 1997 0dae 02       		.uleb128 0x2
+ 1998 0daf 0C       		.uleb128 0xc
+ 1999 0db0 67726565 		.ascii "green_channel_size\0"
+ 1999      6E5F6368 
+ 1999      616E6E65 
+ 1999      6C5F7369 
+ 1999      7A6500
+ 2000 0dc3 08       		.byte	0x8
+ 2001 0dc4 3A       		.byte	0x3a
+ 2002 0dc5 BE000000 		.long	0xbe
+ 2003 0dc9 02       		.byte	0x2
+ 2004 0dca 23       		.byte	0x23
+ 2005 0dcb 03       		.uleb128 0x3
+ 2006 0dcc 0C       		.uleb128 0xc
+ 2007 0dcd 626C7565 		.ascii "blue_channel_size\0"
+ 2007      5F636861 
+ 2007      6E6E656C 
+ 2007      5F73697A 
+ 2007      6500
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 46
+
+
+ 2008 0ddf 08       		.byte	0x8
+ 2009 0de0 3B       		.byte	0x3b
+ 2010 0de1 BE000000 		.long	0xbe
+ 2011 0de5 02       		.byte	0x2
+ 2012 0de6 23       		.byte	0x23
+ 2013 0de7 04       		.uleb128 0x4
+ 2014 0de8 0C       		.uleb128 0xc
+ 2015 0de9 68656967 		.ascii "height\0"
+ 2015      687400
+ 2016 0df0 08       		.byte	0x8
+ 2017 0df1 3D       		.byte	0x3d
+ 2018 0df2 0B0D0000 		.long	0xd0b
+ 2019 0df6 02       		.byte	0x2
+ 2020 0df7 23       		.byte	0x23
+ 2021 0df8 08       		.uleb128 0x8
+ 2022 0df9 0C       		.uleb128 0xc
+ 2023 0dfa 77696474 		.ascii "width\0"
+ 2023      6800
+ 2024 0e00 08       		.byte	0x8
+ 2025 0e01 3E       		.byte	0x3e
+ 2026 0e02 0B0D0000 		.long	0xd0b
+ 2027 0e06 02       		.byte	0x2
+ 2028 0e07 23       		.byte	0x23
+ 2029 0e08 0C       		.uleb128 0xc
+ 2030 0e09 0C       		.uleb128 0xc
+ 2031 0e0a 64617461 		.ascii "data\0"
+ 2031      00
+ 2032 0e0f 08       		.byte	0x8
+ 2033 0e10 40       		.byte	0x40
+ 2034 0e11 87040000 		.long	0x487
+ 2035 0e15 02       		.byte	0x2
+ 2036 0e16 23       		.byte	0x23
+ 2037 0e17 10       		.uleb128 0x10
+ 2038 0e18 00       		.byte	0x0
+ 2039 0e19 03       		.uleb128 0x3
+ 2040 0e1a 43535049 		.ascii "CSPIC\0"
+ 2040      4300
+ 2041 0e20 08       		.byte	0x8
+ 2042 0e21 41       		.byte	0x41
+ 2043 0e22 580D0000 		.long	0xd58
+ 2044 0e26 1D       		.uleb128 0x1d
+ 2045 0e27 01       		.byte	0x1
+ 2046 0e28 6D61696E 		.ascii "main\0"
+ 2046      00
+ 2047 0e2d 01       		.byte	0x1
+ 2048 0e2e 16       		.byte	0x16
+ 2049 0e2f 01       		.byte	0x1
+ 2050 0e30 F2000000 		.long	0xf2
+ 2051 0e34 00000000 		.long	LFB6
+ 2052 0e38 0C030000 		.long	LFE6
+ 2053 0e3c 00000000 		.secrel32	LLST0
+ 2054 0e40 C30E0000 		.long	0xec3
+ 2055 0e44 1E       		.uleb128 0x1e
+ 2056 0e45 61726763 		.ascii "argc\0"
+ 2056      00
+ 2057 0e4a 01       		.byte	0x1
+ 2058 0e4b 15       		.byte	0x15
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 47
+
+
+ 2059 0e4c F2000000 		.long	0xf2
+ 2060 0e50 43000000 		.secrel32	LLST1
+ 2061 0e54 1E       		.uleb128 0x1e
+ 2062 0e55 61726776 		.ascii "argv\0"
+ 2062      00
+ 2063 0e5a 01       		.byte	0x1
+ 2064 0e5b 15       		.byte	0x15
+ 2065 0e5c C30E0000 		.long	0xec3
+ 2066 0e60 9C000000 		.secrel32	LLST2
+ 2067 0e64 1F       		.uleb128 0x1f
+ 2068 0e65 70696374 		.ascii "picture\0"
+ 2068      75726500 
+ 2069 0e6d 01       		.byte	0x1
+ 2070 0e6e 18       		.byte	0x18
+ 2071 0e6f 190E0000 		.long	0xe19
+ 2072 0e73 02       		.byte	0x2
+ 2073 0e74 91       		.byte	0x91
+ 2074 0e75 48       		.sleb128 -56
+ 2075 0e76 20       		.uleb128 0x20
+ 2076 0e77 65727200 		.ascii "err\0"
+ 2077 0e7b 01       		.byte	0x1
+ 2078 0e7c 1B       		.byte	0x1b
+ 2079 0e7d 97000000 		.long	0x97
+ 2080 0e81 F5000000 		.secrel32	LLST3
+ 2081 0e85 21       		.uleb128 0x21
+ 2082 0e86 00000000 		.secrel32	Ldebug_ranges0+0x0
+ 2083 0e8a 9C0E0000 		.long	0xe9c
+ 2084 0e8e 20       		.uleb128 0x20
+ 2085 0e8f 6600     		.ascii "f\0"
+ 2086 0e91 01       		.byte	0x1
+ 2087 0e92 2C       		.byte	0x2c
+ 2088 0e93 7D0C0000 		.long	0xc7d
+ 2089 0e97 4A010000 		.secrel32	LLST4
+ 2090 0e9b 00       		.byte	0x0
+ 2091 0e9c 22       		.uleb128 0x22
+ 2092 0e9d 18000000 		.secrel32	Ldebug_ranges0+0x18
+ 2093 0ea1 20       		.uleb128 0x20
+ 2094 0ea2 73697A65 		.ascii "size\0"
+ 2094      00
+ 2095 0ea7 01       		.byte	0x1
+ 2096 0ea8 54       		.byte	0x54
+ 2097 0ea9 97000000 		.long	0x97
+ 2098 0ead 7E010000 		.secrel32	LLST5
+ 2099 0eb1 1F       		.uleb128 0x1f
+ 2100 0eb2 636F6C6F 		.ascii "color\0"
+ 2100      7200
+ 2101 0eb8 01       		.byte	0x1
+ 2102 0eb9 55       		.byte	0x55
+ 2103 0eba C90E0000 		.long	0xec9
+ 2104 0ebe 02       		.byte	0x2
+ 2105 0ebf 91       		.byte	0x91
+ 2106 0ec0 5C       		.sleb128 -36
+ 2107 0ec1 00       		.byte	0x0
+ 2108 0ec2 00       		.byte	0x0
+ 2109 0ec3 0E       		.uleb128 0xe
+ 2110 0ec4 04       		.byte	0x4
+ 2111 0ec5 7D060000 		.long	0x67d
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 48
+
+
+ 2112 0ec9 23       		.uleb128 0x23
+ 2113 0eca 97000000 		.long	0x97
+ 2114 0ece 09       		.uleb128 0x9
+ 2115 0ecf C4010000 		.long	0x1c4
+ 2116 0ed3 02       		.byte	0x2
+ 2117 0ed4 00       		.byte	0x0
+ 2118 0ed5 00       		.byte	0x0
+ 2119              		.section	.debug_abbrev,"dr"
+ 2120 0000 01       		.uleb128 0x1
+ 2121 0001 11       		.uleb128 0x11
+ 2122 0002 01       		.byte	0x1
+ 2123 0003 25       		.uleb128 0x25
+ 2124 0004 08       		.uleb128 0x8
+ 2125 0005 13       		.uleb128 0x13
+ 2126 0006 0B       		.uleb128 0xb
+ 2127 0007 03       		.uleb128 0x3
+ 2128 0008 08       		.uleb128 0x8
+ 2129 0009 1B       		.uleb128 0x1b
+ 2130 000a 08       		.uleb128 0x8
+ 2131 000b 11       		.uleb128 0x11
+ 2132 000c 01       		.uleb128 0x1
+ 2133 000d 12       		.uleb128 0x12
+ 2134 000e 01       		.uleb128 0x1
+ 2135 000f 10       		.uleb128 0x10
+ 2136 0010 06       		.uleb128 0x6
+ 2137 0011 00       		.byte	0x0
+ 2138 0012 00       		.byte	0x0
+ 2139 0013 02       		.uleb128 0x2
+ 2140 0014 24       		.uleb128 0x24
+ 2141 0015 00       		.byte	0x0
+ 2142 0016 0B       		.uleb128 0xb
+ 2143 0017 0B       		.uleb128 0xb
+ 2144 0018 3E       		.uleb128 0x3e
+ 2145 0019 0B       		.uleb128 0xb
+ 2146 001a 03       		.uleb128 0x3
+ 2147 001b 08       		.uleb128 0x8
+ 2148 001c 00       		.byte	0x0
+ 2149 001d 00       		.byte	0x0
+ 2150 001e 03       		.uleb128 0x3
+ 2151 001f 16       		.uleb128 0x16
+ 2152 0020 00       		.byte	0x0
+ 2153 0021 03       		.uleb128 0x3
+ 2154 0022 08       		.uleb128 0x8
+ 2155 0023 3A       		.uleb128 0x3a
+ 2156 0024 0B       		.uleb128 0xb
+ 2157 0025 3B       		.uleb128 0x3b
+ 2158 0026 0B       		.uleb128 0xb
+ 2159 0027 49       		.uleb128 0x49
+ 2160 0028 13       		.uleb128 0x13
+ 2161 0029 00       		.byte	0x0
+ 2162 002a 00       		.byte	0x0
+ 2163 002b 04       		.uleb128 0x4
+ 2164 002c 0F       		.uleb128 0xf
+ 2165 002d 00       		.byte	0x0
+ 2166 002e 0B       		.uleb128 0xb
+ 2167 002f 0B       		.uleb128 0xb
+ 2168 0030 00       		.byte	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 49
+
+
+ 2169 0031 00       		.byte	0x0
+ 2170 0032 05       		.uleb128 0x5
+ 2171 0033 16       		.uleb128 0x16
+ 2172 0034 00       		.byte	0x0
+ 2173 0035 03       		.uleb128 0x3
+ 2174 0036 08       		.uleb128 0x8
+ 2175 0037 3A       		.uleb128 0x3a
+ 2176 0038 0B       		.uleb128 0xb
+ 2177 0039 3B       		.uleb128 0x3b
+ 2178 003a 05       		.uleb128 0x5
+ 2179 003b 49       		.uleb128 0x49
+ 2180 003c 13       		.uleb128 0x13
+ 2181 003d 00       		.byte	0x0
+ 2182 003e 00       		.byte	0x0
+ 2183 003f 06       		.uleb128 0x6
+ 2184 0040 17       		.uleb128 0x17
+ 2185 0041 01       		.byte	0x1
+ 2186 0042 0B       		.uleb128 0xb
+ 2187 0043 0B       		.uleb128 0xb
+ 2188 0044 3A       		.uleb128 0x3a
+ 2189 0045 0B       		.uleb128 0xb
+ 2190 0046 3B       		.uleb128 0x3b
+ 2191 0047 0B       		.uleb128 0xb
+ 2192 0048 01       		.uleb128 0x1
+ 2193 0049 13       		.uleb128 0x13
+ 2194 004a 00       		.byte	0x0
+ 2195 004b 00       		.byte	0x0
+ 2196 004c 07       		.uleb128 0x7
+ 2197 004d 0D       		.uleb128 0xd
+ 2198 004e 00       		.byte	0x0
+ 2199 004f 03       		.uleb128 0x3
+ 2200 0050 08       		.uleb128 0x8
+ 2201 0051 3A       		.uleb128 0x3a
+ 2202 0052 0B       		.uleb128 0xb
+ 2203 0053 3B       		.uleb128 0x3b
+ 2204 0054 0B       		.uleb128 0xb
+ 2205 0055 49       		.uleb128 0x49
+ 2206 0056 13       		.uleb128 0x13
+ 2207 0057 00       		.byte	0x0
+ 2208 0058 00       		.byte	0x0
+ 2209 0059 08       		.uleb128 0x8
+ 2210 005a 01       		.uleb128 0x1
+ 2211 005b 01       		.byte	0x1
+ 2212 005c 49       		.uleb128 0x49
+ 2213 005d 13       		.uleb128 0x13
+ 2214 005e 01       		.uleb128 0x1
+ 2215 005f 13       		.uleb128 0x13
+ 2216 0060 00       		.byte	0x0
+ 2217 0061 00       		.byte	0x0
+ 2218 0062 09       		.uleb128 0x9
+ 2219 0063 21       		.uleb128 0x21
+ 2220 0064 00       		.byte	0x0
+ 2221 0065 49       		.uleb128 0x49
+ 2222 0066 13       		.uleb128 0x13
+ 2223 0067 2F       		.uleb128 0x2f
+ 2224 0068 0B       		.uleb128 0xb
+ 2225 0069 00       		.byte	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 50
+
+
+ 2226 006a 00       		.byte	0x0
+ 2227 006b 0A       		.uleb128 0xa
+ 2228 006c 24       		.uleb128 0x24
+ 2229 006d 00       		.byte	0x0
+ 2230 006e 0B       		.uleb128 0xb
+ 2231 006f 0B       		.uleb128 0xb
+ 2232 0070 3E       		.uleb128 0x3e
+ 2233 0071 0B       		.uleb128 0xb
+ 2234 0072 00       		.byte	0x0
+ 2235 0073 00       		.byte	0x0
+ 2236 0074 0B       		.uleb128 0xb
+ 2237 0075 13       		.uleb128 0x13
+ 2238 0076 01       		.byte	0x1
+ 2239 0077 0B       		.uleb128 0xb
+ 2240 0078 0B       		.uleb128 0xb
+ 2241 0079 3A       		.uleb128 0x3a
+ 2242 007a 0B       		.uleb128 0xb
+ 2243 007b 3B       		.uleb128 0x3b
+ 2244 007c 0B       		.uleb128 0xb
+ 2245 007d 01       		.uleb128 0x1
+ 2246 007e 13       		.uleb128 0x13
+ 2247 007f 00       		.byte	0x0
+ 2248 0080 00       		.byte	0x0
+ 2249 0081 0C       		.uleb128 0xc
+ 2250 0082 0D       		.uleb128 0xd
+ 2251 0083 00       		.byte	0x0
+ 2252 0084 03       		.uleb128 0x3
+ 2253 0085 08       		.uleb128 0x8
+ 2254 0086 3A       		.uleb128 0x3a
+ 2255 0087 0B       		.uleb128 0xb
+ 2256 0088 3B       		.uleb128 0x3b
+ 2257 0089 0B       		.uleb128 0xb
+ 2258 008a 49       		.uleb128 0x49
+ 2259 008b 13       		.uleb128 0x13
+ 2260 008c 38       		.uleb128 0x38
+ 2261 008d 0A       		.uleb128 0xa
+ 2262 008e 00       		.byte	0x0
+ 2263 008f 00       		.byte	0x0
+ 2264 0090 0D       		.uleb128 0xd
+ 2265 0091 13       		.uleb128 0x13
+ 2266 0092 01       		.byte	0x1
+ 2267 0093 03       		.uleb128 0x3
+ 2268 0094 08       		.uleb128 0x8
+ 2269 0095 0B       		.uleb128 0xb
+ 2270 0096 0B       		.uleb128 0xb
+ 2271 0097 3A       		.uleb128 0x3a
+ 2272 0098 0B       		.uleb128 0xb
+ 2273 0099 3B       		.uleb128 0x3b
+ 2274 009a 0B       		.uleb128 0xb
+ 2275 009b 01       		.uleb128 0x1
+ 2276 009c 13       		.uleb128 0x13
+ 2277 009d 00       		.byte	0x0
+ 2278 009e 00       		.byte	0x0
+ 2279 009f 0E       		.uleb128 0xe
+ 2280 00a0 0F       		.uleb128 0xf
+ 2281 00a1 00       		.byte	0x0
+ 2282 00a2 0B       		.uleb128 0xb
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 51
+
+
+ 2283 00a3 0B       		.uleb128 0xb
+ 2284 00a4 49       		.uleb128 0x49
+ 2285 00a5 13       		.uleb128 0x13
+ 2286 00a6 00       		.byte	0x0
+ 2287 00a7 00       		.byte	0x0
+ 2288 00a8 0F       		.uleb128 0xf
+ 2289 00a9 13       		.uleb128 0x13
+ 2290 00aa 01       		.byte	0x1
+ 2291 00ab 03       		.uleb128 0x3
+ 2292 00ac 0E       		.uleb128 0xe
+ 2293 00ad 0B       		.uleb128 0xb
+ 2294 00ae 05       		.uleb128 0x5
+ 2295 00af 3A       		.uleb128 0x3a
+ 2296 00b0 0B       		.uleb128 0xb
+ 2297 00b1 3B       		.uleb128 0x3b
+ 2298 00b2 0B       		.uleb128 0xb
+ 2299 00b3 01       		.uleb128 0x1
+ 2300 00b4 13       		.uleb128 0x13
+ 2301 00b5 00       		.byte	0x0
+ 2302 00b6 00       		.byte	0x0
+ 2303 00b7 10       		.uleb128 0x10
+ 2304 00b8 13       		.uleb128 0x13
+ 2305 00b9 01       		.byte	0x1
+ 2306 00ba 03       		.uleb128 0x3
+ 2307 00bb 08       		.uleb128 0x8
+ 2308 00bc 0B       		.uleb128 0xb
+ 2309 00bd 05       		.uleb128 0x5
+ 2310 00be 3A       		.uleb128 0x3a
+ 2311 00bf 0B       		.uleb128 0xb
+ 2312 00c0 3B       		.uleb128 0x3b
+ 2313 00c1 0B       		.uleb128 0xb
+ 2314 00c2 01       		.uleb128 0x1
+ 2315 00c3 13       		.uleb128 0x13
+ 2316 00c4 00       		.byte	0x0
+ 2317 00c5 00       		.byte	0x0
+ 2318 00c6 11       		.uleb128 0x11
+ 2319 00c7 0D       		.uleb128 0xd
+ 2320 00c8 00       		.byte	0x0
+ 2321 00c9 03       		.uleb128 0x3
+ 2322 00ca 0E       		.uleb128 0xe
+ 2323 00cb 3A       		.uleb128 0x3a
+ 2324 00cc 0B       		.uleb128 0xb
+ 2325 00cd 3B       		.uleb128 0x3b
+ 2326 00ce 0B       		.uleb128 0xb
+ 2327 00cf 49       		.uleb128 0x49
+ 2328 00d0 13       		.uleb128 0x13
+ 2329 00d1 38       		.uleb128 0x38
+ 2330 00d2 0A       		.uleb128 0xa
+ 2331 00d3 00       		.byte	0x0
+ 2332 00d4 00       		.byte	0x0
+ 2333 00d5 12       		.uleb128 0x12
+ 2334 00d6 15       		.uleb128 0x15
+ 2335 00d7 00       		.byte	0x0
+ 2336 00d8 27       		.uleb128 0x27
+ 2337 00d9 0C       		.uleb128 0xc
+ 2338 00da 00       		.byte	0x0
+ 2339 00db 00       		.byte	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 52
+
+
+ 2340 00dc 13       		.uleb128 0x13
+ 2341 00dd 15       		.uleb128 0x15
+ 2342 00de 01       		.byte	0x1
+ 2343 00df 27       		.uleb128 0x27
+ 2344 00e0 0C       		.uleb128 0xc
+ 2345 00e1 49       		.uleb128 0x49
+ 2346 00e2 13       		.uleb128 0x13
+ 2347 00e3 01       		.uleb128 0x1
+ 2348 00e4 13       		.uleb128 0x13
+ 2349 00e5 00       		.byte	0x0
+ 2350 00e6 00       		.byte	0x0
+ 2351 00e7 14       		.uleb128 0x14
+ 2352 00e8 05       		.uleb128 0x5
+ 2353 00e9 00       		.byte	0x0
+ 2354 00ea 49       		.uleb128 0x49
+ 2355 00eb 13       		.uleb128 0x13
+ 2356 00ec 00       		.byte	0x0
+ 2357 00ed 00       		.byte	0x0
+ 2358 00ee 15       		.uleb128 0x15
+ 2359 00ef 0D       		.uleb128 0xd
+ 2360 00f0 00       		.byte	0x0
+ 2361 00f1 03       		.uleb128 0x3
+ 2362 00f2 08       		.uleb128 0x8
+ 2363 00f3 3A       		.uleb128 0x3a
+ 2364 00f4 0B       		.uleb128 0xb
+ 2365 00f5 3B       		.uleb128 0x3b
+ 2366 00f6 05       		.uleb128 0x5
+ 2367 00f7 49       		.uleb128 0x49
+ 2368 00f8 13       		.uleb128 0x13
+ 2369 00f9 38       		.uleb128 0x38
+ 2370 00fa 0A       		.uleb128 0xa
+ 2371 00fb 00       		.byte	0x0
+ 2372 00fc 00       		.byte	0x0
+ 2373 00fd 16       		.uleb128 0x16
+ 2374 00fe 26       		.uleb128 0x26
+ 2375 00ff 00       		.byte	0x0
+ 2376 0100 49       		.uleb128 0x49
+ 2377 0101 13       		.uleb128 0x13
+ 2378 0102 00       		.byte	0x0
+ 2379 0103 00       		.byte	0x0
+ 2380 0104 17       		.uleb128 0x17
+ 2381 0105 13       		.uleb128 0x13
+ 2382 0106 01       		.byte	0x1
+ 2383 0107 03       		.uleb128 0x3
+ 2384 0108 08       		.uleb128 0x8
+ 2385 0109 0B       		.uleb128 0xb
+ 2386 010a 0B       		.uleb128 0xb
+ 2387 010b 3A       		.uleb128 0x3a
+ 2388 010c 0B       		.uleb128 0xb
+ 2389 010d 3B       		.uleb128 0x3b
+ 2390 010e 05       		.uleb128 0x5
+ 2391 010f 01       		.uleb128 0x1
+ 2392 0110 13       		.uleb128 0x13
+ 2393 0111 00       		.byte	0x0
+ 2394 0112 00       		.byte	0x0
+ 2395 0113 18       		.uleb128 0x18
+ 2396 0114 13       		.uleb128 0x13
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 53
+
+
+ 2397 0115 01       		.byte	0x1
+ 2398 0116 0B       		.uleb128 0xb
+ 2399 0117 0B       		.uleb128 0xb
+ 2400 0118 3A       		.uleb128 0x3a
+ 2401 0119 0B       		.uleb128 0xb
+ 2402 011a 3B       		.uleb128 0x3b
+ 2403 011b 05       		.uleb128 0x5
+ 2404 011c 01       		.uleb128 0x1
+ 2405 011d 13       		.uleb128 0x13
+ 2406 011e 00       		.byte	0x0
+ 2407 011f 00       		.byte	0x0
+ 2408 0120 19       		.uleb128 0x19
+ 2409 0121 17       		.uleb128 0x17
+ 2410 0122 01       		.byte	0x1
+ 2411 0123 0B       		.uleb128 0xb
+ 2412 0124 0B       		.uleb128 0xb
+ 2413 0125 3A       		.uleb128 0x3a
+ 2414 0126 0B       		.uleb128 0xb
+ 2415 0127 3B       		.uleb128 0x3b
+ 2416 0128 05       		.uleb128 0x5
+ 2417 0129 01       		.uleb128 0x1
+ 2418 012a 13       		.uleb128 0x13
+ 2419 012b 00       		.byte	0x0
+ 2420 012c 00       		.byte	0x0
+ 2421 012d 1A       		.uleb128 0x1a
+ 2422 012e 0D       		.uleb128 0xd
+ 2423 012f 00       		.byte	0x0
+ 2424 0130 03       		.uleb128 0x3
+ 2425 0131 08       		.uleb128 0x8
+ 2426 0132 3A       		.uleb128 0x3a
+ 2427 0133 0B       		.uleb128 0xb
+ 2428 0134 3B       		.uleb128 0x3b
+ 2429 0135 05       		.uleb128 0x5
+ 2430 0136 49       		.uleb128 0x49
+ 2431 0137 13       		.uleb128 0x13
+ 2432 0138 00       		.byte	0x0
+ 2433 0139 00       		.byte	0x0
+ 2434 013a 1B       		.uleb128 0x1b
+ 2435 013b 15       		.uleb128 0x15
+ 2436 013c 01       		.byte	0x1
+ 2437 013d 27       		.uleb128 0x27
+ 2438 013e 0C       		.uleb128 0xc
+ 2439 013f 01       		.uleb128 0x1
+ 2440 0140 13       		.uleb128 0x13
+ 2441 0141 00       		.byte	0x0
+ 2442 0142 00       		.byte	0x0
+ 2443 0143 1C       		.uleb128 0x1c
+ 2444 0144 17       		.uleb128 0x17
+ 2445 0145 01       		.byte	0x1
+ 2446 0146 03       		.uleb128 0x3
+ 2447 0147 08       		.uleb128 0x8
+ 2448 0148 0B       		.uleb128 0xb
+ 2449 0149 0B       		.uleb128 0xb
+ 2450 014a 3A       		.uleb128 0x3a
+ 2451 014b 0B       		.uleb128 0xb
+ 2452 014c 3B       		.uleb128 0x3b
+ 2453 014d 0B       		.uleb128 0xb
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 54
+
+
+ 2454 014e 01       		.uleb128 0x1
+ 2455 014f 13       		.uleb128 0x13
+ 2456 0150 00       		.byte	0x0
+ 2457 0151 00       		.byte	0x0
+ 2458 0152 1D       		.uleb128 0x1d
+ 2459 0153 2E       		.uleb128 0x2e
+ 2460 0154 01       		.byte	0x1
+ 2461 0155 3F       		.uleb128 0x3f
+ 2462 0156 0C       		.uleb128 0xc
+ 2463 0157 03       		.uleb128 0x3
+ 2464 0158 08       		.uleb128 0x8
+ 2465 0159 3A       		.uleb128 0x3a
+ 2466 015a 0B       		.uleb128 0xb
+ 2467 015b 3B       		.uleb128 0x3b
+ 2468 015c 0B       		.uleb128 0xb
+ 2469 015d 27       		.uleb128 0x27
+ 2470 015e 0C       		.uleb128 0xc
+ 2471 015f 49       		.uleb128 0x49
+ 2472 0160 13       		.uleb128 0x13
+ 2473 0161 11       		.uleb128 0x11
+ 2474 0162 01       		.uleb128 0x1
+ 2475 0163 12       		.uleb128 0x12
+ 2476 0164 01       		.uleb128 0x1
+ 2477 0165 40       		.uleb128 0x40
+ 2478 0166 06       		.uleb128 0x6
+ 2479 0167 01       		.uleb128 0x1
+ 2480 0168 13       		.uleb128 0x13
+ 2481 0169 00       		.byte	0x0
+ 2482 016a 00       		.byte	0x0
+ 2483 016b 1E       		.uleb128 0x1e
+ 2484 016c 05       		.uleb128 0x5
+ 2485 016d 00       		.byte	0x0
+ 2486 016e 03       		.uleb128 0x3
+ 2487 016f 08       		.uleb128 0x8
+ 2488 0170 3A       		.uleb128 0x3a
+ 2489 0171 0B       		.uleb128 0xb
+ 2490 0172 3B       		.uleb128 0x3b
+ 2491 0173 0B       		.uleb128 0xb
+ 2492 0174 49       		.uleb128 0x49
+ 2493 0175 13       		.uleb128 0x13
+ 2494 0176 02       		.uleb128 0x2
+ 2495 0177 06       		.uleb128 0x6
+ 2496 0178 00       		.byte	0x0
+ 2497 0179 00       		.byte	0x0
+ 2498 017a 1F       		.uleb128 0x1f
+ 2499 017b 34       		.uleb128 0x34
+ 2500 017c 00       		.byte	0x0
+ 2501 017d 03       		.uleb128 0x3
+ 2502 017e 08       		.uleb128 0x8
+ 2503 017f 3A       		.uleb128 0x3a
+ 2504 0180 0B       		.uleb128 0xb
+ 2505 0181 3B       		.uleb128 0x3b
+ 2506 0182 0B       		.uleb128 0xb
+ 2507 0183 49       		.uleb128 0x49
+ 2508 0184 13       		.uleb128 0x13
+ 2509 0185 02       		.uleb128 0x2
+ 2510 0186 0A       		.uleb128 0xa
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 55
+
+
+ 2511 0187 00       		.byte	0x0
+ 2512 0188 00       		.byte	0x0
+ 2513 0189 20       		.uleb128 0x20
+ 2514 018a 34       		.uleb128 0x34
+ 2515 018b 00       		.byte	0x0
+ 2516 018c 03       		.uleb128 0x3
+ 2517 018d 08       		.uleb128 0x8
+ 2518 018e 3A       		.uleb128 0x3a
+ 2519 018f 0B       		.uleb128 0xb
+ 2520 0190 3B       		.uleb128 0x3b
+ 2521 0191 0B       		.uleb128 0xb
+ 2522 0192 49       		.uleb128 0x49
+ 2523 0193 13       		.uleb128 0x13
+ 2524 0194 02       		.uleb128 0x2
+ 2525 0195 06       		.uleb128 0x6
+ 2526 0196 00       		.byte	0x0
+ 2527 0197 00       		.byte	0x0
+ 2528 0198 21       		.uleb128 0x21
+ 2529 0199 0B       		.uleb128 0xb
+ 2530 019a 01       		.byte	0x1
+ 2531 019b 55       		.uleb128 0x55
+ 2532 019c 06       		.uleb128 0x6
+ 2533 019d 01       		.uleb128 0x1
+ 2534 019e 13       		.uleb128 0x13
+ 2535 019f 00       		.byte	0x0
+ 2536 01a0 00       		.byte	0x0
+ 2537 01a1 22       		.uleb128 0x22
+ 2538 01a2 0B       		.uleb128 0xb
+ 2539 01a3 01       		.byte	0x1
+ 2540 01a4 55       		.uleb128 0x55
+ 2541 01a5 06       		.uleb128 0x6
+ 2542 01a6 00       		.byte	0x0
+ 2543 01a7 00       		.byte	0x0
+ 2544 01a8 23       		.uleb128 0x23
+ 2545 01a9 01       		.uleb128 0x1
+ 2546 01aa 01       		.byte	0x1
+ 2547 01ab 49       		.uleb128 0x49
+ 2548 01ac 13       		.uleb128 0x13
+ 2549 01ad 00       		.byte	0x0
+ 2550 01ae 00       		.byte	0x0
+ 2551 01af 00       		.byte	0x0
+ 2552              		.section	.debug_pubnames,"dr"
+ 2553 0000 17000000 		.long	0x17
+ 2554 0004 0200     		.word	0x2
+ 2555 0006 00000000 		.secrel32	Ldebug_info0
+ 2556 000a D60E0000 		.long	0xed6
+ 2557 000e 260E0000 		.long	0xe26
+ 2558 0012 6D61696E 		.ascii "main\0"
+ 2558      00
+ 2559 0017 00000000 		.long	0x0
+ 2560              		.section	.debug_aranges,"dr"
+ 2561 0000 1C000000 		.long	0x1c
+ 2562 0004 0200     		.word	0x2
+ 2563 0006 00000000 		.secrel32	Ldebug_info0
+ 2564 000a 04       		.byte	0x4
+ 2565 000b 00       		.byte	0x0
+ 2566 000c 0000     		.word	0x0
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 56
+
+
+ 2567 000e 0000     		.word	0x0
+ 2568 0010 00000000 		.long	Ltext0
+ 2569 0014 0C030000 		.long	Letext0-Ltext0
+ 2570 0018 00000000 		.long	0x0
+ 2571 001c 00000000 		.long	0x0
+ 2572              		.section	.debug_ranges,"dr"
+ 2573              	Ldebug_ranges0:
+ 2574 0000 60000000 		.long	LBB2-Ltext0
+ 2575 0004 9A000000 		.long	LBE2-Ltext0
+ 2576 0008 91020000 		.long	LBB5-Ltext0
+ 2577 000c A5020000 		.long	LBE5-Ltext0
+ 2578 0010 00000000 		.long	0x0
+ 2579 0014 00000000 		.long	0x0
+ 2580 0018 24010000 		.long	LBB3-Ltext0
+ 2581 001c E0010000 		.long	LBE3-Ltext0
+ 2582 0020 A5020000 		.long	LBB6-Ltext0
+ 2583 0024 0C030000 		.long	LBE6-Ltext0
+ 2584 0028 F7010000 		.long	LBB4-Ltext0
+ 2585 002c 60020000 		.long	LBE4-Ltext0
+ 2586 0030 00000000 		.long	0x0
+ 2587 0034 00000000 		.long	0x0
+ 2588              		.section	.debug_str,"dr"
+ 2589              	LASF0:
+ 2590 0000 5F6F6E5F 		.ascii "_on_exit_args\0"
+ 2590      65786974 
+ 2590      5F617267 
+ 2590      7300
+GAS LISTING /cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s 			page 57
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 imagestats.c
+/cygdrive/c/Users/THESCI~1/AppData/Local/Temp/ccnfwRWF.s:42     .text:00000000 _main
+
+UNDEFINED SYMBOLS
+___main
+___getreent
+_fopen
+_read_cs229picture
+_fclose
+_ReportError
+_printf
+_count_pixels_of_color

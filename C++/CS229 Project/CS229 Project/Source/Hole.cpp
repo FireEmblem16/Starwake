@@ -1,0 +1,34 @@
+///////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////// Hole.cpp /////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+/// Implements the hole class.                                                  ///
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+#ifndef _HOLE_CPP
+#define _HOLE_CPP
+
+#include "../Headers/Hole.h"
+
+Hole::Hole(string Type, string Display, string Name) : Property(Type,Display,Name)
+{return;}
+
+Hole::Hole(const Hole& rhs) : Property(rhs.type,rhs.disp,rhs.name,rhs.energy_cost,rhs.turn_cost)
+{return;}
+
+Hole& Hole::operator =(const Hole& rhs)
+{
+	if(this == &rhs)
+		return *this;
+
+	Property::operator =(rhs);
+	return *this;
+}
+
+Item* Hole::Clone()
+{
+	Hole* ret = new Hole("","");
+	*ret = *this;
+	return (Item*)ret;
+}
+
+#endif

@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Stdlib">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Stdlib\Hal">
+      <UniqueIdentifier>{b2a6be19-f790-4217-85f7-80a89fe6a206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\C++ Include">
+      <UniqueIdentifier>{581f308a-9117-42a1-9632-8620c5da819c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Standard Library">
+      <UniqueIdentifier>{a2da3dcc-b4a2-4593-aeb9-4df86f02f0df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Debug">
+      <UniqueIdentifier>{4f7171c0-beae-44c5-9fcb-11c5052f6ddc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Debug\Header">
+      <UniqueIdentifier>{e4800bc1-a71f-4b66-a2b2-85b03046b3dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Debug\Source">
+      <UniqueIdentifier>{9b102663-3fbd-425d-8e61-134b6a6db006}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Memory Managment">
+      <UniqueIdentifier>{dea2aad0-fdab-496f-a68e-3196b5638c09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Memory Managment\Source">
+      <UniqueIdentifier>{94e3481b-9b30-4e3d-8f0c-5217e446ac81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Memory Managment\Headers">
+      <UniqueIdentifier>{4ad6db6d-ea1f-4bff-af8e-53a0e6555abd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Keyboard">
+      <UniqueIdentifier>{485aef97-2979-4b20-b226-0937accf79db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\System">
+      <UniqueIdentifier>{d8d62064-05ec-4706-8e21-399f9ec20a8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\System\Headers">
+      <UniqueIdentifier>{662a1df6-1b7a-48dc-ac54-11bd1e47763a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\System\Source">
+      <UniqueIdentifier>{cf28e508-11d6-4747-8d07-d2d1a3391b2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Floppy Disk">
+      <UniqueIdentifier>{50854a52-35e8-41ce-8bf6-c29fb58a48ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Exceptions">
+      <UniqueIdentifier>{d3916071-2144-40f6-9a9e-4c75c25ea5c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Exceptions\Header">
+      <UniqueIdentifier>{f9bf7572-6ee2-47eb-a1f8-8771aed36d2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Exceptions\Source">
+      <UniqueIdentifier>{30fe3b3a-a925-486f-874a-af8a0f268627}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Virtual File System">
+      <UniqueIdentifier>{4b1792e1-fa50-4fed-b95f-579a9a98e27d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Virtual File System\Headers">
+      <UniqueIdentifier>{ec2891fa-9a73-4081-b14d-74a05ca89369}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdlib\Virtual File System\Source">
+      <UniqueIdentifier>{4cf16829-275c-4f7d-84f7-fc17610b715f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="panic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debugcmd.cpp">
+      <Filter>Stdlib\Debug\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugDisplay.cpp">
+      <Filter>Stdlib\Debug\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="mmngr_phys.cpp">
+      <Filter>Stdlib\Memory Managment\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="mmngr_stack.cpp">
+      <Filter>Stdlib\Memory Managment\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="mmngr_virtual.cpp">
+      <Filter>Stdlib\Memory Managment\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vmmngr_pde.cpp">
+      <Filter>Stdlib\Memory Managment\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="vmmngr_pte.cpp">
+      <Filter>Stdlib\Memory Managment\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="keyboard.cpp">
+      <Filter>Stdlib\System\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="sleep.cpp">
+      <Filter>Stdlib\System\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions.cpp">
+      <Filter>Stdlib\Exceptions\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="fsys.cpp">
+      <Filter>Stdlib\Virtual File System\Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cpu.h">
+      <Filter>Stdlib\Hal</Filter>
+    </ClInclude>
+    <ClInclude Include="dma.h">
+      <Filter>Stdlib\Hal</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>Stdlib\Hal</Filter>
+    </ClInclude>
+    <ClInclude Include="gdt.h">
+      <Filter>Stdlib\Hal</Filter>
+    </ClInclude>
+    <ClInclude Include="hal.h">
+      <Filter>Stdlib\Hal</Filter>
+    </ClInclude>
+    <ClInclude Include="idt.h">
+      <Filter>Stdlib\Hal</Filter>
+    </ClInclude>
+    <ClInclude Include="pic.h">
+      <Filter>Stdlib\Hal</Filter>
+    </ClInclude>
+    <ClInclude Include="pit.h">
+      <Filter>Stdlib\Hal</Filter>
+    </ClInclude>
+    <ClInclude Include="regs.h">
+      <Filter>Stdlib\Hal</Filter>
+    </ClInclude>
+    <ClInclude Include="_null.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="bootinfo.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="bpb.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="crtdef.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="ctype.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="fat12.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="float.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="limits.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="size_t.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="stdarg.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="stdint.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="stdio.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="string.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="va_list.h">
+      <Filter>Stdlib\Standard Library</Filter>
+    </ClInclude>
+    <ClInclude Include="Debugcmd.h">
+      <Filter>Stdlib\Debug\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDisplay.h">
+      <Filter>Stdlib\Debug\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="mmngr_phys.h">
+      <Filter>Stdlib\Memory Managment\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="mmngr_stack.h">
+      <Filter>Stdlib\Memory Managment\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="mmngr_virtual.h">
+      <Filter>Stdlib\Memory Managment\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmngr_pde.h">
+      <Filter>Stdlib\Memory Managment\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vmmngr_pte.h">
+      <Filter>Stdlib\Memory Managment\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="kybrd.h">
+      <Filter>Stdlib\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="naomi.h">
+      <Filter>Stdlib\System\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="flpydsk.h">
+      <Filter>Stdlib\Floppy Disk</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions.h">
+      <Filter>Stdlib\Exceptions\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="fsys.h">
+      <Filter>Stdlib\Virtual File System\Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cctype">
+      <Filter>Stdlib\C++ Include</Filter>
+    </None>
+    <None Include="cstdarg">
+      <Filter>Stdlib\C++ Include</Filter>
+    </None>
+    <None Include="cstdint">
+      <Filter>Stdlib\C++ Include</Filter>
+    </None>
+    <None Include="cstdio">
+      <Filter>Stdlib\C++ Include</Filter>
+    </None>
+    <None Include="cstring">
+      <Filter>Stdlib\C++ Include</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

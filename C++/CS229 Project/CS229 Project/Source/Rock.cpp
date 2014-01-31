@@ -1,0 +1,34 @@
+///////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////// Rock.cpp /////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+/// Implements the rock class.                                                  ///
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+#ifndef _ROCK_CPP
+#define _ROCK_CPP
+
+#include "../Headers/Rock.h"
+
+Rock::Rock(string Type, string Display, string Name, string Color) : Object(Type,Display,Name,Color)
+{return;}
+
+Rock::Rock(const Rock& rhs) : Object(rhs.type,rhs.disp,rhs.name,rhs.color)
+{return;}
+
+Rock& Rock::operator =(const Rock& rhs)
+{
+	if(this == &rhs)
+		return *this;
+
+	Object::operator =(rhs);
+	return *this;
+}
+
+Item* Rock::Clone()
+{
+	Rock* ret = new Rock("","");
+	*ret = *this;
+	return (Item*)ret;
+}
+
+#endif

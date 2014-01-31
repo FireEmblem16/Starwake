@@ -1,0 +1,1 @@
+copy /Y Kernel\NAOMI.SYS A:\NAOMI.SYS

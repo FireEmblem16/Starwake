@@ -1,0 +1,9 @@
+// cstring
+// The c++ include file for string.h
+
+#ifndef CSTRING_
+#define CSTRING_
+
+#include <sting.h>
+
+#endif

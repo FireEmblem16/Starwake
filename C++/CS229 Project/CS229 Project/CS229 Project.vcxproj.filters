@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Properties">
+      <UniqueIdentifier>{40d7631d-910f-484d-8a7f-4f77ce4850fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{d105a8c7-2899-4bd6-804f-77dc9b582a4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Base Entries">
+      <UniqueIdentifier>{00b3befb-f9a4-4373-b845-1c93a473f12b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Simulation Files">
+      <UniqueIdentifier>{f787b054-c08c-4bcf-951d-4b11fabc3991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\XML Parser">
+      <UniqueIdentifier>{fb5a8cc9-808e-4f09-8ba2-a568a876c47f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Behaviour">
+      <UniqueIdentifier>{dd97cfcf-791b-4140-a910-de872a902b2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Behaviour\Robot Behaviours">
+      <UniqueIdentifier>{de5ff4f3-c77a-4221-ba6c-561a021fe3e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Behaviour\Probe Behaviours">
+      <UniqueIdentifier>{f319e89f-89f7-40fc-bf7f-7ad70377feb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Behaviour\Move Behaviours">
+      <UniqueIdentifier>{74a320f3-d8f8-4f25-bf90-4e54eb7349e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Behaviour\Collision Behaviours">
+      <UniqueIdentifier>{155fcbe7-2edc-46d9-85e9-278f2d5ea09d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Message System">
+      <UniqueIdentifier>{b592025c-633c-4aee-b4b0-1ada4d2d3f73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Simulation Files">
+      <UniqueIdentifier>{cddecb2d-bb62-4c75-922c-e21ebc06bb57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{29c9a823-6acc-4687-957f-c202d69dddf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Properties">
+      <UniqueIdentifier>{889e9ad3-8ad8-4ded-8ba8-998e0a6080a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Base Entries">
+      <UniqueIdentifier>{24531cb8-0093-4904-9ef1-1c6829b5ed29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\XML Parser">
+      <UniqueIdentifier>{6d7e3117-1dd9-4224-9867-8baf3477e1ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Behaviour">
+      <UniqueIdentifier>{d6a4444f-9151-4d89-a69f-30cb809cbe99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Behaviour\Robot Behaviours">
+      <UniqueIdentifier>{9942ee0d-bb61-46f4-9f68-9b216c110428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Behaviour\Probe Behaviours">
+      <UniqueIdentifier>{bc8c4d60-2834-420d-8556-8be48a95c8a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Behaviour\Move Behaviours">
+      <UniqueIdentifier>{8b8aa521-9b83-4863-9e4e-d5352e7132e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Behaviour\Collision Behaviours">
+      <UniqueIdentifier>{fbdfa009-f54c-4472-8167-7fe18970d7e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Message System">
+      <UniqueIdentifier>{cfa026db-4211-4b3a-b0d1-d7a2f873abe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Hole.cpp">
+      <Filter>Source Files\Properties</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Jam.cpp">
+      <Filter>Source Files\Properties</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lava.cpp">
+      <Filter>Source Files\Properties</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mud.cpp">
+      <Filter>Source Files\Properties</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Water.cpp">
+      <Filter>Source Files\Properties</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Ball.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Block.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EarthRock.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EnergyPill.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Robot.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RumulanRock.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Geometry.cpp">
+      <Filter>Source Files\Base Entries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Item.cpp">
+      <Filter>Source Files\Base Entries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object.cpp">
+      <Filter>Source Files\Base Entries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Property.cpp">
+      <Filter>Source Files\Base Entries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Rock.cpp">
+      <Filter>Source Files\Base Entries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Entry.cpp">
+      <Filter>Source Files\Simulation Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Simulation.cpp">
+      <Filter>Source Files\Simulation Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\XMLParser.cpp">
+      <Filter>Source Files\XML Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Behaviour.cpp">
+      <Filter>Source Files\Behaviour</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Target.cpp">
+      <Filter>Source Files\Behaviour</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PillAddict.cpp">
+      <Filter>Source Files\Behaviour\Robot Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Probeable.cpp">
+      <Filter>Source Files\Behaviour\Probe Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Unprobeable.cpp">
+      <Filter>Source Files\Behaviour\Probe Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PillSeeker.cpp">
+      <Filter>Source Files\Behaviour\Move Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Stationary.cpp">
+      <Filter>Source Files\Behaviour\Move Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Consumable.cpp">
+      <Filter>Source Files\Behaviour\Collision Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\HardPlace.cpp">
+      <Filter>Source Files\Behaviour\Collision Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RollingPlace.cpp">
+      <Filter>Source Files\Behaviour\Collision Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SoftPlace.cpp">
+      <Filter>Source Files\Behaviour\Collision Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Command.cpp">
+      <Filter>Source Files\Message System</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MessageReader.cpp">
+      <Filter>Source Files\Message System</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MoveInfo.cpp">
+      <Filter>Source Files\Message System</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sentry.cpp">
+      <Filter>Source Files\Behaviour\Robot Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Centurion.cpp">
+      <Filter>Source Files\Behaviour\Move Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tribot.cpp">
+      <Filter>Source Files\Behaviour\Robot Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Gatherer.cpp">
+      <Filter>Source Files\Behaviour\Move Behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\simulate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\Defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Entry.h">
+      <Filter>Header Files\Simulation Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Simulation.h">
+      <Filter>Header Files\Simulation Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Ball.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Block.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\EarthRock.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\EnergyPill.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Robot.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\RumulanRock.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Hole.h">
+      <Filter>Header Files\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Jam.h">
+      <Filter>Header Files\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Lava.h">
+      <Filter>Header Files\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Mud.h">
+      <Filter>Header Files\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Water.h">
+      <Filter>Header Files\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Geometry.h">
+      <Filter>Header Files\Base Entries</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Item.h">
+      <Filter>Header Files\Base Entries</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Object.h">
+      <Filter>Header Files\Base Entries</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Property.h">
+      <Filter>Header Files\Base Entries</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Rock.h">
+      <Filter>Header Files\Base Entries</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\XMLParser.h">
+      <Filter>Header Files\XML Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Behaviour.h">
+      <Filter>Header Files\Behaviour</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Target.h">
+      <Filter>Header Files\Behaviour</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\PillAddict.h">
+      <Filter>Header Files\Behaviour\Robot Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Probeable.h">
+      <Filter>Header Files\Behaviour\Probe Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\ProbeBehaviour.h">
+      <Filter>Header Files\Behaviour\Probe Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Unprobeable.h">
+      <Filter>Header Files\Behaviour\Probe Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\MoveBehaviour.h">
+      <Filter>Header Files\Behaviour\Move Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\PillSeeker.h">
+      <Filter>Header Files\Behaviour\Move Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Stationary.h">
+      <Filter>Header Files\Behaviour\Move Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\CollisionBehaviour.h">
+      <Filter>Header Files\Behaviour\Collision Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Consumable.h">
+      <Filter>Header Files\Behaviour\Collision Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\HardPlace.h">
+      <Filter>Header Files\Behaviour\Collision Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\RollingPlace.h">
+      <Filter>Header Files\Behaviour\Collision Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\SoftPlace.h">
+      <Filter>Header Files\Behaviour\Collision Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Command.h">
+      <Filter>Header Files\Message System</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\MessageReader.h">
+      <Filter>Header Files\Message System</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\MoveInfo.h">
+      <Filter>Header Files\Message System</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Centurion.h">
+      <Filter>Header Files\Behaviour\Move Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Sentry.h">
+      <Filter>Header Files\Behaviour\Robot Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Tribot.h">
+      <Filter>Header Files\Behaviour\Robot Behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Gatherer.h">
+      <Filter>Header Files\Behaviour\Move Behaviours</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="proj.in">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ClassDiagram1.cd">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

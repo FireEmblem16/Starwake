@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{445E2C5F-A7DD-4505-ACE0-DB0FB5293389}</ProjectGuid>
+    <RootNamespace>CS229Project</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Centurion.cpp" />
+    <ClCompile Include="Source\Gatherer.cpp" />
+    <ClCompile Include="Source\Sentry.cpp" />
+    <ClCompile Include="Source\Hole.cpp" />
+    <ClCompile Include="Source\Jam.cpp" />
+    <ClCompile Include="Source\Lava.cpp" />
+    <ClCompile Include="Source\Mud.cpp" />
+    <ClCompile Include="Source\simulate.cpp" />
+    <ClCompile Include="Source\Tribot.cpp" />
+    <ClCompile Include="Source\Water.cpp" />
+    <ClCompile Include="Source\Ball.cpp" />
+    <ClCompile Include="Source\Block.cpp" />
+    <ClCompile Include="Source\EarthRock.cpp" />
+    <ClCompile Include="Source\EnergyPill.cpp" />
+    <ClCompile Include="Source\Robot.cpp" />
+    <ClCompile Include="Source\RumulanRock.cpp" />
+    <ClCompile Include="Source\Geometry.cpp" />
+    <ClCompile Include="Source\Item.cpp" />
+    <ClCompile Include="Source\Object.cpp" />
+    <ClCompile Include="Source\Property.cpp" />
+    <ClCompile Include="Source\Rock.cpp" />
+    <ClCompile Include="Source\Entry.cpp" />
+    <ClCompile Include="Source\Simulation.cpp" />
+    <ClCompile Include="Source\XMLParser.cpp" />
+    <ClCompile Include="Source\Behaviour.cpp" />
+    <ClCompile Include="Source\Target.cpp" />
+    <ClCompile Include="Source\PillAddict.cpp" />
+    <ClCompile Include="Source\Probeable.cpp" />
+    <ClCompile Include="Source\Unprobeable.cpp" />
+    <ClCompile Include="Source\PillSeeker.cpp" />
+    <ClCompile Include="Source\Stationary.cpp" />
+    <ClCompile Include="Source\Consumable.cpp" />
+    <ClCompile Include="Source\HardPlace.cpp" />
+    <ClCompile Include="Source\RollingPlace.cpp" />
+    <ClCompile Include="Source\SoftPlace.cpp" />
+    <ClCompile Include="Source\Command.cpp" />
+    <ClCompile Include="Source\MessageReader.cpp" />
+    <ClCompile Include="Source\MoveInfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\Centurion.h" />
+    <ClInclude Include="Headers\Defines.h" />
+    <ClInclude Include="Headers\Entry.h" />
+    <ClInclude Include="Headers\Gatherer.h" />
+    <ClInclude Include="Headers\Sentry.h" />
+    <ClInclude Include="Headers\Simulation.h" />
+    <ClInclude Include="Headers\Ball.h" />
+    <ClInclude Include="Headers\Block.h" />
+    <ClInclude Include="Headers\EarthRock.h" />
+    <ClInclude Include="Headers\EnergyPill.h" />
+    <ClInclude Include="Headers\Robot.h" />
+    <ClInclude Include="Headers\RumulanRock.h" />
+    <ClInclude Include="Headers\Hole.h" />
+    <ClInclude Include="Headers\Jam.h" />
+    <ClInclude Include="Headers\Lava.h" />
+    <ClInclude Include="Headers\Mud.h" />
+    <ClInclude Include="Headers\Tribot.h" />
+    <ClInclude Include="Headers\Water.h" />
+    <ClInclude Include="Headers\Geometry.h" />
+    <ClInclude Include="Headers\Item.h" />
+    <ClInclude Include="Headers\Object.h" />
+    <ClInclude Include="Headers\Property.h" />
+    <ClInclude Include="Headers\Rock.h" />
+    <ClInclude Include="Headers\XMLParser.h" />
+    <ClInclude Include="Headers\Behaviour.h" />
+    <ClInclude Include="Headers\Target.h" />
+    <ClInclude Include="Headers\PillAddict.h" />
+    <ClInclude Include="Headers\Probeable.h" />
+    <ClInclude Include="Headers\ProbeBehaviour.h" />
+    <ClInclude Include="Headers\Unprobeable.h" />
+    <ClInclude Include="Headers\MoveBehaviour.h" />
+    <ClInclude Include="Headers\PillSeeker.h" />
+    <ClInclude Include="Headers\Stationary.h" />
+    <ClInclude Include="Headers\CollisionBehaviour.h" />
+    <ClInclude Include="Headers\Consumable.h" />
+    <ClInclude Include="Headers\HardPlace.h" />
+    <ClInclude Include="Headers\RollingPlace.h" />
+    <ClInclude Include="Headers\SoftPlace.h" />
+    <ClInclude Include="Headers\Command.h" />
+    <ClInclude Include="Headers\MessageReader.h" />
+    <ClInclude Include="Headers\MoveInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="makefile" />
+    <None Include="proj.in" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

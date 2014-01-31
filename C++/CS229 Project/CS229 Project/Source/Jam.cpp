@@ -1,0 +1,34 @@
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////// Jam.cpp /////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+/// Implements the jam class.                                                   ///
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+#ifndef _JAM_CPP
+#define _JAM_CPP
+
+#include "../Headers/Jam.h"
+
+Jam::Jam(string Type, string Display, string Name) : Property(Type,Display,Name)
+{return;}
+
+Jam::Jam(const Jam& rhs) : Property(rhs.type,rhs.disp,rhs.name,rhs.energy_cost,rhs.turn_cost)
+{return;}
+
+Jam& Jam::operator =(const Jam& rhs)
+{
+	if(this == &rhs)
+		return *this;
+
+	Property::operator =(rhs);
+	return *this;
+}
+
+Item* Jam::Clone()
+{
+	Jam* ret = new Jam("","");
+	*ret = *this;
+	return (Item*)ret;
+}
+
+#endif

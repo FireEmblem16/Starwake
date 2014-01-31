@@ -1,0 +1,1 @@
+To properly view the class diagram picture you will have to zoom in on the part you want to look at.

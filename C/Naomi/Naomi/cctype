@@ -1,0 +1,9 @@
+// cctype
+// The c++ include file for ctype.h
+
+#ifndef CCTYPE_
+#define CSTDINT_
+
+#include <ctype.h>
+
+#endif

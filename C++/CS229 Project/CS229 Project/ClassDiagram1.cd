@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="Entry">
+    <Position X="4.5" Y="10.75" Width="2.25" />
+    <Members>
+      <Method Name="~Entry" Hidden="true" />
+      <Method Name="Entry" Hidden="true" />
+      <Field Name="items" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Field Name="x" Hidden="true" />
+      <Field Name="y" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACQAAAAAAAAKEAAACgADAAAgIAEAAECYADgAAAAAAA=</HashCode>
+      <FileName>Headers\Entry.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Simulation">
+    <Position X="2.25" Y="10.75" Width="2" />
+    <Members>
+      <Method Name="~Simulation" Hidden="true" />
+      <Field Name="entries" Hidden="true" />
+      <Field Name="height" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="Simulation" Hidden="true" />
+      <Field Name="width" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAESQAUAAgAABAAIQAAAAAAAAgFEBAAAQ=</HashCode>
+      <FileName>Headers\Simulation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ball" Collapsed="true">
+    <Position X="22.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAJA=</HashCode>
+      <FileName>Headers\Ball.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Block" Collapsed="true">
+    <Position X="24.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Headers\Block.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EarthRock" Collapsed="true">
+    <Position X="13" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Headers\EarthRock.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnergyPill">
+    <Position X="17.5" Y="7" Width="1.5" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Field Name="energy_contents" Hidden="true" />
+      <Method Name="EnergyPill" Hidden="true" />
+      <Method Name="GetParams" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="SetParams" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="ToXML" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAEAAAAAAABAAAIgAAABAAgAAAAABQ=</HashCode>
+      <FileName>Headers\EnergyPill.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot">
+    <Position X="19.75" Y="7" Width="1.5" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Field Name="count" Hidden="true" />
+      <Field Name="dir" Hidden="true" />
+      <Field Name="energy" Hidden="true" />
+      <Method Name="GetParams" Hidden="true" />
+      <Field Name="iD" Hidden="true" />
+      <Field Name="in" Hidden="true" />
+      <Field Name="move_cost" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Field Name="out" Hidden="true" />
+      <Field Name="paramA" Hidden="true" />
+      <Field Name="paramB" Hidden="true" />
+      <Field Name="paramC" Hidden="true" />
+      <Field Name="probe_cost" Hidden="true" />
+      <Field Name="probe_width" Hidden="true" />
+      <Field Name="probed" Hidden="true" />
+      <Field Name="recharge" Hidden="true" />
+      <Method Name="Robot" Hidden="true" />
+      <Method Name="SetParams" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="ToXML" Hidden="true" />
+      <Field Name="turn_cost" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Robot::Facing">
+        <TypeIdentifier>
+          <NewMemberFileName>Headers\Robot.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AYQgIFCAAyACgIwEBMEAhACQDAEYgAAABAAgABAAABQ=</HashCode>
+      <FileName>Headers\Robot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RumulanRock" Collapsed="true">
+    <Position X="15.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAgAAAAABA=</HashCode>
+      <FileName>Headers\RumulanRock.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hole" Collapsed="true">
+    <Position X="9.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Headers\Hole.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jam" Collapsed="true">
+    <Position X="0.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Headers\Jam.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lava" Collapsed="true">
+    <Position X="2.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAgAAAAABA=</HashCode>
+      <FileName>Headers\Lava.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mud" Collapsed="true">
+    <Position X="5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Headers\Mud.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Water" Collapsed="true">
+    <Position X="7.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Headers\Water.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Geometry" Collapsed="true">
+    <Position X="23.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAgBA=</HashCode>
+      <FileName>Headers\Geometry.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Item">
+    <Position X="10.75" Y="0.5" Width="1.75" />
+    <Members>
+      <Method Name="~Item" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Field Name="disp" Hidden="true" />
+      <Field Name="isghost" Hidden="true" />
+      <Field Name="isobj" Hidden="true" />
+      <Method Name="Item" Hidden="true" />
+      <Field Name="name" Hidden="true" />
+      <Field Name="nature" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="RequestTypeRename" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAIACAAAAAEAEABAAAFAAQNkIEAAAEgAAAABBQ=</HashCode>
+      <FileName>Headers\Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object">
+    <Position X="19" Y="4.5" Width="1.5" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Field Name="color" Hidden="true" />
+      <Method Name="GetParams" Hidden="true" />
+      <Method Name="Object" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="SetParams" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="ToXML" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAkAAAAAAAAAAAIgACAAAAgAAAAABQ=</HashCode>
+      <FileName>Headers\Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Property">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Field Name="default_energy_cost" Hidden="true" />
+      <Field Name="energy_cost" Hidden="true" />
+      <Method Name="GetEnergyCostString" Hidden="true" />
+      <Method Name="GetParams" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="Property" Hidden="true" />
+      <Method Name="SetParams" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="ToXML" Hidden="true" />
+      <Field Name="turn_cost" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CAAgAIAAAAAgAAAEAAAAAAAAAAAIgAAAAQAgARAAABQ=</HashCode>
+      <FileName>Headers\Property.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rock" Collapsed="true">
+    <Position X="14.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Headers\Rock.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XMLParser">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <Members>
+      <Method Name="~XMLParser" Hidden="true" />
+      <Method Name="ContainsEndTag" Hidden="true" />
+      <Method Name="ContainsParam" Hidden="true" />
+      <Method Name="ContainsStartTag" Hidden="true" />
+      <Method Name="ContainsX" Hidden="true" />
+      <Method Name="CreateItem" Hidden="true" />
+      <Method Name="FloatParamValue" Hidden="true" />
+      <Method Name="GetParamName" Hidden="true" />
+      <Method Name="GetParamValue" Hidden="true" />
+      <Method Name="GetTagName" Hidden="true" />
+      <Method Name="IndexOf" Hidden="true" />
+      <Field Name="input" Hidden="true" />
+      <Method Name="LoadNext" Hidden="true" />
+      <Method Name="ParamValue" Hidden="true" />
+      <Method Name="RemoveComments" Hidden="true" />
+      <Method Name="RemoveParamWhiteSpace" Hidden="true" />
+      <Method Name="RemoveWhiteSpace" Hidden="true" />
+      <Field Name="sim" Hidden="true" />
+      <Method Name="XMLParser" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QEBAgAAQISAAAAQAQAIIAAAgAAAQABBAABIAACAQgEA=</HashCode>
+      <FileName>Headers\XMLParser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Behaviour">
+    <Position X="22.25" Y="11" Width="1.5" />
+    <Members>
+      <Method Name="~Behaviour" Hidden="true" />
+      <Field Name="action" Hidden="true" />
+      <Method Name="Behaviour" Hidden="true" />
+      <Field Name="collider" Hidden="true" />
+      <Method Name="CreateNew" Hidden="true" />
+      <Field Name="probe" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIAABACEAIEBIAAAAAAAAwQAAAAAAAAABAAAGAAAIAA=</HashCode>
+      <FileName>Headers\Behaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Target">
+    <Position X="17.25" Y="21.5" Width="1.75" />
+    <Members>
+      <Field Name="e" Hidden="true" />
+      <Method Name="operator-" Hidden="true" />
+      <Method Name="operator!=" Hidden="true" />
+      <Method Name="operator+" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+      <Method Name="operator==" Hidden="true" />
+      <Method Name="Target" Hidden="true" />
+      <Field Name="x" Hidden="true" />
+      <Field Name="y" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAABSAAAAAAAABCAARkCAEAAAA=</HashCode>
+      <FileName>Headers\Target.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PillAddict" Collapsed="true">
+    <Position X="20" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\PillAddict.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Probeable" Collapsed="true">
+    <Position X="22" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\Probeable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProbeBehaviour">
+    <Position X="20.75" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\ProbeBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unprobeable" Collapsed="true">
+    <Position X="19.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\Unprobeable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveBehaviour">
+    <Position X="13.75" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\MoveBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PillSeeker">
+    <Position X="10.25" Y="20.5" Width="1.5" />
+    <Members>
+      <Method Name="abs" Hidden="true" />
+      <Method Name="AddNewTargets" Hidden="true" />
+      <Method Name="DetermineMoveDirection" Hidden="true" />
+      <Field Name="face" Hidden="true" />
+      <Method Name="GetTarget" Hidden="true" />
+      <Method Name="HasTarget" Hidden="true" />
+      <Field Name="last_location" Hidden="true" />
+      <Method Name="OnGrid" Hidden="true" />
+      <Method Name="rand" Hidden="true" />
+      <Method Name="RemoveTarget" Hidden="true" />
+      <Method Name="SearchAndDestroy" Hidden="true" />
+      <Field Name="targets" Hidden="true" />
+      <Field Name="turn_counter" Hidden="true" />
+      <Method Name="UpdateFaceAndVelocity" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="PillSeeker::Direction">
+        <TypeIdentifier>
+          <NewMemberFileName>Headers\PillSeeker.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IMAAAIAAAICMAEAAAAAAAgAAEEQoQAAAAgBAAAAAAAA=</HashCode>
+      <FileName>Headers\PillSeeker.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Stationary" Collapsed="true">
+    <Position X="17.25" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\Stationary.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionBehaviour">
+    <Position X="4" Y="18.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\CollisionBehaviour.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Consumable" Collapsed="true">
+    <Position X="7.75" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\Consumable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HardPlace" Collapsed="true">
+    <Position X="1" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\HardPlace.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RollingPlace" Collapsed="true">
+    <Position X="3.25" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\RollingPlace.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftPlace" Collapsed="true">
+    <Position X="5.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\SoftPlace.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Command">
+    <Position X="12.25" Y="10.75" Width="2" />
+    <Members>
+      <Method Name="Command" Hidden="true" />
+      <Field Name="data" Hidden="true" />
+      <Field Name="me_code" Hidden="true" />
+      <Field Name="mv_code" Hidden="true" />
+      <Method Name="operator=" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Command::MessageCode">
+        <TypeIdentifier>
+          <NewMemberFileName>Headers\Command.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Command::MoveCode">
+        <TypeIdentifier>
+          <NewMemberFileName>Headers\Command.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAQABAGEAAAAAEBgAAAAAAgAAAAAAwAABAEAA=</HashCode>
+      <FileName>Headers\Command.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MessageReader">
+    <Position X="9.25" Y="10.75" Width="2.75" />
+    <Members>
+      <Field Name="cmd" Hidden="true" />
+      <Field Name="message" Hidden="true" />
+      <Method Name="MessageReader" Hidden="true" />
+      <Field Name="probe_size" Hidden="true" />
+      <Method Name="ReadDoNothing" Hidden="true" />
+      <Method Name="ReadFire" Hidden="true" />
+      <Method Name="ReadInit" Hidden="true" />
+      <Method Name="ReadMove" Hidden="true" />
+      <Method Name="ReadMoveForward" Hidden="true" />
+      <Method Name="ReadProbe" Hidden="true" />
+      <Method Name="ReadTerminate" Hidden="true" />
+      <Method Name="ReadTurn" Hidden="true" />
+      <Field Name="ready" Hidden="true" />
+      <Method Name="RemoveWhiteSpace" Hidden="true" />
+      <Method Name="TypeHasEnergy" Hidden="true" />
+      <Field Name="wait_for_probe" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AaRAAAAACTREACQAAAAAQggAAAAAAAAAAAAAAARBAGg=</HashCode>
+      <FileName>Headers\MessageReader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemData">
+    <Position X="14.5" Y="15.25" Width="2.25" />
+    <Members>
+      <Method Name="operator==" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAQAAAAABAACAAABgAAAAAAA=</HashCode>
+      <FileName>Headers\MoveInfo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveInfo">
+    <Position X="14.5" Y="10.75" Width="2.25" />
+    <Members>
+      <Method Name="DetermineX" Hidden="true" />
+      <Method Name="DetermineY" Hidden="true" />
+      <Field Name="energy" Hidden="true" />
+      <Field Name="probe_distances" Hidden="true" />
+      <Field Name="success" Hidden="true" />
+      <Field Name="visables" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AwEAIACIEgSAAAQIAEEAAAAAAIAAQAKApAAACAABAAA=</HashCode>
+      <FileName>Headers\MoveInfo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sentry" Collapsed="true">
+    <Position X="22.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Headers\Sentry.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Centurion">
+    <Position X="12.5" Y="20.5" Width="1.75" />
+    <Members>
+      <Method Name="abs" Hidden="true" />
+      <Method Name="AddNewTargets" Hidden="true" />
+      <Method Name="DetermineMoveDirection" Hidden="true" />
+      <Field Name="face" Hidden="true" />
+      <Method Name="GetTarget" Hidden="true" />
+      <Method Name="HasTarget" Hidden="true" />
+      <Field Name="last_location" Hidden="true" />
+      <Method Name="OnGrid" Hidden="true" />
+      <Field Name="phase" Hidden="true" />
+      <Method Name="rand" Hidden="true" />
+      <Method Name="RemoveTarget" Hidden="true" />
+      <Field Name="reverse" Hidden="true" />
+      <Method Name="SearchAndDestroy" Hidden="true" />
+      <Field Name="targets" Hidden="true" />
+      <Field Name="turn_counter" Hidden="true" />
+      <Method Name="UpdateFaceAndVelocity" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Centurion::Direction">
+        <TypeIdentifier>
+          <NewMemberFileName>Headers\Centurion.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Centurion::Phase">
+        <TypeIdentifier>
+          <NewMemberFileName>Headers\Centurion.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IIAAAIAAAICMAEAgAAAAAgAAEEQoQAIAAgBEAAAAAAA=</HashCode>
+      <FileName>Headers\Centurion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gatherer">
+    <Position X="15" Y="20.5" Width="1.5" />
+    <Members>
+      <Method Name="abs" Hidden="true" />
+      <Method Name="AddNewTargets" Hidden="true" />
+      <Method Name="DetermineMoveDirection" Hidden="true" />
+      <Field Name="face" Hidden="true" />
+      <Method Name="GetTarget" Hidden="true" />
+      <Method Name="HasTarget" Hidden="true" />
+      <Field Name="last_location" Hidden="true" />
+      <Method Name="OnGrid" Hidden="true" />
+      <Method Name="rand" Hidden="true" />
+      <Method Name="RemoveTarget" Hidden="true" />
+      <Method Name="SearchAndDestroy" Hidden="true" />
+      <Field Name="targets" Hidden="true" />
+      <Field Name="turn_counter" Hidden="true" />
+      <Method Name="UpdateFaceAndVelocity" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Gatherer::Direction">
+        <TypeIdentifier>
+          <NewMemberFileName>Headers\Gatherer.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>IIAAAIAAAICMAEAAAAAAAgAAEEQoQAAAAgBAAAAABAA=</HashCode>
+      <FileName>Headers\Gatherer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tribot" Collapsed="true">
+    <Position X="24.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Headers\Tribot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

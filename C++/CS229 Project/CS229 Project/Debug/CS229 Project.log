@@ -1,0 +1,58 @@
+﻿Build started 5/4/2011 10:32:43 AM.
+     1>Project "C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\CS229 Project\CS229 Project\CS229 Project.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\CS229 Project.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source\XMLParser.cpp
+         XMLParser.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\CS229 Project\Debug\CS229 Project.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\CS229 Project.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\CS229 Project\Debug\CS229 Project.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\CS229 Project\Debug\CS229 Project.lib" /MACHINE:X86 Debug\Centurion.obj
+         Debug\Gatherer.obj
+         Debug\Sentry.obj
+         Debug\Hole.obj
+         Debug\Jam.obj
+         Debug\Lava.obj
+         Debug\Mud.obj
+         Debug\simulate.obj
+         Debug\Tribot.obj
+         Debug\Water.obj
+         Debug\Ball.obj
+         Debug\Block.obj
+         Debug\EarthRock.obj
+         Debug\EnergyPill.obj
+         Debug\Robot.obj
+         Debug\RumulanRock.obj
+         Debug\Geometry.obj
+         Debug\Item.obj
+         Debug\Object.obj
+         Debug\Property.obj
+         Debug\Rock.obj
+         Debug\Entry.obj
+         Debug\Simulation.obj
+         Debug\XMLParser.obj
+         Debug\Behaviour.obj
+         Debug\Target.obj
+         Debug\PillAddict.obj
+         Debug\Probeable.obj
+         Debug\Unprobeable.obj
+         Debug\PillSeeker.obj
+         Debug\Stationary.obj
+         Debug\Consumable.obj
+         Debug\HardPlace.obj
+         Debug\RollingPlace.obj
+         Debug\SoftPlace.obj
+         Debug\Command.obj
+         Debug\MessageReader.obj
+         Debug\MoveInfo.obj
+         LINK : C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\CS229 Project\Debug\CS229 Project.exe not found or not built by the last incremental link; performing full link
+         CS229 Project.vcxproj -> C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\CS229 Project\Debug\CS229 Project.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\CS229 Project\Debug\CS229 Project.exe;#1" /manifest "Debug\CS229 Project.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Deleting file "Debug\CS229 Project.unsuccessfulbuild".
+         Touching "Debug\CS229 Project.lastbuildstate".
+     1>Done Building Project "C:\Users\The Science Guy\Documents\Visual Studio 2008\Projects\CS229 Project\CS229 Project\CS229 Project.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.71

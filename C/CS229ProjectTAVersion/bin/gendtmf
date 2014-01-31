@@ -1,0 +1,118 @@
+#!/bin/bash
+arg1=$1
+arg2=$2
+if [ $arg1 = 1 ]
+then
+	./gensine MONO 697 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1209 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = 2 ]
+then
+	./gensine MONO 697 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1336 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = 3 ]
+then
+	./gensine MONO 697 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1477 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = 4 ]
+then
+	./gensine MONO 770 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1209 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = 5 ]
+then
+	./gensine MONO 770 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1336 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = 6 ]
+then
+	./gensine MONO 770 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1477 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = 7 ]
+then
+	./gensine MONO 852 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1209 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = 8 ]
+then
+	./gensine MONO 852 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1336 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = 9 ]
+then
+	./gensine MONO 852 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1477 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = 0 ]
+then
+	./gensine MONO 941 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1336 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = A ]
+then
+	./gensine MONO 697 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1633 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = B ]
+then
+	./gensine MONO 770 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1633 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = C ]
+then
+	./gensine MONO 852 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1633 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = D ]
+then
+	./gensine MONO 941 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1633 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = star ]
+then
+	./gensine MONO 941 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1209 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+elif [ $arg1 = pound ]
+then
+	./gensine MONO 941 16 32000 32767 $arg2 > gentone1.su
+	./gensine MONO 1477 16 32000 32767 $arg2 > gentone2.su
+	./mix gentone1.su 1.0 gentone2.su 1.0
+	rm gentone1.su
+	rm gentone2.su
+else
+	echo "Invalid Button Specified"
+fi

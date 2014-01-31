@@ -1,0 +1,41 @@
+﻿Build started 11/20/2012 1:32:41 PM.
+     1>Project "C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\texture_with_lighting\texture_with_lighting.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\texture_with_lighting.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\include /I..\RenderUtils /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt cube_with_texture2.cpp
+         cube_with_texture2.cpp
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(48): warning C4244: 'initializing' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(61): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(61): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(61): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(62): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(62): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(62): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(63): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(63): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(63): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(74): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(74): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(74): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(81): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(82): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(83): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(228): warning C4305: '+=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(231): warning C4305: '-=' : truncation from 'double' to 'GLfloat'
+     1>c:\users\fireemblem16\desktop\cs336x projects\lighting\texture_with_lighting\cube_with_texture2.cpp(234): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\Debug\texture_with_lighting.exe" /NOLOGO /LIBPATH:..\lib\windows glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\texture_with_lighting.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\Debug\texture_with_lighting.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\Debug\texture_with_lighting.lib" /MACHINE:X86 Debug\cube_with_texture2.obj
+         "C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\Debug\RenderUtils.lib"
+         LINK : C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\Debug\texture_with_lighting.exe not found or not built by the last incremental link; performing full link
+         texture_with_lighting.vcxproj -> C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\Debug\texture_with_lighting.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\Debug\texture_with_lighting.exe;#1" /manifest Debug\texture_with_lighting.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\texture_with_lighting.unsuccessfulbuild".
+         Touching "Debug\texture_with_lighting.lastbuildstate".
+     1>Done Building Project "C:\Users\FireEmblem16\Desktop\CS336X Projects\lighting\texture_with_lighting\texture_with_lighting.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.21

@@ -1,0 +1,9 @@
+// cstdarg
+// The c++ include file for stdio.h
+
+#ifndef CSTDIO_
+#define CSTDIO_
+
+#include <stdio.h>
+
+#endif
