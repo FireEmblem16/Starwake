@@ -1,0 +1,16 @@
+c:\users\fireemblem16\documents\visual studio 2010\Projects\TheGame\TheGame\bin\Debug\TheGame.exe
+c:\users\fireemblem16\documents\visual studio 2010\Projects\TheGame\TheGame\bin\Debug\TheGame.pdb
+c:\users\fireemblem16\documents\visual studio 2010\Projects\TheGame\TheGame\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\fireemblem16\documents\visual studio 2010\Projects\TheGame\TheGame\obj\x86\Debug\TheGame.exe
+c:\users\fireemblem16\documents\visual studio 2010\Projects\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
+C:\Users\FireEmblem16\documents\visual studio 2010\Projects\TheGame\TheGame\bin\Debug\BasicAbilities.pdb
+C:\Users\FireEmblem16\documents\visual studio 2010\Projects\TheGame\TheGame\bin\Debug\BasicTerrain.pdb
+C:\Users\FireEmblem16\documents\visual studio 2010\Projects\TheGame\TheGame\bin\Debug\Engine.pdb
+C:\Users\Science\Documents\Visual Studio 2010\Projects\TheGame\TheGame\obj\x86\Debug\TheGame.exe
+C:\Users\Science\Documents\Visual Studio 2010\Projects\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
+C:\Users\Science\Documents\Visual Studio 2010\Projects\TheGame\TheGame\bin\Debug\TheGame.exe
+C:\Users\Science\Documents\Visual Studio 2010\Projects\TheGame\TheGame\bin\Debug\TheGame.pdb
+C:\Users\Science\Documents\Visual Studio 2010\Projects\TheGame\TheGame\bin\Debug\BasicAbilities.pdb
+C:\Users\Science\Documents\Visual Studio 2010\Projects\TheGame\TheGame\bin\Debug\BasicTerrain.pdb
+C:\Users\Science\Documents\Visual Studio 2010\Projects\TheGame\TheGame\bin\Debug\Engine.pdb
+C:\Users\Science\Documents\Visual Studio 2010\Projects\TheGame\TheGame\obj\x86\Debug\TheGame.csprojResolveAssemblyReference.cache

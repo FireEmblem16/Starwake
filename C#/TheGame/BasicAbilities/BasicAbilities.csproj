@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F236631D-07CB-4396-8D88-7F08EE44D128}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TheGame</RootNamespace>
+    <AssemblyName>BasicAbilities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\TheGame\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine\Abilities\ActivatableAbility\Attack\RangedAttack.cs" />
+    <Compile Include="Engine\Abilities\ActivatableAbility\Healing\RangedHealing.cs" />
+    <Compile Include="Engine\Abilities\ActivatableAbility\Healing\TouchHealing.cs" />
+    <Compile Include="Engine\Abilities\Health\MiracleHealth.cs" />
+    <Compile Include="Engine\Abilities\Movement\AmphibiousMovement.cs" />
+    <Compile Include="Engine\Abilities\Movement\FlyingMountedMovement.cs" />
+    <Compile Include="Engine\Abilities\Movement\FlyingMovement.cs" />
+    <Compile Include="Engine\Abilities\Movement\GroundMountedMovement.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\Ailment\Poisoned.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\Ailment\Zombified.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\AttackEnhancement\LeechingAttack.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\AttackEnhancement\Necromancy.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\AttackEnhancement\Poison.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\AttackEnhancement\PowerAttack.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\AttackEnhancement\Regicide.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\AttackEnhancement\Teamwork.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\DamageModifier\FlyingArmor.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\DamageModifier\FlyingProtection.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\DamageModifier\MountProtection.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\DamageModifier\RangedProtection.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\Miscellaneous\HoldTheLine.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\Miscellaneous\Regeneration.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\Movement\FlyingMovementModifier.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\Movement\MarineMovementModifier.cs" />
+    <Compile Include="Engine\Abilities\PassiveAbilities\Movement\MountedMovementModifier.cs" />
+    <Compile Include="Engine\Abilities\Visibility\Invisibility.cs" />
+    <Compile Include="Engine\Abilities\Vision\InvisibleVision.cs" />
+    <Compile Include="Engine\ActivatedAbilities\Attack\RangedAttackActivation.cs" />
+    <Compile Include="Engine\ActivatedAbilities\Healing\RangedHealingActivation.cs" />
+    <Compile Include="Engine\ActivatedAbilities\Healing\TouchHealingActivation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Engine\Abilities\ActivatableAbility\Miscellaneous\" />
+    <Folder Include="Engine\ActivatedAbilities\Miscellaneous\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.csproj">
+      <Project>{DBDC079C-9644-4A43-B1D1-B11FD1CA81FD}</Project>
+      <Name>Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
