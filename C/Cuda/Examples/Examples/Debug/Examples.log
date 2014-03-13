@@ -1,0 +1,50 @@
+﻿Build started 2/10/2014 9:09:07 PM.
+     1>Project "C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Examples\Examples.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\Examples.lastbuildstate".
+       CudaClean:
+         cmd.exe /C "C:\Users\Science\AppData\Local\Temp\tmp65c5fbf9f4da46c9a2fad9d0028d6da9.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\vectors.cu.obj "C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Examples\vectors.cu" -clean
+         
+         C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Examples>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\vectors.cu.obj "C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Examples\vectors.cu" -clean 
+         Deleting file "Debug\vectors.cu.deps".
+       InitializeBuildStatus:
+         Touching "Debug\Examples.unsuccessfulbuild".
+       AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" /I. /FIcuda_runtime.h /c C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Examples\vectors.cu 
+       CudaBuild:
+         Compiling CUDA source file vectors.cu...
+         cmd.exe /C "C:\Users\Science\AppData\Local\Temp\tmp4279d0c041594be0977cb06c6a43689b.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2010 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\vectors.cu.obj "C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Examples\vectors.cu"
+         
+         C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Examples>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2010 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\vectors.cu.obj "C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Examples\vectors.cu" 
+     1>C:/Users/Science/Documents/GitHub/Starwake/C/Cuda/Examples/Examples/vectors.cu(16): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Examples.exe.embed.manifest.res" Debug\Examples_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\Examples.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\lib\Win32" cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Examples.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\Examples.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\Examples.lib" /MACHINE:X86 Debug\vectors.cu.obj
+         Debug\Examples.exe.embed.manifest.res
+       Manifest:
+         Deleting file "Debug\Examples.exe.embed.manifest".
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Examples.exe.embed.manifest" /manifest Debug\Examples.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Examples.exe.embed.manifest.res" Debug\Examples_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\Examples.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\lib\Win32" cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Examples.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\Examples.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\Examples.lib" /MACHINE:X86 Debug\vectors.cu.obj
+         Debug\Examples.exe.embed.manifest.res
+         Examples.vcxproj -> C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\Examples.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\cudart*.dll" "C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\cudart*.dll" "C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\"
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\cudart*.dll" "C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Debug\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\cudart32_55.dll
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.5\bin\cudart64_55.dll
+                 2 file(s) copied.
+       FinalizeBuildStatus:
+         Deleting file "Debug\Examples.unsuccessfulbuild".
+         Touching "Debug\Examples.lastbuildstate".
+     1>Done Building Project "C:\Users\Science\Documents\GitHub\Starwake\C\Cuda\Examples\Examples\Examples.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.25
