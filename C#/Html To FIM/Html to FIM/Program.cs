@@ -9,7 +9,7 @@ namespace Html_to_FIM
 	{
 		public static void Main(string[] args)
 		{
-			string file = Console.In.ReadLine();
+			string file = "t.html";//Console.In.ReadLine();
 
 			if(!File.Exists(file))
 				return;
@@ -26,9 +26,6 @@ namespace Html_to_FIM
 			while(tkns.HasNext<string>())
 			{
 				string str = tkns.Next<string>();
-				
-				if(str.Contains("hoofwritten"))
-					str = str;
 
 				if(in_p)
 				{
@@ -66,7 +63,7 @@ namespace Html_to_FIM
 						in_p = false;
 					}
 					else
-						fout += str;
+						fout += str.Replace("&quot;","\"");
 				}
 				else if(str.StartsWith("p style=\"") || str.StartsWith("p align=\""))
 				{
@@ -82,7 +79,7 @@ namespace Html_to_FIM
 				}
 			}
 
-			File.WriteAllText(output,fout);
+			File.WriteAllText(output,fout,System.Text.Encoding.Unicode);
 			return;
 		}
 

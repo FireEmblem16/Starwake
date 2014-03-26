@@ -1,0 +1,13 @@
+﻿Build started 3/26/2014 1:39:16 PM.
+     1>Project "C:\Users\Science\Documents\GitHub\Starwake\C\uThread\uThread\uThread.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\uThread.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "lib-ult.h"
+         lib-ult.h
+     1>c:\users\science\documents\github\starwake\c\uthread\uthread\lib-ult.h(241): error C4716: 'uthread_yield' : must return a value
+     1>Done Building Project "C:\Users\Science\Documents\GitHub\Starwake\C\uThread\uThread\uThread.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.27

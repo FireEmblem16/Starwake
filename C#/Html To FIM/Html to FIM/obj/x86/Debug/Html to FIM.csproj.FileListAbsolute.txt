@@ -2,3 +2,4 @@ C:\Users\Science\Documents\GitHub\Starwake\C#\Html to FIM\Html to FIM\bin\Debug\
 C:\Users\Science\Documents\GitHub\Starwake\C#\Html to FIM\Html to FIM\bin\Debug\Html to FIM.pdb
 C:\Users\Science\Documents\GitHub\Starwake\C#\Html to FIM\Html to FIM\obj\x86\Debug\Html to FIM.exe
 C:\Users\Science\Documents\GitHub\Starwake\C#\Html to FIM\Html to FIM\obj\x86\Debug\Html to FIM.pdb
+C:\Users\Science\Documents\GitHub\Starwake\C#\Html to FIM\Html to FIM\obj\x86\Debug\Html to FIM.csprojResolveAssemblyReference.cache
