@@ -1,0 +1,17 @@
+achievement.Essence.desc=Gather Ethel Seeds.
+achievement.Essence=Essence
+achievement.Potent.desc=Forge a fey blank rune.
+achievement.Potent=Potent
+achievement.Potential.desc=Forge a blank rune.
+achievement.Potential=Potential
+item.Blank Rune.name=Blank Rune
+item.Ethel Seed.name=Ethel Seed
+item.Ethel Weed.name=Ethel Weed
+item.Faerie Shovel.name=Faerie Shovel
+item.Fey Blank Rune.name=Fey Blank Rune
+item.Fey Ethel Weed.name=Fey Ethel Weed
+itemGroup.Runic Magic=Runic Magic
+tile.Ethel Crop.name=Ethel Crop
+tile.Faerie Ring Grass.name=Faerie Ring Grass
+tile.Fey Ethel Crop.name=Fey Ethel Crop
+tile.Grown Ethel Crop.name=Grown Ethel Crop

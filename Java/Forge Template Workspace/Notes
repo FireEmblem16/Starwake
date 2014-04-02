@@ -1,0 +1,8 @@
+-RunicMagic (the class) needs a file path for the released language file path (en_US.lang) in the LoadConfigurations function.
+-Save facing information as metadata for multitexture blocks and then use getIcon(side,meta) or its overloaded version.
+-Faerie Ring Grass needs a better recipe.
+-Fey blank runes needs to use fey stone. 
+-Tools need implementing and real receipes.
+
+-Have a Faerie World. You can get there by building an Faerie Ring or finding one that naturally spawns. Every mob that spawns in that world knows magic.
+-Have balrogs.

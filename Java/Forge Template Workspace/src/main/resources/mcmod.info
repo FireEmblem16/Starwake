@@ -1,0 +1,16 @@
+[
+{
+  "modid": "runicmagic",
+  "name": "Runic Magic",
+  "description": "The faeries are on the loose and magic has returned to the world.\n\nAmidst the many dangers, there lies great power in magic.\n\nIt waits for a wizard strong enough to claim it.",
+  "version": "0.1",
+  "mcversion": "1.7.2",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["Forthwith"],
+  "credits": "Credits to Forthwith.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
