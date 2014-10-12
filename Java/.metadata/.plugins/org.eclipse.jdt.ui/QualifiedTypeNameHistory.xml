@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.ClassLoader"/>
+<fullyQualifiedTypeName name="zip.UnZip"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="java.lang.Short"/>
+<fullyQualifiedTypeName name="LZEncryption.ByteWrapper"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="LZEncryption.BigByte"/>
+<fullyQualifiedTypeName name="LZEncryption.Trie"/>
+<fullyQualifiedTypeName name="LZEncryption.Encoding"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="LZEncryption.ByteUnwrapper"/>
+<fullyQualifiedTypeName name="LZEncryption"/>
+</qualifiedTypeNameHistroy>

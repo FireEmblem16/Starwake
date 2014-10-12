@@ -9,8 +9,6 @@ namespace Html_to_FIM
 	{
 		public static void Main(string[] args)
 		{
-			string file = "t.html";//Console.In.ReadLine();
-
 			if(!File.Exists(file))
 				return;
 			
@@ -22,7 +20,8 @@ namespace Html_to_FIM
 
 			string fout = Format.GenerateDifference(null,fmt.Peek());
 			bool in_p = false;
-
+			bool start_sub = false;
+			
 			while(tkns.HasNext<string>())
 			{
 				string str = tkns.Next<string>();
@@ -50,7 +49,7 @@ namespace Html_to_FIM
 						Format f = fmt.Pop();
 						fout += Format.GenerateDifference(f,fmt.Peek());
 					}
-					else if(str == "br /")
+					else if(str == "br /" || str == "[br]")
 					{
 						fout += "\r\n";
 
@@ -62,14 +61,33 @@ namespace Html_to_FIM
 						fout += "\r\n\r\n";
 						in_p = false;
 					}
+					else if(str == "[d]")
+					{
+						fout += "-----------------------------------------------";
+						start_sub = true;
+					}
+					else if(str == "[/d]")
+					{
+						fout = fout.Substring(0,fout.Length - 2);
+						fout += "-----------------------------------------------";
+					}
+					else if(fmt.Peek().bold)
+						fout += str.Replace("&quot;","\"").Replace("—","–").Replace("^0","⁰").Replace("^1","¹").Replace("^2","²").Replace("^3","³").Replace("^4","⁴").Replace("^5","⁵").Replace("^6","⁶").Replace("^7","⁷").Replace("^8","⁸").Replace("^9","⁹");
 					else
-						fout += str.Replace("&quot;","\"");
+						fout += str.Replace("&quot;","\"").Replace("—","–").Replace("^0","[b]⁰[/b]").Replace("^1","[b]¹[/b]").Replace("^2","[b]²[/b]").Replace("^3","[b]³[/b]").Replace("^4","[b]⁴[/b]").Replace("^5","[b]⁵[/b]").Replace("^6","[b]⁶[/b]").Replace("^7","[b]⁷[/b]").Replace("^8","[b]⁸[/b]").Replace("^9","[b]⁹[/b]");
 				}
 				else if(str.StartsWith("p style=\"") || str.StartsWith("p align=\""))
 				{
+					if(start_sub)
+					{
+						fout = fout.Substring(0,fout.Length - 2);
+						start_sub = false;
+					}
+
 					if(str.Contains("center"))
 					{
-						fout += "[hr]\r\n\r\n";
+						if(fout != "") // I'm tired of having a bunch of [hr]s at the beginning of every output
+							fout += "[hr]\r\n\r\n";
 
 						tkns.Next<string>();
 						tkns.Next<string>();
@@ -79,10 +97,43 @@ namespace Html_to_FIM
 				}
 			}
 
+			// Pull off any extra padding at the end of the text
+			bool done = false;
+
+			while(true)
+			{
+				char c = fout[fout.Length - 1];
+
+				switch(c)
+				{
+				case '\n':
+				case ' ':
+				case '\t':
+				case '\r':
+					fout = fout.Substring(0,fout.Length - 1);
+					break;
+				case ']':
+					if(fout.EndsWith("[hr]"))
+						fout = fout.Substring(0,fout.Length - 4);
+					else
+						done = true;
+
+					break;
+				default:
+					done = true;
+					break;
+				}
+
+				if(done)
+					break;
+			}
+
+			File.Delete(file);
 			File.WriteAllText(output,fout,System.Text.Encoding.Unicode);
 			return;
 		}
 
+		public static string file = "t.html";
 		public static string output = "out.txt";
 	}
 

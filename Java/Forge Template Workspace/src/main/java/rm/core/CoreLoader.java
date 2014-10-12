@@ -1,13 +1,10 @@
 package rm.core;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+import net.minecraft.client.model.ModelSpider;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.stats.Achievement;
 import rm.core.achievement.*;
@@ -25,6 +22,9 @@ import rm.core.item.tool.RunicMagicTool;
 import rm.core.item.tool.RunicMagicToolMaterial;
 import rm.core.item.tool.material.*;
 import rm.core.item.tool.spade.FaerieSpade;
+import rm.core.mob.Balrog;
+import rm.core.worldgen.RunicMagicWorldGenerator;
+import rm.core.worldgen.overworld.*;
 
 public class CoreLoader extends Loader
 {
@@ -138,6 +138,7 @@ public class CoreLoader extends Loader
 		LoadItems();
 		LoadTools();
 		LoadSeeds();
+		LoadWorldGenerators();
 		
 		return;
 	}
@@ -174,6 +175,12 @@ public class CoreLoader extends Loader
 		return;
 	}
 	
+	public void LoadWorldGenerators()
+	{
+		for(RunicMagicWorldGenerator generator : generators)
+			RunicMagicWorldGenerator.RegisterGenerator(generator);
+	}
+	
 	private static ArrayList<RunicMagicBlock> blocks = new ArrayList<RunicMagicBlock>();
 	private static ArrayList<RunicMagicItem> items = new ArrayList<RunicMagicItem>();
 	private static ArrayList<CreativeTabs> tabs = new ArrayList<CreativeTabs>();
@@ -181,6 +188,7 @@ public class CoreLoader extends Loader
 	private static ArrayList<RunicMagicSeed> seeds = new ArrayList<RunicMagicSeed>();
 	private static ArrayList<RunicMagicToolMaterial> tool_mats = new ArrayList<RunicMagicToolMaterial>();
 	private static ArrayList<RunicMagicTool> tools = new ArrayList<RunicMagicTool>();
+	private static ArrayList<RunicMagicWorldGenerator> generators = new ArrayList<RunicMagicWorldGenerator>();
 	
 	static
 	{
@@ -198,11 +206,15 @@ public class CoreLoader extends Loader
 		tabs.add(RunicMagicTab.instance);
 		
 		// Add achivements added by this submod
+		achievements.put("Too Greedy, Too Deep",new RunicMagicAchievement("Too Greedy, Too Deep","Venture into the depths.",0,10,Blocks.bedrock,null,true,new SimpleKillMoniter(Balrog.class,1,"Too Greedy, Too Deep",true)));
 		achievements.put("Essence",new RunicMagicAchievement("Essence","Gather Ethel Seeds.",0,0,EthelSeed.instance,null,false,new SimplePickupMonitor(EthelSeed.instance,"Essence")));
 		achievements.put("Potential",new RunicMagicAchievement("Potential","Forge a blank rune.",2,0,BlankRune.instance,achievements.get("Essence"),false,new SimpleCraftingMonitor(BlankRune.instance,"Potential")));
 		
 		// This achievement should require an achievement for entering the faerie realm first
 		achievements.put("Potent",new RunicMagicAchievement("Potent","Forge a fey blank rune.",2,2,FeyBlankRune.instance,achievements.get("Potential"),false,new SimpleCraftingMonitor(FeyBlankRune.instance,"Potent")));
+		
+		// DEBUG DEBUG DEBUG
+		achievements.put("d",new RunicMagicAchievement("d","Forge a fey blank rune.",3,3,Blocks.dirt,null,false,new SimpleKillMoniter(ModelSpider.class,1,"d",false)));
 		
 		// Add all seeds added by this submod
 		seeds.add(EthelSeed.instance);
@@ -223,5 +235,9 @@ public class CoreLoader extends Loader
 		
 		// Add tools added by this submod
 		tools.add(FaerieSpade.instance);
+		
+		// Add world generators added by this submod
+		generators.add(EthelField.instance);
+		generators.add(BalrogMine.instance);
 	}
 }

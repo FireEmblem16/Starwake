@@ -1,0 +1,4 @@
+C:\Users\Science\Documents\GitHub\Starwake\C#\Twilight\Twilight\bin\Debug\Twilight.exe
+C:\Users\Science\Documents\GitHub\Starwake\C#\Twilight\Twilight\bin\Debug\Twilight.pdb
+C:\Users\Science\Documents\GitHub\Starwake\C#\Twilight\Twilight\obj\x86\Debug\Twilight.exe
+C:\Users\Science\Documents\GitHub\Starwake\C#\Twilight\Twilight\obj\x86\Debug\Twilight.pdb

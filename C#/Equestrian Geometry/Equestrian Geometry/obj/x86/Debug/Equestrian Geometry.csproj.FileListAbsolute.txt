@@ -1,0 +1,8 @@
+C:\Users\Science\Documents\GitHub\Starwake\C#\Equestrian Geometry\Equestrian Geometry\bin\Debug\Equestrian Geometry.exe
+C:\Users\Science\Documents\GitHub\Starwake\C#\Equestrian Geometry\Equestrian Geometry\bin\Debug\Equestrian Geometry.pdb
+C:\Users\Science\Documents\GitHub\Starwake\C#\Equestrian Geometry\Equestrian Geometry\obj\x86\Debug\Equestrian_Geometry.Properties.Resources.resources
+C:\Users\Science\Documents\GitHub\Starwake\C#\Equestrian Geometry\Equestrian Geometry\obj\x86\Debug\Equestrian Geometry.csproj.GenerateResource.Cache
+C:\Users\Science\Documents\GitHub\Starwake\C#\Equestrian Geometry\Equestrian Geometry\obj\x86\Debug\Equestrian Geometry.exe
+C:\Users\Science\Documents\GitHub\Starwake\C#\Equestrian Geometry\Equestrian Geometry\obj\x86\Debug\Equestrian Geometry.pdb
+C:\Users\Science\Documents\GitHub\Starwake\C#\Equestrian Geometry\Equestrian Geometry\obj\x86\Debug\Equestrian_Geometry.EquestrianGeometry.resources
+C:\Users\Science\Documents\GitHub\Starwake\C#\Equestrian Geometry\Equestrian Geometry\obj\x86\Debug\Equestrian Geometry.csprojResolveAssemblyReference.cache

@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,6 +19,7 @@ import rm.core.item.plant.RunicMagicSeed;
 import rm.core.item.rune.BlankRune;
 import rm.core.item.tool.RunicMagicToolMaterial;
 import rm.core.proxy.CommonProxy;
+import rm.core.worldgen.RunicMagicWorldGenerator;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -41,6 +43,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 		RunicMagicItem.RegisterItems();
 		RunicMagicItem.RegisterTools();
 		RunicMagicSeed.RegisterSeeds();
+		RunicMagicWorldGenerator.RegisterGenerators();
 		
 		return;
 	}

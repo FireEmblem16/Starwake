@@ -3,6 +3,8 @@
 -Faerie Ring Grass needs a better recipe.
 -Fey blank runes needs to use fey stone. 
 -Tools need implementing and real receipes.
+-RunicMagicWorldGenerator needs to know what the faerie world id is (or switch it to name in the default switch).
+-Balrog Mines need more epic generation in the Faerie world.
+-We need to get our own biome generation going because trying to fight Minecraft's default ones is annoying.
 
 -Have a Faerie World. You can get there by building an Faerie Ring or finding one that naturally spawns. Every mob that spawns in that world knows magic.
--Have balrogs.

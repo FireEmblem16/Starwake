@@ -1,2 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="net.minecraft.world.biome.BiomeGenBase.FlowerEntry"/>
+<fullyQualifiedTypeName name="net.minecraft.world.biome.BiomeGenBase"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.IWorldGenerator"/>
+<fullyQualifiedTypeName name="rm.core.CONSTANTS"/>
+<fullyQualifiedTypeName name="rm.core.block.plant.crop.GrownEthelCrop"/>
+<fullyQualifiedTypeName name="rm.core.worldgen.RunicMagicWorldGenerator"/>
+<fullyQualifiedTypeName name="rm.core.worldgen.overworld.BalrogMine"/>
+<fullyQualifiedTypeName name="rm.core.block.portal.FaerieRingGrass"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="net.minecraft.block.Block"/>
+<fullyQualifiedTypeName name="net.minecraft.init.Blocks"/>
+<fullyQualifiedTypeName name="com.sun.media.jfxmedia.events.PlayerEvent"/>
+<fullyQualifiedTypeName name="net.minecraftforge.event.entity.player.PlayerEvent"/>
+<fullyQualifiedTypeName name="net.minecraft.client.renderer.entity.RenderLiving"/>
+<fullyQualifiedTypeName name="net.minecraft.util.ResourceLocation"/>
+<fullyQualifiedTypeName name="rm.core.RunicMagic"/>
+<fullyQualifiedTypeName name="net.minecraft.client.model.ModelBase"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.eventhandler.SubscribeEvent"/>
+<fullyQualifiedTypeName name="net.minecraftforge.event.entity.living.LivingDeathEvent"/>
+<fullyQualifiedTypeName name="net.minecraft.server.management.PlayerManager"/>
+<fullyQualifiedTypeName name="net.minecraft.entity.Entity"/>
+<fullyQualifiedTypeName name="net.minecraft.entity.player.EntityPlayer"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.registry.GameRegistry"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.Loader"/>
+<fullyQualifiedTypeName name="net.minecraft.client.Minecraft"/>
+<fullyQualifiedTypeName name="rm.core.achievement.RunicMagicAchievement"/>
+<fullyQualifiedTypeName name="rm.core.achievement.RunicMagicAchievementPage"/>
+<fullyQualifiedTypeName name="rm.core.mob.Balrog"/>
+<fullyQualifiedTypeName name="net.minecraft.entity.monster.EntityMob"/>
+<fullyQualifiedTypeName name="rm.core.achievement.events.SimpleKillMoniter"/>
+<fullyQualifiedTypeName name="net.minecraft.client.model.ModelSpider"/>
+<fullyQualifiedTypeName name="net.minecraftforge.common.MinecraftForge"/>
+</qualifiedTypeNameHistroy>
