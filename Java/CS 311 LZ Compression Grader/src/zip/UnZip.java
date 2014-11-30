@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
- 
+
 public class UnZip
 {
     public List<String> fileList;
@@ -36,13 +36,19 @@ public class UnZip
  
     	while(ze!=null){
  
+    		
     	   String fileName = ze.getName();
            File newFile = new File(outputFolder + File.separator + fileName);
  
-           System.out.println("file unzip : "+ newFile.getAbsoluteFile());
+           //System.out.println("file unzip : "+ newFile.getAbsoluteFile());
  
             //create all non exists folders
             //else you will hit FileNotFoundException for compressed folder
+           if(ze.isDirectory())
+        	   newFile.mkdirs();
+           else
+           {
+           
             new File(newFile.getParent()).mkdirs();
  
             FileOutputStream fos = new FileOutputStream(newFile);             
@@ -51,14 +57,16 @@ public class UnZip
             while ((len = zis.read(buffer)) > 0) {
        		fos.write(buffer, 0, len);
             }
- 
+           
             fos.close();   
+           }
+           
             ze = zis.getNextEntry();
     	}
  
         zis.closeEntry();
     	zis.close();
  
-    	System.out.println("Done");
+    	//System.out.println("Done");
    }    
 }

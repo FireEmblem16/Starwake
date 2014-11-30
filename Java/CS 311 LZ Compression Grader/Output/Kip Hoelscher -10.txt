@@ -1,0 +1,40 @@
+Running test cases for Kip Hoelscher -10.
+-----------------------------------------
+Succeeded on test case 1 for encode.
+Succeeded on test case 1 for decode.
+Succeeded on test case 2 for encode.
+Succeeded on test case 2 for decode.
+Succeeded on test case 3 for encode.
+Succeeded on test case 3 for decode.
+Succeeded on test case 4 for encode.
+Succeeded on test case 4 for decode.
+Succeeded on test case 5 for encode.
+Succeeded on test case 5 for decode.
+Succeeded on test case 6 for encode.
+Succeeded on test case 6 for decode.
+Succeeded on test case 7 for encode.
+Succeeded on test case 7 for decode.
+Succeeded on test case 8 for encode.
+Succeeded on test case 8 for decode.
+Succeeded on test case 9 for encode.
+Succeeded on test case 9 for decode.
+Succeeded on test case 10 for encode.
+Succeeded on test case 10 for decode.
+Succeeded on test case 11 for encode.
+Succeeded on test case 11 for decode.
+Succeeded on test case 12 for encode.
+Succeeded on test case 12 for decode.
+Succeeded on test case 13 for encode.
+Succeeded on test case 13 for decode.
+Succeeded on test case 14 for encode.
+Succeeded on test case 14 for decode.
+Succeeded on test case 15 for encode.
+Succeeded on test case 15 for decode.
+
+Total encode successes: 15.0/15
+Total decode successes: 15.0/15
+
+Total successes: 30.0/30
+Total points: 291.0 / 291
+
+

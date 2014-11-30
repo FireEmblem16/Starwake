@@ -1,0 +1,461 @@
+package grading;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.FilenameFilter;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Scanner;
+import oracle.LZEncryption;
+import zip.UnZip;
+
+public class Grader
+{
+	public static void main(String[] args) throws Exception
+	{
+		if(args.length != 4)
+		{
+			System.out.println("This program requires four string arguments.\n");
+			
+			System.out.println("The first is the directory of the Grader class file (the bin folder, in other words).");
+			System.out.println("The Second is the source directory for student zip files.");
+			System.out.println("The third is the path to use for javac (can be \".\"). This should not include the executable name.");
+			System.out.println("The fourth is the input file to use for the test cases. Input cases are seperated by a line containing only the character '#'.\n");
+			
+			System.out.println("These paths can be absolute or relative.");
+			
+			return;
+		}
+		
+		// FileWriter output = new FileWriter(new File("OUTPUT.txt"));
+		
+		// Make sure our inputs are in the form we want
+		if(args[0].charAt(args[0].length() - 1) != '/')
+			args[0] += "/";
+		
+		if(args[1].charAt(args[1].length() - 1) != '/')
+			args[1] += "/";
+		
+		/*if(args[2].charAt(args[2].length() - 1) != '\\')
+			args[2] += "\\javac";
+		else
+			args[2] += "javac";*/
+		args[2] = "javac";
+		
+		// Generate all of the test cases
+		ArrayList<String> test_input = new ArrayList<String>();
+		ArrayList<String> oracle_output = new ArrayList<String>();
+		
+		// Read the input file for the actual test cases
+		try
+		{
+			Scanner fin = new Scanner(new File(args[3]));
+			String str = "";
+			
+			while(fin.hasNextLine())
+			{
+				String temp = fin.nextLine();
+				
+				if(temp.equals("#"))
+				{
+					test_input.add(str.substring(0,str.length() - 1));
+					str = "";
+					
+					continue;
+				}
+				
+				str += temp + "\n";
+			}
+			
+			// Add the last test input case
+			if(!str.equals(""))
+				test_input.add(str.substring(0,str.length() - 1));
+			
+			fin.close();
+		}
+		catch(Exception e)
+		{
+			System.err.println("Unable to open input file: " + args[3]);
+			return;
+		}
+		
+		// Generate the solutions to the test cases (note that the decode solutions are the test cases themselves)
+		for(String str : test_input)
+		{
+			try
+			{oracle_output.add(LZEncryption.encode(str));}
+			catch(Exception e)
+			{
+				System.err.println("A problem has occured with the oracle! A test case was unable to be encoded! The test case was the following:\n");
+				System.err.println(str);
+				System.err.println("\nSkipping test case.");
+				
+				continue;
+			}
+			
+			try
+			{
+				if(!str.equals(LZEncryption.decode(oracle_output.get(oracle_output.size() - 1))))
+				{
+					System.err.println("A problem has occured with the oracle! A test case was unable to be decoded to its original input! The test case was the following:\n");
+					System.err.println(str);
+					System.err.println("\nSkipping test case.");
+					
+					oracle_output.remove(oracle_output.size() - 1);
+					continue;
+				}
+			}
+			catch(Exception e)
+			{
+				System.err.println("A problem has occured with the oracle! A test case was unable to be decoded to its original input! The test case was the following:\n");
+				System.err.println(str);
+				System.err.println("\nSkipping test case.");
+				
+				oracle_output.remove(oracle_output.size() - 1);
+				continue;
+			}
+		}
+		
+		// Get a list of all the students
+		File[] projects = new File(args[1]).listFiles(new FilenameFilter()
+		{
+			public boolean accept(File f, String full_name)
+			{return full_name.substring(full_name.length() - 4).equals(".zip");}
+		});
+		
+		// For every student, do the tests
+		for(File f : projects)
+		{
+			String student = f.getName().substring(0,f.getName().length() - 4); // Chop off the .zip
+			System.out.println("Beginning work on " + student);
+			
+			// HACKING
+			if(!new File("Output").exists() || !new File("Output").isDirectory())
+				new File("Output").mkdirs();
+			FileWriter output = new FileWriter(new File("Output/" + student + ".txt"));
+			
+			// Unzip the next student's code
+			try
+			{UnZip.unZipIt(f.getAbsolutePath(),args[0]);}
+			catch(Exception e)
+			{
+				output.write("Unable to unzip code for " + student + ". The zip file is corrupted.\n\n\n");
+				output.close(); // HACKING
+				continue;
+			}
+			
+			// Running javac on the LZEncryption class compiles everything it depends on
+			boolean LZ = false;
+			
+			try
+			{
+				Process p = Runtime.getRuntime().exec(args[2] + " " + "-classpath " + args[0] +  " " + args[0] + "LZEncryption.java");
+				
+				if(p.waitFor() != 0)
+				{
+					// This was the actual name of the class in the specs, so I suppose I should check for it
+					p = Runtime.getRuntime().exec(args[2] + " " + "-classpath " + args[0] + " " + args[0] + "LZ.java");
+					
+					if(p.waitFor() != 0)
+					{
+						output.write("Unable to compile code for " + student + ".\n\n\n");
+						output.close(); // HACKING
+						continue;
+					}
+					else
+						LZ = true;
+				}
+			}
+			catch(Exception e)
+			{
+				try
+				{
+					// This was the actual name of the class in the specs, so I suppose I should check for it
+					Process p = Runtime.getRuntime().exec(args[2] + " " + "-classpath " + args[0] + " " + args[0] + "LZ.java");
+					
+					if(p.waitFor() != 0)
+					{
+						output.write("Unable to compile code for " + student + ".\n\n\n");
+						output.close(); // HACKING
+						continue;
+					}
+					else
+						LZ = true;
+				}
+				catch(Exception e2)
+				{
+					output.write("Unable to compile code for " + student + ".\n\n\n");
+					output.close(); // HACKING
+					continue;
+				}
+			}
+			
+			// Loading the LZEncryption class will dynamically load everything it depends on
+			ClassLoader loader = Grader.class.getClassLoader();
+			Class<?> student_LZEncryption_class = null;
+			
+			try
+			{
+				if(LZ)
+					student_LZEncryption_class = loader.loadClass("LZ");
+				else
+					student_LZEncryption_class = loader.loadClass("LZEncryption");
+			}
+			catch(Exception e)
+			{
+				output.write("Unable to load compiled LZEncryption class file for " + student + ".\n\n\n");
+				output.close(); // HACKING
+				continue;
+			}
+			
+			// Load the encode and decode functions
+			Method encode = null;
+			Method decode = null;
+			
+			try
+			{encode = student_LZEncryption_class.getMethod("encode",String.class);}
+			catch(Exception e)
+			{
+				output.write("Unable to load the encode function for " + student + ".\n\n\n");
+				output.close(); // HACKING
+				continue;
+			}
+			
+			// encode should never be null, but it's better to check anyway
+			if(encode == null || !encode.getReturnType().equals(String.class))
+			{
+				output.write("The encode function for " + student + " does not return a string.\n\n\n");
+				output.close(); // HACKING
+				continue;
+			}
+			
+			try
+			{decode = student_LZEncryption_class.getMethod("decode",String.class);}
+			catch(Exception e)
+			{
+				output.write("Unable to load the decode function for " + student + ".\n\n\n");
+				output.close(); // HACKING
+				continue;
+			}
+			
+			// decode should never be null, but it's better to check anyway
+			if(decode == null || !decode.getReturnType().equals(String.class))
+			{
+				output.write("The decode function for " + student + " does not return a string.\n\n\n");
+				output.close(); // HACKING
+				continue;
+			}
+			
+			// Run some test cases
+			output.write("Running test cases for " + student + ".\n");
+			output.write("------------------------");
+			
+			for(int i = 0;i < student.length();i++)
+				output.write("-");
+			
+			output.write("\n");
+			
+			double encode_successes = 0;
+			double decode_successes = 0;
+			
+			for(int i = 0;i < test_input.size();i++)
+			{
+				// Run the ith encode test case
+				try
+				{
+					////// WRITE HERE /////
+					Executor e = new Executor(Thread.currentThread(),encode,test_input.get(i));
+					e.start();
+					Thread.currentThread().wait(10000);
+					
+					if(!e.done || !test_input.get(i).equals(LZEncryption.decode((String)e.ret)))
+					{
+						byte[] test_bytes = BytesFromString((String)encode.invoke(null,test_input.get(i)));
+						byte[] oracle_bytes = BytesFromString(oracle_output.get(i));
+						
+						double points = 0.0;
+						
+						// The first four bytes being correct is worth 7 points, or 7/47 successes
+						boolean success = true;
+						
+						for(int j = 0;j < 4;j++)
+							if(test_bytes[j] != oracle_bytes[j])
+								success = false;
+						
+						if(success)
+							points += 7.0;
+						
+						// Look for a matching substring of length 25%, 50%, 75%, 90%, and 100% - in reverse order
+						double[] match_length = new double[] {1.0,0.9,0.75,0.5,0.25};
+						
+						for(int j = 0;j < match_length.length;j++)
+						{
+							int length = (int)((oracle_bytes.length - 4) * match_length[j]);
+							
+							if(FindMatchingSubarray(oracle_bytes,test_bytes,4,4+length,4))
+							{
+								points += match_length[j] * 40.0;
+								break;
+							}
+						}
+						
+						output.write("Succeeded " + (points / 47.0) + " percent on test case " + (i + 1) + " for encode.\n");
+						encode_successes += points / 47.0;
+					}
+					else
+					{
+						output.write("Succeeded on test case " + (i + 1) + " for encode.\n");
+						encode_successes++;
+					}
+				}
+				catch(Exception e)
+				{output.write("Failed test case " + (i + 1) + " for encode.\n");}
+				
+				// Run the ith decode test case
+				try
+				{
+					if(!test_input.get(i).equals(decode.invoke(null,oracle_output.get(i))))
+					{
+						byte[] test_bytes = BytesFromString((String)decode.invoke(null,oracle_output.get(i)));
+						byte[] oracle_bytes = BytesFromString(test_input.get(i));
+						
+						double points = 0.0;
+						
+						// Look for a matching substring of length 25%, 50%, 75%, and 90% - in reverse order
+						double[] match_length = new double[] {0.9,0.75,0.5,0.25};
+						
+						for(int j = 0;j < match_length.length;j++)
+						{
+							int length = (int)(oracle_bytes.length * match_length[j]);
+							
+							if(FindMatchingSubarray(oracle_bytes,test_bytes,0,length,0))
+							{
+								points += match_length[j] * 50.0;
+								break;
+							}
+						}
+						
+						output.write("Succeeded " + (points / 50.0) + " percent on test case " + (i + 1) + " for decode.\n");
+						encode_successes += points / 50.0;
+					}
+					else
+					{
+						output.write("Succeeded on test case " + (i + 1) + " for decode.\n");
+						decode_successes++;
+					}
+				}
+				catch(Exception e)
+				{output.write("Failed test case " + (i + 1) + " for decode.\n");}
+			}
+			
+			// Output total results
+			output.write("\nTotal encode successes: " + encode_successes + "/" + test_input.size());
+			output.write("\nTotal decode successes: " + decode_successes + "/" + test_input.size());
+			
+			output.write("\n\nTotal successes: " + (encode_successes + decode_successes) + "/" + (test_input.size() << 1));
+			output.write("\nTotal points: " + ((encode_successes / test_input.size() * 141.0) + (decode_successes / test_input.size()) * 150.0) + " / 291" + "\n\n\n");
+			
+			// HACKING
+			output.close();
+			f.delete();
+		}
+		
+		// HACKING
+		File[] garbage = new File(args[0]).listFiles(new FilenameFilter()
+		{
+			public boolean accept(File f, String full_name)
+			{return !f.getName().equals("grading") && !f.getName().equals("oracle") && !f.getName().equals("zip");}
+		});
+		
+		for(File f : garbage)
+			f.delete();
+		
+		// Make sure Java actually writes the buffer, because it tends not to do that
+		//output.close();
+		
+		return;
+	}
+	
+	public static String StringFromBytes(byte[] b)
+	{
+		final char[] masks = {0x8000,0x4000,0x2000,0x1000,0x800,0x400,0x200,0x100,0x80,0x40,0x20,0x10,0x8,0x4,0x2,0x1};
+		String ret = "";
+		
+		for(int i = 0;i < b.length;i += 2)
+		{
+			char c = 0x0;
+			
+			for(int j = 0;j < 16;j++)
+				c |= ((b[i + j / 8] << (j < 8 ? 8 : 0)) & masks[j]);
+			
+			int a = (int)c;
+			ret += c;
+		}
+		
+		return ret;
+	}
+	
+	public static byte[] BytesFromString(String str)
+	{
+		if(str == null || str.equals(""))
+			return new byte[0];
+		
+		byte[] ret = new byte[str.length() << 1];
+		
+		for(int i = 0;i < str.length();i++)
+		{
+			ret[i << 1] = (byte)((str.charAt(i) >> 8) & 0xFF);
+			ret[(i << 1) + 1] = (byte)(str.charAt(i) & 0xFF);
+		}
+		
+		return ret;
+	}
+	
+	public static boolean FindMatchingSubarray(byte[] find, byte[] in, int starting_index_find, int ending_index_find, int starting_index_in)
+	{
+		for(int i = starting_index_in;i <= in.length - (ending_index_find - starting_index_find);i++)
+			for(int j = starting_index_find;j < ending_index_find;j++)
+			{
+				if(find[j] != in[i + j - starting_index_find])
+					break;
+				
+				if(j == ending_index_find - 1)
+					return true;
+			}
+		
+		return false;
+	}
+	
+	public static class Executor extends Thread
+	{
+		public Executor(Thread main, Method m, Object param)
+		{
+			this.main = main;
+			this.m = m;
+			this.param = param;
+			
+			return;
+		}
+		
+		public void run()
+		{
+			try
+			{
+				m.invoke(null,param);
+				done = true;
+				main.notify();
+			}
+			catch(Exception e)
+			{}
+			
+			return;
+		}
+		
+		public Object ret = null;
+		public boolean done = false;
+		
+		protected Thread main;
+		protected Method m;
+		protected Object param;
+	}
+}

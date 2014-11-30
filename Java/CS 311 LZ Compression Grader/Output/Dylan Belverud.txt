@@ -1,0 +1,40 @@
+Running test cases for Dylan Belverud.
+--------------------------------------
+Failed test case 1 for encode.
+Succeeded 0.0 percent on test case 1 for decode.
+Failed test case 2 for encode.
+Succeeded 0.0 percent on test case 2 for decode.
+Failed test case 3 for encode.
+Succeeded 0.0 percent on test case 3 for decode.
+Failed test case 4 for encode.
+Succeeded 0.0 percent on test case 4 for decode.
+Failed test case 5 for encode.
+Succeeded 0.0 percent on test case 5 for decode.
+Failed test case 6 for encode.
+Succeeded 0.0 percent on test case 6 for decode.
+Failed test case 7 for encode.
+Succeeded 0.0 percent on test case 7 for decode.
+Failed test case 8 for encode.
+Succeeded 0.0 percent on test case 8 for decode.
+Failed test case 9 for encode.
+Succeeded 0.0 percent on test case 9 for decode.
+Failed test case 10 for encode.
+Succeeded 0.0 percent on test case 10 for decode.
+Failed test case 11 for encode.
+Succeeded 0.0 percent on test case 11 for decode.
+Failed test case 12 for encode.
+Succeeded 0.0 percent on test case 12 for decode.
+Failed test case 13 for encode.
+Succeeded 0.0 percent on test case 13 for decode.
+Failed test case 14 for encode.
+Succeeded 0.0 percent on test case 14 for decode.
+Failed test case 15 for encode.
+Succeeded 0.0 percent on test case 15 for decode.
+
+Total encode successes: 0.0/15
+Total decode successes: 0.0/15
+
+Total successes: 0.0/30
+Total points: 0.0 / 291
+
+

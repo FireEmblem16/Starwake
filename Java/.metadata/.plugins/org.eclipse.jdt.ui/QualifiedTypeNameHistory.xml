@@ -5,11 +5,23 @@
 <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="java.lang.Short"/>
 <fullyQualifiedTypeName name="LZEncryption.ByteWrapper"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="LZEncryption.BigByte"/>
 <fullyQualifiedTypeName name="LZEncryption.Trie"/>
 <fullyQualifiedTypeName name="LZEncryption.Encoding"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="LZEncryption.ByteUnwrapper"/>
 <fullyQualifiedTypeName name="LZEncryption"/>
+<fullyQualifiedTypeName name="java.beans.MetaData.java_awt_AWTKeyStroke_PersistenceDelegate"/>
+<fullyQualifiedTypeName name="java.io.FileSystem"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileFilter"/>
+<fullyQualifiedTypeName name="java.io.FilenameFilter"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Method"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.util.concurrent.CompletableFuture.OrCompletion"/>
+<fullyQualifiedTypeName name="oracle.LZEncryption"/>
+<fullyQualifiedTypeName name="grading.Grader.Executor"/>
 </qualifiedTypeNameHistroy>
