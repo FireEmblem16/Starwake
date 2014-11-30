@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/CS 311 LZ Compression Grader/src/Grader.java"/>
+<listEntry value="/CS 311 LZ Compression Grader"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
-<listEntry value="1"/>
+<listEntry value="4"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="Grader"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="./bin&#13;&#10;&quot;Student Code&quot;&#13;&#10;&quot;C:\Program Files\Java\jdk1.8.0_20\bin&quot;&#13;&#10;./INPUT.txt"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="CS 311 LZ Compression Grader"/>
 </launchConfiguration>
